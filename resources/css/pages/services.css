@@ -1,0 +1,632 @@
+/* =========================================================
+   SERVICES PAGE
+   Corporate Doodle Style
+========================================================= */
+
+
+/* =========================================================
+   SERVICES HERO
+========================================================= */
+
+.services-hero {
+    padding: 110px 0 100px;
+
+    background: #fffdf7;
+
+    border-bottom: 3px solid #1f2937;
+}
+
+
+.services-hero-content {
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.services-label {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    color: #1f2937;
+}
+
+
+.services-hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 30px;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    color: #1f2937;
+}
+
+
+.services-hero h1 span {
+    position: relative;
+
+    display: inline-block;
+}
+
+
+.services-hero h1 span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 100%;
+
+    height: 7px;
+
+    background: #f97316;
+
+    border-radius: 50%;
+
+    transform: rotate(-2deg);
+}
+
+
+.services-intro {
+    max-width: 650px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #374151;
+}
+
+
+/* =========================================================
+   HERO NOTE
+========================================================= */
+
+.services-hero-note {
+    padding: 35px;
+
+    background: #fbbf24;
+
+    border: 3px solid #1f2937;
+
+    box-shadow: 8px 8px 0 #1f2937;
+
+    transform: rotate(2deg);
+}
+
+
+.services-hero-note span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 50px;
+
+    line-height: 1;
+}
+
+
+.services-hero-note p {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.7;
+
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.services-introduction {
+    padding: 100px 0;
+
+    background: #ffffff;
+
+    border-bottom: 3px solid #1f2937;
+}
+
+
+.services-introduction-grid {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 80px;
+}
+
+
+.services-section-label {
+    margin-bottom: 15px;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    color: #1f2937;
+}
+
+
+.services-introduction h2 {
+    max-width: 500px;
+
+    font-size: clamp(45px, 5vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    color: #1f2937;
+}
+
+
+.services-introduction-grid > div:last-child p {
+    margin-bottom: 20px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #374151;
+}
+
+
+/* =========================================================
+   SERVICES LIST
+========================================================= */
+
+.services-list {
+    padding: 100px 0;
+
+    background: #f7f7f2;
+}
+
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.service-doodle-card {
+    min-height: 350px;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border: 3px solid #1f2937;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.service-doodle-card:hover {
+    transform: translate(-5px, -5px);
+}
+
+
+/* Card colors */
+
+.service-orange {
+    box-shadow: 9px 9px 0 #f97316;
+}
+
+
+.service-green {
+    box-shadow: 9px 9px 0 #7dbd26;
+}
+
+
+.service-blue {
+    box-shadow: 9px 9px 0 #159bd3;
+}
+
+
+.service-yellow {
+    box-shadow: 9px 9px 0 #fbbf24;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.service-card-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+
+.service-number {
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.service-symbol {
+    font-size: 40px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.service-doodle-card h3 {
+    margin-bottom: 18px;
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+
+    color: #1f2937;
+}
+
+
+.service-doodle-card p {
+    max-width: 550px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #374151;
+}
+
+
+/* =========================================================
+   CARD LINE
+========================================================= */
+
+.service-line {
+    width: 100%;
+
+    height: 2px;
+
+    margin: 30px 0 18px;
+
+    background: #1f2937;
+
+    transform: rotate(-1deg);
+}
+
+
+/* =========================================================
+   CARD TAG
+========================================================= */
+
+.service-tag {
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   APPROACH
+========================================================= */
+
+.services-approach {
+    padding: 100px 0;
+
+    background: #ffffff;
+
+    border-bottom: 3px solid #1f2937;
+}
+
+
+.services-approach-header {
+    margin-bottom: 55px;
+}
+
+
+.services-approach-header h2 {
+    max-width: 850px;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   APPROACH GRID
+========================================================= */
+
+.services-approach-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.approach-card {
+    padding: 30px;
+
+    background: #fffdf7;
+
+    border: 3px solid #1f2937;
+}
+
+
+.approach-card:nth-child(1) {
+    transform: rotate(-1deg);
+}
+
+
+.approach-card:nth-child(2) {
+    transform: rotate(1deg);
+}
+
+
+.approach-card:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+
+.approach-number {
+    display: block;
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #f97316;
+}
+
+
+.approach-card h3 {
+    margin-bottom: 15px;
+
+    font-size: 27px;
+
+    color: #1f2937;
+}
+
+
+.approach-card p {
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #374151;
+}
+
+
+/* =========================================================
+   SERVICES CTA
+========================================================= */
+
+.services-cta {
+    padding: 110px 0;
+
+    background: #fbbf24;
+
+    border-bottom: 3px solid #1f2937;
+}
+
+
+.services-cta-content {
+    max-width: 850px;
+}
+
+
+.services-cta h2 {
+    margin-bottom: 25px;
+
+    font-size: clamp(50px, 6vw, 80px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    color: #1f2937;
+}
+
+
+.services-cta p:not(.services-section-label) {
+    max-width: 650px;
+
+    margin-bottom: 30px;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.services-cta-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: #1f2937;
+
+    color: #ffffff !important;
+
+    border: 3px solid #1f2937;
+
+    font-weight: 900;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.services-cta-button:hover {
+    background: #ffffff;
+
+    color: #1f2937 !important;
+
+    transform: translate(-3px, -3px);
+
+    box-shadow: 6px 6px 0 #1f2937;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .services-hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .services-hero-note {
+        max-width: 500px;
+    }
+
+
+    .services-introduction-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .services-approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .services-hero {
+        padding: 80px 0;
+    }
+
+
+    .services-hero h1 {
+        font-size: 55px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .services-introduction,
+    .services-list,
+    .services-approach,
+    .services-cta {
+        padding: 75px 0;
+    }
+
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .service-doodle-card {
+        min-height: auto;
+
+        padding: 28px;
+    }
+
+
+    .service-doodle-card h3 {
+        font-size: 30px;
+    }
+
+
+    .services-cta h2 {
+        font-size: 50px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .services-hero h1 {
+        font-size: 45px;
+    }
+
+
+    .services-hero-note {
+        padding: 25px;
+    }
+
+
+    .services-cta h2 {
+        font-size: 42px;
+    }
+
+}

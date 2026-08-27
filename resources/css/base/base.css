@@ -1,0 +1,75 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fffdf7;
+    color: #171717;
+
+    /*
+     * DoodleCSS menggunakan Short Stack sebagai
+     * font utamanya.
+     *
+     * Untuk sementara kita gunakan fallback jika
+     * font belum tersedia.
+     */
+    font-family: "Short Stack", cursive;
+
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+
+
+
+/* =========================================================
+   DOODLE GLOBAL
+========================================================= */
+
+/*
+ * Sedikit membuat elemen terasa tidak terlalu kaku.
+ */
+
+.doodle {
+    overflow-x: hidden;
+}
+
+.doodle h1,
+.doodle h2,
+.doodle h3 {
+    line-height: 1.15;
+}
+
+.doodle a {
+    cursor: pointer;
+}

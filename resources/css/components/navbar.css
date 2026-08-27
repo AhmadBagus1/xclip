@@ -1,0 +1,169 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #fffdf7;
+
+    /*
+     * DoodleCSS sendiri menangani banyak style
+     * hand-drawn. Border ini menjadi garis pemisah
+     * tambahan untuk identitas Xclip.
+     */
+    border-bottom: 3px solid #171717;
+}
+
+.navbar-container {
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    transition: transform 0.2s ease;
+}
+
+.navbar-logo img {
+    width: 125px;
+    height: auto;
+
+    object-fit: contain;
+
+    /*
+     * Tidak menggunakan background putih tambahan
+     * supaya logo menyatu dengan navbar.
+     */
+    mix-blend-mode: multiply;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.navbar-logo:hover img {
+    transform: rotate(-2deg) scale(1.04);
+}
+
+
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+.nav-link {
+    position: relative;
+
+    padding: 8px 2px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.nav-link:hover {
+    transform:
+        translateY(-2px)
+        rotate(-1deg);
+}
+
+
+/*
+ * Hand-drawn underline
+ */
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #171717;
+
+    transform: scaleX(0) rotate(-2deg);
+
+    transform-origin: center;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1) rotate(-2deg);
+}
+
+
+
+
+/* =========================================================
+   NAVBAR CTA
+========================================================= */
+
+.navbar-cta {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background: #171717;
+    color: #ffffff;
+
+    border: 3px solid #171717;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    /*
+     * Sedikit miring agar terasa digambar tangan.
+     */
+    transform: rotate(-1.5deg);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.navbar-cta:hover {
+    background: #ffffff;
+    color: #171717;
+
+    transform:
+        rotate(1deg)
+        translateY(-2px);
+
+    box-shadow:
+        5px 5px 0 #171717;
+}

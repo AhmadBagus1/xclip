@@ -1,0 +1,14 @@
+/* =========================================================
+   DOODLE BORDERS
+========================================================= */
+
+/*
+ * DoodleCSS menyediakan .doodle-border.
+ *
+ * Kita memberi beberapa komponen kemampuan untuk
+ * menggunakan class tersebut jika dibutuhkan.
+ */
+
+.doodle-border {
+    position: relative;
+}

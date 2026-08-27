@@ -1,0 +1,532 @@
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    padding: 120px 0 130px;
+
+    background: #fffdf7;
+
+    border-bottom: 3px solid #171717;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+
+    max-width: 850px;
+
+    z-index: 2;
+}
+
+
+/*
+ * Label kecil
+ */
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 5px 12px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    border: 2px solid #171717;
+
+    transform: rotate(-2deg);
+}
+
+
+/*
+ * Main heading
+ */
+
+.hero h1 {
+    max-width: 850px;
+
+    margin: 0 0 25px;
+
+    font-size: clamp(48px, 8vw, 92px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+}
+
+
+/*
+ * Hero paragraph
+ */
+
+.hero p {
+    max-width: 650px;
+
+    margin: 0 0 35px;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   HERO DOODLE DECORATION
+========================================================= */
+
+.hero::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 70px;
+    right: 12%;
+
+    font-size: 70px;
+
+    transform: rotate(15deg);
+
+    opacity: 0.8;
+}
+
+.hero::after {
+    content: "〰";
+
+    position: absolute;
+
+    right: 8%;
+    bottom: 70px;
+
+    font-size: 100px;
+
+    transform: rotate(-8deg);
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+.hero-actions a {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border: 3px solid #171717;
+
+    font-weight: 700;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hero-actions a:first-child {
+    background: #171717;
+    color: #ffffff;
+}
+
+.hero-actions a:hover {
+    transform:
+        translate(-3px, -3px)
+        rotate(-1deg);
+
+    box-shadow:
+        5px 5px 0 #171717;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+section:not(.hero) {
+    padding: 100px 0;
+}
+
+section:not(.hero) h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1;
+}
+
+section:not(.hero) > .container > p:first-child {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    border-bottom: 2px solid #171717;
+}
+
+
+/* =========================================================
+   ABOUT PREVIEW
+========================================================= */
+
+.about-preview {
+    background: #ffffff;
+}
+
+.about-preview .container {
+    position: relative;
+}
+
+.about-preview p {
+    max-width: 680px;
+}
+
+
+/*
+ * Doodle box pada bagian About
+ */
+
+.about-preview .container::after {
+    content: "✎";
+
+    position: absolute;
+
+    right: 5%;
+    top: 30%;
+
+    font-size: 80px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* =========================================================
+   GENERAL TEXT
+========================================================= */
+
+.about-preview p:not(:first-child),
+.projects-preview p:not(:first-child) {
+    max-width: 680px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   LINK ARROW
+========================================================= */
+
+.about-preview a,
+.services-preview > .container > a,
+.projects-preview a {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    font-weight: 700;
+
+    border-bottom: 2px solid #171717;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.about-preview a:hover,
+.services-preview > .container > a:hover,
+.projects-preview a:hover {
+    transform:
+        translateX(5px)
+        rotate(-1deg);
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-preview {
+    background: #f5f0df;
+}
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+
+    margin: 45px 0;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.service-card {
+    position: relative;
+
+    min-height: 250px;
+
+    padding: 30px 25px;
+
+    background: #ffffff;
+
+    border: 3px solid #171717;
+
+    /*
+     * Shadow seperti coretan.
+     */
+    box-shadow:
+        6px 6px 0 #171717;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/*
+ * Variasi kemiringan kartu.
+ */
+
+.service-card:nth-child(1) {
+    transform: rotate(-1deg);
+}
+
+.service-card:nth-child(2) {
+    transform: rotate(1deg);
+}
+
+.service-card:nth-child(3) {
+    transform: rotate(-0.7deg);
+}
+
+.service-card:nth-child(4) {
+    transform: rotate(1deg);
+}
+
+
+.service-card:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg);
+
+    box-shadow:
+        9px 9px 0 #171717;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+
+    font-size: 24px;
+}
+
+.service-card p {
+    font-size: 15px;
+}
+
+
+/*
+ * Nomor dekoratif
+ */
+
+.service-card::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-preview {
+    background: #ffffff;
+}
+
+.projects-preview .container {
+    position: relative;
+}
+
+.projects-preview::before {
+    content: "PROJECTS";
+
+    position: absolute;
+
+    right: -40px;
+
+    font-size: 90px;
+
+    opacity: 0.04;
+
+    font-weight: 700;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    position: relative;
+
+    padding: 100px 0;
+
+    background: #171717;
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+.cta h2 {
+    max-width: 750px;
+}
+
+.cta p {
+    max-width: 600px;
+
+    margin-bottom: 30px;
+}
+
+
+/*
+ * Doodle decoration
+ */
+
+.cta::before {
+    content: "✦";
+
+    position: absolute;
+
+    right: 12%;
+    top: 25px;
+
+    font-size: 90px;
+
+    transform: rotate(20deg);
+}
+
+.cta::after {
+    content: "〰";
+
+    position: absolute;
+
+    right: 8%;
+    bottom: 30px;
+
+    font-size: 100px;
+
+    transform: rotate(-10deg);
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.cta a {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: #ffffff;
+
+    color: #171717;
+
+    border: 3px solid #ffffff;
+
+    font-weight: 700;
+
+    transform: rotate(-1deg);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.cta a:hover {
+    transform:
+        rotate(1deg)
+        translateY(-3px);
+
+    box-shadow:
+        6px 6px 0 #ffffff;
+}
+
+
+/* =========================================================
+   DOODLE BORDERS
+========================================================= */
+
+/*
+ * DoodleCSS menyediakan .doodle-border.
+ *
+ * Kita memberi beberapa komponen kemampuan untuk
+ * menggunakan class tersebut jika dibutuhkan.
+ */
+
+.doodle-border {
+    position: relative;
+}
+
+
+/* =========================================================
+   FORM / INPUT
+   Persiapan untuk halaman Contact & RFQ
+========================================================= */
+
+.doodle input,
+.doodle textarea,
+.doodle select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    background: #ffffff;
+
+    color: #171717;
+
+    border: 3px solid #171717;
+
+    outline: none;
+}
+
+.doodle textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+.doodle input:focus,
+.doodle textarea:focus,
+.doodle select:focus {
+    box-shadow:
+        5px 5px 0 #171717;
+}

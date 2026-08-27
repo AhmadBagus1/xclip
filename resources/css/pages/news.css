@@ -1,0 +1,553 @@
+/* =====================================================
+   NEWS PAGE
+===================================================== */
+
+
+/* =========================
+   NEWS HERO
+========================= */
+
+.news-hero {
+    padding: 90px 0;
+    background: #f7f7f2;
+}
+
+.news-hero-box {
+    max-width: 950px;
+
+    padding: 70px;
+
+    background: #ffffff;
+
+    border: 3px solid #1f2937;
+
+    transform: rotate(-0.4deg);
+}
+
+.news-hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 25px;
+
+    font-size: clamp(48px, 7vw, 82px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+.news-hero h1 span {
+    display: block;
+}
+
+.news-hero-description {
+    max-width: 650px;
+
+    font-size: 19px;
+}
+
+
+/* =========================
+   FEATURED NEWS
+========================= */
+
+.featured-news {
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+.featured-news-card {
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr;
+
+    margin-top: 25px;
+
+    background: #ffffff;
+
+    border: 3px solid #1f2937;
+
+    box-shadow: 8px 8px 0 #1f2937;
+
+    transform: rotate(0.3deg);
+}
+
+
+/* =========================
+   FEATURED IMAGE
+========================= */
+
+.featured-news-image {
+    min-height: 420px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-right: 3px solid #1f2937;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #ffffff,
+            #ffffff 12px,
+            #e5e7eb 12px,
+            #e5e7eb 14px
+        );
+}
+
+.featured-news-image span {
+    padding: 12px 18px;
+
+    background: #ffffff;
+
+    border: 2px solid #1f2937;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transform: rotate(-4deg);
+}
+
+
+/* =========================
+   FEATURED CONTENT
+========================= */
+
+.featured-news-content {
+    padding: 55px;
+}
+
+.news-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.news-meta span {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.featured-news-content h2 {
+    max-width: 600px;
+
+    margin-bottom: 20px;
+
+    font-size: clamp(35px, 4vw, 52px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.featured-news-content > p {
+    max-width: 550px;
+
+    margin-bottom: 30px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   NEWS READ MORE
+========================= */
+
+.news-read-more {
+    display: inline-block;
+
+    padding-bottom: 3px;
+
+    border-bottom: 2px solid #1f2937;
+
+    font-weight: 800;
+}
+
+.news-read-more:hover {
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   LATEST NEWS
+========================= */
+
+.latest-news {
+    padding: 100px 0;
+
+    background: #f7f7f2;
+}
+
+.news-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    align-items: end;
+
+    margin-bottom: 55px;
+}
+
+.news-heading h2 {
+    font-size: clamp(42px, 5vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.news-heading > p {
+    max-width: 450px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   NEWS GRID
+========================= */
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px;
+}
+
+
+/* =========================
+   NEWS CARD
+========================= */
+
+.news-card {
+    background: #ffffff;
+
+    border: 3px solid #1f2937;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.news-card:nth-child(1) {
+    transform: rotate(-0.5deg);
+}
+
+.news-card:nth-child(2) {
+    transform: rotate(0.5deg);
+}
+
+.news-card:nth-child(3) {
+    transform: rotate(0.4deg);
+}
+
+.news-card:nth-child(4) {
+    transform: rotate(-0.4deg);
+}
+
+.news-card:hover {
+    transform: translate(-5px, -5px) rotate(0deg);
+
+    box-shadow: 8px 8px 0 #1f2937;
+}
+
+
+/* =========================
+   NEWS CARD IMAGE
+========================= */
+
+.news-card-image {
+    height: 250px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 3px solid #1f2937;
+}
+
+.news-card-image span {
+    padding: 10px 15px;
+
+    background: #ffffff;
+
+    border: 2px solid #1f2937;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================
+   IMAGE PATTERNS
+========================= */
+
+.news-image-1 {
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #ffffff,
+            #ffffff 10px,
+            #e5e7eb 10px,
+            #e5e7eb 12px
+        );
+}
+
+.news-image-2 {
+    background:
+        radial-gradient(
+            #d1d5db 1.5px,
+            transparent 1.5px
+        );
+
+    background-size: 15px 15px;
+}
+
+.news-image-3 {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 25%,
+            #e5e7eb 25%,
+            #e5e7eb 50%,
+            #ffffff 50%,
+            #ffffff 75%,
+            #e5e7eb 75%
+        );
+
+    background-size: 32px 32px;
+}
+
+.news-image-4 {
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #ffffff,
+            #ffffff 14px,
+            #d1d5db 14px,
+            #d1d5db 16px
+        );
+}
+
+
+/* =========================
+   NEWS CARD CONTENT
+========================= */
+
+.news-card-content {
+    padding: 30px;
+}
+
+.news-card-content h3 {
+    max-width: 500px;
+
+    margin-bottom: 15px;
+
+    font-size: 28px;
+
+    line-height: 1.1;
+}
+
+.news-card-content > p {
+    max-width: 500px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   NEWS CTA
+========================= */
+
+.news-cta {
+    padding: 100px 0;
+
+    background: #1f2937;
+
+    color: #ffffff;
+}
+
+.news-cta-box {
+    max-width: 850px;
+}
+
+.news-cta-box h2 {
+    max-width: 800px;
+
+    margin-bottom: 25px;
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+.news-cta-box > p:not(.section-label) {
+    max-width: 600px;
+
+    margin-bottom: 30px;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   NEWS CTA BUTTONS
+========================= */
+
+.news-cta-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.news-button {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    border: 3px solid #ffffff;
+
+    font-weight: 800;
+
+    transition: all 0.2s ease;
+}
+
+.news-button:hover {
+    transform: translate(-3px, -3px);
+}
+
+.news-button-outline {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    border: 3px solid #ffffff;
+
+    font-weight: 800;
+
+    transition: all 0.2s ease;
+}
+
+.news-button-outline:hover {
+    background: #ffffff;
+
+    color: #1f2937;
+}
+
+
+/* =========================
+   NEWS RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .news-hero-box {
+        padding: 50px;
+    }
+
+    .featured-news-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-news-image {
+        min-height: 300px;
+
+        border-right: none;
+
+        border-bottom: 3px solid #1f2937;
+    }
+
+    .news-heading {
+        display: block;
+    }
+
+    .news-heading > p {
+        margin-top: 20px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .news-hero {
+        padding: 60px 0;
+    }
+
+    .news-hero-box {
+        padding: 35px 25px;
+    }
+
+    .news-hero h1 {
+        font-size: 48px;
+    }
+
+    .featured-news,
+    .latest-news,
+    .news-cta {
+        padding: 70px 0;
+    }
+
+    .featured-news-content {
+        padding: 30px 25px;
+    }
+
+    .featured-news-content h2 {
+        font-size: 38px;
+    }
+
+    .news-card-image {
+        height: 220px;
+    }
+
+    .news-card-content {
+        padding: 25px;
+    }
+
+    .news-card-content h3 {
+        font-size: 24px;
+    }
+
+    .news-cta-box h2 {
+        font-size: 48px;
+    }
+
+}

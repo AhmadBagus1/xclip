@@ -1,0 +1,854 @@
+/* =========================================================
+   ABOUT PAGE - XCLIP DOODLE STYLE
+========================================================= */
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.about-hero {
+    padding: 110px 0 100px;
+    background: #fffdf7;
+    border-bottom: 3px solid #1f1f1f;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::after {
+    content: "✦";
+    position: absolute;
+    right: 8%;
+    top: 90px;
+
+    font-size: 70px;
+    color: #f5a623;
+
+    transform: rotate(15deg);
+}
+
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+
+    align-items: center;
+    gap: 80px;
+}
+
+.about-hero-content {
+    max-width: 850px;
+}
+
+.about-label {
+    margin-bottom: 15px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.about-hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 30px;
+
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1;
+
+    color: #202020;
+}
+
+.about-hero h1 span {
+    display: block;
+}
+
+.about-hero-description {
+    max-width: 720px;
+
+    margin-bottom: 35px;
+
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.about-hero-actions {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.doodle-button {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    background: #fff;
+
+    border: 3px solid #1f1f1f;
+
+    color: #1f1f1f;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.doodle-button:hover {
+    transform: translate(-3px, -3px);
+
+    box-shadow: 6px 6px 0 #1f1f1f;
+}
+
+.doodle-button-primary {
+    background: #1f1f1f;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO NOTE
+========================================================= */
+
+.about-hero-note {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.doodle-note {
+    width: 260px;
+    min-height: 230px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 3px solid #1f1f1f;
+
+    transform: rotate(3deg);
+
+    box-shadow: 8px 8px 0 #f5a623;
+}
+
+.note-number {
+    font-size: 75px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    color: #168bc4;
+}
+
+.note-text {
+    margin-top: 10px;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+.doodle-note small {
+    margin-top: 10px;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.about-section-heading {
+    margin-bottom: 50px;
+}
+
+.about-section-heading h2 {
+    max-width: 800px;
+
+    margin: 0;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1;
+}
+
+.about-section-heading.centered {
+    text-align: center;
+}
+
+.about-section-heading.centered > p:last-child {
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.about-profile {
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+.about-profile-grid {
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+.about-profile-text {
+    max-width: 750px;
+}
+
+.about-profile-text p {
+    margin-bottom: 25px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+.about-profile-highlight {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   DOODLE CARD
+========================================================= */
+
+.doodle-card {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 3px solid #1f1f1f;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.doodle-card:hover {
+    transform: translate(-4px, -4px);
+
+    box-shadow: 8px 8px 0 #1f1f1f;
+}
+
+.profile-card:nth-child(1) {
+    transform: rotate(-1deg);
+}
+
+.profile-card:nth-child(2) {
+    transform: rotate(1deg);
+}
+
+.profile-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 27px;
+}
+
+.profile-card p {
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border: 3px solid #1f1f1f;
+
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.card-orange {
+    background: #f15a24;
+    color: #ffffff;
+}
+
+.card-green {
+    background: #78be20;
+    color: #ffffff;
+}
+
+.card-blue {
+    background: #168bc4;
+    color: #ffffff;
+}
+
+.card-yellow {
+    background: #f5b52b;
+    color: #1f1f1f;
+}
+
+
+/* =========================================================
+   LEGAL
+========================================================= */
+
+.about-legal {
+    padding: 100px 0;
+
+    background: #f7f7f2;
+
+    border-top: 3px solid #1f1f1f;
+    border-bottom: 3px solid #1f1f1f;
+}
+
+.legal-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.legal-card {
+    min-height: 100%;
+}
+
+.legal-card-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.legal-card-title .card-icon {
+    flex-shrink: 0;
+
+    margin: 0;
+}
+
+.legal-card-title h3 {
+    margin: 0;
+
+    font-size: 27px;
+}
+
+.legal-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+}
+
+.legal-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 16px 0;
+
+    border-bottom: 2px dashed #777;
+}
+
+.legal-item:last-child {
+    border-bottom: none;
+}
+
+.legal-item span {
+    font-weight: 700;
+}
+
+.legal-item strong {
+    text-align: right;
+}
+
+.legal-card-yellow {
+    background: #fffbea;
+
+    transform: rotate(1deg);
+}
+
+.legal-card-yellow p {
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+.commitment-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.commitment-tags span {
+    padding: 8px 14px;
+
+    border: 2px solid #1f1f1f;
+
+    background: #ffffff;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BUSINESS PORTFOLIO
+========================================================= */
+
+.about-business {
+    padding: 110px 0;
+
+    background: #fffdf7;
+}
+
+.business-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.business-card {
+    position: relative;
+
+    min-height: 360px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 3px solid #1f1f1f;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.business-card:hover {
+    transform: translate(-5px, -5px);
+
+    box-shadow: 8px 8px 0 #1f1f1f;
+}
+
+.business-number {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    font-size: 18px;
+
+    font-weight: 900;
+}
+
+.business-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border: 3px solid #1f1f1f;
+
+    font-size: 28px;
+
+    font-weight: 900;
+}
+
+.business-card h3 {
+    max-width: 280px;
+
+    margin-bottom: 18px;
+
+    font-size: 27px;
+
+    line-height: 1.15;
+}
+
+.business-card strong {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    font-size: 18px;
+}
+
+.business-card p {
+    font-size: 16px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   BUSINESS COLORS
+========================================================= */
+
+.business-orange {
+    border-color: #f15a24;
+}
+
+.business-orange .business-icon {
+    background: #f15a24;
+
+    color: #ffffff;
+}
+
+.business-orange strong {
+    color: #f15a24;
+}
+
+
+.business-blue {
+    border-color: #168bc4;
+}
+
+.business-blue .business-icon {
+    background: #168bc4;
+
+    color: #ffffff;
+}
+
+.business-blue strong {
+    color: #168bc4;
+}
+
+
+.business-green {
+    border-color: #78be20;
+}
+
+.business-green .business-icon {
+    background: #78be20;
+
+    color: #ffffff;
+}
+
+.business-green strong {
+    color: #5b9a12;
+}
+
+
+.business-yellow {
+    border-color: #f5b52b;
+}
+
+.business-yellow .business-icon {
+    background: #f5b52b;
+
+    color: #1f1f1f;
+}
+
+.business-yellow strong {
+    color: #d79600;
+}
+
+
+/* =========================================================
+   APPROACH
+========================================================= */
+
+.about-approach {
+    padding: 100px 0;
+
+    background: #ffffff;
+
+    border-top: 3px solid #1f1f1f;
+}
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.approach-grid h2 {
+    max-width: 600px;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1;
+}
+
+.approach-content p {
+    margin-bottom: 20px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.approach-flow {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.approach-flow span {
+    padding: 10px 15px;
+
+    border: 2px solid #1f1f1f;
+
+    font-weight: 800;
+
+    background: #fffdf7;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.about-cta {
+    padding: 80px 0;
+
+    background: #1f1f1f;
+
+    color: #ffffff;
+}
+
+.about-cta-box {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+.about-cta h2 {
+    max-width: 700px;
+
+    margin-bottom: 20px;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1;
+}
+
+.about-cta p:not(.about-label) {
+    max-width: 600px;
+
+    font-size: 18px;
+}
+
+.about-cta .about-label {
+    color: #f5b52b;
+}
+
+.about-cta-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    min-width: 210px;
+}
+
+.about-cta .doodle-button {
+    text-align: center;
+
+    background: #ffffff;
+
+    color: #1f1f1f;
+}
+
+.about-cta .doodle-button-primary {
+    background: #f5b52b;
+
+    border-color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .about-hero-note {
+        justify-content: flex-start;
+    }
+
+    .about-profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .about-cta-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .about-cta-actions {
+        flex-direction: row;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        padding: 80px 0;
+    }
+
+    .about-hero h1 {
+        font-size: 48px;
+    }
+
+    .about-profile,
+    .about-legal,
+    .about-business,
+    .about-approach {
+        padding: 75px 0;
+    }
+
+    .legal-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .business-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .business-card {
+        min-height: auto;
+    }
+
+    .legal-item {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .legal-item strong {
+        text-align: left;
+    }
+
+    .about-cta-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .about-cta-actions .doodle-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .about-hero h1 {
+        font-size: 42px;
+    }
+
+    .about-section-heading h2 {
+        font-size: 40px;
+    }
+
+    .about-hero-description {
+        font-size: 17px;
+    }
+
+    .about-profile-text p {
+        font-size: 17px;
+    }
+
+    .doodle-note {
+        width: 220px;
+        min-height: 200px;
+    }
+
+    .note-number {
+        font-size: 60px;
+    }
+
+    .business-card h3 {
+        font-size: 24px;
+    }
+
+}
