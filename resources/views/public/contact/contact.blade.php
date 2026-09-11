@@ -107,7 +107,7 @@
                         </h3>
 
                         <p>
-                            +62 xxx xxxx xxxx
+                            +62 123 4567 8901
                         </p>
 
                     </div>
@@ -134,7 +134,7 @@
                         </p>
 
                         <p>
-                            Company address will be displayed here.
+                            Alamatnya disini
                         </p>
 
                     </div>
@@ -157,11 +157,11 @@
                         </h3>
 
                         <p>
-                            Monday – Friday
+                            Senin - Jumat
                         </p>
 
                         <p>
-                            08:00 – 17:00
+                            08:00 – Selesai
                         </p>
 
                     </div>
@@ -191,7 +191,12 @@
                 </div>
 
 
-                <form class="contact-form">
+                <form
+                    action="{{ route('contact.store') }}"
+                    method="POST"
+                    class="contact-form">
+
+                    @csrf
 
 
                     {{-- NAME --}}
@@ -282,7 +287,7 @@
                     {{-- SUBMIT --}}
 
                     <button
-                        type="button"
+                        type="submit"
                         class="contact-submit">
                         Send Message →
                     </button>

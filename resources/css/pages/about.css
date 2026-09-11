@@ -195,6 +195,20 @@
 
 .about-section-heading.centered {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-section-heading.centered h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-section-heading.centered > p:last-child {
+    max-width: 650px;
+    margin: 20px auto 0;
+    font-size: 18px;
+    text-align: center;
 }
 
 .about-section-heading.centered > p:last-child {

@@ -4,6 +4,25 @@
 
 @section('content')
 
+@if(session('success'))
+<div class="rfq-success">
+    {{ session('success') }}
+</div>
+@endif
+
+@if($errors->any())
+<div class="rfq-error">
+    <strong>Please check the following:</strong>
+
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+
 {{-- =====================================================
      RFQ HERO
 ===================================================== --}}
@@ -133,26 +152,34 @@
 
         <div class="rfq-form-wrapper">
 
+            {{-- FORM HEADER --}}
+
             <div class="rfq-form-header">
 
                 <p class="section-label">
-                    PROJECT INFORMATION
+                    INFORMASI PROYEK
                 </p>
 
                 <h2>
-                    Request
-                    a Quote.
+                    Ajukan
+                    Permintaan Penawaran.
                 </h2>
 
                 <p>
-                    Please provide your contact and project
-                    information below.
+                    Silakan lengkapi informasi kontak dan
+                    proyek Anda di bawah ini.
                 </p>
 
             </div>
 
 
-            <form class="rfq-form">
+            <form
+                action="{{ route('rfq.store') }}"
+                method="POST"
+                enctype="multipart/form-data"
+                class="rfq-form">
+
+                @csrf
 
 
                 {{-- =================================================
@@ -164,7 +191,7 @@
                     <span>01</span>
 
                     <h3>
-                        Company Information
+                        Informasi Perusahaan
                     </h3>
 
                 </div>
@@ -172,25 +199,30 @@
 
                 <div class="rfq-form-grid">
 
+                    {{-- COMPANY NAME --}}
+
                     <div class="form-group">
 
                         <label for="company">
-                            Company Name
+                            Nama Perusahaan
                         </label>
 
                         <input
                             type="text"
                             id="company"
                             name="company"
-                            placeholder="Your company name">
+                            value="{{ old('company') }}"
+                            placeholder="Nama perusahaan Anda">
 
                     </div>
 
 
+                    {{-- COMPANY TYPE --}}
+
                     <div class="form-group">
 
                         <label for="company_type">
-                            Company / Organization Type
+                            Jenis Perusahaan / Organisasi
                         </label>
 
                         <select
@@ -198,27 +230,37 @@
                             name="company_type">
 
                             <option value="">
-                                Select type
+                                Pilih jenis perusahaan
                             </option>
 
-                            <option value="private">
-                                Private Company
+                            <option
+                                value="private"
+                                {{ old('company_type') == 'private' ? 'selected' : '' }}>
+                                Perusahaan Swasta
                             </option>
 
-                            <option value="government">
-                                Government
+                            <option
+                                value="government"
+                                {{ old('company_type') == 'government' ? 'selected' : '' }}>
+                                Pemerintah
                             </option>
 
-                            <option value="organization">
-                                Organization
+                            <option
+                                value="organization"
+                                {{ old('company_type') == 'organization' ? 'selected' : '' }}>
+                                Organisasi
                             </option>
 
-                            <option value="individual">
-                                Individual
+                            <option
+                                value="individual"
+                                {{ old('company_type') == 'individual' ? 'selected' : '' }}>
+                                Perorangan
                             </option>
 
-                            <option value="other">
-                                Other
+                            <option
+                                value="other"
+                                {{ old('company_type') == 'other' ? 'selected' : '' }}>
+                                Lainnya
                             </option>
 
                         </select>
@@ -237,7 +279,7 @@
                     <span>02</span>
 
                     <h3>
-                        Contact Information
+                        Informasi Kontak
                     </h3>
 
                 </div>
@@ -245,35 +287,43 @@
 
                 <div class="rfq-form-grid">
 
+                    {{-- CONTACT NAME --}}
+
                     <div class="form-group">
 
                         <label for="name">
-                            Contact Name
+                            Nama Kontak
                         </label>
 
                         <input
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Your full name">
+                            value="{{ old('name') }}"
+                            placeholder="Nama lengkap Anda">
 
                     </div>
 
 
+                    {{-- POSITION --}}
+
                     <div class="form-group">
 
                         <label for="position">
-                            Position
+                            Jabatan
                         </label>
 
                         <input
                             type="text"
                             id="position"
                             name="position"
-                            placeholder="Your position">
+                            value="{{ old('position') }}"
+                            placeholder="Jabatan Anda">
 
                     </div>
 
+
+                    {{-- EMAIL --}}
 
                     <div class="form-group">
 
@@ -285,21 +335,25 @@
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="your@email.com">
+                            value="{{ old('email') }}"
+                            placeholder="nama@email.com">
 
                     </div>
 
 
+                    {{-- PHONE --}}
+
                     <div class="form-group">
 
                         <label for="phone">
-                            Phone / WhatsApp
+                            Telepon / WhatsApp
                         </label>
 
                         <input
                             type="text"
                             id="phone"
                             name="phone"
+                            value="{{ old('phone') }}"
                             placeholder="+62 xxx xxxx xxxx">
 
                     </div>
@@ -316,7 +370,7 @@
                     <span>03</span>
 
                     <h3>
-                        Project Information
+                        Informasi Proyek
                     </h3>
 
                 </div>
@@ -324,25 +378,30 @@
 
                 <div class="rfq-form-grid">
 
+                    {{-- PROJECT NAME --}}
+
                     <div class="form-group">
 
                         <label for="project_name">
-                            Project Name
+                            Nama Proyek
                         </label>
 
                         <input
                             type="text"
                             id="project_name"
                             name="project_name"
-                            placeholder="Project name">
+                            value="{{ old('project_name') }}"
+                            placeholder="Nama proyek">
 
                     </div>
 
 
+                    {{-- SERVICE CATEGORY --}}
+
                     <div class="form-group">
 
                         <label for="service">
-                            Service Category
+                            Kategori Layanan
                         </label>
 
                         <select
@@ -350,27 +409,37 @@
                             name="service">
 
                             <option value="">
-                                Select service
+                                Pilih layanan
                             </option>
 
-                            <option value="construction">
-                                Construction
+                            <option
+                                value="construction"
+                                {{ old('service') == 'construction' ? 'selected' : '' }}>
+                                Konstruksi
                             </option>
 
-                            <option value="trade">
-                                Trade
+                            <option
+                                value="trade"
+                                {{ old('service') == 'trade' ? 'selected' : '' }}>
+                                Perdagangan
                             </option>
 
-                            <option value="industrial">
-                                Industrial
+                            <option
+                                value="industrial"
+                                {{ old('service') == 'industrial' ? 'selected' : '' }}>
+                                Industri
                             </option>
 
-                            <option value="professional">
-                                Professional Services
+                            <option
+                                value="professional"
+                                {{ old('service') == 'professional' ? 'selected' : '' }}>
+                                Layanan Profesional
                             </option>
 
-                            <option value="other">
-                                Other
+                            <option
+                                value="other"
+                                {{ old('service') == 'other' ? 'selected' : '' }}>
+                                Lainnya
                             </option>
 
                         </select>
@@ -386,25 +455,30 @@
 
                 <div class="rfq-form-grid">
 
+                    {{-- PROJECT LOCATION --}}
+
                     <div class="form-group">
 
                         <label for="project_location">
-                            Project Location
+                            Lokasi Proyek
                         </label>
 
                         <input
                             type="text"
                             id="project_location"
                             name="project_location"
-                            placeholder="City / Province / Country">
+                            value="{{ old('project_location') }}"
+                            placeholder="Kota / Provinsi / Negara">
 
                     </div>
 
 
+                    {{-- PROJECT STATUS --}}
+
                     <div class="form-group">
 
                         <label for="project_status">
-                            Project Status
+                            Status Proyek
                         </label>
 
                         <select
@@ -412,23 +486,31 @@
                             name="project_status">
 
                             <option value="">
-                                Select status
+                                Pilih status proyek
                             </option>
 
-                            <option value="planning">
-                                Planning
+                            <option
+                                value="planning"
+                                {{ old('project_status') == 'planning' ? 'selected' : '' }}>
+                                Tahap Perencanaan
                             </option>
 
-                            <option value="tender">
-                                Tender / Procurement
+                            <option
+                                value="tender"
+                                {{ old('project_status') == 'tender' ? 'selected' : '' }}>
+                                Tender / Pengadaan
                             </option>
 
-                            <option value="ready">
-                                Ready to Start
+                            <option
+                                value="ready"
+                                {{ old('project_status') == 'ready' ? 'selected' : '' }}>
+                                Siap Dimulai
                             </option>
 
-                            <option value="ongoing">
-                                Ongoing
+                            <option
+                                value="ongoing"
+                                {{ old('project_status') == 'ongoing' ? 'selected' : '' }}>
+                                Sedang Berjalan
                             </option>
 
                         </select>
@@ -444,10 +526,12 @@
 
                 <div class="rfq-form-grid">
 
+                    {{-- BUDGET --}}
+
                     <div class="form-group">
 
                         <label for="budget">
-                            Estimated Budget
+                            Perkiraan Anggaran
                         </label>
 
                         <select
@@ -455,31 +539,43 @@
                             name="budget">
 
                             <option value="">
-                                Select budget range
+                                Pilih kisaran anggaran
                             </option>
 
-                            <option value="under-100m">
-                                Under Rp 100 Million
+                            <option
+                                value="under-100m"
+                                {{ old('budget') == 'under-100m' ? 'selected' : '' }}>
+                                Di bawah Rp 100 Juta
                             </option>
 
-                            <option value="100m-500m">
-                                Rp 100 – 500 Million
+                            <option
+                                value="100m-500m"
+                                {{ old('budget') == '100m-500m' ? 'selected' : '' }}>
+                                Rp 100 – 500 Juta
                             </option>
 
-                            <option value="500m-1b">
-                                Rp 500 Million – 1 Billion
+                            <option
+                                value="500m-1b"
+                                {{ old('budget') == '500m-1b' ? 'selected' : '' }}>
+                                Rp 500 Juta – 1 Miliar
                             </option>
 
-                            <option value="1b-5b">
-                                Rp 1 – 5 Billion
+                            <option
+                                value="1b-5b"
+                                {{ old('budget') == '1b-5b' ? 'selected' : '' }}>
+                                Rp 1 – 5 Miliar
                             </option>
 
-                            <option value="above-5b">
-                                Above Rp 5 Billion
+                            <option
+                                value="above-5b"
+                                {{ old('budget') == 'above-5b' ? 'selected' : '' }}>
+                                Di atas Rp 5 Miliar
                             </option>
 
-                            <option value="not-decided">
-                                Not Decided Yet
+                            <option
+                                value="not-decided"
+                                {{ old('budget') == 'not-decided' ? 'selected' : '' }}>
+                                Belum Ditentukan
                             </option>
 
                         </select>
@@ -487,10 +583,12 @@
                     </div>
 
 
+                    {{-- TIMELINE --}}
+
                     <div class="form-group">
 
                         <label for="timeline">
-                            Expected Timeline
+                            Perkiraan Waktu Pelaksanaan
                         </label>
 
                         <select
@@ -498,27 +596,37 @@
                             name="timeline">
 
                             <option value="">
-                                Select timeline
+                                Pilih waktu pelaksanaan
                             </option>
 
-                            <option value="less-1-month">
-                                Less than 1 Month
+                            <option
+                                value="less-1-month"
+                                {{ old('timeline') == 'less-1-month' ? 'selected' : '' }}>
+                                Kurang dari 1 Bulan
                             </option>
 
-                            <option value="1-3-months">
-                                1 – 3 Months
+                            <option
+                                value="1-3-months"
+                                {{ old('timeline') == '1-3-months' ? 'selected' : '' }}>
+                                1 – 3 Bulan
                             </option>
 
-                            <option value="3-6-months">
-                                3 – 6 Months
+                            <option
+                                value="3-6-months"
+                                {{ old('timeline') == '3-6-months' ? 'selected' : '' }}>
+                                3 – 6 Bulan
                             </option>
 
-                            <option value="6-12-months">
-                                6 – 12 Months
+                            <option
+                                value="6-12-months"
+                                {{ old('timeline') == '6-12-months' ? 'selected' : '' }}>
+                                6 – 12 Bulan
                             </option>
 
-                            <option value="more-12-months">
-                                More than 12 Months
+                            <option
+                                value="more-12-months"
+                                {{ old('timeline') == 'more-12-months' ? 'selected' : '' }}>
+                                Lebih dari 12 Bulan
                             </option>
 
                         </select>
@@ -537,7 +645,7 @@
                     <span>04</span>
 
                     <h3>
-                        Project Details
+                        Detail Proyek
                     </h3>
 
                 </div>
@@ -546,14 +654,14 @@
                 <div class="form-group">
 
                     <label for="description">
-                        Project Description
+                        Deskripsi Proyek
                     </label>
 
                     <textarea
                         id="description"
                         name="description"
                         rows="7"
-                        placeholder="Describe your project, requirements, scope of work, specifications, or other information..."></textarea>
+                        placeholder="Jelaskan proyek, kebutuhan, ruang lingkup pekerjaan, spesifikasi, atau informasi lainnya...">{{ old('description') }}</textarea>
 
                 </div>
 
@@ -565,7 +673,7 @@
                 <div class="form-group">
 
                     <label for="document">
-                        Supporting Document
+                        Dokumen Pendukung
                     </label>
 
                     <input
@@ -574,9 +682,9 @@
                         name="document">
 
                     <small>
-                        You can attach a project brief,
-                        specification, drawing, or other
-                        supporting document.
+                        Anda dapat melampirkan brief proyek,
+                        spesifikasi, gambar, atau dokumen
+                        pendukung lainnya.
                     </small>
 
                 </div>
@@ -592,13 +700,15 @@
 
                         <input
                             type="checkbox"
-                            name="agreement">
+                            name="agreement"
+                            value="1"
+                            {{ old('agreement') ? 'checked' : '' }}>
 
                         <span>
-                            I confirm that the information
-                            provided is accurate and may be
-                            used by Xclip to contact me
-                            regarding this request.
+                            Saya memastikan bahwa informasi yang
+                            diberikan sudah benar dan dapat
+                            digunakan oleh Xclip untuk menghubungi
+                            saya terkait permintaan ini.
                         </span>
 
                     </label>
@@ -611,9 +721,11 @@
                 ================================================== --}}
 
                 <button
-                    type="button"
+                    type="submit"
                     class="rfq-submit">
-                    Submit Request →
+
+                    Kirim Permintaan →
+
                 </button>
 
 

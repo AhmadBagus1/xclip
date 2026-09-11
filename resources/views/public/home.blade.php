@@ -6,19 +6,18 @@
 
 <section class="hero">
 
-    <div class="container hero-container">
+    <div class="container">
 
         <div class="hero-content">
 
-
             <h1>
                 Business Solutions
-                <span>for Your Project</span>
+                for Your Project
             </h1>
 
-            <p class="hero-description">
-                Discover our services, projects,
-                and professional solutions.
+            <p>
+                Discover our services,
+                projects, and professional solutions.
             </p>
 
             <div class="hero-actions">
@@ -35,16 +34,10 @@
 
         </div>
 
-        <div class="hero-visual">
-
-            <div class="doodle doodle-one"></div>
-            <div class="doodle doodle-two"></div>
-
-        </div>
-
     </div>
 
 </section>
+
 
 <section class="about-preview">
 
@@ -84,35 +77,58 @@
         <div class="service-grid">
 
             <div class="service-card">
-                <h3>Construction</h3>
+
+                <h3>
+                    Construction
+                </h3>
+
                 <p>
                     Construction and infrastructure
                     related services.
                 </p>
+
             </div>
 
+
             <div class="service-card">
-                <h3>Trade</h3>
+
+                <h3>
+                    Trade
+                </h3>
+
                 <p>
                     Trading, distribution,
                     and retail solutions.
                 </p>
+
             </div>
 
+
             <div class="service-card">
-                <h3>Industrial</h3>
+
+                <h3>
+                    Industrial
+                </h3>
+
                 <p>
                     Industrial and manufacturing
                     solutions.
                 </p>
+
             </div>
 
+
             <div class="service-card">
-                <h3>Professional</h3>
+
+                <h3>
+                    Professional
+                </h3>
+
                 <p>
                     Consulting, design,
                     and professional services.
                 </p>
+
             </div>
 
         </div>
@@ -130,7 +146,9 @@
 
     <div class="container">
 
-        <p>OUR PROJECTS</p>
+        <p>
+            OUR PROJECTS
+        </p>
 
         <h2>
             Featured Projects

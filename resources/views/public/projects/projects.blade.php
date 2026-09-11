@@ -9,6 +9,7 @@
 ========================= --}}
 
 <section class="projects-hero">
+
     <div class="container">
 
         <div class="doodle-box projects-hero-box">
@@ -30,6 +31,7 @@
         </div>
 
     </div>
+
 </section>
 
 
@@ -38,11 +40,13 @@
 ========================= --}}
 
 <section class="projects-intro">
+
     <div class="container">
 
         <div class="projects-intro-grid">
 
             <div>
+
                 <p class="section-label">
                     OUR WORK
                 </p>
@@ -51,9 +55,12 @@
                     Turning Ideas
                     Into Real Solutions
                 </h2>
+
             </div>
 
+
             <div>
+
                 <p>
                     Xclip supports clients through a variety of
                     projects and professional solutions. From
@@ -66,24 +73,28 @@
                     quality, reliability, and solutions that meet
                     the needs of our clients.
                 </p>
+
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
 {{-- =========================
-     PROJECT FILTER
+     FEATURED PROJECTS
 ========================= --}}
 
 <section class="projects-list">
+
     <div class="container">
 
         <div class="projects-heading">
 
             <div>
+
                 <p class="section-label">
                     FEATURED PROJECTS
                 </p>
@@ -91,6 +102,7 @@
                 <h2>
                     Our Selected Work
                 </h2>
+
             </div>
 
         </div>
@@ -98,44 +110,96 @@
 
         {{-- PROJECT GRID --}}
 
+        @if($featuredProjects->count() > 0)
+
         <div class="projects-grid">
 
-
-            {{-- PROJECT 1 --}}
+            @foreach($featuredProjects as $index => $project)
 
             <article class="project-card doodle-card">
 
-                <div class="project-image project-image-1">
-                    <span>
-                        PROJECT 01
-                    </span>
+
+                {{-- PROJECT IMAGE --}}
+
+                <div class="project-image">
+
+                    @if($project->thumbnail)
+
+                    <img
+                        src="{{ asset('storage/' . $project->thumbnail) }}"
+                        alt="{{ $project->title }}">
+
+                    @else
+
+                    <div class="project-image-placeholder">
+
+                        <span>
+                            PROJECT {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
+                        </span>
+
+                    </div>
+
+                    @endif
+
                 </div>
+
+
+                {{-- PROJECT CONTENT --}}
 
                 <div class="project-content">
 
                     <p class="project-category">
-                        CONSTRUCTION
+                        {{ strtoupper($project->category) }}
                     </p>
+
 
                     <h3>
-                        Construction & Infrastructure
+                        {{ $project->title }}
                     </h3>
 
+
+                    @if($project->description)
+
                     <p>
-                        Construction and infrastructure solutions
-                        designed to support client development
-                        and project requirements.
+                        {{ $project->description }}
                     </p>
+
+                    @else
+
+                    <p>
+                        Xclip delivers reliable solutions tailored
+                        to meet project requirements and client needs.
+                    </p>
+
+                    @endif
+
 
                     <div class="project-meta">
 
                         <span>
-                            Construction
+                            {{ ucfirst($project->category) }}
                         </span>
 
+
+                        @if($project->location)
+
                         <span>
-                            Project
+                            {{ $project->location }}
                         </span>
+
+                        @elseif($project->year)
+
+                        <span>
+                            {{ $project->year }}
+                        </span>
+
+                        @else
+
+                        <span>
+                            Xclip Project
+                        </span>
+
+                        @endif
 
                     </div>
 
@@ -143,140 +207,172 @@
 
             </article>
 
+            @endforeach
 
-            {{-- PROJECT 2 --}}
+        </div>
+
+        @else
+
+        {{-- NO FEATURED PROJECTS --}}
+
+        <div class="projects-empty">
+
+            <div class="projects-empty-icon">
+                +
+            </div>
+
+            <h3>
+                Projects Coming Soon.
+            </h3>
+
+            <p>
+                Our selected projects will be displayed here.
+            </p>
+
+        </div>
+
+        @endif
+
+    </div>
+
+</section>
+
+
+{{-- =========================
+     ALL PROJECTS
+========================= --}}
+
+@if($projects->count() > 0)
+
+<section class="projects-all">
+
+    <div class="container">
+
+        <div class="projects-heading">
+
+            <div>
+
+                <p class="section-label">
+                    OUR PORTFOLIO
+                </p>
+
+                <h2>
+                    More Projects
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            @foreach($projects as $index => $project)
 
             <article class="project-card doodle-card">
 
-                <div class="project-image project-image-2">
-                    <span>
-                        PROJECT 02
-                    </span>
-                </div>
 
-                <div class="project-content">
+                {{-- PROJECT IMAGE --}}
 
-                    <p class="project-category">
-                        TRADE
-                    </p>
+                <div class="project-image">
 
-                    <h3>
-                        Trading & Distribution
-                    </h3>
+                    @if($project->thumbnail)
 
-                    <p>
-                        Trading, distribution, and retail solutions
-                        supporting business and commercial
-                        activities.
-                    </p>
+                    <img
+                        src="{{ asset('storage/' . $project->thumbnail) }}"
+                        alt="{{ $project->title }}">
 
-                    <div class="project-meta">
+                    @else
+
+                    <div class="project-image-placeholder">
 
                         <span>
-                            Trade
-                        </span>
-
-                        <span>
-                            Distribution
+                            PROJECT {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                         </span>
 
                     </div>
 
+                    @endif
+
                 </div>
 
-            </article>
 
-
-            {{-- PROJECT 3 --}}
-
-            <article class="project-card doodle-card">
-
-                <div class="project-image project-image-3">
-                    <span>
-                        PROJECT 03
-                    </span>
-                </div>
+                {{-- PROJECT CONTENT --}}
 
                 <div class="project-content">
 
                     <p class="project-category">
-                        INDUSTRIAL
+                        {{ strtoupper($project->category) }}
                     </p>
+
 
                     <h3>
-                        Industrial Solutions
+                        {{ $project->title }}
                     </h3>
 
+
+                    @if($project->description)
+
                     <p>
-                        Industrial and manufacturing solutions
-                        developed to support operational and
-                        production requirements.
+                        {{ $project->description }}
                     </p>
+
+                    @else
+
+                    <p>
+                        Xclip delivers reliable solutions tailored
+                        to meet project requirements and client needs.
+                    </p>
+
+                    @endif
+
 
                     <div class="project-meta">
 
                         <span>
-                            Industrial
+                            {{ ucfirst($project->category) }}
                         </span>
 
+
+                        @if($project->location)
+
                         <span>
-                            Manufacturing
+                            {{ $project->location }}
                         </span>
+
+                        @elseif($project->year)
+
+                        <span>
+                            {{ $project->year }}
+                        </span>
+
+                        @else
+
+                        <span>
+                            Xclip Project
+                        </span>
+
+                        @endif
 
                     </div>
 
                 </div>
-
+                <a
+                    href="{{ route('projects.show', $project->slug) }}"
+                    class="project-view-link">
+                    View Project →
+                </a>
             </article>
 
-
-            {{-- PROJECT 4 --}}
-
-            <article class="project-card doodle-card">
-
-                <div class="project-image project-image-4">
-                    <span>
-                        PROJECT 04
-                    </span>
-                </div>
-
-                <div class="project-content">
-
-                    <p class="project-category">
-                        PROFESSIONAL
-                    </p>
-
-                    <h3>
-                        Professional Services
-                    </h3>
-
-                    <p>
-                        Consulting, design, and professional
-                        services tailored to support client
-                        projects.
-                    </p>
-
-                    <div class="project-meta">
-
-                        <span>
-                            Consulting
-                        </span>
-
-                        <span>
-                            Professional
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
+            @endforeach
 
         </div>
 
     </div>
+
 </section>
+
+@endif
 
 
 {{-- =========================
@@ -387,7 +483,9 @@
                 Xclip can support your needs.
             </p>
 
-            <a href="/rfq" class="doodle-button">
+            <a
+                href="{{ route('rfq') }}"
+                class="doodle-button">
                 Request a Quote →
             </a>
 

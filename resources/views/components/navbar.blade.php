@@ -2,14 +2,21 @@
 
     <div class="container navbar-container">
 
-        {{-- Logo Xclip --}}
+        {{-- =========================
+             LOGO XCLIP
+        ========================== --}}
         <a href="/" class="navbar-logo">
+
             <img
                 src="{{ asset('images/xclip-logo.jpeg') }}"
-                alt="Xclip">
+                alt="Xclip Logo">
+
         </a>
 
-        {{-- Navigation --}}
+
+        {{-- =========================
+             NAVIGATION MENU
+        ========================== --}}
         <div class="navbar-menu">
 
             <a href="/" class="nav-link">
@@ -42,7 +49,10 @@
 
         </div>
 
-        {{-- Request a Quote --}}
+
+        {{-- =========================
+             REQUEST A QUOTE
+        ========================== --}}
         <a href="/rfq" class="navbar-cta">
             Request a Quote
         </a>
