@@ -1,3 +1,12 @@
+@php
+$siteSetting = \App\Models\SiteSetting::first();
+
+$siteName = $siteSetting?->site_name ?? 'Xclip';
+
+$siteDescription = $siteSetting?->description
+?? 'Professional business solutions for your project needs.';
+@endphp
+
 <footer>
 
     <div class="container">
@@ -10,11 +19,12 @@
             ========================== --}}
             <div class="footer-company">
 
-                <h2>XCLIP</h2>
+                <h2>
+                    {{ strtoupper($siteName) }}
+                </h2>
 
                 <p>
-                    Professional business solutions
-                    for your project needs.
+                    {{ $siteDescription }}
                 </p>
 
             </div>
@@ -69,13 +79,77 @@
                     Contact
                 </h3>
 
+                @if($siteSetting?->email)
                 <p>
-                    Email: info@xclip.com
+                    Email: {{ $siteSetting->email }}
                 </p>
+                @endif
 
+                @if($siteSetting?->phone)
                 <p>
-                    Phone: +62 xxx xxxx xxxx
+                    Phone: {{ $siteSetting->phone }}
                 </p>
+                @endif
+
+                @if($siteSetting?->whatsapp)
+                <p>
+                    WhatsApp: {{ $siteSetting->whatsapp }}
+                </p>
+                @endif
+
+                @if($siteSetting?->address)
+                <p>
+                    Address: {{ $siteSetting->address }}
+                </p>
+                @endif
+
+            </div>
+
+
+            {{-- =========================
+                 SOCIAL MEDIA
+            ========================== --}}
+            <div class="footer-social">
+
+                <h3>
+                    Follow Us
+                </h3>
+
+                @if($siteSetting?->instagram)
+                <a
+                    href="{{ $siteSetting->instagram }}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Instagram
+                </a>
+                @endif
+
+                @if($siteSetting?->facebook)
+                <a
+                    href="{{ $siteSetting->facebook }}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Facebook
+                </a>
+                @endif
+
+                @if($siteSetting?->linkedin)
+                <a
+                    href="{{ $siteSetting->linkedin }}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+                @endif
+
+                @if($siteSetting?->youtube)
+                <a
+                    href="{{ $siteSetting->youtube }}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    YouTube
+                </a>
+                @endif
 
             </div>
 
@@ -88,7 +162,7 @@
         <div class="footer-bottom">
 
             <p>
-                &copy; {{ date('Y') }} Xclip.
+                &copy; {{ date('Y') }} {{ $siteName }}.
                 All rights reserved.
             </p>
 

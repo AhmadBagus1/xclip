@@ -14,16 +14,15 @@
     <div>
 
         <p class="section-label">
-            XCLIP ADMIN PANEL
+            OVERVIEW DASHBOARD
         </p>
 
         <h2>
-            Welcome Back.
+            Siap beraksi hari ini?
         </h2>
 
         <p>
-            Manage your website, messages, and project requests
-            from this dashboard.
+            Kendalikan website, pantau pesan masuk, dan kelola permintaan proyekmu langsung dari satu tempat.
         </p>
 
     </div>
@@ -51,9 +50,6 @@
 
         <div class="admin-stat-info">
 
-            <span>
-                01
-            </span>
 
             <h3>
                 Contact Messages
@@ -81,9 +77,7 @@
 
         <div class="admin-stat-info">
 
-            <span>
-                02
-            </span>
+
 
             <h3>
                 Quote Requests

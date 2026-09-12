@@ -37,9 +37,6 @@
                 href="{{ route('admin.dashboard') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
 
-                <span class="admin-nav-number">
-                    01
-                </span>
 
                 <span>
                     Dashboard
@@ -53,9 +50,6 @@
                 href="{{ route('admin.messages.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.messages.*') ? 'active' : '' }}">
 
-                <span class="admin-nav-number">
-                    02
-                </span>
 
                 <span>
                     Messages
@@ -69,9 +63,6 @@
                 href="{{ route('admin.rfq.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.rfq.*') ? 'active' : '' }}">
 
-                <span class="admin-nav-number">
-                    03
-                </span>
 
                 <span>
                     Request a Quote
@@ -97,7 +88,6 @@
             <a href="{{ route('admin.projects.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.projects.*') ? 'active' : '' }}">
 
-                <span class="admin-nav-number">04</span>
                 <span>Projects</span>
 
             </a>
@@ -107,7 +97,6 @@
             <a
                 href="{{ route('admin.news.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.news.*') ? 'active' : '' }}">
-                <span class="admin-nav-number">05</span>
                 <span>News</span>
             </a>
 
@@ -115,8 +104,6 @@
             {{-- DOWNLOADS --}}
             <a href="{{ route('admin.downloads.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.downloads.*') ? 'active' : '' }}">
-
-                <span class="admin-nav-number">06</span>
 
                 <span>Downloads</span>
 
@@ -137,49 +124,10 @@
 
 
             {{-- SETTINGS --}}
-            <a
-                href="#"
-                class="admin-nav-item">
-
-                <span class="admin-nav-number">
-                    07
-                </span>
-
-                <span>
-                    Settings
-                </span>
-
+            <a href="{{ route('admin.settings.index') }}"
+                class="admin-nav-item {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
+                <span>Settings</span>
             </a>
-
-
-            {{-- LOGOUT --}}
-            <form
-                method="POST"
-                action="{{ route('admin.logout') }}">
-
-                @csrf
-
-                <button
-                    type="submit"
-                    class="admin-nav-item admin-logout">
-
-                    <span class="admin-nav-number">
-                        08
-                    </span>
-
-                    <span>
-                        Logout
-                    </span>
-
-                </button>
-
-            </form>
-
         </div>
-
     </nav>
-
-
-
-
 </aside>

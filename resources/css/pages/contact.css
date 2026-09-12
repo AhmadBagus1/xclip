@@ -507,3 +507,21 @@
     }
 
 }
+
+/* =========================================
+   CONTACT GOOGLE MAP
+========================================= */
+
+.map-embed {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    overflow: hidden;
+}
+
+.map-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

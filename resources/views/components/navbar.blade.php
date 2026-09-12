@@ -1,3 +1,13 @@
+@php
+$siteSetting = \App\Models\SiteSetting::first();
+
+$siteName = $siteSetting?->site_name ?? 'Xclip';
+
+$logo = $siteSetting?->logo
+? asset('storage/' . $siteSetting->logo)
+: asset('images/xclip-logo.jpeg');
+@endphp
+
 <nav class="navbar">
 
     <div class="container navbar-container">
@@ -8,8 +18,8 @@
         <a href="/" class="navbar-logo">
 
             <img
-                src="{{ asset('images/xclip-logo.jpeg') }}"
-                alt="Xclip Logo">
+                src="{{ $logo }}"
+                alt="{{ $siteName }} Logo">
 
         </a>
 

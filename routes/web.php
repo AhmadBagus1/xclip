@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\RfqController;
+use App\Http\Controllers\Admin\SettingController;
 
 
 /*
@@ -155,6 +156,19 @@ Route::middleware('auth')
 
         Route::get('/dashboard', [DashboardController::class, 'index'])
             ->name('admin.dashboard');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | SETTINGS
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get('/settings', [SettingController::class, 'index'])
+            ->name('admin.settings.index');
+
+        Route::put('/settings', [SettingController::class, 'update'])
+            ->name('admin.settings.update');
 
 
         /*

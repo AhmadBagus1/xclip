@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
-@section('title', 'Contact - Xclip')
+@php
+$siteSetting = \App\Models\SiteSetting::first();
+
+$siteName = $siteSetting?->site_name ?? 'Xclip';
+
+$email = $siteSetting?->email;
+$phone = $siteSetting?->phone;
+$whatsapp = $siteSetting?->whatsapp;
+$address = $siteSetting?->address;
+
+$businessDays = $siteSetting?->business_days;
+$businessHours = $siteSetting?->business_hours;
+
+$googleMapsEmbed = $siteSetting?->google_maps_embed;
+@endphp
+
+@section('title', 'Contact - ' . $siteName)
 
 @section('content')
 
@@ -15,7 +31,7 @@
         <div class="contact-hero-box">
 
             <p class="section-label">
-                CONTACT XCLIP
+                CONTACT {{ strtoupper($siteName) }}
             </p>
 
             <h1>
@@ -25,8 +41,8 @@
 
             <p>
                 Have a question, business inquiry, or need
-                more information about Xclip? Get in touch
-                with our team.
+                more information about {{ $siteName }}?
+                Get in touch with our team.
             </p>
 
         </div>
@@ -46,7 +62,6 @@
 
         <div class="contact-layout">
 
-
             {{-- =================================================
                  CONTACT INFORMATION
             ================================================== --}}
@@ -59,7 +74,7 @@
 
                 <h2>
                     Contact
-                    Xclip
+                    {{ $siteName }}
                 </h2>
 
                 <p class="contact-intro">
@@ -70,7 +85,6 @@
 
 
                 {{-- EMAIL --}}
-
                 <div class="contact-item">
 
                     <div class="contact-item-number">
@@ -84,7 +98,7 @@
                         </h3>
 
                         <p>
-                            info@xclip.com
+                            {{ $email ?? 'Email belum tersedia' }}
                         </p>
 
                     </div>
@@ -93,7 +107,6 @@
 
 
                 {{-- PHONE --}}
-
                 <div class="contact-item">
 
                     <div class="contact-item-number">
@@ -107,7 +120,7 @@
                         </h3>
 
                         <p>
-                            +62 123 4567 8901
+                            {{ $phone ?? 'Phone belum tersedia' }}
                         </p>
 
                     </div>
@@ -115,8 +128,7 @@
                 </div>
 
 
-                {{-- ADDRESS --}}
-
+                {{-- WHATSAPP --}}
                 <div class="contact-item">
 
                     <div class="contact-item-number">
@@ -126,15 +138,11 @@
                     <div>
 
                         <h3>
-                            Address
+                            WhatsApp
                         </h3>
 
                         <p>
-                            Xclip Office
-                        </p>
-
-                        <p>
-                            Alamatnya disini
+                            {{ $whatsapp ?? 'WhatsApp belum tersedia' }}
                         </p>
 
                     </div>
@@ -142,8 +150,7 @@
                 </div>
 
 
-                {{-- BUSINESS HOURS --}}
-
+                {{-- ADDRESS --}}
                 <div class="contact-item">
 
                     <div class="contact-item-number">
@@ -153,15 +160,37 @@
                     <div>
 
                         <h3>
+                            Address
+                        </h3>
+
+                        <p>
+                            {{ $address ?? $siteName . ' Office' }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                {{-- BUSINESS HOURS --}}
+                <div class="contact-item">
+
+                    <div class="contact-item-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3>
                             Business Hours
                         </h3>
 
                         <p>
-                            Senin - Jumat
+                            {{ $businessDays ?? 'Business days belum tersedia' }}
                         </p>
 
                         <p>
-                            08:00 – Selesai
+                            {{ $businessHours ?? 'Business hours belum tersedia' }}
                         </p>
 
                     </div>
@@ -191,6 +220,32 @@
                 </div>
 
 
+                @if(session('success'))
+
+                <div class="contact-success-message">
+                    {{ session('success') }}
+                </div>
+
+                @endif
+
+
+                @if($errors->any())
+
+                <div class="contact-error-message">
+
+                    @foreach($errors->all() as $error)
+
+                    <p>
+                        {{ $error }}
+                    </p>
+
+                    @endforeach
+
+                </div>
+
+                @endif
+
+
                 <form
                     action="{{ route('contact.store') }}"
                     method="POST"
@@ -200,7 +255,6 @@
 
 
                     {{-- NAME --}}
-
                     <div class="form-group">
 
                         <label for="name">
@@ -211,13 +265,14 @@
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Your name">
+                            value="{{ old('name') }}"
+                            placeholder="Your name"
+                            required>
 
                     </div>
 
 
                     {{-- EMAIL --}}
-
                     <div class="form-group">
 
                         <label for="email">
@@ -228,13 +283,14 @@
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="your@email.com">
+                            value="{{ old('email') }}"
+                            placeholder="your@email.com"
+                            required>
 
                     </div>
 
 
                     {{-- PHONE --}}
-
                     <div class="form-group">
 
                         <label for="phone">
@@ -245,13 +301,13 @@
                             type="text"
                             id="phone"
                             name="phone"
+                            value="{{ old('phone') }}"
                             placeholder="+62 xxx xxxx xxxx">
 
                     </div>
 
 
                     {{-- SUBJECT --}}
-
                     <div class="form-group">
 
                         <label for="subject">
@@ -262,13 +318,14 @@
                             type="text"
                             id="subject"
                             name="subject"
-                            placeholder="What can we help you with?">
+                            value="{{ old('subject') }}"
+                            placeholder="What can we help you with?"
+                            required>
 
                     </div>
 
 
                     {{-- MESSAGE --}}
-
                     <div class="form-group">
 
                         <label for="message">
@@ -279,17 +336,19 @@
                             id="message"
                             name="message"
                             rows="6"
-                            placeholder="Tell us about your project or inquiry..."></textarea>
+                            placeholder="Tell us about your project or inquiry..."
+                            required>{{ old('message') }}</textarea>
 
                     </div>
 
 
                     {{-- SUBMIT --}}
-
                     <button
                         type="submit"
                         class="contact-submit">
+
                         Send Message →
+
                     </button>
 
                 </form>
@@ -321,7 +380,7 @@
 
                 <h2>
                     Find
-                    Xclip.
+                    {{ $siteName }}.
                 </h2>
 
                 <p>
@@ -331,23 +390,44 @@
 
             </div>
 
-            <div class="contact-map">
 
-                <div class="map-placeholder">
+            {{-- =================================================
+                 GOOGLE MAP
+            ================================================== --}}
 
-                    <span>
-                        MAP
-                    </span>
+            @if($googleMapsEmbed)
 
-                    <div class="map-pin">
-                        X
-                    </div>
+            <div class="map-embed">
 
+                <iframe
+                    src="{{ $googleMapsEmbed }}"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+            @else
+
+            <div class="map-placeholder">
+
+                <span>MAP</span>
+
+                <div class="map-pin">
+                    X
                 </div>
 
             </div>
 
+            @endif
+
         </div>
+
+    </div>
 
     </div>
 
@@ -379,7 +459,9 @@
         <a
             href="/rfq"
             class="contact-cta-button">
+
             Request a Quote →
+
         </a>
 
     </div>
