@@ -236,35 +236,12 @@
                 </div>
 
 
-                {{-- CTA --}}
-
-                <div class="project-detail-cta">
-
-                    <p class="section-label">
-                        HAVE A SIMILAR PROJECT?
-                    </p>
-
-                    <h3>
-                        Let's Build
-                        Something Together.
-                    </h3>
-
-                    <p>
-                        Tell us about your project and discover
-                        how Xclip can support your needs.
-                    </p>
-
-                    <a
-                        href="{{ route('rfq') }}"
-                        class="doodle-button">
-                        Request a Quote →
-                    </a>
-
-                </div>
 
             </div>
 
         </div>
+
+    </div>
 
     </div>
 
@@ -285,11 +262,6 @@
             ← Back to All Projects
         </a>
 
-        <a
-            href="{{ route('rfq') }}"
-            class="doodle-button">
-            Start Your Project →
-        </a>
 
     </div>
 

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RfqRequestController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\RfqRequestController;
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DownloadController as AdminDownloadController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
@@ -37,24 +39,31 @@ use App\Http\Controllers\Admin\RfqController;
 
 
 // HOME
+
 Route::get('/', function () {
+
     return view('public.home');
 })->name('home');
 
 
 // ABOUT
+
 Route::get('/about', function () {
+
     return view('public.about.about');
 })->name('about');
 
 
 // SERVICES
+
 Route::get('/services', function () {
+
     return view('public.services.services');
 })->name('services');
 
 
 // PROJECTS
+
 Route::get('/projects', [ProjectController::class, 'index'])
     ->name('projects');
 
@@ -63,35 +72,47 @@ Route::get('/projects/{project:slug}', [ProjectController::class, 'show'])
 
 
 // NEWS
-Route::get('/news', function () {
-    return view('public.news.news');
-})->name('news');
+
+Route::get('/news', [NewsController::class, 'index'])
+    ->name('news');
+
+Route::get('/news/{news:slug}', [NewsController::class, 'show'])
+    ->name('news.show');
 
 
 // DOWNLOADS
-Route::get('/downloads', function () {
-    return view('public.downloads.downloads');
-})->name('downloads');
+
+Route::get('/downloads', [DownloadController::class, 'index'])
+    ->name('downloads');
+
+Route::get('/downloads/{download}/download', [DownloadController::class, 'download'])
+    ->name('downloads.download');
 
 
 // CONTACT
+
 Route::get('/contact', function () {
+
     return view('public.contact.contact');
 })->name('contact');
 
 
 // CONTACT FORM SUBMISSION
+
 Route::post('/contact', [ContactMessageController::class, 'store'])
     ->name('contact.store');
 
 
 // REQUEST FOR QUOTE
+
 Route::get('/rfq', function () {
+
     return view('public.rfq.rfq');
 })->name('rfq');
 
 
 // RFQ FORM SUBMISSION
+
 Route::post('/rfq', [RfqRequestController::class, 'store'])
     ->name('rfq.store');
 
@@ -104,11 +125,13 @@ Route::post('/rfq', [RfqRequestController::class, 'store'])
 
 
 // ADMIN LOGIN PAGE
+
 Route::get('/admin/login', [AuthController::class, 'showLogin'])
     ->name('admin.login');
 
 
 // ADMIN LOGIN PROCESS
+
 Route::post('/admin/login', [AuthController::class, 'login'])
     ->name('admin.login.submit');
 
@@ -184,6 +207,16 @@ Route::middleware('auth')
 
         Route::resource('news', AdminNewsController::class)
             ->names('admin.news');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | DOWNLOADS
+        |--------------------------------------------------------------------------
+        */
+
+        Route::resource('downloads', AdminDownloadController::class)
+            ->names('admin.downloads');
 
 
         /*

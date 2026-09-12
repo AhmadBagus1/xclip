@@ -47,32 +47,108 @@
             FEATURED
         </p>
 
+
+        @if($featured)
+
         <div class="featured-news-card">
 
+            {{-- FEATURED IMAGE --}}
+
             <div class="featured-news-image">
+
+                @if($featured->thumbnail)
+
+                <img
+                    src="{{ asset('storage/' . $featured->thumbnail) }}"
+                    alt="{{ $featured->title }}">
+
+                @else
+
                 <span>
                     FEATURED NEWS
                 </span>
+
+                @endif
+
             </div>
+
+
+            {{-- FEATURED CONTENT --}}
 
             <div class="featured-news-content">
 
                 <div class="news-meta">
 
                     <span>
-                        COMPANY
+                        {{ strtoupper($featured->category) }}
                     </span>
 
                     <span>
-                        27 AUG 2026
+                        {{ $featured->published_at->format('d M Y') }}
                     </span>
 
                 </div>
+
+
+                <h2>
+                    {{ $featured->title }}
+                </h2>
+
+
+                @if($featured->excerpt)
+
+                <p>
+                    {{ $featured->excerpt }}
+                </p>
+
+                @endif
+
+
+                <a
+                    href="{{ route('news.show', $featured->slug) }}"
+                    class="news-read-more">
+                    Read More →
+                </a>
+
+            </div>
+
+        </div>
+
+        @else
+
+        {{-- DEFAULT FEATURED CONTENT --}}
+
+        <div class="featured-news-card">
+
+            <div class="featured-news-image">
+
+                <span>
+                    FEATURED NEWS
+                </span>
+
+            </div>
+
+
+            <div class="featured-news-content">
+
+                <div class="news-meta">
+
+                    <span>
+                        XCLIP
+                    </span>
+
+                    <span>
+                        NEWS
+                    </span>
+
+                </div>
+
 
                 <h2>
                     Building Better Solutions
                     for Our Clients
                 </h2>
+
 
                 <p>
                     Discover how Xclip continues to develop
@@ -80,13 +156,11 @@
                     client projects and business needs.
                 </p>
 
-                <a href="#" class="news-read-more">
-                    Read More →
-                </a>
-
             </div>
 
         </div>
+
+        @endif
 
     </div>
 
@@ -125,47 +199,69 @@
 
         {{-- NEWS GRID --}}
 
+        @if($news->count() > 0)
+
         <div class="news-grid">
 
-
-            {{-- NEWS 1 --}}
+            @foreach($news as $item)
 
             <article class="news-card">
 
-                <div class="news-card-image news-image-1">
+                {{-- NEWS IMAGE --}}
+
+                <div class="news-card-image">
+
+                    @if($item->thumbnail)
+
+                    <img
+                        src="{{ asset('storage/' . $item->thumbnail) }}"
+                        alt="{{ $item->title }}">
+
+                    @else
 
                     <span>
-                        NEWS 01
+                        NEWS
                     </span>
 
+                    @endif
+
                 </div>
+
+
+                {{-- NEWS CONTENT --}}
 
                 <div class="news-card-content">
 
                     <div class="news-meta">
 
                         <span>
-                            COMPANY
+                            {{ strtoupper($item->category) }}
                         </span>
 
                         <span>
-                            20 AUG 2026
+                            {{ $item->published_at->format('d M Y') }}
                         </span>
 
                     </div>
 
+
                     <h3>
-                        Xclip and Our Commitment
-                        to Better Solutions
+                        {{ $item->title }}
                     </h3>
 
+
+                    @if($item->excerpt)
+
                     <p>
-                        Learn more about Xclip's commitment
-                        to delivering professional solutions
-                        for our clients.
+                        {{ \Illuminate\Support\Str::limit($item->excerpt, 150) }}
                     </p>
 
-                    <a href="#" class="news-read-more">
+                    @endif
+
+
+                    <a
+                        href="{{ route('news.show', $item->slug) }}"
+                        class="news-read-more">
                         Read More →
                     </a>
 
@@ -173,144 +269,31 @@
 
             </article>
 
-
-            {{-- NEWS 2 --}}
-
-            <article class="news-card">
-
-                <div class="news-card-image news-image-2">
-
-                    <span>
-                        NEWS 02
-                    </span>
-
-                </div>
-
-                <div class="news-card-content">
-
-                    <div class="news-meta">
-
-                        <span>
-                            PROJECT
-                        </span>
-
-                        <span>
-                            15 AUG 2026
-                        </span>
-
-                    </div>
-
-                    <h3>
-                        Supporting Projects
-                        Through Professional Services
-                    </h3>
-
-                    <p>
-                        Our professional services are designed
-                        to help clients move their projects
-                        forward.
-                    </p>
-
-                    <a href="#" class="news-read-more">
-                        Read More →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            {{-- NEWS 3 --}}
-
-            <article class="news-card">
-
-                <div class="news-card-image news-image-3">
-
-                    <span>
-                        NEWS 03
-                    </span>
-
-                </div>
-
-                <div class="news-card-content">
-
-                    <div class="news-meta">
-
-                        <span>
-                            INDUSTRIAL
-                        </span>
-
-                        <span>
-                            10 AUG 2026
-                        </span>
-
-                    </div>
-
-                    <h3>
-                        Exploring New Opportunities
-                        in Industrial Solutions
-                    </h3>
-
-                    <p>
-                        Xclip continues to explore opportunities
-                        across industrial and manufacturing sectors.
-                    </p>
-
-                    <a href="#" class="news-read-more">
-                        Read More →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            {{-- NEWS 4 --}}
-
-            <article class="news-card">
-
-                <div class="news-card-image news-image-4">
-
-                    <span>
-                        NEWS 04
-                    </span>
-
-                </div>
-
-                <div class="news-card-content">
-
-                    <div class="news-meta">
-
-                        <span>
-                            TRADE
-                        </span>
-
-                        <span>
-                            05 AUG 2026
-                        </span>
-
-                    </div>
-
-                    <h3>
-                        Expanding Business
-                        and Trade Solutions
-                    </h3>
-
-                    <p>
-                        Discover how Xclip supports business
-                        activities through trading and distribution.
-                    </p>
-
-                    <a href="#" class="news-read-more">
-                        Read More →
-                    </a>
-
-                </div>
-
-            </article>
-
+            @endforeach
 
         </div>
+
+        @else
+
+        <div class="news-empty">
+
+            <p class="section-label">
+                NO UPDATES
+            </p>
+
+            <h3>
+                No News Available Yet.
+            </h3>
+
+            <p>
+                There are currently no published news
+                articles. Please check back soon for
+                the latest updates from Xclip.
+            </p>
+
+        </div>
+
+        @endif
 
     </div>
 
@@ -343,11 +326,15 @@
 
             <div class="news-cta-actions">
 
-                <a href="/services" class="news-button">
+                <a
+                    href="{{ route('services') }}"
+                    class="news-button">
                     Explore Services →
                 </a>
 
-                <a href="/contact" class="news-button-outline">
+                <a
+                    href="{{ route('contact') }}"
+                    class="news-button-outline">
                     Contact Us
                 </a>
 

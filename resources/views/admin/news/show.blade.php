@@ -245,19 +245,7 @@
         @endif
 
 
-        {{-- SLUG --}}
 
-        <div class="admin-news-detail-slug">
-
-            <span>
-                URL SLUG
-            </span>
-
-            <code>
-                /news/{{ $news->slug }}
-            </code>
-
-        </div>
 
 
     </div>
@@ -277,20 +265,6 @@
     </a>
 
 
-    <form
-        action="{{ route('admin.news.destroy', $news) }}"
-        method="POST"
-        onsubmit="return confirm('Yakin ingin menghapus news ini? Data news dan thumbnail-nya akan dihapus secara permanen.')">
-
-        @csrf
-
-        @method('DELETE')
-
-        <button
-            type="submit"
-            class="admin-danger-button">
-            Delete News
-        </button>
 
     </form>
 

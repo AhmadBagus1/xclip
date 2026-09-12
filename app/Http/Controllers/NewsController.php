@@ -6,9 +6,6 @@ use App\Models\News;
 
 class NewsController extends Controller
 {
-    /**
-     * Display all active news articles.
-     */
     public function index()
     {
         $news = News::where('is_active', true)
@@ -17,13 +14,16 @@ class NewsController extends Controller
             ->latest('published_at')
             ->get();
 
-        return view('public.news.news', compact('news'));
+        $featured = $news
+            ->where('is_featured', true)
+            ->first();
+
+        return view('public.news.news', compact(
+            'news',
+            'featured'
+        ));
     }
 
-
-    /**
-     * Display a single active news article.
-     */
     public function show(News $news)
     {
         if (

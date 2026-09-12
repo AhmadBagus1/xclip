@@ -113,17 +113,12 @@
 
 
             {{-- DOWNLOADS --}}
-            <a
-                href="#"
-                class="admin-nav-item">
+            <a href="{{ route('admin.downloads.index') }}"
+                class="admin-nav-item {{ request()->routeIs('admin.downloads.*') ? 'active' : '' }}">
 
-                <span class="admin-nav-number">
-                    06
-                </span>
+                <span class="admin-nav-number">06</span>
 
-                <span>
-                    Downloads
-                </span>
+                <span>Downloads</span>
 
             </a>
 
