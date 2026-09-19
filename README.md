@@ -34,12 +34,6 @@ Website menggunakan konsep **dynamic content**, sehingga data tertentu yang dita
 - Downloads
 - Contact
 - Request for Quote (RFQ)
-- Responsive layout
-- Dynamic company information
-- Dynamic Google Maps
-- Dynamic news
-- Dynamic projects
-- Dynamic downloads
 
 ### 🔐 Admin Panel
 
@@ -140,15 +134,4 @@ Beberapa karakteristik desain:
 - Corporate color palette
 - Responsive layout
 
-CSS dibuat secara modular berdasarkan fungsi dan halaman agar lebih mudah dikembangkan dan dipelihara.
 
-Contoh struktur CSS:
-
-```text
-resources/
-└── css/
-    ├── app.css
-    ├── base/
-    ├── components/
-    ├── pages/
-    └── admin/
