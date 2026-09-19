@@ -8,7 +8,7 @@ use App\Models\ContactMessage;
 class MessageController extends Controller
 {
     /**
-     * Menampilkan semua pesan contact.
+     * Menampilkan daftar pesan.
      */
     public function index()
     {
@@ -20,19 +20,27 @@ class MessageController extends Controller
 
     /**
      * Menampilkan detail pesan.
-     *
-     * Jika pesan masih baru, otomatis
-     * ditandai sebagai sudah dibaca.
      */
     public function show(ContactMessage $message)
     {
+        /*
+        |--------------------------------------------------------------------------
+        | Tandai sebagai READ ketika pesan dibuka
+        |--------------------------------------------------------------------------
+        */
+
         if ($message->status === 'new') {
+
             $message->update([
                 'status' => 'read',
             ]);
         }
 
-        return view('admin.contact.show', compact('message'));
+
+        return view(
+            'admin.contact.show',
+            compact('message')
+        );
     }
 
 
@@ -43,8 +51,12 @@ class MessageController extends Controller
     {
         $message->delete();
 
+
         return redirect()
             ->route('admin.messages.index')
-            ->with('success', 'Pesan berhasil dihapus.');
+            ->with(
+                'delete_success',
+                'Pesan berhasil dihapus.'
+            );
     }
 }

@@ -56,7 +56,7 @@
         </p>
 
         <a href="/about">
-            Learn More →
+            Learn More
         </a>
 
     </div>
@@ -134,7 +134,7 @@
         </div>
 
         <a href="/services">
-            View All Services →
+            View All Services
         </a>
 
     </div>
@@ -160,7 +160,7 @@
         </p>
 
         <a href="/projects">
-            View Projects →
+            View Projects
         </a>
 
     </div>

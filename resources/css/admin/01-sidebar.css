@@ -1,0 +1,326 @@
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.admin-sidebar {
+    width: 260px;
+
+    min-width: 260px;
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-right: 3px solid #1f2937;
+
+    display: flex;
+
+    flex-direction: column;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   SIDEBAR BRAND
+========================================================= */
+
+.admin-sidebar-brand {
+    /*
+     * HARUS SAMA DENGAN TINGGI TOPBAR
+     */
+    height: 135px;
+
+    min-height: 135px;
+
+    box-sizing: border-box;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-bottom: 3px solid #1f2937;
+}
+
+
+/* =========================================================
+   BRAND TITLE
+========================================================= */
+
+.admin-sidebar-brand h2 {
+    margin: 0;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   BRAND SUBTITLE
+========================================================= */
+
+.admin-sidebar-brand span {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.admin-sidebar-nav {
+    flex: 1;
+
+    padding: 22px 20px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NAV GROUP
+========================================================= */
+
+.admin-nav-group {
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   NAV TITLE
+========================================================= */
+
+.admin-nav-title {
+    margin: 0 0 9px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   NAV ITEM
+========================================================= */
+
+.admin-nav-item {
+    width: 100%;
+
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    box-sizing: border-box;
+
+    padding: 9px 11px;
+
+    margin-bottom: 4px;
+
+    background: transparent;
+
+    border: 2px solid transparent;
+
+    color: #1f2937;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    text-align: left;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   NAV NUMBER
+========================================================= */
+
+.admin-nav-number {
+    min-width: 21px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   NAV HOVER
+========================================================= */
+
+.admin-nav-item:hover {
+    background: #f7f7f2;
+
+    border-color: #1f2937;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   NAV ACTIVE
+========================================================= */
+
+.admin-nav-item.active {
+    background: #1f2937;
+
+    border-color: #1f2937;
+
+    color: #ffffff;
+
+    box-shadow: 5px 5px 0 #9ca3af;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.admin-logout {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.admin-sidebar-bottom {
+    padding: 15px 20px;
+
+    border-top: 2px dashed #1f2937;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER TITLE
+========================================================= */
+
+.admin-sidebar-bottom span {
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER SUBTITLE
+========================================================= */
+
+.admin-sidebar-bottom small {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   SIDEBAR RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .admin-sidebar {
+        width: 220px;
+
+        min-width: 220px;
+    }
+
+    .admin-sidebar-brand {
+        height: 100px;
+
+        min-height: 100px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-sidebar {
+        width: 100%;
+
+        min-width: 100%;
+
+        position: relative;
+
+        min-height: auto;
+
+        border-right: none;
+
+        border-bottom: 3px solid #1f2937;
+    }
+
+    .admin-sidebar-brand {
+        height: 90px;
+
+        min-height: 90px;
+    }
+
+}

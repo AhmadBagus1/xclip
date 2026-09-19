@@ -1,0 +1,364 @@
+/* =====================================================
+   ADMIN DOWNLOADS
+===================================================== */
+
+
+/* =========================
+   PAGE HEADER ACTION
+========================= */
+
+.admin-page-header-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+/* =========================
+   ALERT
+========================= */
+
+.admin-alert {
+    margin-bottom: 30px;
+
+    padding: 15px 20px;
+
+    border: 3px solid #1f2937;
+
+    background: #ffffff;
+
+    font-weight: 700;
+}
+
+.admin-alert-success {
+    box-shadow: 5px 5px 0 #22c55e;
+}
+
+
+/* =========================
+   SECTION COUNT
+========================= */
+
+.admin-section-count {
+    display: inline-block;
+
+    padding: 8px 12px;
+
+    border: 2px solid #1f2937;
+
+    background: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transform: rotate(2deg);
+}
+
+
+/* =========================
+   DOWNLOAD DOCUMENT
+========================= */
+
+.admin-download-document {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 250px;
+}
+
+.admin-download-document strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 15px;
+}
+
+.admin-download-document span {
+    display: block;
+
+    max-width: 250px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   DOWNLOAD ICON
+========================= */
+
+.admin-download-icon {
+    width: 42px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #facc15;
+
+    border: 2px solid #1f2937;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.admin-category {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border: 2px solid #1f2937;
+
+    background: #f7f7f2;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.admin-status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border: 2px solid #1f2937;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+}
+
+.admin-status-active {
+    background: #bbf7d0;
+}
+
+.admin-status-inactive {
+    background: #e5e7eb;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   TABLE ACTIONS
+========================= */
+
+.admin-table-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.admin-table-actions form {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| DOWNLOAD ACTIONS
+|--------------------------------------------------------------------------
+|
+| Gunakan style action button yang sama dengan
+| Projects dan News.
+|
+*/
+
+.admin-table-actions .admin-action-link {
+    display: inline-block;
+
+    padding: 5px 7px;
+
+    border: 1.5px solid #1f2937;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.admin-table-actions .admin-action-link:hover {
+    background: #facc15;
+
+    transform: rotate(-1deg);
+}
+
+
+.admin-table-actions .admin-action-delete {
+    display: inline-block;
+
+    padding: 5px 7px;
+
+    border: 1.5px solid #1f2937;
+
+    background: #ffffff;
+
+    color: #dc2626;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.admin-table-actions .admin-action-delete:hover {
+    background: #fecaca;
+
+    transform: rotate(1deg);
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.admin-empty-state {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 50px;
+
+    background: #ffffff;
+
+    border: 3px solid #1f2937;
+
+    box-shadow: 7px 7px 0 #1f2937;
+
+    transform: rotate(-0.2deg);
+}
+
+.admin-empty-number {
+    font-size: 70px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    color: #f59e0b;
+}
+
+.admin-empty-state h3 {
+    margin-bottom: 12px;
+
+    font-size: 30px;
+}
+
+.admin-empty-state p:not(.section-label) {
+    max-width: 550px;
+
+    margin-bottom: 20px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .admin-page-header {
+        display: block;
+    }
+
+    .admin-page-header-action {
+        justify-content: flex-start;
+
+        margin-top: 25px;
+    }
+
+    .admin-table-wrapper {
+        overflow-x: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-empty-state {
+        display: block;
+
+        padding: 30px;
+    }
+
+    .admin-empty-number {
+        margin-bottom: 20px;
+
+        font-size: 55px;
+    }
+
+    .admin-download-document {
+        min-width: 220px;
+    }
+
+}
+

@@ -1,0 +1,121 @@
+/* =========================================================
+   XCLIP SWEETALERT
+========================================================= */
+
+.xclip-swal-popup {
+    border: 3px solid #1f2937 !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: 7px 7px 0 #1f2937 !important;
+
+    font-family: inherit !important;
+
+    padding: 30px !important;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.xclip-swal-title {
+    color: #1f2937 !important;
+
+    font-size: 24px !important;
+
+    font-weight: 900 !important;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.xclip-swal-text {
+    color: #64748b !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.6 !important;
+}
+
+
+/* =========================================================
+   CONFIRM BUTTON
+========================================================= */
+
+.xclip-swal-confirm {
+    min-width: 120px;
+
+    min-height: 42px;
+
+    border: 2px solid #1f2937 !important;
+
+    border-radius: 0 !important;
+
+    background: #1f2937 !important;
+
+    color: #ffffff !important;
+
+    font-family: inherit !important;
+
+    font-size: 13px !important;
+
+    font-weight: 800 !important;
+
+    box-shadow: 3px 3px 0 #9ca3af !important;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.xclip-swal-cancel {
+    min-width: 100px;
+
+    min-height: 42px;
+
+    border: 2px solid #1f2937 !important;
+
+    border-radius: 0 !important;
+
+    background: #ffffff !important;
+
+    color: #1f2937 !important;
+
+    font-family: inherit !important;
+
+    font-size: 13px !important;
+
+    font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.xclip-swal-popup .swal2-icon {
+    border-width: 3px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .xclip-swal-popup {
+        width: calc(100% - 30px) !important;
+
+        padding: 24px !important;
+    }
+
+    .xclip-swal-title {
+        font-size: 21px !important;
+    }
+
+}

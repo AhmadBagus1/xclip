@@ -7,55 +7,71 @@
 @section('content')
 
 <div class="admin-page-header">
-    <div>
-        <p class="section-label">CONTENT MANAGEMENT</p>
 
-        <h2>Projects.</h2>
+    <div>
+
+        <p class="section-label">
+            MANAJEMEN PROYEK
+        </p>
+
+        <h2>
+            Projects.
+        </h2>
 
         <p>
             Manage project portfolio displayed on the Xclip website.
         </p>
+
     </div>
 
+
     <div class="admin-page-header-action">
+
         <a
             href="{{ route('admin.projects.create') }}"
             class="admin-primary-button">
+
             <span>+</span>
+
             Add Project
+
         </a>
+
     </div>
-</div>
-
-
-{{-- SUCCESS MESSAGE --}}
-@if(session('success'))
-
-<div class="admin-alert admin-alert-success">
-
-    <span>✓</span>
-
-    {{ session('success') }}
 
 </div>
 
-@endif
 
 
-{{-- PROJECTS TABLE --}}
+
+
+{{-- =====================================================
+     PROJECTS TABLE
+===================================================== --}}
+
 <div class="admin-dashboard-section">
 
     <div class="admin-section-header">
 
         <div>
-            <p class="section-label">PROJECT PORTFOLIO</p>
 
-            <h2>All Projects</h2>
+            <p class="section-label">
+                PROJECT PORTFOLIO
+            </p>
+
+            <h2>
+                All Projects
+            </h2>
+
         </div>
 
+
         <span class="admin-section-count">
+
             {{ $projects->count() }}
+
             Project{{ $projects->count() !== 1 ? 's' : '' }}
+
         </span>
 
     </div>
@@ -70,13 +86,35 @@
             <thead>
 
                 <tr>
-                    <th>PROJECT</th>
-                    <th>CLIENT</th>
-                    <th>CATEGORY</th>
-                    <th>YEAR</th>
-                    <th>STATUS</th>
-                    <th>VISIBILITY</th>
-                    <th>ACTION</th>
+
+                    <th>
+                        PROJECT
+                    </th>
+
+                    <th>
+                        CLIENT
+                    </th>
+
+                    <th>
+                        CATEGORY
+                    </th>
+
+                    <th>
+                        YEAR
+                    </th>
+
+                    <th>
+                        STATUS
+                    </th>
+
+                    <th>
+                        VISIBILITY
+                    </th>
+
+                    <th>
+                        ACTION
+                    </th>
+
                 </tr>
 
             </thead>
@@ -88,7 +126,10 @@
 
                 <tr>
 
-                    {{-- PROJECT --}}
+                    {{-- =================================================
+                         PROJECT
+                    ================================================= --}}
+
                     <td>
 
                         <div class="admin-project-cell">
@@ -102,7 +143,8 @@
 
                             @else
 
-                            <div class="admin-project-thumbnail admin-project-thumbnail-empty">
+                            <div
+                                class="admin-project-thumbnail admin-project-thumbnail-empty">
 
                                 <span>
                                     NO IMAGE
@@ -119,6 +161,7 @@
                                     {{ $project->title }}
                                 </strong>
 
+
                                 @if($project->location)
 
                                 <span>
@@ -134,53 +177,85 @@
                     </td>
 
 
-                    {{-- CLIENT --}}
+                    {{-- =================================================
+                         CLIENT
+                    ================================================= --}}
+
                     <td>
+
                         {{ $project->client ?: '—' }}
+
                     </td>
 
 
-                    {{-- CATEGORY --}}
+                    {{-- =================================================
+                         CATEGORY
+                    ================================================= --}}
+
                     <td>
 
                         <span class="admin-project-category">
+
                             {{ ucfirst($project->category) }}
+
                         </span>
 
                     </td>
 
 
-                    {{-- YEAR --}}
+                    {{-- =================================================
+                         YEAR
+                    ================================================= --}}
+
                     <td>
+
                         {{ $project->year ?: '—' }}
+
                     </td>
 
 
-                    {{-- STATUS --}}
+                    {{-- =================================================
+                         STATUS
+                    ================================================= --}}
+
                     <td>
 
                         @if($project->status === 'planning')
 
-                        <span class="admin-project-status admin-project-status-planning">
+                        <span
+                            class="admin-project-status admin-project-status-planning">
+
                             PLANNING
+
                         </span>
+
 
                         @elseif($project->status === 'ongoing')
 
-                        <span class="admin-project-status admin-project-status-ongoing">
+                        <span
+                            class="admin-project-status admin-project-status-ongoing">
+
                             ONGOING
+
                         </span>
+
 
                         @elseif($project->status === 'completed')
 
-                        <span class="admin-project-status admin-project-status-completed">
+                        <span
+                            class="admin-project-status admin-project-status-completed">
+
                             COMPLETED
+
                         </span>
+
 
                         @else
 
                         <span class="admin-project-status">
+
                             {{ strtoupper($project->status) }}
+
                         </span>
 
                         @endif
@@ -188,7 +263,10 @@
                     </td>
 
 
-                    {{-- VISIBILITY --}}
+                    {{-- =================================================
+                         VISIBILITY
+                    ================================================= --}}
+
                     <td>
 
                         <div class="admin-project-visibility">
@@ -196,13 +274,17 @@
                             @if($project->is_active)
 
                             <span class="admin-visibility-active">
+
                                 ACTIVE
+
                             </span>
 
                             @else
 
                             <span class="admin-visibility-hidden">
+
                                 HIDDEN
+
                             </span>
 
                             @endif
@@ -211,7 +293,9 @@
                             @if($project->is_featured)
 
                             <span class="admin-featured-badge">
+
                                 ★ FEATURED
+
                             </span>
 
                             @endif
@@ -221,40 +305,55 @@
                     </td>
 
 
-                    {{-- ACTION --}}
+                    {{-- =================================================
+                         ACTION
+                    ================================================= --}}
+
                     <td>
 
                         <div class="admin-table-actions">
 
                             {{-- VIEW --}}
+
                             <a
                                 href="{{ route('admin.projects.show', $project) }}"
                                 class="admin-action-link">
+
                                 View
+
                             </a>
 
 
                             {{-- EDIT --}}
+
                             <a
                                 href="{{ route('admin.projects.edit', $project) }}"
                                 class="admin-action-link">
+
                                 Edit
+
                             </a>
 
 
                             {{-- DELETE --}}
+
                             <form
-                                action="{{ route('admin.projects.destroy', $project) }}"
                                 method="POST"
-                                onsubmit="return confirm('Yakin ingin menghapus project ini? Data project dan thumbnail-nya akan dihapus secara permanen.')">
+                                action="{{ route('admin.projects.destroy', $project) }}"
+                                class="swal-delete-form">
+
                                 @csrf
+
                                 @method('DELETE')
 
                                 <button
                                     type="submit"
-                                    class="admin-action-link admin-action-delete">
-                                    Delete
+                                    class="admin-action-delete">
+
+                                    Hapus
+
                                 </button>
+
                             </form>
 
                         </div>
@@ -274,26 +373,35 @@
 
     @else
 
-    {{-- EMPTY STATE --}}
+    {{-- =================================================
+         EMPTY STATE
+    ================================================= --}}
+
     <div class="admin-empty-state">
 
         <div class="admin-empty-icon">
             +
         </div>
 
+
         <h3>
             No Projects Yet.
         </h3>
+
 
         <p>
             You haven't added any projects to your portfolio.
         </p>
 
+
         <a
             href="{{ route('admin.projects.create') }}"
             class="admin-primary-button">
+
             <span>+</span>
+
             Add Your First Project
+
         </a>
 
     </div>

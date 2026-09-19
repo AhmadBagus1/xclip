@@ -279,7 +279,7 @@
             <button
                 type="submit"
                 class="admin-btn admin-btn-primary">
-                Save Download →
+                Save Download
             </button>
 
         </div>

@@ -1,4770 +1,537 @@
+@import "./00-core.css";
+@import "./01-sidebar.css";
+@import "./02-topbar.css";
+@import "./03-dashboard.css";
+@import "./04-common.css";
+@import "./05-rfq.css";
+@import "./06-overflow.css";
+@import "./07-projects.css";
+@import "./08-project-form.css";
+@import "./09-project-detail.css";
+@import "./10-project-edit.css";
+@import "./11-downloads.css";
+@import "./12-download-create.css";
+@import "./13-download-show.css";
+@import "./14-download-edit.css";
+@import "./15-dashboard-charts.css";
+@import "./16-settings.css";
+@import "./17-login.css";
+@import "./18-profile.css";
+@import "./19-logout.css";
+@import "./20-sweetalert.css";
+
 /* =========================================================
-   XCLIP ADMIN PANEL
-   Doodle / Corporate Style
-   Compact 75% Feel - No Horizontal Scroll
+   ADMIN PROFILE
 ========================================================= */
 
+.admin-profile-layout {
+    display: grid;
 
-/* =========================================================
-   RESET
-========================================================= */
+    grid-template-columns:
+        320px minmax(0, 1fr);
 
-.admin-body {
-    margin: 0;
-    padding: 0;
+    gap: 30px;
 
-    background: #f7f7f2;
-    color: #1f2937;
-
-    min-height: 100vh;
-
-    overflow-x: hidden;
+    align-items: start;
 }
 
 
 /* =========================================================
-   ADMIN LAYOUT
+   PROFILE CARD
 ========================================================= */
 
-.admin-layout {
-    display: flex;
-
-    width: 100%;
-    min-height: 100vh;
-
-    overflow-x: hidden;
-}
-
-
-/* =========================================================
-   SIDEBAR
-========================================================= */
-
-.admin-sidebar {
-    width: 260px;
-    min-width: 260px;
-
-    min-height: 100vh;
-
-    box-sizing: border-box;
-
+.admin-profile-card {
     background: #ffffff;
-
-    border-right: 3px solid #1f2937;
-
-    display: flex;
-    flex-direction: column;
-
-    position: sticky;
-    top: 0;
-
-    z-index: 100;
-}
-
-
-/* =========================================================
-   SIDEBAR BRAND
-========================================================= */
-
-.admin-sidebar-brand {
-    height: 100px;
-
-    box-sizing: border-box;
-
-    padding: 0 22px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background: #ffffff;
-
-    border-bottom: 3px solid #1f2937;
-}
-
-
-/* =========================================================
-   BRAND TITLE
-========================================================= */
-
-.admin-sidebar-brand h2 {
-    margin: 0;
-
-    font-size: 20px;
-
-    line-height: 1;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-
-    color: #1f2937;
-}
-
-
-/* =========================================================
-   BRAND SUBTITLE
-========================================================= */
-
-.admin-sidebar-brand span {
-    display: block;
-
-    margin-top: 7px;
-
-    font-size: 9px;
-
-    line-height: 1;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   SIDEBAR NAVIGATION
-========================================================= */
-
-.admin-sidebar-nav {
-    flex: 1;
-
-    padding: 22px 20px 20px;
-
-    box-sizing: border-box;
-}
-
-
-/* =========================================================
-   NAV GROUP
-========================================================= */
-
-.admin-nav-group {
-    margin-bottom: 28px;
-}
-
-
-/* =========================================================
-   NAV TITLE
-========================================================= */
-
-.admin-nav-title {
-    margin: 0 0 9px;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   NAV ITEM
-========================================================= */
-
-.admin-nav-item {
-    width: 100%;
-
-    min-height: 42px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
-
-    box-sizing: border-box;
-
-    padding: 9px 11px;
-
-    margin-bottom: 4px;
-
-    background: transparent;
-
-    border: 2px solid transparent;
-
-    color: #1f2937;
-
-    font-family: inherit;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    line-height: 1.2;
-
-    text-align: left;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-/* =========================================================
-   NAV NUMBER
-========================================================= */
-
-.admin-nav-number {
-    min-width: 21px;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   NAV HOVER
-========================================================= */
-
-.admin-nav-item:hover {
-    background: #f7f7f2;
-
-    border-color: #1f2937;
-
-    transform: translateX(3px);
-}
-
-
-/* =========================================================
-   NAV ACTIVE
-========================================================= */
-
-.admin-nav-item.active {
-    background: #1f2937;
-
-    border-color: #1f2937;
-
-    color: #ffffff;
-
-    box-shadow: 5px 5px 0 #9ca3af;
-}
-
-
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-.admin-logout {
-    appearance: none;
-    -webkit-appearance: none;
-
-    background: transparent;
-}
-
-
-/* =========================================================
-   SIDEBAR BOTTOM
-========================================================= */
-
-.admin-sidebar-bottom {
-    padding: 15px 20px;
-
-    border-top: 2px dashed #1f2937;
-}
-
-
-/* =========================================================
-   SIDEBAR FOOTER TITLE
-========================================================= */
-
-.admin-sidebar-bottom span {
-    display: block;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.5px;
-}
-
-
-/* =========================================================
-   SIDEBAR FOOTER SUBTITLE
-========================================================= */
-
-.admin-sidebar-bottom small {
-    display: block;
-
-    margin-top: 3px;
-
-    font-size: 8px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   MAIN AREA
-========================================================= */
-
-.admin-main {
-    flex: 1;
-
-    min-width: 0;
-
-    width: calc(100% - 260px);
-
-    background: #f7f7f2;
-
-    overflow-x: hidden;
-}
-
-
-/* =========================================================
-   TOPBAR
-========================================================= */
-
-.admin-topbar {
-    min-height: 100px;
-
-    padding: 18px 40px;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    background: #ffffff;
-
-    border-bottom: 3px solid #1f2937;
-}
-
-
-/* =========================================================
-   TOPBAR LABEL
-========================================================= */
-
-.admin-topbar-label {
-    margin: 0 0 5px;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   TOPBAR TITLE
-========================================================= */
-
-.admin-topbar h1 {
-    margin: 0;
-
-    font-size: 32px;
-
-    line-height: 0.95;
-
-    letter-spacing: -1.5px;
-
-    color: #1f2937;
-}
-
-
-/* =========================================================
-   ADMIN USER
-========================================================= */
-
-.admin-user {
-    position: relative;
-
-    min-width: 215px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 9px 12px;
-
-    box-sizing: border-box;
-
-    background: #f7f7f2;
 
     border: 2px solid #1f2937;
 
-    transform: rotate(0.4deg);
+    padding: 28px;
+
+    box-shadow:
+        5px 5px 0 #1f2937;
+
+    transform:
+        rotate(-0.5deg);
 }
 
 
 /* =========================================================
-   REMOVE OLD PSEUDO ELEMENT
+   PROFILE CARD HEADER
 ========================================================= */
 
-.admin-user::before,
-.admin-user::after {
-    content: none !important;
-
-    display: none !important;
+.admin-profile-card-header {
+    margin-bottom: 25px;
 }
 
-
-/* =========================================================
-   ADMIN AVATAR
-========================================================= */
-
-.admin-user-avatar {
-    width: 34px;
-
-    height: 34px;
-
-    min-width: 34px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    box-sizing: border-box;
-
-    border-radius: 50%;
-
-    background: #1f2937;
-
-    color: #ffffff;
-
-    font-size: 12px;
-
-    font-weight: 900;
+.admin-profile-card-header .section-label {
+    margin-bottom: 8px;
 }
 
+.admin-profile-card-header h2 {
+    margin: 0 0 10px;
 
-/* =========================================================
-   ADMIN USER TEXT
-========================================================= */
-
-.admin-user strong {
-    display: block;
-
-    margin: 0;
-
-    font-size: 12px;
-
-    font-weight: 900;
-}
-
-
-.admin-user span {
-    display: block;
-
-    margin-top: 3px;
-
-    font-size: 9px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.admin-content {
-    width: 100%;
-
-    max-width: 100%;
-
-    padding: 38px 40px;
-
-    box-sizing: border-box;
-
-    overflow-x: hidden;
-}
-
-
-/* =========================================================
-   PAGE HEADER
-========================================================= */
-
-.admin-page-header {
-    margin-bottom: 32px;
-}
-
-
-/* =========================================================
-   PAGE HEADER LABEL
-========================================================= */
-
-.admin-page-header > p:first-child {
-    margin: 0 0 7px;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   PAGE HEADER TITLE
-========================================================= */
-
-.admin-page-header h2 {
-    margin: 0;
-
-    font-size: clamp(38px, 4.5vw, 58px);
-
-    line-height: 0.9;
-
-    letter-spacing: -3px;
-
-    color: #1f2937;
-}
-
-
-/* =========================================================
-   PAGE HEADER DESCRIPTION
-========================================================= */
-
-.admin-page-header p:last-child {
-    max-width: 700px;
-
-    margin: 13px 0 0;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-
-    color: #1f2937;
-}
-
-
-/* =========================================================
-   ADMIN STATISTICS
-========================================================= */
-
-.admin-stats {
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 22px;
-
-    margin-bottom: 42px;
-
-    width: 100%;
-}
-
-
-/* =========================================================
-   STAT CARD
-========================================================= */
-
-.admin-stat-card {
-    display: grid;
-
-    grid-template-columns: 100px minmax(0, 1fr);
-
-    gap: 20px;
-
-    padding: 24px;
-
-    box-sizing: border-box;
-
-    min-width: 0;
-
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    box-shadow: 6px 6px 0 #1f2937;
-}
-
-
-/* =========================================================
-   STAT NUMBER
-========================================================= */
-
-.admin-stat-number {
-    font-size: 52px;
-
-    line-height: 0.9;
-
-    font-weight: 900;
-
-    letter-spacing: -3px;
-}
-
-
-/* =========================================================
-   STAT LABEL
-========================================================= */
-
-.admin-stat-info > span {
-    display: block;
-
-    font-size: 8px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   STAT TITLE
-========================================================= */
-
-.admin-stat-info h3 {
-    margin: 6px 0;
-
-    font-size: 18px;
+    font-size: 25px;
 
     line-height: 1.1;
-}
-
-
-/* =========================================================
-   STAT DESCRIPTION
-========================================================= */
-
-.admin-stat-info p {
-    margin: 0;
-
-    font-size: 11px;
-
-    line-height: 1.5;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   DASHBOARD SECTION
-========================================================= */
-
-.admin-dashboard-section {
-    width: 100%;
-
-    margin-bottom: 42px;
-
-    min-width: 0;
-}
-
-
-/* =========================================================
-   SECTION HEADER
-========================================================= */
-
-.admin-section-header {
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    margin-bottom: 18px;
-}
-
-
-/* =========================================================
-   SECTION TITLE
-========================================================= */
-
-.admin-section-header h2 {
-    margin: 0;
-
-    font-size: 28px;
-
-    line-height: 1;
-
-    letter-spacing: -1.5px;
-}
-
-
-/* =========================================================
-   VIEW LINK
-========================================================= */
-
-.admin-view-link {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 7px 11px;
-
-    background: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    color: #1f2937;
-
-    font-size: 10px;
 
     font-weight: 900;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    transition: all 0.2s ease;
 }
 
-
-.admin-view-link:hover {
-    background: #1f2937;
-
-    color: #ffffff;
-
-    transform: translate(-2px, -2px);
-
-    box-shadow: 3px 3px 0 #9ca3af;
-}
-
-
-/* =========================================================
-   TABLE WRAPPER
-========================================================= */
-
-.admin-table-wrapper {
-    width: 100%;
-
-    max-width: 100%;
-
-    overflow-x: auto;
-
-    box-sizing: border-box;
-
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    box-shadow: 6px 6px 0 #1f2937;
-}
-
-
-/* =========================================================
-   TABLE
-========================================================= */
-
-.admin-table {
-    width: 100%;
-
-    min-width: 700px;
-
-    border-collapse: collapse;
-}
-
-
-/* =========================================================
-   TABLE HEADER
-========================================================= */
-
-.admin-table th {
-    padding: 12px;
-
-    background: #1f2937;
-
-    color: #ffffff;
-
-    border-right: 1px solid #ffffff;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-
-    text-align: left;
-
-    white-space: nowrap;
-}
-
-
-.admin-table th:last-child {
-    border-right: none;
-}
-
-
-/* =========================================================
-   TABLE BODY
-========================================================= */
-
-.admin-table td {
-    padding: 13px 12px;
-
-    border-bottom: 2px solid #1f2937;
-
-    font-size: 11px;
-
-    line-height: 1.5;
-
-    vertical-align: middle;
-}
-
-
-.admin-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-
-.admin-table tbody tr:hover {
-    background: #f7f7f2;
-}
-
-
-/* =========================================================
-   TABLE SMALL TEXT
-========================================================= */
-
-.admin-table small {
-    color: #64748b;
-
-    font-size: 9px;
-}
-
-
-/* =========================================================
-   STATUS
-========================================================= */
-
-.admin-status {
+.admin-profile-role {
     display: inline-block;
 
-    padding: 4px 7px;
+    padding: 5px 9px;
 
-    background: #f7f7f2;
+    background: #facc15;
 
     border: 2px solid #1f2937;
-
-    font-size: 8px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   EMPTY STATE
-========================================================= */
-
-.admin-empty {
-    padding: 42px 25px;
-
-    text-align: center;
-}
-
-
-.admin-empty span {
-    display: block;
-
-    margin-bottom: 8px;
 
     font-size: 9px;
 
     font-weight: 900;
 
-    letter-spacing: 2px;
-}
+    letter-spacing: 0.1em;
 
-
-.admin-empty p {
-    margin: 0;
-
-    font-size: 11px;
-
-    color: #64748b;
+    transform:
+        rotate(-1deg);
 }
 
 
 /* =========================================================
-   ALERT
+   PROFILE PHOTO
 ========================================================= */
 
-.admin-alert {
-    margin-bottom: 20px;
+.admin-profile-photo-wrapper {
+    display: flex;
 
-    padding: 12px 15px;
+    justify-content: center;
 
-    box-sizing: border-box;
-
-    background: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    box-shadow: 4px 4px 0 #1f2937;
-
-    font-size: 11px;
-
-    font-weight: 800;
+    margin: 30px 0 20px;
 }
 
+.admin-profile-photo,
+.admin-profile-photo-placeholder {
+    width: 145px;
 
-.admin-alert-success {
-    background: #dff7df;
-}
-
-
-/* =========================================================
-   DETAIL CARD
-========================================================= */
-
-.admin-detail-card {
-    width: 100%;
-
-    max-width: 100%;
-
-    padding: 27px;
-
-    box-sizing: border-box;
-
-    background: #ffffff;
+    height: 145px;
 
     border: 3px solid #1f2937;
 
-    box-shadow: 6px 6px 0 #1f2937;
-}
-
-
-/* =========================================================
-   DETAIL HEADER
-========================================================= */
-
-.admin-detail-header {
-    display: flex;
-
-    align-items: flex-start;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding-bottom: 20px;
-
-    margin-bottom: 22px;
-
-    border-bottom: 3px dashed #1f2937;
-}
-
-
-.admin-detail-header h3 {
-    margin: 6px 0 0;
-
-    font-size: 24px;
-
-    line-height: 1;
-
-    font-weight: 900;
-}
-
-
-.admin-detail-header small {
-    color: #64748b;
-
-    font-size: 10px;
-}
-
-
-/* =========================================================
-   DETAIL LABEL
-========================================================= */
-
-.admin-detail-label {
-    display: block;
-
-    margin-bottom: 5px;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   DETAIL GRID
-========================================================= */
-
-.admin-detail-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 16px;
-
-    margin-bottom: 28px;
-}
-
-
-/* =========================================================
-   DETAIL ITEM
-========================================================= */
-
-.admin-detail-item {
-    min-width: 0;
-
-    padding: 14px;
-
-    box-sizing: border-box;
-
-    background: #f9fafb;
-
-    border: 2px solid #1f2937;
-
-    overflow-wrap: anywhere;
-}
-
-
-.admin-detail-item strong {
-    font-size: 12px;
-
-    line-height: 1.5;
-}
-
-
-.admin-detail-item a {
-    color: #1f2937;
-
-    font-weight: 800;
-
-    text-decoration: underline;
-
-    overflow-wrap: anywhere;
-}
-
-
-/* =========================================================
-   MESSAGE
-========================================================= */
-
-.admin-message {
-    padding: 18px;
-
-    margin-bottom: 22px;
-
-    box-sizing: border-box;
-
-    background: #f7f7f2;
-
-    border: 2px solid #1f2937;
-}
-
-
-.admin-message > span {
-    display: block;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #64748b;
-}
-
-
-.admin-message p {
-    margin: 10px 0 0;
-
-    font-size: 12px;
-
-    line-height: 1.8;
-
-    white-space: pre-line;
-}
-
-
-/* =========================================================
-   MESSAGE CONTENT
-========================================================= */
-
-.admin-message-content {
-    min-height: 150px;
-
-    padding: 16px;
-
-    box-sizing: border-box;
-
-    background: #fffdf0;
-
-    border: 2px solid #1f2937;
-
-    white-space: pre-line;
-
-    line-height: 1.8;
-
-    font-size: 12px;
-
-    overflow-wrap: anywhere;
-}
-
-
-/* =========================================================
-   DETAIL SECTION
-========================================================= */
-
-.admin-detail-section {
-    padding: 20px 0;
-
-    border-bottom: 2px dashed #d1d5db;
-}
-
-
-.admin-detail-section:last-of-type {
-    border-bottom: none;
-}
-
-
-/* =========================================================
-   DETAIL SECTION TITLE
-========================================================= */
-
-.admin-detail-section-title {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 16px;
-
-    font-size: 15px;
-
-    font-weight: 900;
-}
-
-
-.admin-detail-section-title span {
-    width: 27px;
-
-    height: 27px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    box-sizing: border-box;
-
-    background: #facc15;
-
-    border: 2px solid #1f2937;
-
-    font-size: 10px;
-
-    transform: rotate(-4deg);
-}
-
-
-/* =========================================================
-   ACTIONS
-========================================================= */
-
-.admin-detail-actions {
-    display: flex;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 9px;
-
-    padding-top: 20px;
-}
-
-
-.admin-detail-actions form {
-    margin: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    max-width: 100%;
-}
-
-
-.admin-detail-actions select {
-    max-width: 100%;
-
-    padding: 8px 10px;
-
-    background: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    font-family: inherit;
-
-    font-size: 11px;
-
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   ADMIN BUTTON
-========================================================= */
-
-.admin-btn {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 9px 14px;
-
-    box-sizing: border-box;
-
-    border: 2px solid #1f2937;
-
-    background: #ffffff;
-
-    color: #1f2937;
-
-    font-family: inherit;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    box-shadow: 3px 3px 0 #1f2937;
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-
-.admin-btn:hover {
-    transform: translate(2px, 2px);
-
-    box-shadow: 1px 1px 0 #1f2937;
-}
-
-
-/* =========================================================
-   BUTTON COLORS
-========================================================= */
-
-.admin-btn-primary {
-    background: #a7f3a0;
-}
-
-
-.admin-btn-secondary {
-    background: #ffffff;
-}
-
-
-.admin-btn-danger {
-    background: #ff9b9b;
-}
-
-
-/* =========================================================
-   OLD ACTION BUTTON SUPPORT
-========================================================= */
-
-.admin-action-button,
-.admin-delete-button {
-    padding: 8px 12px;
-
-    border: 2px solid #1f2937;
-
-    font-family: inherit;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    cursor: pointer;
-}
-
-
-.admin-action-button {
-    background: #1f2937;
-
-    color: #ffffff;
-}
-
-
-.admin-delete-button {
-    background: #ffffff;
-
-    color: #1f2937;
-}
-
-
-.admin-action-button:hover,
-.admin-delete-button:hover {
-    transform: translate(-2px, -2px);
-
-    box-shadow: 3px 3px 0 #1f2937;
-}
-
-
-/* =========================================================
-   RFQ ADMIN
-========================================================= */
-
-.rfq-admin-details {
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
-
-    width: 100%;
-}
-
-
-.rfq-detail-item {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-
-    min-width: 0;
-
-    padding: 14px;
-
-    box-sizing: border-box;
-
-    background: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    overflow-wrap: anywhere;
-}
-
-
-.rfq-detail-item span {
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-
-    opacity: 0.6;
-}
-
-
-.rfq-detail-item strong {
-    font-size: 12px;
-
-    line-height: 1.4;
-
-    overflow-wrap: anywhere;
-}
-
-
-/* =========================================================
-   RFQ DESCRIPTION
-========================================================= */
-
-.rfq-description {
-    padding: 18px;
-
-    box-sizing: border-box;
-
-    background: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    line-height: 1.7;
-
-    white-space: pre-line;
-
-    font-size: 12px;
-
-    overflow-wrap: anywhere;
-}
-
-
-/* =========================================================
-   RFQ FORM
-========================================================= */
-
-.admin-dashboard-section form .form-group {
-    margin-bottom: 15px;
-}
-
-
-.admin-dashboard-section select {
-    width: 100%;
-
-    max-width: 100%;
-
-    padding: 10px 12px;
-
-    box-sizing: border-box;
-
-    background: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    font-family: inherit;
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   RESPONSIVE - 1200px
-========================================================= */
-
-@media (max-width: 1200px) {
-
-    .admin-sidebar {
-        width: 235px;
-
-        min-width: 235px;
-    }
-
-
-    .admin-main {
-        width: calc(100% - 235px);
-    }
-
-
-    .admin-sidebar-brand {
-        padding-left: 18px;
-
-        padding-right: 18px;
-    }
-
-
-    .admin-sidebar-nav {
-        padding-left: 17px;
-
-        padding-right: 17px;
-    }
-
-
-    .admin-sidebar-bottom {
-        padding-left: 17px;
-
-        padding-right: 17px;
-    }
-
-
-    .admin-topbar {
-        padding-left: 30px;
-
-        padding-right: 30px;
-    }
-
-
-    .admin-content {
-        padding-left: 30px;
-
-        padding-right: 30px;
-    }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE - 900px
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .admin-sidebar {
-        width: 210px;
-
-        min-width: 210px;
-    }
-
-
-    .admin-main {
-        width: calc(100% - 210px);
-    }
-
-
-    .admin-sidebar-brand h2 {
-        font-size: 18px;
-    }
-
-
-    .admin-nav-item {
-        font-size: 11px;
-    }
-
-
-    .admin-topbar {
-        padding: 20px 25px;
-    }
-
-
-    .admin-topbar h1 {
-        font-size: 28px;
-    }
-
-
-    .admin-user {
-        min-width: 190px;
-    }
-
-
-    .admin-content {
-        padding: 30px 25px;
-    }
-
-
-    .admin-stats {
-        grid-template-columns: 1fr;
-    }
-
-
-    .admin-stat-card {
-        grid-template-columns: 100px minmax(0, 1fr);
-    }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE - 700px
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .admin-layout {
-        display: block;
-
-        width: 100%;
-    }
-
-
-    .admin-sidebar {
-        width: 100%;
-
-        min-width: 0;
-
-        min-height: auto;
-
-        position: relative;
-
-        border-right: none;
-
-        border-bottom: 3px solid #1f2937;
-    }
-
-
-    .admin-main {
-        width: 100%;
-
-        min-width: 0;
-    }
-
-
-    .admin-sidebar-brand {
-        height: 85px;
-
-        min-height: 85px;
-    }
-
-
-    .admin-sidebar-nav {
-        padding: 20px;
-    }
-
-
-    .admin-sidebar-bottom {
-        display: none;
-    }
-
-
-    .admin-topbar {
-        min-height: auto;
-
-        padding: 20px;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-
-    .admin-topbar h1 {
-        font-size: 30px;
-    }
-
-
-    .admin-user {
-        width: 100%;
-
-        min-width: 0;
-    }
-
-
-    .admin-content {
-        padding: 25px 20px;
-
-        width: 100%;
-    }
-
-
-    .admin-page-header h2 {
-        font-size: 45px;
-
-        letter-spacing: -2.5px;
-    }
-
-
-    .admin-section-header {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-
-    .admin-detail-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .rfq-admin-details {
-        grid-template-columns: 1fr;
-    }
-
-
-    .admin-detail-card {
-        padding: 22px;
-    }
-
-
-    .admin-detail-header {
-        flex-direction: column;
-    }
-
-
-    .admin-detail-actions {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-
-    .admin-detail-actions form {
-        width: 100%;
-    }
-
-
-    .admin-detail-actions select,
-    .admin-detail-actions .admin-btn,
-    .admin-detail-actions .admin-view-link,
-    .admin-action-button,
-    .admin-delete-button {
-        width: 100%;
-
-        box-sizing: border-box;
-
-        text-align: center;
-    }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE - 500px
-========================================================= */
-
-@media (max-width: 500px) {
-
-    .admin-sidebar-nav {
-        padding: 18px 15px;
-    }
-
-
-    .admin-nav-group {
-        margin-bottom: 22px;
-    }
-
-
-    .admin-nav-item {
-        min-height: 44px;
-
-        font-size: 12px;
-    }
-
-
-    .admin-topbar {
-        padding: 18px 15px;
-    }
-
-
-    .admin-content {
-        padding: 22px 15px;
-    }
-
-
-    .admin-page-header h2 {
-        font-size: 38px;
-
-        letter-spacing: -2px;
-    }
-
-
-    .admin-stat-card {
-        grid-template-columns: 1fr;
-
-        padding: 22px;
-    }
-
-
-    .admin-stat-number {
-        font-size: 48px;
-    }
-
-
-    .admin-detail-card {
-        padding: 18px;
-    }
-
-}
-
-
-/* =========================================================
-   EXTRA HORIZONTAL OVERFLOW PROTECTION
-========================================================= */
-
-html {
-    overflow-x: hidden;
-}
-
-
-body {
-    overflow-x: hidden;
-}
-
-
-.admin-body,
-.admin-layout,
-.admin-main,
-.admin-content {
-    max-width: 100%;
-}
-
-/* =====================================================
-   RFQ READ STATUS
-===================================================== */
-
-.admin-status-new {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 5px 10px;
-
-    border: 2px solid #1f2937;
-
-    background: #facc15;
-
-    color: #1f2937;
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    transform: rotate(-1deg);
-}
-
-
-.admin-status-read {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 5px 10px;
-
-    border: 2px solid #1f2937;
-
-    background: #d1fae5;
-
-    color: #1f2937;
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    transform: rotate(1deg);
-}
-/* =========================================================
-   PROJECTS ADMIN
-   ========================================================= */
-
-.admin-page-header-action {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.admin-primary-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    padding: 11px 18px;
-
-    border: 2px solid #1f2937;
-    background: #facc15;
-    color: #1f2937;
-
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-
-    box-shadow: 4px 4px 0 #1f2937;
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-.admin-primary-button span {
-    font-size: 17px;
-    line-height: 1;
-}
-
-.admin-primary-button:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 #1f2937;
-}
-
-
-.admin-alert {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    margin-bottom: 25px;
-    padding: 13px 16px;
-
-    border: 2px solid #1f2937;
-
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.admin-alert-success {
-    background: #d1fae5;
-}
-
-.admin-alert-success span {
-    font-size: 17px;
-}
-
-
-.admin-section-count {
-    padding: 7px 11px;
-
-    border: 2px solid #1f2937;
-    background: #f3f4f6;
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-}
-
-
-.admin-project-cell {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    min-width: 230px;
-}
-
-.admin-project-thumbnail {
-    width: 58px;
-    height: 48px;
-
-    flex: 0 0 58px;
+    box-shadow:
+        5px 5px 0 #1f2937;
 
     object-fit: cover;
 
-    border: 2px solid #1f2937;
-    background: #f3f4f6;
-
-    transform: rotate(-1deg);
+    background: #facc15;
 }
 
-.admin-project-thumbnail-empty {
+.admin-profile-photo-placeholder {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    padding: 4px;
+    font-size: 58px;
 
-    font-size: 7px;
-    font-weight: 800;
-    text-align: center;
+    font-weight: 900;
+
+    transform:
+        rotate(2deg);
 }
 
-.admin-project-info {
+
+/* =========================================================
+   PROFILE SUMMARY
+========================================================= */
+
+.admin-profile-summary {
     display: flex;
+
     flex-direction: column;
-    gap: 3px;
-}
 
-.admin-project-info strong {
-    font-size: 13px;
-    line-height: 1.3;
-}
-
-.admin-project-info span {
-    font-size: 10px;
-    color: #6b7280;
-}
-
-
-.admin-project-category {
-    display: inline-block;
-
-    padding: 5px 8px;
-
-    border: 1.5px solid #1f2937;
-
-    background: #fff;
-
-    font-size: 10px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-
-.admin-project-status {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 5px 8px;
-
-    border: 2px solid #1f2937;
-
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-}
-
-.admin-project-status-planning {
-    background: #fef3c7;
-}
-
-.admin-project-status-ongoing {
-    background: #dbeafe;
-}
-
-.admin-project-status-completed {
-    background: #d1fae5;
-}
-
-
-.admin-project-visibility {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 5px;
-}
 
-.admin-visibility-active,
-.admin-visibility-hidden,
-.admin-featured-badge {
-    display: inline-flex;
-    align-items: center;
+    padding-top: 20px;
 
-    padding: 4px 7px;
-
-    border: 1.5px solid #1f2937;
-
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-}
-
-.admin-visibility-active {
-    background: #d1fae5;
-}
-
-.admin-visibility-hidden {
-    background: #e5e7eb;
-}
-
-.admin-featured-badge {
-    background: #facc15;
-}
-
-
-.admin-table-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-}
-
-.admin-table-actions form {
-    margin: 0;
-    padding: 0;
-}
-
-.admin-action-link {
-    display: inline-block;
-
-    padding: 5px 7px;
-
-    border: 1.5px solid #1f2937;
-
-    background: #fff;
-    color: #1f2937;
-
-    font-size: 9px;
-    font-weight: 800;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition:
-        background 0.15s ease,
-        transform 0.15s ease;
-}
-
-.admin-action-link:hover {
-    background: #facc15;
-    transform: rotate(-1deg);
-}
-
-.admin-action-delete {
-    font-family: inherit;
-}
-
-.admin-action-delete:hover {
-    background: #fecaca;
-}
-
-
-.admin-empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 300px;
-
-    padding: 50px 30px;
-
-    border: 2px dashed #1f2937;
+    border-top: 2px solid #1f2937;
 
     text-align: center;
-
-    background: #fff;
 }
 
-.admin-empty-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.admin-profile-summary strong {
+    font-size: 17px;
 
-    width: 55px;
-    height: 55px;
+    font-weight: 900;
+}
 
-    margin-bottom: 15px;
+.admin-profile-summary span {
+    font-size: 12px;
+
+    color: #6b7280;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   PROFILE FORM CARD
+========================================================= */
+
+.admin-profile-form-card {
+    background: #ffffff;
 
     border: 2px solid #1f2937;
 
-    background: #facc15;
+    padding: 32px;
+
+    box-shadow:
+        5px 5px 0 #1f2937;
+}
+
+
+/* =========================================================
+   PROFILE FORM HEADER
+========================================================= */
+
+.admin-profile-form-header {
+    margin-bottom: 30px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 2px solid #1f2937;
+}
+
+.admin-profile-form-header .section-label {
+    margin-bottom: 8px;
+}
+
+.admin-profile-form-header h2 {
+    margin: 0 0 10px;
 
     font-size: 28px;
-    font-weight: 700;
 
-    transform: rotate(-4deg);
+    font-weight: 900;
 }
 
-.admin-empty-state h3 {
-    margin: 0 0 7px;
+.admin-profile-form-header p:last-child {
+    margin: 0;
 
-    font-size: 22px;
-}
-
-.admin-empty-state p {
-    margin: 0 0 22px;
-
-    font-size: 13px;
     color: #6b7280;
 }
+
+
 /* =========================================================
-   PROJECT FORM
-   ========================================================= */
+   PROFILE SECTION
+========================================================= */
 
-.admin-secondary-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.admin-profile-section {
+    margin-bottom: 35px;
 
-    padding: 10px 16px;
-
-    border: 2px solid #1f2937;
-
-    background: #fff;
-    color: #1f2937;
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.3px;
-
-    text-decoration: none;
-
-    box-shadow: 3px 3px 0 #1f2937;
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-.admin-secondary-button:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 #1f2937;
-}
-
-
-/* ERROR */
-
-.admin-alert-error {
-    background: #fecaca;
-}
-
-.admin-alert-error strong {
-    display: block;
-    margin-bottom: 7px;
-}
-
-.admin-alert-error ul {
-    margin: 0;
-    padding-left: 18px;
-}
-
-.admin-alert-error li {
-    margin-bottom: 3px;
-}
-
-
-/* FORM */
-
-.admin-project-form {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-
-.admin-form-card {
-    padding: 28px;
-
-    border: 2px solid #1f2937;
-
-    background: #fff;
-
-    box-shadow: 5px 5px 0 #1f2937;
-}
-
-
-.admin-form-card-header {
-    margin-bottom: 25px;
-    padding-bottom: 18px;
+    padding-bottom: 30px;
 
     border-bottom: 2px dashed #9ca3af;
 }
 
-.admin-form-card-header h2 {
-    margin: 4px 0 6px;
+.admin-profile-section:last-of-type {
+    margin-bottom: 0;
 
-    font-size: 24px;
-    line-height: 1.15;
+    border-bottom: none;
 }
 
-.admin-form-card-header p:not(.section-label) {
-    margin: 0;
-
-    font-size: 12px;
-    line-height: 1.6;
-    color: #6b7280;
-}
-
-
-.admin-form-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 17px;
-}
-
-
-.admin-form-full {
-    grid-column: 1 / -1;
-}
-
-
-.admin-form-group {
+.admin-profile-section-title {
     display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
 
-.admin-form-group label {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
-}
-
-.admin-form-group label span {
-    color: #dc2626;
-}
-
-
-.admin-form-group input,
-.admin-form-group select,
-.admin-form-group textarea {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 10px 12px;
-
-    border: 2px solid #1f2937;
-
-    background: #fff;
-    color: #1f2937;
-
-    font-family: inherit;
-    font-size: 12px;
-
-    outline: none;
-
-    border-radius: 0;
-
-    transition:
-        box-shadow 0.15s ease,
-        transform 0.15s ease;
-}
-
-.admin-form-group input:focus,
-.admin-form-group select:focus,
-.admin-form-group textarea:focus {
-    box-shadow: 3px 3px 0 #facc15;
-    transform: translate(-1px, -1px);
-}
-
-
-.admin-form-group input::placeholder,
-.admin-form-group textarea::placeholder {
-    color: #9ca3af;
-}
-
-
-.admin-form-group textarea {
-    min-height: 150px;
-    resize: vertical;
-    line-height: 1.6;
-}
-
-
-/* UPLOAD */
-
-.admin-upload-area {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-
-.admin-upload-box {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
 
-    min-height: 180px;
-
-    padding: 25px;
-
-    border: 2px dashed #1f2937;
-
-    background: #f9fafb;
-
-    text-align: center;
-
-    cursor: pointer;
-
-    transition:
-        background 0.15s ease,
-        transform 0.15s ease;
-}
-
-.admin-upload-box:hover {
-    background: #fef3c7;
-    transform: rotate(-0.5deg);
-}
-
-
-.admin-upload-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 50px;
-    height: 50px;
-
-    margin-bottom: 12px;
-
-    border: 2px solid #1f2937;
-
-    background: #facc15;
-
-    font-size: 27px;
-    font-weight: 800;
-
-    transform: rotate(-4deg);
-}
-
-
-.admin-upload-box strong {
-    margin-bottom: 5px;
-
-    font-size: 14px;
-}
-
-
-.admin-upload-box span {
-    font-size: 10px;
-    color: #6b7280;
-}
-
-
-.admin-upload-input {
-    display: none;
-}
-
-
-.admin-image-preview {
-    display: none;
-
-    width: 100%;
-    max-width: 500px;
-
-    margin: 0 auto;
-
-    border: 2px solid #1f2937;
-}
-
-.admin-image-preview img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-
-/* CHECKBOX */
-
-.admin-checkbox-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 15px;
-}
-
-
-.admin-checkbox-card {
-    display: flex;
-    align-items: flex-start;
     gap: 12px;
 
-    padding: 15px;
-
-    border: 2px solid #1f2937;
-
-    background: #f9fafb;
-
-    cursor: pointer;
-
-    transition:
-        background 0.15s ease,
-        transform 0.15s ease;
+    margin-bottom: 22px;
 }
 
-.admin-checkbox-card:hover {
-    background: #fef3c7;
-    transform: rotate(-0.5deg);
-}
-
-
-.admin-checkbox-card input {
-    width: 17px;
-    height: 17px;
-
-    margin-top: 2px;
-
-    accent-color: #1f2937;
-
-    cursor: pointer;
-}
-
-
-.admin-checkbox-content {
+.admin-profile-section-title span {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
 
-
-.admin-checkbox-content strong {
-    font-size: 12px;
-}
-
-
-.admin-checkbox-content small {
-    font-size: 10px;
-    line-height: 1.5;
-    color: #6b7280;
-}
-
-
-/* ACTIONS */
-
-.admin-form-actions {
-    display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
 
-    padding-top: 5px;
-}
-@media (max-width: 900px) {
-
-    .admin-page-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
-    }
-
-    .admin-page-header-action {
-        justify-content: flex-start;
-    }
-
-    .admin-form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-form-full {
-        grid-column: auto;
-    }
-
-    .admin-checkbox-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .admin-form-card {
-        padding: 20px;
-    }
-
-    .admin-form-card-header h2 {
-        font-size: 21px;
-    }
-
-    .admin-form-actions {
-        flex-direction: column-reverse;
-        align-items: stretch;
-    }
-
-    .admin-form-actions a,
-    .admin-form-actions button {
-        width: 100%;
-    }
-
-}
-/* =========================================================
-   PROJECT DETAIL
-========================================================= */
-
-.admin-project-detail {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    gap: 32px;
-    margin-top: 30px;
-}
-
-
-/* ---------------------------------------------------------
-   IMAGE
---------------------------------------------------------- */
-
-.admin-project-detail-image-card {
-    position: relative;
-    min-height: 520px;
-    border: 3px solid #1f2937;
-    background: #ffffff;
-    box-shadow: 8px 8px 0 #1f2937;
-    transform: rotate(-0.5deg);
-    overflow: hidden;
-}
-
-.admin-project-detail-image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 520px;
-    object-fit: cover;
-}
-
-
-.admin-project-detail-no-image {
-    min-height: 520px;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 
-    background:
-        repeating-linear-gradient(
-            -45deg,
-            #f7f7f2,
-            #f7f7f2 12px,
-            #ecece5 12px,
-            #ecece5 24px
-        );
+    width: 34px;
 
-    color: #1f2937;
-    text-align: center;
-}
-
-.admin-project-detail-no-image span {
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-.admin-project-detail-no-image small {
-    margin-top: 8px;
-    font-size: 12px;
-}
-
-
-/* ---------------------------------------------------------
-   INFORMATION
---------------------------------------------------------- */
-
-.admin-project-detail-info {
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-}
-
-
-.admin-project-detail-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-
-    padding-bottom: 22px;
-    border-bottom: 3px solid #1f2937;
-}
-
-.admin-project-detail-heading h2 {
-    margin: 6px 0 4px;
-
-    font-size: clamp(28px, 3vw, 42px);
-    line-height: 1.05;
-    font-weight: 900;
-    letter-spacing: -1px;
-}
-
-
-.admin-project-detail-client {
-    margin: 0;
-
-    font-size: 14px;
-    font-weight: 600;
-    color: #6b7280;
-}
-
-
-.admin-project-detail-status {
-    flex-shrink: 0;
-}
-
-
-/* ---------------------------------------------------------
-   META
---------------------------------------------------------- */
-
-.admin-project-meta-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    border-top: 3px solid #1f2937;
-    border-left: 3px solid #1f2937;
-}
-
-
-.admin-project-meta-item {
-    min-height: 95px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 18px;
-
-    border-right: 3px solid #1f2937;
-    border-bottom: 3px solid #1f2937;
-
-    background: #ffffff;
-}
-
-
-.admin-project-meta-item:nth-child(1) {
-    background: #fef3c7;
-}
-
-.admin-project-meta-item:nth-child(2) {
-    background: #d1fae5;
-}
-
-.admin-project-meta-item:nth-child(3) {
-    background: #dbeafe;
-}
-
-.admin-project-meta-item:nth-child(4) {
-    background: #f3f4f6;
-}
-
-
-.admin-project-meta-item span {
-    margin-bottom: 6px;
-
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-}
-
-
-.admin-project-meta-item strong {
-    font-size: 15px;
-    font-weight: 800;
-    word-break: break-word;
-}
-
-
-/* ---------------------------------------------------------
-   DESCRIPTION
---------------------------------------------------------- */
-
-.admin-project-description {
-    padding: 22px;
-
-    border: 3px solid #1f2937;
-    background: #ffffff;
-
-    box-shadow: 5px 5px 0 #1f2937;
-
-    transform: rotate(0.3deg);
-}
-
-
-.admin-project-description p:not(.section-label) {
-    margin: 12px 0 0;
-
-    font-size: 15px;
-    line-height: 1.8;
-    color: #374151;
-}
-
-
-.admin-project-no-description {
-    font-style: italic;
-    color: #9ca3af !important;
-}
-
-
-/* ---------------------------------------------------------
-   DISPLAY SETTINGS
---------------------------------------------------------- */
-
-.admin-project-display-settings {
-    padding: 22px;
-
-    border: 3px solid #1f2937;
-    background: #fefce8;
-
-    box-shadow: 5px 5px 0 #1f2937;
-
-    transform: rotate(-0.25deg);
-}
-
-
-.admin-project-display-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 14px;
-
-    margin-top: 16px;
-}
-
-
-.admin-project-display-item {
-    min-height: 85px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 16px;
-
-    border: 2px solid #1f2937;
-    background: #ffffff;
-}
-
-
-.admin-project-display-item > span {
-    margin-bottom: 8px;
-
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-}
-
-
-.admin-project-display-item strong {
-    width: fit-content;
-}
-
-
-/* ---------------------------------------------------------
-   FEATURED OFF
---------------------------------------------------------- */
-
-.admin-featured-not-active {
-    display: inline-flex;
-
-    padding: 5px 9px;
-
-    border: 2px solid #1f2937;
-
-    background: #f3f4f6;
-    color: #6b7280;
-
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-
-/* ---------------------------------------------------------
-   TIMESTAMPS
---------------------------------------------------------- */
-
-.admin-project-timestamps {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 20px;
-
-    padding-top: 5px;
-}
-
-
-.admin-project-timestamps div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-
-.admin-project-timestamps span {
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-    color: #6b7280;
-}
-
-
-.admin-project-timestamps strong {
-    font-size: 12px;
-    font-weight: 700;
-}
-
-
-/* ---------------------------------------------------------
-   ACTIONS
---------------------------------------------------------- */
-
-.admin-project-detail-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 14px;
-
-    padding-top: 10px;
-}
-
-
-/* =========================================================
-   PROJECT DETAIL RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .admin-project-detail {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-project-detail-image-card,
-    .admin-project-detail-image,
-    .admin-project-detail-no-image {
-        min-height: 420px;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .admin-project-detail {
-        gap: 24px;
-    }
-
-    .admin-project-detail-image-card {
-        box-shadow: 5px 5px 0 #1f2937;
-    }
-
-    .admin-project-detail-heading {
-        flex-direction: column;
-    }
-
-    .admin-project-detail-heading h2 {
-        font-size: 30px;
-    }
-
-    .admin-project-meta-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-project-display-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-project-timestamps {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-project-detail-actions {
-        flex-direction: column-reverse;
-        align-items: stretch;
-    }
-
-    .admin-project-detail-actions a {
-        width: 100%;
-        justify-content: center;
-    }
-
-}
-
-/* =========================================================
-   PROJECT EDIT
-========================================================= */
-
-.admin-edit-image-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 28px;
-}
-
-
-/* ---------------------------------------------------------
-   CURRENT IMAGE
---------------------------------------------------------- */
-
-.admin-current-image {
-    position: relative;
-
-    min-height: 360px;
-
-    border: 3px solid #1f2937;
-    background: #ffffff;
-
-    box-shadow: 6px 6px 0 #1f2937;
-
-    transform: rotate(-0.4deg);
-
-    overflow: hidden;
-}
-
-
-.admin-current-image img {
-    display: block;
-
-    width: 100%;
-    height: 360px;
-
-    object-fit: cover;
-}
-
-
-.admin-image-label {
-    display: inline-block;
-
-    margin-bottom: 10px;
-
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-}
-
-
-.admin-current-image > .admin-image-label {
-    position: absolute;
-
-    top: 14px;
-    left: 14px;
-
-    z-index: 2;
-
-    padding: 6px 9px;
-
-    border: 2px solid #1f2937;
-
-    background: #facc15;
-    color: #1f2937;
-}
-
-
-.admin-current-image-empty {
-    min-height: 360px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        repeating-linear-gradient(
-            -45deg,
-            #f7f7f2,
-            #f7f7f2 12px,
-            #ecece5 12px,
-            #ecece5 24px
-        );
-}
-
-
-.admin-current-image-empty span {
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-
-/* ---------------------------------------------------------
-   NEW IMAGE PREVIEW
---------------------------------------------------------- */
-
-.admin-image-preview {
-    display: none;
-
-    margin-top: 18px;
-
-    padding: 12px;
-
-    border: 3px solid #1f2937;
-
-    background: #ffffff;
-
-    box-shadow: 4px 4px 0 #1f2937;
-
-    transform: rotate(0.3deg);
-}
-
-
-.admin-image-preview .admin-image-label {
-    display: block;
-
-    padding-bottom: 8px;
-
-    border-bottom: 2px solid #1f2937;
-}
-
-
-.admin-image-preview img {
-    display: block;
-
-    width: 100%;
-    max-height: 300px;
-
-    margin-top: 8px;
-
-    object-fit: cover;
-}
-
-
-/* ---------------------------------------------------------
-   RESPONSIVE
---------------------------------------------------------- */
-
-@media (max-width: 900px) {
-
-    .admin-edit-image-layout {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .admin-current-image,
-    .admin-current-image img,
-    .admin-current-image-empty {
-        min-height: 280px;
-        height: 280px;
-    }
-
-    .admin-image-preview img {
-        max-height: 240px;
-    }
-
-}
-
-/* =====================================================
-   ADMIN DOWNLOADS
-===================================================== */
-
-
-/* =========================
-   PAGE HEADER ACTION
-========================= */
-
-.admin-page-header-action {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-
-/* =========================
-   ADMIN BUTTON
-========================= */
-
-.admin-button {
-    display: inline-block;
-
-    padding: 13px 20px;
-
-    background: #1f2937;
-
-    color: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.admin-button:hover {
-    color: #ffffff;
-
-    transform: translate(-3px, -3px);
-
-    box-shadow: 5px 5px 0 #f59e0b;
-}
-
-
-/* =========================
-   ALERT
-========================= */
-
-.admin-alert {
-    margin-bottom: 30px;
-
-    padding: 15px 20px;
-
-    border: 3px solid #1f2937;
-
-    background: #ffffff;
-
-    font-weight: 700;
-}
-
-.admin-alert-success {
-    box-shadow: 5px 5px 0 #22c55e;
-}
-
-
-/* =========================
-   SECTION COUNT
-========================= */
-
-.admin-section-count {
-    display: inline-block;
-
-    padding: 8px 12px;
-
-    border: 2px solid #1f2937;
-
-    background: #ffffff;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    transform: rotate(2deg);
-}
-
-
-/* =========================
-   DOWNLOAD DOCUMENT
-========================= */
-
-.admin-download-document {
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    min-width: 250px;
-}
-
-.admin-download-document strong {
-    display: block;
-
-    margin-bottom: 4px;
-
-    font-size: 15px;
-}
-
-.admin-download-document span {
-    display: block;
-
-    max-width: 250px;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-
-    color: #6b7280;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   DOWNLOAD ICON
-========================= */
-
-.admin-download-icon {
-    width: 42px;
-    height: 50px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
+    height: 34px;
 
     background: #facc15;
 
     border: 2px solid #1f2937;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    transform: rotate(-3deg);
-}
-
-
-/* =========================
-   CATEGORY
-========================= */
-
-.admin-category {
-    display: inline-block;
-
-    padding: 5px 9px;
-
-    border: 2px solid #1f2937;
-
-    background: #f7f7f2;
 
     font-size: 11px;
 
-    font-weight: 800;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.05em;
-}
-
-
-/* =========================
-   STATUS
-========================= */
-
-.admin-status {
-    display: inline-block;
-
-    padding: 5px 9px;
-
-    border: 2px solid #1f2937;
-
-    font-size: 10px;
-
     font-weight: 900;
 
-    letter-spacing: 0.08em;
+    flex-shrink: 0;
 }
 
-.admin-status-active {
-    background: #bbf7d0;
-}
-
-.admin-status-inactive {
-    background: #e5e7eb;
-
-    color: #6b7280;
-}
-
-
-/* =========================
-   TABLE ACTIONS
-========================= */
-
-.admin-table-actions {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-}
-
-.admin-table-actions form {
+.admin-profile-section-title h3 {
     margin: 0;
-    padding: 0;
-}
 
-
-/*
-|--------------------------------------------------------------------------
-| DOWNLOAD ACTIONS
-|--------------------------------------------------------------------------
-|
-| Gunakan style action button yang sama dengan
-| Projects dan News.
-|
-*/
-
-.admin-table-actions .admin-action-link {
-    display: inline-block;
-
-    padding: 5px 7px;
-
-    border: 1.5px solid #1f2937;
-
-    background: #ffffff;
-
-    color: #1f2937;
-
-    font-family: inherit;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    line-height: 1;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition:
-        background 0.15s ease,
-        transform 0.15s ease;
-}
-
-.admin-table-actions .admin-action-link:hover {
-    background: #facc15;
-
-    transform: rotate(-1deg);
-}
-
-
-.admin-table-actions .admin-action-delete {
-    display: inline-block;
-
-    padding: 5px 7px;
-
-    border: 1.5px solid #1f2937;
-
-    background: #ffffff;
-
-    color: #dc2626;
-
-    font-family: inherit;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    transition:
-        background 0.15s ease,
-        transform 0.15s ease;
-}
-
-.admin-table-actions .admin-action-delete:hover {
-    background: #fecaca;
-
-    transform: rotate(1deg);
-}
-
-
-/* =========================
-   EMPTY STATE
-========================= */
-
-.admin-empty-state {
-    display: flex;
-
-    align-items: center;
-
-    gap: 30px;
-
-    padding: 50px;
-
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    box-shadow: 7px 7px 0 #1f2937;
-
-    transform: rotate(-0.2deg);
-}
-
-.admin-empty-number {
-    font-size: 70px;
+    font-size: 19px;
 
     font-weight: 900;
-
-    line-height: 1;
-
-    color: #f59e0b;
 }
 
-.admin-empty-state h3 {
-    margin-bottom: 12px;
 
-    font-size: 30px;
-}
+/* =========================================================
+   PROFILE FORM GROUP
+========================================================= */
 
-.admin-empty-state p:not(.section-label) {
-    max-width: 550px;
-
+.admin-profile-section .admin-form-group {
     margin-bottom: 20px;
+}
 
-    line-height: 1.7;
+.admin-profile-section .admin-form-group:last-child {
+    margin-bottom: 0;
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================================
+   PROFILE FORM HELP
+========================================================= */
 
-@media (max-width: 900px) {
-
-    .admin-page-header {
-        display: block;
-    }
-
-    .admin-page-header-action {
-        justify-content: flex-start;
-
-        margin-top: 25px;
-    }
-
-    .admin-table-wrapper {
-        overflow-x: auto;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .admin-empty-state {
-        display: block;
-
-        padding: 30px;
-    }
-
-    .admin-empty-number {
-        margin-bottom: 20px;
-
-        font-size: 55px;
-    }
-
-    .admin-download-document {
-        min-width: 220px;
-    }
-
-}
-
-/* =====================================================
-   ADMIN DOWNLOAD - CREATE FORM
-===================================================== */
-
-
-/* =========================
-   FORM WRAPPER
-========================= */
-
-.admin-form-wrapper {
-    max-width: 1000px;
-
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    box-shadow: 8px 8px 0 #1f2937;
-
-    padding: 45px;
-
-    transform: rotate(-0.15deg);
-}
-
-
-/* =========================
-   FORM
-========================= */
-
-.admin-form {
-    width: 100%;
-}
-
-
-/* =========================
-   FORM GROUP
-========================= */
-
-.admin-form-group {
-    margin-bottom: 30px;
-}
-
-.admin-form-group > label {
+.admin-profile-section .admin-form-help {
     display: block;
 
-    margin-bottom: 10px;
+    margin-top: 6px;
 
-    color: #1f2937;
+    font-size: 11px;
 
-    font-size: 13px;
+    line-height: 1.5;
 
-    font-weight: 900;
-
-    letter-spacing: 0.05em;
-
-    text-transform: uppercase;
+    color: #6b7280;
 }
 
-.admin-form-group > label span {
+
+/* =========================================================
+   PROFILE FIELD ERROR
+========================================================= */
+
+.admin-field-error {
+    display: block;
+
+    margin-top: 6px;
+
     color: #dc2626;
+
+    font-size: 12px;
+
+    font-weight: 700;
 }
 
 
-/* =========================
-   FORM INPUT
-========================= */
+/* =========================================================
+   PASSWORD NOTE
+========================================================= */
 
-.admin-form input[type="text"],
-.admin-form textarea,
-.admin-form select {
-    width: 100%;
+.admin-profile-password-note {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-bottom: 22px;
 
     padding: 13px 15px;
 
-    background: #f7f7f2;
+    background: #fef3c7;
 
     border: 2px solid #1f2937;
 
-    border-radius: 0;
-
-    color: #1f2937;
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    outline: none;
-
-    box-sizing: border-box;
-
-    transition:
-        background 0.2s ease,
-        box-shadow 0.2s ease;
+    box-shadow:
+        3px 3px 0 #1f2937;
 }
 
+.admin-profile-password-note strong {
+    font-size: 12px;
 
-.admin-form input[type="text"]:focus,
-.admin-form textarea:focus,
-.admin-form select:focus {
-    background: #ffffff;
+    font-weight: 900;
 
-    box-shadow: 4px 4px 0 #facc15;
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
 }
 
+.admin-profile-password-note span {
+    font-size: 12px;
 
-.admin-form textarea {
-    min-height: 150px;
-
-    resize: vertical;
-
-    line-height: 1.6;
-}
-
-
-.admin-form select {
-    cursor: pointer;
-}
-
-
-/* =========================
-   FORM ROW
-========================= */
-
-.admin-form-row {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 30px;
-}
-
-
-/* =========================
-   CHECKBOX
-========================= */
-
-.admin-checkbox-wrapper {
-    min-height: 48px;
-
-    display: flex;
-
-    align-items: center;
-
-    padding: 10px 15px;
-
-    background: #f7f7f2;
-
-    border: 2px solid #1f2937;
-}
-
-.admin-checkbox {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin: 0;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-}
-
-.admin-checkbox input {
-    width: 18px;
-    height: 18px;
-
-    accent-color: #1f2937;
-
-    cursor: pointer;
-}
-
-
-/* =========================
-   HELP TEXT
-========================= */
-
-.admin-form-help {
-    display: block;
-
-    margin-top: 8px;
-
-    color: #6b7280;
-
-    font-size: 11px;
+    color: #555555;
 
     line-height: 1.5;
 }
 
 
-/* =========================
-   ERROR
-========================= */
+/* =========================================================
+   PROFILE ACTIONS
+========================================================= */
 
-.admin-form-error {
-    display: block;
-
-    margin-top: 8px;
-
-    color: #dc2626;
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-
-/* =========================
-   ALERT ERROR
-========================= */
-
-.admin-alert-error {
-    margin-bottom: 30px;
-
-    padding: 18px 20px;
-
-    background: #fee2e2;
-
-    border: 3px solid #dc2626;
-
-    color: #991b1b;
-}
-
-.admin-alert-error strong {
-    display: block;
-
-    margin-bottom: 8px;
-}
-
-.admin-alert-error ul {
-    margin: 0;
-
-    padding-left: 20px;
-}
-
-.admin-alert-error li {
-    margin-bottom: 4px;
-
-    font-size: 13px;
-}
-
-
-/* =========================
-   FILE UPLOAD
-========================= */
-
-.admin-file-upload {
-    position: relative;
-
-    padding: 25px;
-
-    background:
-        repeating-linear-gradient(
-            -45deg,
-            #ffffff,
-            #ffffff 12px,
-            #f3f4f6 12px,
-            #f3f4f6 14px
-        );
-
-    border: 2px dashed #1f2937;
-
-    text-align: center;
-}
-
-
-/* Hide native file input */
-
-.admin-file-upload input[type="file"] {
-    position: absolute;
-
-    width: 1px;
-    height: 1px;
-
-    opacity: 0;
-
-    pointer-events: none;
-}
-
-
-/* Choose file button */
-
-.admin-file-upload-label {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 12px 18px;
-
-    background: #facc15;
-
-    border: 2px solid #1f2937;
-
-    color: #1f2937;
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.admin-file-upload-label:hover {
-    transform: translate(-3px, -3px);
-
-    box-shadow: 4px 4px 0 #1f2937;
-}
-
-
-.admin-file-upload-icon {
-    font-size: 20px;
-
-    line-height: 1;
-}
-
-
-/* Selected file */
-
-.admin-file-name {
-    margin-top: 15px;
-
-    color: #1f2937;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    word-break: break-word;
-}
-
-
-/* =========================
-   FORM ACTIONS
-========================= */
-
-.admin-form-actions {
+.admin-profile-actions {
     display: flex;
 
-    justify-content: flex-end;
-
     align-items: center;
 
-    gap: 12px;
+    justify-content: space-between;
 
-    padding-top: 20px;
+    gap: 15px;
+
+    padding-top: 25px;
 
     border-top: 2px solid #1f2937;
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* =========================================================
+   PROFILE ACTION BUTTONS
+========================================================= */
 
-.admin-form-actions .admin-btn {
-    display: inline-flex;
+.admin-profile-actions .admin-button,
+.admin-profile-actions .admin-btn {
+    width: 180px;
 
-    align-items: center;
-    justify-content: center;
+    min-height: 52px;
 
-    min-height: 40px;
-
-    padding: 10px 18px;
-
-    border: 2px solid #1f2937;
-
-    font-family: inherit;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.admin-form-actions .admin-btn-primary {
-    background: #1f2937;
-
-    color: #ffffff;
-}
-
-.admin-form-actions .admin-btn-primary:hover {
-    color: #ffffff;
-
-    transform: translate(-3px, -3px);
-
-    box-shadow: 5px 5px 0 #facc15;
-}
-
-
-.admin-form-actions .admin-btn-secondary {
-    background: #ffffff;
-
-    color: #1f2937;
-}
-
-.admin-form-actions .admin-btn-secondary:hover {
-    color: #1f2937;
-
-    background: #f7f7f2;
-
-    transform: translate(-2px, -2px);
-
-    box-shadow: 4px 4px 0 #1f2937;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-    .admin-form-wrapper {
-        padding: 30px 25px;
-    }
-
-    .admin-form-row {
-        grid-template-columns: 1fr;
-
-        gap: 0;
-    }
-
-    .admin-form-actions {
-        flex-direction: column-reverse;
-
-        align-items: stretch;
-    }
-
-    .admin-form-actions .admin-btn {
-        width: 100%;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .admin-form-wrapper {
-        padding: 25px 20px;
-
-        box-shadow: 5px 5px 0 #1f2937;
-    }
-
-    .admin-file-upload {
-        padding: 20px 15px;
-    }
-
-}
-
-/* =====================================================
-   ADMIN DOWNLOAD SHOW
-===================================================== */
-
-
-/* =========================
-   MAIN LAYOUT
-========================= */
-
-.admin-download-show-layout {
-    display: grid;
-
-    grid-template-columns: minmax(0, 1fr) 320px;
-
-    gap: 30px;
-
-    align-items: start;
-}
-
-
-/* =========================
-   MAIN CARD
-========================= */
-
-.admin-download-show-card {
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    box-shadow: 8px 8px 0 #1f2937;
-
-    padding: 45px;
-
-    transform: rotate(-0.15deg);
-}
-
-
-/* =========================
-   DOCUMENT HEADER
-========================= */
-
-.admin-download-show-header {
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-
-    padding-bottom: 35px;
-
-    border-bottom: 3px solid #1f2937;
-}
-
-.admin-download-show-file-icon {
-    width: 70px;
-    height: 82px;
+    box-sizing: border-box;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    flex-shrink: 0;
+    padding: 12px 16px;
 
-    background: #facc15;
+    font-size: 13px;
 
-    border: 3px solid #1f2937;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    transform: rotate(-3deg);
-
-    box-shadow: 4px 4px 0 #1f2937;
-}
-
-.admin-download-show-header h1 {
-    margin: 0;
-
-    max-width: 700px;
-
-    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
 
     line-height: 1;
 
-    letter-spacing: -2px;
+    text-align: center;
 
-    word-break: break-word;
+    text-decoration: none;
 }
 
 
-/* =========================
-   DESCRIPTION
-========================= */
+/* =========================================================
+   ADMIN USER AVATAR
+========================================================= */
 
-.admin-download-show-description {
-    padding: 35px 0;
+.admin-user-avatar {
+    width: 44px;
 
-    border-bottom: 2px solid #d1d5db;
-}
+    height: 44px;
 
-.admin-download-show-description > p:not(.section-label) {
-    max-width: 750px;
-
-    margin: 0;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================
-   INFORMATION GRID
-========================= */
-
-.admin-download-show-info {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 0;
-
-    margin-top: 10px;
-}
-
-.admin-download-show-info-item {
-    min-width: 0;
-
-    padding: 22px 15px 22px 0;
-
-    border-bottom: 1px solid #d1d5db;
-}
-
-.admin-download-show-info-item:nth-child(even) {
-    padding-left: 25px;
-
-    border-left: 1px solid #d1d5db;
-}
-
-.admin-download-show-info-item span:first-child {
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: #6b7280;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.1em;
-}
-
-.admin-download-show-info-item strong {
-    display: block;
-
-    color: #1f2937;
-
-    font-size: 14px;
-
-    font-weight: 800;
-}
-
-
-/* =========================
-   FILE NAME
-========================= */
-
-.admin-download-show-file-name {
-    overflow-wrap: anywhere;
-}
-
-
-/* =========================
-   ACTIONS
-========================= */
-
-.admin-download-show-actions {
     display: flex;
 
     align-items: center;
 
-    flex-wrap: wrap;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: #1f2937;
+
+    border: 2px solid #1f2937;
+
+    border-radius: 0;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ADMIN USER PROFILE PHOTO
+========================================================= */
+
+.admin-user-avatar img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+
+/* =========================================================
+   ADMIN USER DROPDOWN - PROFILE
+========================================================= */
+
+.admin-dropdown-item {
+    display: flex;
+
+    align-items: center;
 
     gap: 10px;
 
-    padding-top: 30px;
-}
+    width: 100%;
 
-.admin-download-show-button {
-    display: inline-flex;
+    box-sizing: border-box;
 
-    align-items: center;
-    justify-content: center;
-
-    min-height: 40px;
-
-    padding: 10px 17px;
-
-    border: 2px solid #1f2937;
-
-    font-family: inherit;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-}
-
-.admin-download-show-button-primary {
-    background: #1f2937;
-
-    color: #ffffff;
-}
-
-.admin-download-show-button-primary:hover {
-    color: #ffffff;
-
-    transform: translate(-3px, -3px);
-
-    box-shadow: 5px 5px 0 #facc15;
-}
-
-.admin-download-show-button-secondary {
-    background: #ffffff;
+    padding: 11px 14px;
 
     color: #1f2937;
-}
 
-.admin-download-show-button-secondary:hover {
-    color: #1f2937;
+    background: transparent;
 
-    background: #f7f7f2;
-
-    transform: translate(-2px, -2px);
-
-    box-shadow: 4px 4px 0 #1f2937;
-}
-
-
-/* =========================
-   SIDE INFORMATION
-========================= */
-
-.admin-download-show-side {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 25px;
-}
-
-
-/* =========================
-   SIDE NOTE
-========================= */
-
-.admin-download-show-note {
-    position: relative;
-
-    padding: 30px;
-
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    transform: rotate(0.6deg);
-}
-
-.admin-download-show-note-yellow {
-    background: #fef3c7;
-
-    transform: rotate(-0.7deg);
-}
-
-.admin-download-show-note-number {
-    position: absolute;
-
-    top: 15px;
-
-    right: 18px;
-
-    font-size: 12px;
-
-    font-weight: 900;
-}
-
-.admin-download-show-note h3 {
-    margin-bottom: 12px;
-
-    font-size: 22px;
-
-    line-height: 1.1;
-}
-
-.admin-download-show-note > p:not(.section-label) {
-    margin: 0;
+    border: none;
 
     font-size: 13px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================
-   DANGER ZONE
-========================= */
-
-.admin-download-show-danger {
-    padding: 30px;
-
-    background: #ffffff;
-
-    border: 3px solid #dc2626;
-
-    transform: rotate(0.4deg);
-}
-
-.admin-download-show-danger h3 {
-    margin-bottom: 12px;
-
-    color: #991b1b;
-
-    font-size: 22px;
-
-    line-height: 1.1;
-}
-
-.admin-download-show-danger > p:not(.section-label) {
-    margin-bottom: 20px;
-
-    color: #4b5563;
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-.admin-download-show-delete {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 15px;
-
-    background: #fee2e2;
-
-    border: 2px solid #dc2626;
-
-    color: #991b1b;
-
-    font-family: inherit;
-
-    font-size: 11px;
-
-    font-weight: 900;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.admin-download-show-delete:hover {
-    transform: translate(-2px, -2px);
-
-    box-shadow: 4px 4px 0 #dc2626;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1000px) {
-
-    .admin-download-show-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-download-show-side {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 768px) {
-
-    .admin-download-show-card {
-        padding: 30px;
-    }
-
-    .admin-download-show-header {
-        align-items: flex-start;
-
-        gap: 18px;
-    }
-
-    .admin-download-show-file-icon {
-        width: 55px;
-        height: 67px;
-
-        font-size: 10px;
-    }
-
-    .admin-download-show-header h1 {
-        font-size: 36px;
-    }
-
-    .admin-download-show-info {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-download-show-info-item,
-    .admin-download-show-info-item:nth-child(even) {
-        padding-left: 0;
-
-        border-left: none;
-    }
-
-    .admin-download-show-side {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .admin-download-show-card {
-        padding: 22px;
-    }
-
-    .admin-download-show-header {
-        flex-direction: column;
-    }
-
-    .admin-download-show-header h1 {
-        font-size: 32px;
-    }
-
-    .admin-download-show-actions {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .admin-download-show-button {
-        width: 100%;
-    }
-
-}
-
-/* =====================================================
-   ADMIN DOWNLOAD EDIT
-===================================================== */
-
-
-/* =========================
-   MAIN LAYOUT
-========================= */
-
-.admin-download-edit-layout {
-    display: grid;
-
-    grid-template-columns: minmax(0, 1fr) 320px;
-
-    gap: 30px;
-
-    align-items: start;
-}
-
-
-/* =========================
-   EDIT CARD
-========================= */
-
-.admin-download-edit-card {
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    box-shadow: 8px 8px 0 #1f2937;
-
-    padding: 45px;
-
-    transform: rotate(-0.15deg);
-}
-
-
-/* =========================
-   CURRENT FILE
-========================= */
-
-.admin-download-current-file {
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 18px;
-
-    background: #f7f7f2;
-
-    border: 2px solid #1f2937;
-}
-
-.admin-download-current-icon {
-    width: 45px;
-    height: 55px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    background: #facc15;
-
-    border: 2px solid #1f2937;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    transform: rotate(-3deg);
-}
-
-.admin-download-current-info {
-    min-width: 0;
-
-    flex: 1;
-}
-
-.admin-download-current-info strong {
-    display: block;
-
-    margin-bottom: 5px;
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    overflow-wrap: anywhere;
-}
-
-.admin-download-current-info span {
-    display: block;
-
-    color: #6b7280;
-
-    font-size: 11px;
 
     font-weight: 700;
-}
-
-
-/* =========================
-   CURRENT FILE OPEN
-========================= */
-
-.admin-download-current-open {
-    display: inline-block;
-
-    flex-shrink: 0;
-
-    padding: 7px 10px;
-
-    background: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    color: #1f2937;
-
-    font-size: 10px;
-
-    font-weight: 900;
 
     text-decoration: none;
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
-.admin-download-current-open:hover {
-    color: #1f2937;
+.admin-dropdown-item:hover {
+    background: #fef3c7;
 
-    background: #facc15;
-
-    transform: translate(-2px, -2px);
-
-    box-shadow: 3px 3px 0 #1f2937;
+    transform:
+        translateX(3px);
 }
 
+.admin-dropdown-item span:first-child {
+    width: 18px;
 
-/* =========================
-   REPLACE FILE
-========================= */
-
-.admin-download-replace-box {
-    position: relative;
-
-    padding: 25px;
-
-    background:
-        repeating-linear-gradient(
-            -45deg,
-            #ffffff,
-            #ffffff 12px,
-            #f3f4f6 12px,
-            #f3f4f6 14px
-        );
-
-    border: 2px dashed #1f2937;
+    font-size: 16px;
 
     text-align: center;
 }
 
 
-/* Hide native input */
+/* =========================================================
+   PROFILE RESPONSIVE
+========================================================= */
 
-.admin-download-replace-box input[type="file"] {
-    position: absolute;
+@media (max-width: 950px) {
 
-    width: 1px;
-    height: 1px;
-
-    opacity: 0;
-
-    pointer-events: none;
-}
-
-
-/* Choose file */
-
-.admin-download-replace-box .admin-file-upload-label {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 12px 18px;
-
-    background: #facc15;
-
-    border: 2px solid #1f2937;
-
-    color: #1f2937;
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.admin-download-replace-box .admin-file-upload-label:hover {
-    transform: translate(-3px, -3px);
-
-    box-shadow: 4px 4px 0 #1f2937;
-}
-
-
-/* =========================
-   FILE NAME
-========================= */
-
-.admin-download-replace-box .admin-file-name {
-    margin-top: 15px;
-
-    color: #1f2937;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    word-break: break-word;
-}
-
-
-/* =========================
-   SIDE NOTES
-========================= */
-
-.admin-download-edit-side {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 25px;
-}
-
-
-.admin-download-edit-note {
-    position: relative;
-
-    padding: 30px;
-
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    transform: rotate(0.6deg);
-}
-
-
-.admin-download-edit-note-yellow {
-    background: #fef3c7;
-
-    transform: rotate(-0.7deg);
-}
-
-
-.admin-download-edit-number {
-    position: absolute;
-
-    top: 15px;
-
-    right: 18px;
-
-    font-size: 12px;
-
-    font-weight: 900;
-}
-
-
-.admin-download-edit-note h3 {
-    margin-bottom: 12px;
-
-    font-size: 22px;
-
-    line-height: 1.1;
-}
-
-
-.admin-download-edit-note > p:not(.section-label) {
-    margin: 0;
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1000px) {
-
-    .admin-download-edit-layout {
+    .admin-profile-layout {
         grid-template-columns: 1fr;
     }
 
-    .admin-download-edit-side {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 768px) {
-
-    .admin-download-edit-card {
-        padding: 30px;
-    }
-
-    .admin-download-edit-side {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-download-current-file {
-        align-items: flex-start;
-
-        flex-wrap: wrap;
-    }
-
-    .admin-download-current-info {
-        width: calc(100% - 65px);
-    }
-
-    .admin-download-current-open {
-        margin-left: 60px;
+    .admin-profile-card {
+        transform: none;
     }
 
 }
@@ -4772,511 +539,40 @@ body {
 
 @media (max-width: 600px) {
 
-    .admin-download-edit-card {
-        padding: 25px 20px;
+    .admin-profile-form-card {
+        padding: 22px;
     }
 
-    .admin-download-current-file {
-        display: grid;
-
-        grid-template-columns: auto 1fr;
+    .admin-profile-card {
+        padding: 22px;
     }
 
-    .admin-download-current-open {
-        grid-column: 1 / -1;
-
-        width: 100%;
-
-        margin-left: 0;
-
-        box-sizing: border-box;
-
-        text-align: center;
+    .admin-profile-form-header h2 {
+        font-size: 24px;
     }
 
-}
-
-/* =========================================================
-   ADMIN DASHBOARD - CHARTS
-========================================================= */
-
-.admin-dashboard-charts {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    margin-bottom: 32px;
-}
-
-
-/* =========================================================
-   CHART CARD
-========================================================= */
-
-.admin-chart-card {
-    background: #ffffff;
-    border: 2px solid #1f2937;
-    border-radius: 4px;
-    padding: 26px;
-    position: relative;
-    box-shadow: 5px 5px 0 #1f2937;
-}
-
-.admin-chart-card-large {
-    min-height: 390px;
-}
-
-.admin-chart-card-status {
-    grid-column: span 2;
-    min-height: 360px;
-}
-
-
-/* =========================================================
-   CHART HEADER
-========================================================= */
-
-.admin-chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 24px;
-}
-
-.admin-chart-header .section-label {
-    margin-bottom: 6px;
-}
-
-.admin-chart-header h2 {
-    margin: 0;
-    font-size: 22px;
-    line-height: 1.2;
-    font-weight: 800;
-}
-
-.admin-chart-period {
-    display: inline-block;
-    padding: 7px 11px;
-    border: 1.5px solid #1f2937;
-    background: #fef3c7;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-    transform: rotate(1deg);
-}
-
-
-/* =========================================================
-   CHART WRAPPER
-========================================================= */
-
-.admin-chart-wrapper {
-    position: relative;
-    width: 100%;
-    height: 275px;
-}
-
-
-/* =========================================================
-   PROJECT STATUS
-========================================================= */
-
-.admin-project-status-chart {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 40px;
-    min-height: 260px;
-}
-
-.admin-project-status-chart-wrapper {
-    position: relative;
-    width: 100%;
-    height: 260px;
-}
-
-
-/* =========================================================
-   PROJECT STATUS LEGEND
-========================================================= */
-
-.admin-project-status-legend {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.admin-project-status-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.admin-project-status-dot {
-    width: 16px;
-    height: 16px;
-    border: 2px solid #1f2937;
-    flex-shrink: 0;
-}
-
-.admin-project-status-dot.planning {
-    background: #facc15;
-}
-
-.admin-project-status-dot.ongoing {
-    background: #3b82f6;
-}
-
-.admin-project-status-dot.completed {
-    background: #22c55e;
-}
-
-.admin-project-status-item div {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.admin-project-status-item strong {
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.admin-project-status-item span:not(.admin-project-status-dot) {
-    font-size: 13px;
-    color: #6b7280;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .admin-dashboard-charts {
-        grid-template-columns: 1fr;
+    .admin-profile-section-title h3 {
+        font-size: 17px;
     }
 
-    .admin-chart-card-status {
-        grid-column: span 1;
-    }
 
-}
+    /* PROFILE BUTTONS */
 
+    .admin-profile-actions {
+        flex-direction: column-reverse;
 
-@media (max-width: 700px) {
+        align-items: stretch;
 
-    .admin-chart-card {
-        padding: 20px;
-        box-shadow: 4px 4px 0 #1f2937;
-    }
-
-    .admin-chart-header {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .admin-chart-header h2 {
-        font-size: 19px;
-    }
-
-    .admin-chart-wrapper {
-        height: 230px;
-    }
-
-    .admin-project-status-chart {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .admin-project-status-chart-wrapper {
-        height: 230px;
-    }
-
-}
-
-/* =========================================================
-   ADMIN DASHBOARD - CHARTS
-========================================================= */
-
-.admin-dashboard-charts {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    margin-bottom: 32px;
-}
-
-
-/* =========================================================
-   CHART CARD
-========================================================= */
-
-.admin-chart-card {
-    background: #ffffff;
-    border: 2px solid #1f2937;
-    border-radius: 4px;
-    padding: 26px;
-    position: relative;
-    box-shadow: 5px 5px 0 #1f2937;
-}
-
-.admin-chart-card-large {
-    min-height: 390px;
-}
-
-.admin-chart-card-status {
-    grid-column: span 2;
-    min-height: 360px;
-}
-
-
-/* =========================================================
-   CHART HEADER
-========================================================= */
-
-.admin-chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 24px;
-}
-
-.admin-chart-header .section-label {
-    margin-bottom: 6px;
-}
-
-.admin-chart-header h2 {
-    margin: 0;
-    font-size: 22px;
-    line-height: 1.2;
-    font-weight: 800;
-}
-
-.admin-chart-period {
-    display: inline-block;
-    padding: 7px 11px;
-    border: 1.5px solid #1f2937;
-    background: #fef3c7;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-    transform: rotate(1deg);
-}
-
-
-/* =========================================================
-   CHART WRAPPER
-========================================================= */
-
-.admin-chart-wrapper {
-    position: relative;
-    width: 100%;
-    height: 275px;
-}
-
-
-/* =========================================================
-   PROJECT STATUS
-========================================================= */
-
-.admin-project-status-chart {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 40px;
-    min-height: 260px;
-}
-
-.admin-project-status-chart-wrapper {
-    position: relative;
-    width: 100%;
-    height: 260px;
-}
-
-
-/* =========================================================
-   PROJECT STATUS LEGEND
-========================================================= */
-
-.admin-project-status-legend {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.admin-project-status-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.admin-project-status-dot {
-    width: 16px;
-    height: 16px;
-    border: 2px solid #1f2937;
-    flex-shrink: 0;
-}
-
-.admin-project-status-dot.planning {
-    background: #facc15;
-}
-
-.admin-project-status-dot.ongoing {
-    background: #3b82f6;
-}
-
-.admin-project-status-dot.completed {
-    background: #22c55e;
-}
-
-.admin-project-status-item div {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.admin-project-status-item strong {
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.admin-project-status-item span:not(.admin-project-status-dot) {
-    font-size: 13px;
-    color: #6b7280;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .admin-dashboard-charts {
-        grid-template-columns: 1fr;
-    }
-
-    .admin-chart-card-status {
-        grid-column: span 1;
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    .admin-chart-card {
-        padding: 20px;
-        box-shadow: 4px 4px 0 #1f2937;
-    }
-
-    .admin-chart-header {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .admin-chart-header h2 {
-        font-size: 19px;
-    }
-
-    .admin-chart-wrapper {
-        height: 230px;
-    }
-
-    .admin-project-status-chart {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .admin-project-status-chart-wrapper {
-        height: 230px;
-    }
-
-}
-
-/* =========================================================
-   ADMIN SETTINGS
-========================================================= */
-
-.admin-settings-form {
-    width: 100%;
-}
-
-.admin-settings-section {
-    margin-bottom: 34px;
-}
-
-.admin-settings-section .admin-section-header {
-    margin-bottom: 18px;
-}
-
-.admin-settings-section .admin-section-header p:not(.section-label) {
-    max-width: 720px;
-    margin-top: 8px;
-    color: #6b7280;
-    line-height: 1.6;
-}
-
-.admin-settings-card {
-    background: #ffffff;
-    border: 2px solid #1f2937;
-    border-radius: 4px;
-    padding: 28px;
-    box-shadow: 5px 5px 0 #1f2937;
-}
-
-.admin-settings-card + .admin-settings-card {
-    margin-top: 20px;
-}
-
-.admin-settings-card .admin-form-group {
-    margin-bottom: 22px;
-}
-
-.admin-settings-card .admin-form-group:last-child {
-    margin-bottom: 0;
-}
-
-.admin-settings-actions {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 0 40px;
-}
-
-.admin-settings-actions .admin-btn {
-    min-width: 190px;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 700px) {
-
-    .admin-settings-card {
-        padding: 20px;
-        box-shadow: 4px 4px 0 #1f2937;
-    }
-
-    .admin-settings-actions {
         justify-content: stretch;
     }
 
-    .admin-settings-actions .admin-btn {
+    .admin-profile-actions .admin-button,
+    .admin-profile-actions .admin-btn {
         width: 100%;
+
+        min-height: 52px;
+
+        box-sizing: border-box;
     }
 
-}
-
-/* =========================================
-   SETTINGS FORM ROW SPACING
-========================================= */
-
-.admin-settings-card > .admin-form-row + .admin-form-row {
-    margin-top: 28px;
 }

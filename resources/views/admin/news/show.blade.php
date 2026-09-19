@@ -261,7 +261,7 @@
     <a
         href="{{ route('admin.news.index') }}"
         class="admin-secondary-button">
-        ← Back to News
+        Back to News
     </a>
 
 

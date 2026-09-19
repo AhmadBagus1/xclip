@@ -9,8 +9,9 @@
 <div class="admin-page-header">
 
     <div>
+
         <p class="section-label">
-            CONTENT MANAGEMENT
+            MANAJEMEN BERITA
         </p>
 
         <h2>
@@ -20,15 +21,20 @@
         <p>
             Manage news and articles displayed on the Xclip website.
         </p>
+
     </div>
+
 
     <div class="admin-page-header-action">
 
         <a
             href="{{ route('admin.news.create') }}"
             class="admin-primary-button">
+
             <span>+</span>
+
             Add News
+
         </a>
 
     </div>
@@ -36,22 +42,11 @@
 </div>
 
 
-{{-- SUCCESS MESSAGE --}}
-
-@if(session('success'))
-
-<div class="admin-alert admin-alert-success">
-
-    <span>✓</span>
-
-    {{ session('success') }}
-
-</div>
-
-@endif
 
 
-{{-- NEWS LIST --}}
+{{-- =====================================================
+     NEWS LIST
+===================================================== --}}
 
 <div class="admin-dashboard-section">
 
@@ -68,6 +63,7 @@
             </h2>
 
         </div>
+
 
         <span class="admin-section-count">
 
@@ -125,11 +121,16 @@
 
                 <tr>
 
-                    {{-- NEWS --}}
+                    {{-- =================================================
+                         NEWS
+                    ================================================== --}}
 
                     <td>
 
                         <div class="admin-project-cell">
+
+
+                            {{-- THUMBNAIL --}}
 
                             @if($item->thumbnail)
 
@@ -140,7 +141,8 @@
 
                             @else
 
-                            <div class="admin-project-thumbnail admin-project-thumbnail-empty">
+                            <div
+                                class="admin-project-thumbnail admin-project-thumbnail-empty">
 
                                 <span>
                                     NO IMAGE
@@ -151,11 +153,14 @@
                             @endif
 
 
+                            {{-- NEWS INFO --}}
+
                             <div class="admin-project-info">
 
                                 <strong>
                                     {{ $item->title }}
                                 </strong>
+
 
                                 @if($item->excerpt)
 
@@ -172,32 +177,42 @@
                     </td>
 
 
-                    {{-- CATEGORY --}}
+                    {{-- =================================================
+                         CATEGORY
+                    ================================================== --}}
 
                     <td>
 
                         <span class="admin-project-category">
 
                             @if($item->category === 'company')
+
                             Company
 
                             @elseif($item->category === 'project')
+
                             Project
 
                             @elseif($item->category === 'business')
+
                             Business
 
                             @elseif($item->category === 'industry')
+
                             Industry
 
                             @elseif($item->category === 'event')
+
                             Event
 
                             @elseif($item->category === 'announcement')
+
                             Announcement
 
                             @else
+
                             {{ ucfirst($item->category) }}
+
                             @endif
 
                         </span>
@@ -205,7 +220,9 @@
                     </td>
 
 
-                    {{-- AUTHOR --}}
+                    {{-- =================================================
+                         AUTHOR
+                    ================================================== --}}
 
                     <td>
 
@@ -214,7 +231,9 @@
                     </td>
 
 
-                    {{-- DATE --}}
+                    {{-- =================================================
+                         DATE
+                    ================================================== --}}
 
                     <td>
 
@@ -233,11 +252,16 @@
                     </td>
 
 
-                    {{-- VISIBILITY --}}
+                    {{-- =================================================
+                         VISIBILITY
+                    ================================================== --}}
 
                     <td>
 
                         <div class="admin-project-visibility">
+
+
+                            {{-- ACTIVE / HIDDEN --}}
 
                             @if($item->is_active)
 
@@ -254,6 +278,8 @@
                             @endif
 
 
+                            {{-- FEATURED --}}
+
                             @if($item->is_featured)
 
                             <span class="admin-featured-badge">
@@ -267,30 +293,43 @@
                     </td>
 
 
-                    {{-- ACTION --}}
+                    {{-- =================================================
+                         ACTION
+                    ================================================== --}}
 
                     <td>
 
                         <div class="admin-table-actions">
 
+
+                            {{-- VIEW --}}
+
                             <a
                                 href="{{ route('admin.news.show', $item) }}"
                                 class="admin-action-link">
+
                                 View
+
                             </a>
 
+
+                            {{-- EDIT --}}
 
                             <a
                                 href="{{ route('admin.news.edit', $item) }}"
                                 class="admin-action-link">
+
                                 Edit
+
                             </a>
 
 
+                            {{-- DELETE --}}
+
                             <form
-                                action="{{ route('admin.news.destroy', $item) }}"
                                 method="POST"
-                                onsubmit="return confirm('Yakin ingin menghapus news ini? Data news dan thumbnail-nya akan dihapus secara permanen.')">
+                                action="{{ route('admin.news.destroy', $item) }}"
+                                class="swal-delete-form">
 
                                 @csrf
 
@@ -298,11 +337,14 @@
 
                                 <button
                                     type="submit"
-                                    class="admin-action-link admin-action-delete">
-                                    Delete
+                                    class="admin-action-delete">
+
+                                    Hapus
+
                                 </button>
 
                             </form>
+
 
                         </div>
 
@@ -322,7 +364,9 @@
     @else
 
 
-    {{-- EMPTY STATE --}}
+    {{-- =====================================================
+         EMPTY STATE
+    ====================================================== --}}
 
     <div class="admin-empty-state">
 
@@ -330,13 +374,16 @@
             +
         </div>
 
+
         <h3>
             No News Yet.
         </h3>
 
+
         <p>
             You haven't added any news articles to your website.
         </p>
+
 
         <a
             href="{{ route('admin.news.create') }}"

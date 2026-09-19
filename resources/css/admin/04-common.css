@@ -1,0 +1,638 @@
+/* =========================================================
+   XCLIP ADMIN - COMMON
+   resources/css/admin/04-common.css
+========================================================= */
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.admin-alert {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 2px solid #1f2937;
+    box-shadow: 4px 4px 0 #1f2937;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.admin-alert-success {
+    background: #dff7df;
+}
+
+
+/* =========================================================
+   DETAIL CARD
+========================================================= */
+
+.admin-detail-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 27px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 3px solid #1f2937;
+    box-shadow: 6px 6px 0 #1f2937;
+}
+
+
+/* =========================================================
+   DETAIL HEADER
+========================================================= */
+
+.admin-detail-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 22px;
+    border-bottom: 3px dashed #1f2937;
+}
+
+.admin-detail-header h3 {
+    margin: 6px 0 0;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.admin-detail-header small {
+    color: #64748b;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   DETAIL LABEL
+========================================================= */
+
+.admin-detail-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.admin-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.admin-detail-item {
+    min-width: 0;
+    padding: 14px;
+    box-sizing: border-box;
+    background: #f9fafb;
+    border: 2px solid #1f2937;
+    overflow-wrap: anywhere;
+}
+
+.admin-detail-item strong {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.admin-detail-item a {
+    color: #1f2937;
+    font-weight: 800;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.admin-message {
+    padding: 18px;
+    margin-bottom: 22px;
+    box-sizing: border-box;
+    background: #f7f7f2;
+    border: 2px solid #1f2937;
+}
+
+.admin-message > span {
+    display: block;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #64748b;
+}
+
+.admin-message p {
+    margin: 10px 0 0;
+    font-size: 12px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+
+/* =========================================================
+   MESSAGE CONTENT
+========================================================= */
+
+.admin-message-content {
+    min-height: 150px;
+    padding: 16px;
+    box-sizing: border-box;
+    background: #fffdf0;
+    border: 2px solid #1f2937;
+    white-space: pre-line;
+    line-height: 1.8;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.admin-detail-section {
+    padding: 20px 0;
+    border-bottom: 2px dashed #d1d5db;
+}
+
+.admin-detail-section:last-of-type {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   DETAIL SECTION TITLE
+========================================================= */
+
+.admin-detail-section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.admin-detail-section-title span {
+    width: 27px;
+    height: 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: #facc15;
+    border: 2px solid #1f2937;
+    font-size: 10px;
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================================
+   DETAIL ACTIONS
+========================================================= */
+
+.admin-detail-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding-top: 20px;
+}
+
+.admin-detail-actions form {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 100%;
+}
+
+.admin-detail-actions select {
+    max-width: 100%;
+    padding: 8px 10px;
+    background: #fff;
+    border: 2px solid #1f2937;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   GENERAL ADMIN BUTTON
+========================================================= */
+
+.admin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 14px;
+    box-sizing: border-box;
+    border: 2px solid #1f2937;
+    background: #fff;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #1f2937;
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+}
+
+.admin-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #1f2937;
+}
+
+
+/* =========================================================
+   BUTTON COLORS
+========================================================= */
+
+.admin-btn-primary {
+    background: #a7f3a0;
+}
+
+.admin-btn-secondary {
+    background: #fff;
+}
+
+.admin-btn-danger {
+    background: #ff9b9b;
+}
+
+
+/* =========================================================
+   OLD ACTION BUTTON
+========================================================= */
+
+.admin-action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 9px 14px;
+    box-sizing: border-box;
+    border: 2px solid #1f2937;
+    background: #1f2937;
+    color: #fff;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #1f2937;
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+}
+
+.admin-action-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #1f2937;
+}
+
+
+/* =========================================================
+   DETAIL DELETE BUTTON
+========================================================= */
+
+.admin-delete-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 74px;
+    height: 40px;
+
+    min-width: 74px;
+    min-height: 40px;
+
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    background: #dc2626;
+    color: #fff;
+
+    border: 3px solid #1f2937;
+    box-shadow: 4px 4px 0 #1f2937;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+}
+
+.admin-delete-button:hover {
+    background: #b91c1c;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #1f2937;
+}
+
+.admin-delete-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   TABLE ACTIONS
+   VIEW / EDIT / HAPUS
+========================================================= */
+
+.admin-table-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    flex-wrap: nowrap;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FORM HAPUS
+   Sama ukuran dengan tombol View dan Edit
+========================================================= */
+
+.admin-table-actions form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 27px;
+
+    min-width: 42px;
+
+    margin: 0;
+    padding: 0;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TOMBOL VIEW / EDIT / HAPUS
+========================================================= */
+
+.admin-table-actions .admin-action-link,
+.admin-table-actions .admin-action-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 27px;
+
+    min-width: 42px;
+    max-width: 42px;
+
+    min-height: 27px;
+    max-height: 27px;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    border: 2px solid #1f2937;
+
+    background: #fff;
+    color: #1f2937;
+
+    font-family: inherit;
+    font-size: 8px;
+    font-weight: 900;
+
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    box-shadow: 2px 2px 0 #1f2937;
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+}
+
+
+/* =========================================================
+   HAPUS
+========================================================= */
+
+.admin-table-actions .admin-action-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 27px;
+
+    min-width: 42px;
+    max-width: 42px;
+
+    min-height: 27px;
+    max-height: 27px;
+
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    background: #fff;
+    color: #dc2626;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   VIEW / EDIT HOVER
+========================================================= */
+
+.admin-table-actions .admin-action-link:hover {
+    background: #f3f4f6;
+
+    transform: translate(2px, 2px);
+
+    box-shadow: 0 0 0 #1f2937;
+}
+
+
+/* =========================================================
+   HAPUS HOVER
+========================================================= */
+
+.admin-table-actions .admin-action-delete:hover {
+    background: #fee2e2;
+
+    transform: translate(2px, 2px);
+
+    box-shadow: 0 0 0 #1f2937;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.admin-table-actions .admin-action-link:active,
+.admin-table-actions .admin-action-delete:active {
+    transform: translate(2px, 2px);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   ACTION COLUMN
+========================================================= */
+
+.admin-table th:last-child,
+.admin-table td:last-child {
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RFQ / MESSAGE HEADER ACTIONS
+========================================================= */
+
+.rfq-header-actions,
+.message-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .admin-detail-actions {
+        gap: 8px;
+    }
+
+
+    .rfq-header-actions,
+    .message-header-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+
+    .admin-delete-button {
+        width: 74px;
+        height: 38px;
+
+        min-width: 74px;
+        min-height: 38px;
+    }
+
+
+    .admin-action-button {
+        min-height: 38px;
+        padding: 8px 12px;
+    }
+
+
+    /* TABLE ACTIONS MOBILE */
+
+    .admin-table-actions {
+        justify-content: center;
+        gap: 4px;
+    }
+
+
+    .admin-table-actions form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 26px;
+
+        min-width: 40px;
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .admin-table-actions .admin-action-link,
+    .admin-table-actions .admin-action-delete {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 26px;
+
+        min-width: 40px;
+        max-width: 40px;
+
+        min-height: 26px;
+        max-height: 26px;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: 7px;
+    }
+}

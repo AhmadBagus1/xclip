@@ -787,7 +787,7 @@
             type="submit"
             class="admin-btn admin-btn-primary">
 
-            Save Settings →
+            Save Settings
 
         </button>
 

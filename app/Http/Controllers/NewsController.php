@@ -14,13 +14,17 @@ class NewsController extends Controller
             ->latest('published_at')
             ->get();
 
-        $featured = $news
+        $featuredNews = $news
             ->where('is_featured', true)
-            ->first();
+            ->values();
+
+        $latestNews = $news
+            ->where('is_featured', false)
+            ->values();
 
         return view('public.news.news', compact(
-            'news',
-            'featured'
+            'featuredNews',
+            'latestNews'
         ));
     }
 

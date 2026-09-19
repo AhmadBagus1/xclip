@@ -591,17 +591,11 @@
                         Planning
                     </span>
 
-                    <span>
-                        →
-                    </span>
 
                     <span>
                         Project
                     </span>
 
-                    <span>
-                        →
-                    </span>
 
                     <span>
                         Support

@@ -1,93 +1,227 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="id">
 
-@section('title', 'Admin Login - Xclip')
+<head>
 
-@section('content')
+    <meta charset="UTF-8">
 
-<section class="admin-login">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <div class="container">
+    <title>
+        Admin Login - Xclip
+    </title>
 
-        <div class="admin-login-box">
+    @vite([
+    'resources/css/app.css',
+    'resources/css/admin/admin.css'
+    ])
 
-            <div class="admin-login-header">
+</head>
 
-                <p class="section-label">
-                    XCLIP ADMIN
-                </p>
 
-                <h1>
-                    Admin
-                    <span>Login.</span>
-                </h1>
+<body class="admin-login-body">
 
-                <p>
-                    Login untuk mengakses dashboard
-                    administrasi Xclip.
-                </p>
+    <main class="admin-login-page">
+
+        <div class="admin-login-container">
+
+
+            {{-- =====================================================
+                 LOGIN BRAND
+            ====================================================== --}}
+
+            <div class="admin-login-brand">
+
+                <div class="admin-login-brand-mark">
+                    X
+                </div>
+
+                <div>
+
+                    <strong>
+                        XCLIP ADMIN
+                    </strong>
+
+                    <span>
+                        CONTROL PANEL
+                    </span>
+
+                </div>
 
             </div>
 
-            {{-- ERROR --}}
 
-            @if ($errors->any())
+            {{-- =====================================================
+                 LOGIN CARD
+            ====================================================== --}}
 
-            <div class="admin-login-error">
+            <div class="admin-login-card">
 
-                @foreach ($errors->all() as $error)
 
-                <p>
-                    {{ $error }}
-                </p>
+                {{-- HEADER --}}
 
-                @endforeach
+                <div class="admin-login-header">
 
-            </div>
+                    <p class="section-label">
+                        ADMIN ACCESS
+                    </p>
 
-            @endif
+                    <h1>
+                        Welcome
+                        <span>Back.</span>
+                    </h1>
 
-            {{-- LOGIN FORM --}}
+                    <p>
+                        Login untuk mengakses
+                        dashboard administrasi Xclip.
+                    </p>
 
-            <form action="{{ route('admin.login.submit') }}" method="POST">
-                @csrf
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="admin@xclip.com"
-                        value="{{ old('email') }}"
-                        required>
                 </div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
 
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Password"
-                        required>
-                </div>
+                {{-- =================================================
+                     ERROR
+                ================================================== --}}
 
                 @if ($errors->any())
-                <div class="login-error">
-                    {{ $errors->first() }}
+
+                <div class="admin-login-error">
+
+                    <div class="admin-login-error-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        @foreach ($errors->all() as $error)
+
+                        <p>
+                            {{ $error }}
+                        </p>
+
+                        @endforeach
+
+                    </div>
+
                 </div>
+
                 @endif
 
-                <button type="submit" class="login-submit">
-                    Login →
-                </button>
-            </form>
+
+                {{-- =================================================
+                     LOGIN FORM
+                ================================================== --}}
+
+                <form
+                    action="{{ route('admin.login.submit') }}"
+                    method="POST"
+                    class="admin-login-form">
+
+                    @csrf
+
+
+                    {{-- EMAIL --}}
+
+                    <div class="admin-login-form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value="{{ old('email') }}"
+                            placeholder="admin@xclip.com"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    {{-- PASSWORD --}}
+
+                    <div class="admin-login-form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+
+                    </div>
+
+
+                    {{-- SUBMIT --}}
+
+                    <button
+                        type="submit"
+                        class="admin-login-submit">
+
+                        <span>
+                            Login
+                        </span>
+
+                        <span>
+
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                {{-- =================================================
+                     FOOTER CARD
+                ================================================== --}}
+
+                <div class="admin-login-card-footer">
+
+                    <span>
+                        XCLIP
+                    </span>
+
+                    <span>
+                        SECURE ADMIN AREA
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            {{-- =====================================================
+                 PAGE FOOTER
+            ====================================================== --}}
+
+            <div class="admin-login-page-footer">
+
+                <span>
+                    © {{ date('Y') }} Xclip
+                </span>
+
+                <span>
+                    Administrator Access
+                </span>
+
+            </div>
+
         </div>
 
-    </div>
+    </main>
 
-</section>
 
-@endsection
+    @vite('resources/js/app.js')
+
+</body>
+
+</html>

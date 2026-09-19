@@ -176,7 +176,6 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        // Hapus thumbnail
         if (
             $project->thumbnail &&
             Storage::disk('public')->exists($project->thumbnail)
@@ -188,6 +187,9 @@ class ProjectController extends Controller
 
         return redirect()
             ->route('admin.projects.index')
-            ->with('success', 'Project berhasil dihapus.');
+            ->with(
+                'delete_success',
+                'Project berhasil dihapus.'
+            );
     }
 }

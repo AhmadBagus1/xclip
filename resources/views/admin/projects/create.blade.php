@@ -21,7 +21,7 @@
         <a
             href="{{ route('admin.projects.index') }}"
             class="admin-secondary-button">
-            ← Back to Projects
+            Back to Projects
         </a>
     </div>
 </div>

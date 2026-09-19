@@ -21,7 +21,7 @@
         <a
             href="{{ route('admin.projects.show', $project) }}"
             class="admin-secondary-button">
-            ← View Project
+            View Project
         </a>
     </div>
 </div>
@@ -458,7 +458,7 @@
         <button
             type="submit"
             class="admin-primary-button">
-            Save Changes →
+            Save Changes
         </button>
 
     </div>

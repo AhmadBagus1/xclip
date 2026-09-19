@@ -2,33 +2,25 @@
 
 @section('title', 'Pesan Kontak - Xclip')
 
+@section('page-title', 'Messages')
+
 @section('content')
 
 <div class="admin-page-header">
 
     <p class="admin-topbar-label">
-        MANAJEMEN KONTAK
+        PESAN KONTAK
     </p>
 
     <h2>
-        Pesan Kontak.
+        Pesan Masuk.
     </h2>
 
     <p>
-        Kelola pesan dan pertanyaan yang dikirim
-        melalui formulir kontak website Xclip.
+        Kelola pesan yang dikirim melalui halaman kontak website Xclip.
     </p>
 
 </div>
-
-
-@if(session('success'))
-
-<div class="admin-alert">
-    {{ session('success') }}
-</div>
-
-@endif
 
 
 <div class="admin-dashboard-section">
@@ -38,7 +30,7 @@
         <div>
 
             <h2>
-                Pesan
+                Daftar Pesan
             </h2>
 
         </div>
@@ -61,23 +53,13 @@
             <thead>
 
                 <tr>
-
                     <th>#</th>
-
                     <th>NAMA</th>
-
                     <th>EMAIL</th>
-
-                    <th>TELEPON</th>
-
                     <th>SUBJEK</th>
-
                     <th>STATUS</th>
-
                     <th>TANGGAL</th>
-
                     <th>AKSI</th>
-
                 </tr>
 
             </thead>
@@ -89,47 +71,57 @@
 
                 <tr>
 
+                    {{-- NOMOR --}}
                     <td>
                         {{ $loop->iteration }}
                     </td>
 
 
+                    {{-- NAMA --}}
                     <td>
 
                         <strong>
                             {{ $message->name ?? '-' }}
                         </strong>
 
+                        @if($message->phone)
+
+                        <br>
+
+                        <small>
+                            {{ $message->phone }}
+                        </small>
+
+                        @endif
+
                     </td>
 
 
+                    {{-- EMAIL --}}
                     <td>
                         {{ $message->email ?? '-' }}
                     </td>
 
 
-                    <td>
-                        {{ $message->phone ?? '-' }}
-                    </td>
-
-
+                    {{-- SUBJECT --}}
                     <td>
                         {{ $message->subject ?? '-' }}
                     </td>
 
 
+                    {{-- STATUS --}}
                     <td>
 
-                        @if($message->status === 'new')
+                        @if($message->status === 'read')
 
-                        <span class="admin-status admin-status-new">
-                            NEW
+                        <span class="admin-status admin-status-read">
+                            READ
                         </span>
 
                         @else
 
-                        <span class="admin-status admin-status-read">
-                            READ
+                        <span class="admin-status admin-status-new">
+                            NEW
                         </span>
 
                         @endif
@@ -137,18 +129,20 @@
                     </td>
 
 
+                    {{-- TANGGAL --}}
                     <td>
-                        {{ $message->created_at->format('d M Y') }}
+                        {{ $message->created_at?->format('d M Y') ?? '-' }}
                     </td>
 
 
+                    {{-- AKSI --}}
                     <td>
 
                         <a
                             href="{{ route('admin.messages.show', $message) }}"
                             class="admin-view-link">
 
-                            Lihat →
+                            Lihat
 
                         </a>
 
@@ -161,7 +155,7 @@
 
                 <tr>
 
-                    <td colspan="8">
+                    <td colspan="7">
 
                         <div class="admin-empty">
 

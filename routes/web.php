@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DownloadController as AdminDownloadController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\RfqController;
 use App\Http\Controllers\Admin\SettingController;
@@ -156,6 +157,19 @@ Route::middleware('auth')
 
         Route::get('/dashboard', [DashboardController::class, 'index'])
             ->name('admin.dashboard');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | PROFILE
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get('/profile', [ProfileController::class, 'index'])
+            ->name('admin.profile.index');
+
+        Route::put('/profile', [ProfileController::class, 'update'])
+            ->name('admin.profile.update');
 
 
         /*

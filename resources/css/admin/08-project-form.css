@@ -1,0 +1,397 @@
+/* =========================================================
+   PROJECT FORM
+   ========================================================= */
+
+.admin-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+
+    border: 2px solid #1f2937;
+
+    background: #fff;
+    color: #1f2937;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+
+    text-decoration: none;
+
+    box-shadow: 3px 3px 0 #1f2937;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.admin-secondary-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #1f2937;
+}
+
+
+/* ERROR */
+
+.admin-alert-error {
+    background: #fecaca;
+}
+
+.admin-alert-error strong {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.admin-alert-error ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.admin-alert-error li {
+    margin-bottom: 3px;
+}
+
+
+/* FORM */
+
+.admin-project-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+.admin-form-card {
+    padding: 28px;
+
+    border: 2px solid #1f2937;
+
+    background: #fff;
+
+    box-shadow: 5px 5px 0 #1f2937;
+}
+
+
+.admin-form-card-header {
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+
+    border-bottom: 2px dashed #9ca3af;
+}
+
+.admin-form-card-header h2 {
+    margin: 4px 0 6px;
+
+    font-size: 24px;
+    line-height: 1.15;
+}
+
+.admin-form-card-header p:not(.section-label) {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.6;
+    color: #6b7280;
+}
+
+
+.admin-form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 17px;
+}
+
+
+.admin-form-full {
+    grid-column: 1 / -1;
+}
+
+
+.admin-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.admin-form-group label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.admin-form-group label span {
+    color: #dc2626;
+}
+
+
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    border: 2px solid #1f2937;
+
+    background: #fff;
+    color: #1f2937;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    outline: none;
+
+    border-radius: 0;
+
+    transition:
+        box-shadow 0.15s ease,
+        transform 0.15s ease;
+}
+
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
+    box-shadow: 3px 3px 0 #facc15;
+    transform: translate(-1px, -1px);
+}
+
+
+.admin-form-group input::placeholder,
+.admin-form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+.admin-form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+
+/* UPLOAD */
+
+.admin-upload-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.admin-upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 180px;
+
+    padding: 25px;
+
+    border: 2px dashed #1f2937;
+
+    background: #f9fafb;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.admin-upload-box:hover {
+    background: #fef3c7;
+    transform: rotate(-0.5deg);
+}
+
+
+.admin-upload-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 12px;
+
+    border: 2px solid #1f2937;
+
+    background: #facc15;
+
+    font-size: 27px;
+    font-weight: 800;
+
+    transform: rotate(-4deg);
+}
+
+
+.admin-upload-box strong {
+    margin-bottom: 5px;
+
+    font-size: 14px;
+}
+
+
+.admin-upload-box span {
+    font-size: 10px;
+    color: #6b7280;
+}
+
+
+.admin-upload-input {
+    display: none;
+}
+
+
+.admin-image-preview {
+    display: none;
+
+    width: 100%;
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    border: 2px solid #1f2937;
+}
+
+.admin-image-preview img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* CHECKBOX */
+
+.admin-checkbox-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+.admin-checkbox-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 15px;
+
+    border: 2px solid #1f2937;
+
+    background: #f9fafb;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.admin-checkbox-card:hover {
+    background: #fef3c7;
+    transform: rotate(-0.5deg);
+}
+
+
+.admin-checkbox-card input {
+    width: 17px;
+    height: 17px;
+
+    margin-top: 2px;
+
+    accent-color: #1f2937;
+
+    cursor: pointer;
+}
+
+
+.admin-checkbox-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.admin-checkbox-content strong {
+    font-size: 12px;
+}
+
+
+.admin-checkbox-content small {
+    font-size: 10px;
+    line-height: 1.5;
+    color: #6b7280;
+}
+
+
+/* ACTIONS */
+
+.admin-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    padding-top: 5px;
+}
+@media (max-width: 900px) {
+
+    .admin-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .admin-page-header-action {
+        justify-content: flex-start;
+    }
+
+    .admin-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form-full {
+        grid-column: auto;
+    }
+
+    .admin-checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-form-card {
+        padding: 20px;
+    }
+
+    .admin-form-card-header h2 {
+        font-size: 21px;
+    }
+
+    .admin-form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .admin-form-actions a,
+    .admin-form-actions button {
+        width: 100%;
+    }
+
+}

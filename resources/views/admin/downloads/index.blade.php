@@ -2,27 +2,30 @@
 
 @section('title', 'Downloads - Xclip Admin')
 
+@section('page-title', 'Downloads')
+
 @section('content')
 
 <div class="admin-page-header">
 
     <div>
-        <p class="section-label">XCLIP ADMIN PANEL</p>
-
-        <h2>Downloads.</h2>
+        <h2>
+            Downloads.
+        </h2>
 
         <p>
             Manage company documents, brochures,
             portfolios, and other downloadable files.
         </p>
+
     </div>
+
 
     <div class="admin-page-header-action">
 
-        <a
-            href="{{ route('admin.downloads.create') }}"
-            class="admin-button">
-            + Add Download
+        <a href="{{ route('admin.downloads.create') }}" class="admin-primary-button">
+            <span>+</span>
+            Add Download
         </a>
 
     </div>
@@ -30,31 +33,35 @@
 </div>
 
 
-{{-- SUCCESS MESSAGE --}}
-
-@if(session('success'))
-
-<div class="admin-alert admin-alert-success">
-    {{ session('success') }}
-</div>
-
-@endif
 
 
-{{-- DOWNLOADS TABLE --}}
+{{-- =====================================================
+     DOWNLOADS TABLE
+===================================================== --}}
 
 <div class="admin-dashboard-section">
 
     <div class="admin-section-header">
 
         <div>
-            <p class="section-label">DOCUMENTS</p>
 
-            <h2>Available Downloads</h2>
+            <p class="section-label">
+                DOCUMENTS
+            </p>
+
+            <h2>
+                Available Downloads
+            </h2>
+
         </div>
 
+
         <span class="admin-section-count">
-            {{ $downloads->count() }} File
+
+            {{ $downloads->count() }}
+
+            File{{ $downloads->count() !== 1 ? 's' : '' }}
+
         </span>
 
     </div>
@@ -70,19 +77,33 @@
 
                 <tr>
 
-                    <th>#</th>
+                    <th>
+                        #
+                    </th>
 
-                    <th>Document</th>
+                    <th>
+                        Document
+                    </th>
 
-                    <th>Category</th>
+                    <th>
+                        Category
+                    </th>
 
-                    <th>File Size</th>
+                    <th>
+                        File Size
+                    </th>
 
-                    <th>Status</th>
+                    <th>
+                        Status
+                    </th>
 
-                    <th>Date</th>
+                    <th>
+                        Date
+                    </th>
 
-                    <th>Action</th>
+                    <th>
+                        Action
+                    </th>
 
                 </tr>
 
@@ -95,33 +116,47 @@
 
                 <tr>
 
-                    {{-- NUMBER --}}
+                    {{-- =================================================
+                         NUMBER
+                    ================================================= --}}
 
                     <td>
+
                         {{ $loop->iteration }}
+
                     </td>
 
 
-                    {{-- DOCUMENT --}}
+                    {{-- =================================================
+                         DOCUMENT
+                    ================================================= --}}
 
                     <td>
 
                         <div class="admin-download-document">
 
                             <div class="admin-download-icon">
+
                                 FILE
+
                             </div>
+
 
                             <div>
 
                                 <strong>
+
                                     {{ $download->title }}
+
                                 </strong>
+
 
                                 @if($download->file_name)
 
                                 <span>
+
                                     {{ $download->file_name }}
+
                                 </span>
 
                                 @endif
@@ -133,7 +168,9 @@
                     </td>
 
 
-                    {{-- CATEGORY --}}
+                    {{-- =================================================
+                         CATEGORY
+                    ================================================= --}}
 
                     <td>
 
@@ -142,30 +179,49 @@
                             @switch($download->category)
 
                             @case('company')
+
                             Company
+
                             @break
+
 
                             @case('brochure')
+
                             Brochure
+
                             @break
+
 
                             @case('portfolio')
+
                             Portfolio
+
                             @break
+
 
                             @case('services')
+
                             Services
+
                             @break
+
 
                             @case('document')
+
                             Document
+
                             @break
+
 
                             @case('other')
+
                             Other
+
                             @break
 
+
                             @default
+
                             {{ ucfirst($download->category) }}
 
                             @endswitch
@@ -175,7 +231,9 @@
                     </td>
 
 
-                    {{-- FILE SIZE --}}
+                    {{-- =================================================
+                         FILE SIZE
+                    ================================================= --}}
 
                     <td>
 
@@ -225,20 +283,26 @@
                     </td>
 
 
-                    {{-- STATUS --}}
+                    {{-- =================================================
+                         STATUS
+                    ================================================= --}}
 
                     <td>
 
                         @if($download->is_active)
 
                         <span class="admin-status admin-status-active">
+
                             ACTIVE
+
                         </span>
 
                         @else
 
                         <span class="admin-status admin-status-inactive">
+
                             INACTIVE
+
                         </span>
 
                         @endif
@@ -246,7 +310,9 @@
                     </td>
 
 
-                    {{-- DATE --}}
+                    {{-- =================================================
+                         DATE
+                    ================================================= --}}
 
                     <td>
 
@@ -255,28 +321,42 @@
                     </td>
 
 
-                    {{-- ACTION --}}
+                    {{-- =================================================
+                         ACTION
+                    ================================================= --}}
 
                     <td>
 
                         <div class="admin-table-actions">
 
+                            {{-- VIEW --}}
+
                             <a
                                 href="{{ route('admin.downloads.show', $download) }}"
                                 class="admin-action-link">
-                                Lihat
+
+                                View
+
                             </a>
+
+
+                            {{-- EDIT --}}
 
                             <a
                                 href="{{ route('admin.downloads.edit', $download) }}"
                                 class="admin-action-link">
+
                                 Edit
+
                             </a>
+
+
+                            {{-- DELETE --}}
 
                             <form
                                 method="POST"
                                 action="{{ route('admin.downloads.destroy', $download) }}"
-                                onsubmit="return confirm('Yakin ingin menghapus file ini?')">
+                                class="swal-delete-form">
 
                                 @csrf
 
@@ -285,7 +365,9 @@
                                 <button
                                     type="submit"
                                     class="admin-action-delete">
+
                                     Hapus
+
                                 </button>
 
                             </form>
@@ -304,36 +386,53 @@
 
     </div>
 
+
     @else
 
-    {{-- EMPTY STATE --}}
+    {{-- =================================================
+         EMPTY STATE
+    ================================================= --}}
 
     <div class="admin-empty-state">
 
         <div class="admin-empty-number">
+
             00
+
         </div>
+
 
         <div>
 
             <p class="section-label">
+
                 NO DOCUMENTS
+
             </p>
 
+
             <h3>
+
                 No Downloads Yet.
+
             </h3>
 
+
             <p>
+
                 There are currently no downloadable
                 documents in the system.
                 Start by adding your first file.
+
             </p>
+
 
             <a
                 href="{{ route('admin.downloads.create') }}"
                 class="admin-button">
+
                 + Add First Download
+
             </a>
 
         </div>

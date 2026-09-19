@@ -2,6 +2,8 @@
 
 @section('title', 'Manajemen RFQ - Xclip')
 
+@section('page-title', 'Request a Quote')
+
 @section('content')
 
 <div class="admin-page-header">
@@ -15,20 +17,10 @@
     </h2>
 
     <p>
-        Kelola permintaan penawaran proyek yang
-        dikirim melalui website Xclip.
+        Kelola permintaan penawaran proyek yang dikirim melalui website Xclip.
     </p>
 
 </div>
-
-
-@if(session('success'))
-
-<div class="admin-alert">
-    {{ session('success') }}
-</div>
-
-@endif
 
 
 <div class="admin-dashboard-section">
@@ -36,19 +28,15 @@
     <div class="admin-section-header">
 
         <div>
-
             <h2>
                 Permintaan Penawaran
             </h2>
-
         </div>
 
         <div>
-
             <span class="admin-status">
                 {{ $rfqs->count() }} Permintaan
             </span>
-
         </div>
 
     </div>
@@ -61,23 +49,14 @@
             <thead>
 
                 <tr>
-
                     <th>#</th>
-
                     <th>PERUSAHAAN</th>
-
                     <th>KONTAK</th>
-
                     <th>PROYEK</th>
-
                     <th>LAYANAN</th>
-
                     <th>STATUS BACA</th>
-
                     <th>TANGGAL</th>
-
                     <th>AKSI</th>
-
                 </tr>
 
             </thead>
@@ -89,11 +68,13 @@
 
                 <tr>
 
+                    {{-- NOMOR --}}
                     <td>
                         {{ $loop->iteration }}
                     </td>
 
 
+                    {{-- PERUSAHAAN --}}
                     <td>
 
                         <strong>
@@ -103,12 +84,46 @@
                         <br>
 
                         <small>
+                            @switch($rfq->company_type)
+
+                            @case('company')
+                            Perusahaan
+                            @break
+
+                            @case('private-company')
+                            Perusahaan Swasta
+                            @break
+
+                            @case('government')
+                            Pemerintah
+                            @break
+
+                            @case('government-agency')
+                            Instansi Pemerintah
+                            @break
+
+                            @case('organization')
+                            Organisasi
+                            @break
+
+                            @case('individual')
+                            Individu
+                            @break
+
+                            @case('other')
+                            Lainnya
+                            @break
+
+                            @default
                             {{ $rfq->company_type ?? '-' }}
+
+                            @endswitch
                         </small>
 
                     </td>
 
 
+                    {{-- KONTAK --}}
                     <td>
 
                         <strong>
@@ -124,16 +139,46 @@
                     </td>
 
 
+                    {{-- PROYEK --}}
                     <td>
                         {{ $rfq->project_name ?? '-' }}
                     </td>
 
 
+                    {{-- LAYANAN --}}
                     <td>
+
+                        @switch($rfq->service)
+
+                        @case('construction')
+                        Konstruksi
+                        @break
+
+                        @case('trade')
+                        Perdagangan
+                        @break
+
+                        @case('industrial')
+                        Industrial
+                        @break
+
+                        @case('professional')
+                        Jasa Profesional
+                        @break
+
+                        @case('other')
+                        Lainnya
+                        @break
+
+                        @default
                         {{ $rfq->service ?? '-' }}
+
+                        @endswitch
+
                     </td>
 
 
+                    {{-- STATUS BACA --}}
                     <td>
 
                         @if($rfq->is_read)
@@ -153,20 +198,20 @@
                     </td>
 
 
+                    {{-- TANGGAL --}}
                     <td>
-
-                        {{ $rfq->created_at->format('d M Y') }}
-
+                        {{ $rfq->created_at?->format('d M Y') ?? '-' }}
                     </td>
 
 
+                    {{-- AKSI --}}
                     <td>
 
                         <a
                             href="{{ route('admin.rfq.show', $rfq) }}"
                             class="admin-view-link">
 
-                            Lihat →
+                            Lihat
 
                         </a>
 
@@ -188,8 +233,7 @@
                             </span>
 
                             <p>
-                                Belum ada permintaan penawaran
-                                yang diterima.
+                                Belum ada permintaan penawaran yang diterima.
                             </p>
 
                         </div>

@@ -231,12 +231,6 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        /*
-        |--------------------------------------------------------------------------
-        | Delete thumbnail
-        |--------------------------------------------------------------------------
-        */
-
         if (
             $news->thumbnail &&
             Storage::disk('public')->exists($news->thumbnail)
@@ -244,16 +238,13 @@ class NewsController extends Controller
             Storage::disk('public')->delete($news->thumbnail);
         }
 
-        /*
-        |--------------------------------------------------------------------------
-        | Delete news
-        |--------------------------------------------------------------------------
-        */
-
         $news->delete();
 
         return redirect()
             ->route('admin.news.index')
-            ->with('success', 'News berhasil dihapus.');
+            ->with(
+                'delete_success',
+                'News berhasil dihapus.'
+            );
     }
 }

@@ -2,6 +2,8 @@
 
 @section('title', 'Detail RFQ - Xclip')
 
+@section('page-title', 'Detail RFQ')
+
 @section('content')
 
 <div class="admin-page-header">
@@ -15,20 +17,11 @@
     </h2>
 
     <p>
-        Tinjau informasi permintaan penawaran proyek
+        Tinjau informasi lengkap permintaan penawaran proyek
         yang dikirim melalui website Xclip.
     </p>
 
 </div>
-
-
-@if(session('success'))
-
-<div class="admin-alert">
-    {{ session('success') }}
-</div>
-
-@endif
 
 
 {{-- =====================================================
@@ -47,8 +40,10 @@
 
         </div>
 
-        <div>
 
+        <div class="rfq-header-actions">
+
+            {{-- STATUS --}}
             @if($rfq->is_read)
 
             <span class="admin-status admin-status-read">
@@ -63,6 +58,27 @@
 
             @endif
 
+
+            {{-- DELETE --}}
+            <form
+                action="{{ route('admin.rfq.destroy', $rfq) }}"
+                method="POST"
+                class="swal-delete-form">
+
+                @csrf
+
+                @method('DELETE')
+
+                <button
+                    type="submit"
+                    class="admin-delete-button">
+
+                    Hapus
+
+                </button>
+
+            </form>
+
         </div>
 
     </div>
@@ -70,6 +86,7 @@
 
     <div class="rfq-admin-details">
 
+        {{-- NAMA PERUSAHAAN --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -83,6 +100,7 @@
         </div>
 
 
+        {{-- JENIS PERUSAHAAN --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -90,7 +108,42 @@
             </span>
 
             <strong>
+
+                @switch($rfq->company_type)
+
+                @case('company')
+                Perusahaan
+                @break
+
+                @case('private-company')
+                Perusahaan Swasta
+                @break
+
+                @case('government')
+                Pemerintah
+                @break
+
+                @case('government-agency')
+                Instansi Pemerintah
+                @break
+
+                @case('organization')
+                Organisasi
+                @break
+
+                @case('individual')
+                Individu
+                @break
+
+                @case('other')
+                Lainnya
+                @break
+
+                @default
                 {{ $rfq->company_type ?? '-' }}
+
+                @endswitch
+
             </strong>
 
         </div>
@@ -121,6 +174,7 @@
 
     <div class="rfq-admin-details">
 
+        {{-- NAMA --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -134,6 +188,7 @@
         </div>
 
 
+        {{-- JABATAN --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -147,6 +202,7 @@
         </div>
 
 
+        {{-- EMAIL --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -160,6 +216,7 @@
         </div>
 
 
+        {{-- TELEPON --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -198,6 +255,7 @@
 
     <div class="rfq-admin-details">
 
+        {{-- NAMA PROYEK --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -211,6 +269,7 @@
         </div>
 
 
+        {{-- LAYANAN --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -218,12 +277,40 @@
             </span>
 
             <strong>
+
+                @switch($rfq->service)
+
+                @case('construction')
+                Konstruksi
+                @break
+
+                @case('trade')
+                Perdagangan
+                @break
+
+                @case('industrial')
+                Industrial
+                @break
+
+                @case('professional')
+                Jasa Profesional
+                @break
+
+                @case('other')
+                Lainnya
+                @break
+
+                @default
                 {{ $rfq->service ?? '-' }}
+
+                @endswitch
+
             </strong>
 
         </div>
 
 
+        {{-- LOKASI --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -237,6 +324,7 @@
         </div>
 
 
+        {{-- STATUS PROYEK --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -244,12 +332,44 @@
             </span>
 
             <strong>
+
+                @switch($rfq->project_status)
+
+                @case('planning')
+                Perencanaan
+                @break
+
+                @case('tender')
+                Tender
+                @break
+
+                @case('ready')
+                Siap
+                @break
+
+                @case('ongoing')
+                Sedang Berjalan
+                @break
+
+                @case('completed')
+                Selesai
+                @break
+
+                @case('other')
+                Lainnya
+                @break
+
+                @default
                 {{ $rfq->project_status ?? '-' }}
+
+                @endswitch
+
             </strong>
 
         </div>
 
 
+        {{-- BUDGET --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -257,12 +377,44 @@
             </span>
 
             <strong>
-                {{ $rfq->budget ?? 'Belum ditentukan' }}
+
+                @switch($rfq->budget)
+
+                @case('under-100m')
+                Di bawah Rp100 Juta
+                @break
+
+                @case('100m-500m')
+                Rp100 Juta – Rp500 Juta
+                @break
+
+                @case('500m-1b')
+                Rp500 Juta – Rp1 Miliar
+                @break
+
+                @case('1b-5b')
+                Rp1 Miliar – Rp5 Miliar
+                @break
+
+                @case('above-5b')
+                Di atas Rp5 Miliar
+                @break
+
+                @case('not-decided')
+                Belum Ditentukan
+                @break
+
+                @default
+                {{ $rfq->budget ?? 'Belum Ditentukan' }}
+
+                @endswitch
+
             </strong>
 
         </div>
 
 
+        {{-- TIMELINE --}}
         <div class="rfq-detail-item">
 
             <span>
@@ -270,7 +422,34 @@
             </span>
 
             <strong>
-                {{ $rfq->timeline ?? 'Belum ditentukan' }}
+
+                @switch($rfq->timeline)
+
+                @case('less-1-month')
+                Kurang dari 1 Bulan
+                @break
+
+                @case('1-3-months')
+                1 – 3 Bulan
+                @break
+
+                @case('3-6-months')
+                3 – 6 Bulan
+                @break
+
+                @case('6-12-months')
+                6 – 12 Bulan
+                @break
+
+                @case('more-12-months')
+                Lebih dari 12 Bulan
+                @break
+
+                @default
+                {{ $rfq->timeline ?? 'Belum Ditentukan' }}
+
+                @endswitch
+
             </strong>
 
         </div>
@@ -281,7 +460,7 @@
 
 
 {{-- =====================================================
-     PROJECT DESCRIPTION
+     DESCRIPTION
 ===================================================== --}}
 
 <div class="admin-dashboard-section">
@@ -309,7 +488,7 @@
 
 
 {{-- =====================================================
-     SUPPORTING DOCUMENT
+     DOCUMENT
 ===================================================== --}}
 
 <div class="admin-dashboard-section">
@@ -350,35 +529,6 @@
 
 
 {{-- =====================================================
-     DELETE
-===================================================== --}}
-
-<div class="admin-dashboard-section">
-
-    <form
-        action="{{ route('admin.rfq.destroy', $rfq) }}"
-        method="POST"
-        onsubmit="return confirm('Apakah Anda yakin ingin menghapus RFQ ini?');">
-
-        @csrf
-
-        @method('DELETE')
-
-
-        <button
-            type="submit"
-            class="admin-view-link">
-
-            Hapus RFQ
-
-        </button>
-
-    </form>
-
-</div>
-
-
-{{-- =====================================================
      BACK
 ===================================================== --}}
 
@@ -388,7 +538,7 @@
         href="{{ route('admin.rfq.index') }}"
         class="admin-view-link">
 
-        ← Kembali ke Daftar RFQ
+        Kembali ke Daftar RFQ
 
     </a>
 

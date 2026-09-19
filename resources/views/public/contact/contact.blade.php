@@ -347,7 +347,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                         type="submit"
                         class="contact-submit">
 
-                        Send Message →
+                        Send Message
 
                     </button>
 
@@ -408,7 +408,6 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
-
             </div>
 
             @else
@@ -460,7 +459,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
             href="/rfq"
             class="contact-cta-button">
 
-            Request a Quote →
+            Request a Quote
 
         </a>
 

@@ -1,0 +1,465 @@
+/* =====================================================
+   ADMIN DOWNLOAD - CREATE FORM
+===================================================== */
+
+
+/* =========================
+   FORM WRAPPER
+========================= */
+
+.admin-form-wrapper {
+    max-width: 1000px;
+
+    background: #ffffff;
+
+    border: 3px solid #1f2937;
+
+    box-shadow: 8px 8px 0 #1f2937;
+
+    padding: 45px;
+
+    transform: rotate(-0.15deg);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.admin-form {
+    width: 100%;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.admin-form-group {
+    margin-bottom: 30px;
+}
+
+.admin-form-group > label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #1f2937;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+}
+
+.admin-form-group > label span {
+    color: #dc2626;
+}
+
+
+/* =========================
+   FORM INPUT
+========================= */
+
+.admin-form input[type="text"],
+.admin-form textarea,
+.admin-form select {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background: #f7f7f2;
+
+    border: 2px solid #1f2937;
+
+    border-radius: 0;
+
+    color: #1f2937;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.admin-form input[type="text"]:focus,
+.admin-form textarea:focus,
+.admin-form select:focus {
+    background: #ffffff;
+
+    box-shadow: 4px 4px 0 #facc15;
+}
+
+
+.admin-form textarea {
+    min-height: 150px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+.admin-form select {
+    cursor: pointer;
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.admin-form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.admin-checkbox-wrapper {
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 10px 15px;
+
+    background: #f7f7f2;
+
+    border: 2px solid #1f2937;
+}
+
+.admin-checkbox {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.admin-checkbox input {
+    width: 18px;
+    height: 18px;
+
+    accent-color: #1f2937;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HELP TEXT
+========================= */
+
+.admin-form-help {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.admin-form-error {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #dc2626;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   ALERT ERROR
+========================= */
+
+.admin-alert-error {
+    margin-bottom: 30px;
+
+    padding: 18px 20px;
+
+    background: #fee2e2;
+
+    border: 3px solid #dc2626;
+
+    color: #991b1b;
+}
+
+.admin-alert-error strong {
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+.admin-alert-error ul {
+    margin: 0;
+
+    padding-left: 20px;
+}
+
+.admin-alert-error li {
+    margin-bottom: 4px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FILE UPLOAD
+========================= */
+
+.admin-file-upload {
+    position: relative;
+
+    padding: 25px;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #ffffff,
+            #ffffff 12px,
+            #f3f4f6 12px,
+            #f3f4f6 14px
+        );
+
+    border: 2px dashed #1f2937;
+
+    text-align: center;
+}
+
+
+/* Hide native file input */
+
+.admin-file-upload input[type="file"] {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* Choose file button */
+
+.admin-file-upload-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 18px;
+
+    background: #facc15;
+
+    border: 2px solid #1f2937;
+
+    color: #1f2937;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-file-upload-label:hover {
+    transform: translate(-3px, -3px);
+
+    box-shadow: 4px 4px 0 #1f2937;
+}
+
+
+.admin-file-upload-icon {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* Selected file */
+
+.admin-file-name {
+    margin-top: 15px;
+
+    color: #1f2937;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.admin-form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-top: 20px;
+
+    border-top: 2px solid #1f2937;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.admin-form-actions .admin-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 10px 18px;
+
+    border: 2px solid #1f2937;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.admin-form-actions .admin-btn-primary {
+    background: #1f2937;
+
+    color: #ffffff;
+}
+
+.admin-form-actions .admin-btn-primary:hover {
+    color: #ffffff;
+
+    transform: translate(-3px, -3px);
+
+    box-shadow: 5px 5px 0 #facc15;
+}
+
+
+.admin-form-actions .admin-btn-secondary {
+    background: #ffffff;
+
+    color: #1f2937;
+}
+
+.admin-form-actions .admin-btn-secondary:hover {
+    color: #1f2937;
+
+    background: #f7f7f2;
+
+    transform: translate(-2px, -2px);
+
+    box-shadow: 4px 4px 0 #1f2937;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .admin-form-wrapper {
+        padding: 30px 25px;
+    }
+
+    .admin-form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .admin-form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .admin-form-actions .admin-btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .admin-form-wrapper {
+        padding: 25px 20px;
+
+        box-shadow: 5px 5px 0 #1f2937;
+    }
+
+    .admin-file-upload {
+        padding: 20px 15px;
+    }
+
+}
+

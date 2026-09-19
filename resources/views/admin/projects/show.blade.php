@@ -15,11 +15,7 @@
         </p>
     </div>
 
-    <div class="admin-page-header-action">
-        <a href="{{ route('admin.projects.edit', $project) }}" class="admin-primary-button">
-            Edit Project →
-        </a>
-    </div>
+
 </div>
 
 
@@ -241,13 +237,13 @@
             <a
                 href="{{ route('admin.projects.index') }}"
                 class="admin-secondary-button">
-                ← Back to Projects
+                Back to Projects
             </a>
 
             <a
                 href="{{ route('admin.projects.edit', $project) }}"
                 class="admin-primary-button">
-                Edit Project →
+                Edit Project
             </a>
 
         </div>

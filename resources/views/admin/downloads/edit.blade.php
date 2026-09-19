@@ -400,7 +400,7 @@
                     type="submit"
                     class="admin-btn admin-btn-primary">
 
-                    Update Download →
+                    Update Download
 
                 </button>
 

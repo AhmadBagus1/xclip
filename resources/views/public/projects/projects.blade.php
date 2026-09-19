@@ -360,7 +360,7 @@
                 <a
                     href="{{ route('projects.show', $project->slug) }}"
                     class="project-view-link">
-                    View Project →
+                    View Project
                 </a>
             </article>
 
@@ -486,7 +486,7 @@
             <a
                 href="{{ route('rfq') }}"
                 class="doodle-button">
-                Request a Quote →
+                Request a Quote
             </a>
 
         </div>

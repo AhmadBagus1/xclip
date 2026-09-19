@@ -322,7 +322,7 @@
             href="{{ route('admin.messages.index') }}"
             class="admin-view-link">
 
-            View All →
+            View All
 
         </a>
 
@@ -440,7 +440,7 @@
             href="{{ route('admin.rfq.index') }}"
             class="admin-view-link">
 
-            View All →
+            View All
 
         </a>
 

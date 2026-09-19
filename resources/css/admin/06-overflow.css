@@ -1,0 +1,60 @@
+/* =========================================================
+   EXTRA HORIZONTAL OVERFLOW PROTECTION
+========================================================= */
+
+html {
+    overflow-x: hidden;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+.admin-body,
+.admin-layout,
+.admin-main,
+.admin-content {
+    max-width: 100%;
+}
+
+/* =========================================================
+   PREVENT LAYOUT SHIFT WHEN MODAL IS OPEN
+========================================================= */
+
+html {
+    scrollbar-gutter: stable;
+}
+
+
+/* =========================================================
+   TABLE ACTIONS
+========================================================= */
+
+.admin-table-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+
+/* Pastikan form delete tidak ikut mengecil/wrap */
+
+.admin-table-actions form {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+
+/* Semua tombol action tidak boleh menyusut */
+
+.admin-table-actions .admin-action-link,
+.admin-table-actions .admin-action-delete {
+    flex-shrink: 0;
+    white-space: nowrap;
+}

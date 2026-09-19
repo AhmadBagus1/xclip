@@ -187,7 +187,7 @@
                         href="{{ route('downloads.download', $download) }}"
                         class="download-button">
 
-                        Download →
+                        Download
 
                     </a>
 

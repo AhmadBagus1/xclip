@@ -1,0 +1,81 @@
+/* =========================================================
+   ADMIN SETTINGS
+========================================================= */
+
+.admin-settings-form {
+    width: 100%;
+}
+
+.admin-settings-section {
+    margin-bottom: 34px;
+}
+
+.admin-settings-section .admin-section-header {
+    margin-bottom: 18px;
+}
+
+.admin-settings-section .admin-section-header p:not(.section-label) {
+    max-width: 720px;
+    margin-top: 8px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.admin-settings-card {
+    background: #ffffff;
+    border: 2px solid #1f2937;
+    border-radius: 4px;
+    padding: 28px;
+    box-shadow: 5px 5px 0 #1f2937;
+}
+
+.admin-settings-card + .admin-settings-card {
+    margin-top: 20px;
+}
+
+.admin-settings-card .admin-form-group {
+    margin-bottom: 22px;
+}
+
+.admin-settings-card .admin-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.admin-settings-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0 40px;
+}
+
+.admin-settings-actions .admin-btn {
+    min-width: 190px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .admin-settings-card {
+        padding: 20px;
+        box-shadow: 4px 4px 0 #1f2937;
+    }
+
+    .admin-settings-actions {
+        justify-content: stretch;
+    }
+
+    .admin-settings-actions .admin-btn {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
+   SETTINGS FORM ROW SPACING
+========================================= */
+
+.admin-settings-card > .admin-form-row + .admin-form-row {
+    margin-top: 28px;
+}
+

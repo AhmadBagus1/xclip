@@ -17,7 +17,7 @@
             <a
                 href="{{ route('news') }}"
                 class="news-back-link">
-                ← Back to News
+                Back to News
             </a>
 
             <div class="news-detail-meta">
@@ -111,50 +111,5 @@
 
 </section>
 
-
-{{-- =========================================================
-     NEWS CTA
-========================================================= --}}
-
-<section class="news-cta">
-
-    <div class="container">
-
-        <div class="news-cta-box">
-
-            <p class="section-label">
-                STAY CONNECTED
-            </p>
-
-            <h2>
-                Want to Know More About Xclip?
-            </h2>
-
-            <p>
-                Explore our services and projects or get
-                in touch with our team to discuss your needs.
-            </p>
-
-            <div class="news-cta-actions">
-
-                <a
-                    href="{{ route('services') }}"
-                    class="news-button">
-                    Explore Services →
-                </a>
-
-                <a
-                    href="{{ route('contact') }}"
-                    class="news-button-outline">
-                    Contact Us
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 @endsection

@@ -724,7 +724,7 @@
                     type="submit"
                     class="rfq-submit">
 
-                    Kirim Permintaan →
+                    Kirim Permintaan
 
                 </button>
 
@@ -761,7 +761,7 @@
         </p>
 
         <a href="/contact">
-            Contact Xclip →
+            Contact Xclip
         </a>
 
     </div>

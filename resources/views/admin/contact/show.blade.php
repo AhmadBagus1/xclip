@@ -1,283 +1,95 @@
 @extends('layouts.admin')
 
 @section('title', 'Detail Pesan - Xclip')
+
 @section('page-title', 'Detail Pesan')
 
 @section('content')
 
 <div class="admin-page-header">
 
-    <div>
+    <p class="admin-topbar-label">
+        PESAN KONTAK
+    </p>
 
-        <p class="admin-topbar-label">
-            PESAN KONTAK
-        </p>
+    <h2>
+        Detail Pesan.
+    </h2>
 
-        <h2>
-            Detail Pesan.
-        </h2>
+    <p>
+        Lihat informasi lengkap pesan yang dikirim melalui website Xclip.
+    </p>
 
-        <p>
-            Lihat informasi lengkap pesan yang dikirim
-            melalui website Xclip.
-        </p>
+
+    <div style="margin-top: 15px;">
+
+        <a
+            href="{{ route('admin.messages.index') }}"
+            class="admin-view-link">
+
+            Kembali ke Pesan
+
+        </a>
 
     </div>
 
-
-    <a
-        href="{{ route('admin.messages.index') }}"
-        class="admin-view-link">
-
-        ← Kembali ke Pesan
-
-    </a>
-
 </div>
 
 
-@if(session('success'))
+{{-- =====================================================
+     MESSAGE DETAIL
+===================================================== --}}
 
-<div class="admin-alert">
-    {{ session('success') }}
-</div>
+<div class="admin-dashboard-section">
 
-@endif
+    <div class="message-detail-header">
 
+        <div>
 
-<div class="admin-message-detail">
+            <span class="admin-topbar-label">
+                SUBJEK
+            </span>
 
-    <div class="admin-detail-card">
-
-
-        {{-- =====================================================
-             MESSAGE HEADER
-        ====================================================== --}}
-
-        <div class="admin-detail-header">
-
-            <div>
-
-                <span class="admin-detail-label">
-                    SUBJEK
-                </span>
-
-                <h3>
-                    {{ $message->subject ?? '-' }}
-                </h3>
-
-            </div>
-
-
-            <div>
-
-                @if($message->status === 'new')
-
-                <span class="admin-status admin-status-new">
-                    NEW
-                </span>
-
-                @else
-
-                <span class="admin-status admin-status-read">
-                    READ
-                </span>
-
-                @endif
-
-            </div>
+            <h2 class="message-detail-subject">
+                {{ $message->subject ?? 'Tanpa Subjek' }}
+            </h2>
 
         </div>
 
 
-        {{-- =====================================================
-             SENDER INFORMATION
-        ====================================================== --}}
+        <div class="message-header-actions">
 
-        <div class="admin-detail-section">
+            {{-- STATUS --}}
+            @if($message->status === 'read')
 
-            <div class="admin-detail-section-title">
+            <span class="admin-status admin-status-read">
+                READ
+            </span>
 
-                <span>
-                    01
-                </span>
+            @else
 
-                Informasi Pengirim
+            <span class="admin-status admin-status-new">
+                NEW
+            </span>
 
-            </div>
+            @endif
 
 
-            <div class="admin-detail-grid">
-
-
-                <div class="admin-detail-item">
-
-                    <span class="admin-detail-label">
-                        NAMA
-                    </span>
-
-                    <strong>
-                        {{ $message->name ?? '-' }}
-                    </strong>
-
-                </div>
-
-
-                <div class="admin-detail-item">
-
-                    <span class="admin-detail-label">
-                        EMAIL
-                    </span>
-
-                    <a href="mailto:{{ $message->email }}">
-
-                        {{ $message->email ?? '-' }}
-
-                    </a>
-
-                </div>
-
-
-                @if($message->phone)
-
-                <div class="admin-detail-item">
-
-                    <span class="admin-detail-label">
-                        TELEPON / WHATSAPP
-                    </span>
-
-                    <a href="tel:{{ $message->phone }}">
-
-                        {{ $message->phone }}
-
-                    </a>
-
-                </div>
-
-                @endif
-
-
-                @if(isset($message->company) && $message->company)
-
-                <div class="admin-detail-item">
-
-                    <span class="admin-detail-label">
-                        PERUSAHAAN
-                    </span>
-
-                    <strong>
-                        {{ $message->company }}
-                    </strong>
-
-                </div>
-
-                @endif
-
-            </div>
-
-        </div>
-
-
-        {{-- =====================================================
-             MESSAGE
-        ====================================================== --}}
-
-        <div class="admin-detail-section">
-
-            <div class="admin-detail-section-title">
-
-                <span>
-                    02
-                </span>
-
-                Pesan
-
-            </div>
-
-
-            <div class="admin-message-content">
-
-                {{ $message->message ?? '-' }}
-
-            </div>
-
-        </div>
-
-
-        {{-- =====================================================
-             INFORMATION
-        ====================================================== --}}
-
-        <div class="admin-detail-section">
-
-            <div class="admin-detail-section-title">
-
-                <span>
-                    03
-                </span>
-
-                Informasi
-
-            </div>
-
-
-            <div class="admin-detail-grid">
-
-                <div class="admin-detail-item">
-
-                    <span class="admin-detail-label">
-                        DITERIMA
-                    </span>
-
-                    <strong>
-
-                        {{ $message->created_at->format('d M Y, H:i') }}
-
-                    </strong>
-
-                </div>
-
-
-                <div class="admin-detail-item">
-
-                    <span class="admin-detail-label">
-                        TERAKHIR DIPERBARUI
-                    </span>
-
-                    <strong>
-
-                        {{ $message->updated_at->format('d M Y, H:i') }}
-
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        {{-- =====================================================
-             ACTIONS
-        ====================================================== --}}
-
-        <div class="admin-detail-actions">
-
+            {{-- DELETE --}}
             <form
                 action="{{ route('admin.messages.destroy', $message) }}"
                 method="POST"
-                onsubmit="return confirm('Apakah Anda yakin ingin menghapus pesan ini?');">
+                class="swal-delete-form">
 
                 @csrf
 
                 @method('DELETE')
 
-
                 <button
                     type="submit"
-                    class="admin-btn admin-btn-danger">
+                    class="admin-delete-button">
 
-                    Hapus Pesan
+                    Hapus
 
                 </button>
 
@@ -285,6 +97,125 @@
 
         </div>
 
+    </div>
+
+
+    <div class="message-divider"></div>
+
+
+    {{-- =================================================
+         SENDER INFORMATION
+    ================================================= --}}
+
+    <div class="message-section-title">
+
+        <span class="message-section-number">
+            01
+        </span>
+
+        <h3>
+            Informasi Pengirim
+        </h3>
+
+    </div>
+
+
+    <div class="rfq-admin-details">
+
+        {{-- NAMA --}}
+        <div class="rfq-detail-item">
+
+            <span>
+                NAMA
+            </span>
+
+            <strong>
+                {{ $message->name ?? '-' }}
+            </strong>
+
+        </div>
+
+
+        {{-- EMAIL --}}
+        <div class="rfq-detail-item">
+
+            <span>
+                EMAIL
+            </span>
+
+            <strong>
+
+                @if($message->email)
+
+                <a
+                    href="mailto:{{ $message->email }}"
+                    class="message-email-link">
+
+                    {{ $message->email }}
+
+                </a>
+
+                @else
+
+                -
+
+                @endif
+
+            </strong>
+
+        </div>
+
+
+        {{-- PHONE --}}
+        <div class="rfq-detail-item">
+
+            <span>
+                TELEPON / WHATSAPP
+            </span>
+
+            <strong>
+                {{ $message->phone ?? '-' }}
+            </strong>
+
+        </div>
+
+
+        {{-- TANGGAL --}}
+        <div class="rfq-detail-item">
+
+            <span>
+                TANGGAL DITERIMA
+            </span>
+
+            <strong>
+                {{ $message->created_at?->format('d M Y, H:i') ?? '-' }}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    {{-- =================================================
+         MESSAGE
+    ================================================= --}}
+
+    <div class="message-section-title message-section-title-spaced">
+
+        <span class="message-section-number">
+            02
+        </span>
+
+        <h3>
+            Isi Pesan
+        </h3>
+
+    </div>
+
+
+    <div class="message-content">
+
+        {{ $message->message ?? '-' }}
 
     </div>
 

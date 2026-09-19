@@ -211,25 +211,19 @@ class DownloadController extends Controller
      */
     public function destroy(Download $download)
     {
-        // Hapus file fisik.
         if (
             $download->file &&
-            Storage::disk('public')->exists(
-                $download->file
-            )
+            Storage::disk('public')->exists($download->file)
         ) {
-            Storage::disk('public')->delete(
-                $download->file
-            );
+            Storage::disk('public')->delete($download->file);
         }
 
-        // Hapus data database.
         $download->delete();
 
         return redirect()
             ->route('admin.downloads.index')
             ->with(
-                'success',
+                'delete_success',
                 'File berhasil dihapus.'
             );
     }

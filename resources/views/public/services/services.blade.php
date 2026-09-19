@@ -369,7 +369,7 @@
             </p>
 
             <a href="/rfq" class="services-cta-button">
-                Request a Quote →
+                Request a Quote
             </a>
 
         </div>

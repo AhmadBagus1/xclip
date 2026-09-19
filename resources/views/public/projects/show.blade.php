@@ -15,7 +15,7 @@
         <div class="project-detail-back">
 
             <a href="{{ route('projects') }}">
-                ← Back to Projects
+                Back to Projects
             </a>
 
         </div>
@@ -259,7 +259,7 @@
         <a
             href="{{ route('projects') }}"
             class="project-detail-back-button">
-            ← Back to All Projects
+            Back to All Projects
         </a>
 
 

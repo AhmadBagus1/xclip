@@ -4,9 +4,10 @@
 
 @section('content')
 
-{{-- =========================
+
+{{-- =====================================================
      NEWS HERO
-========================= --}}
+===================================================== --}}
 
 <section class="news-hero">
 
@@ -35,9 +36,10 @@
 </section>
 
 
-{{-- =========================
+
+{{-- =====================================================
      FEATURED NEWS
-========================= --}}
+===================================================== --}}
 
 <section class="featured-news">
 
@@ -48,11 +50,21 @@
         </p>
 
 
-        @if($featured)
+        {{-- =================================================
+             1 FEATURED
+             Jika hanya ada satu berita featured
+        ================================================== --}}
 
-        <div class="featured-news-card">
+        @if($featuredNews->count() === 1)
 
-            {{-- FEATURED IMAGE --}}
+        @php
+        $featured = $featuredNews->first();
+        @endphp
+
+
+        <article class="featured-news-card">
+
+            {{-- IMAGE --}}
 
             <div class="featured-news-image">
 
@@ -73,7 +85,7 @@
             </div>
 
 
-            {{-- FEATURED CONTENT --}}
+            {{-- CONTENT --}}
 
             <div class="featured-news-content">
 
@@ -107,16 +119,199 @@
                 <a
                     href="{{ route('news.show', $featured->slug) }}"
                     class="news-read-more">
-                    Read More →
+                    Read More
                 </a>
+
+            </div>
+
+        </article>
+
+
+
+        {{-- =================================================
+             2+ FEATURED
+             Berita utama
+             +
+             Berita 1, 2, 3, dst
+        ================================================== --}}
+
+        @elseif($featuredNews->count() > 1)
+
+        @php
+        $mainFeatured = $featuredNews->first();
+        $secondaryFeatured = $featuredNews->skip(1);
+        @endphp
+
+
+        <div class="featured-news-editorial">
+
+
+            {{-- =========================================
+                     BERITA UTAMA
+                ========================================== --}}
+
+            <article class="featured-news-main">
+
+
+                {{-- MAIN IMAGE --}}
+
+                <div class="featured-news-main-image">
+
+                    @if($mainFeatured->thumbnail)
+
+                    <img
+                        src="{{ asset('storage/' . $mainFeatured->thumbnail) }}"
+                        alt="{{ $mainFeatured->title }}">
+
+                    @else
+
+                    <span>
+                        FEATURED NEWS
+                    </span>
+
+                    @endif
+
+                </div>
+
+
+                {{-- MAIN CONTENT --}}
+
+                <div class="featured-news-main-content">
+
+                    <div class="news-meta">
+
+                        <span>
+                            {{ strtoupper($mainFeatured->category) }}
+                        </span>
+
+                        <span>
+                            {{ $mainFeatured->published_at->format('d M Y') }}
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        {{ $mainFeatured->title }}
+                    </h2>
+
+
+                    @if($mainFeatured->excerpt)
+
+                    <p>
+                        {{ \Illuminate\Support\Str::limit(
+                                    $mainFeatured->excerpt,
+                                    220
+                                ) }}
+                    </p>
+
+                    @endif
+
+
+                    <a
+                        href="{{ route('news.show', $mainFeatured->slug) }}"
+                        class="news-read-more">
+                        Read More
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            {{-- =========================================
+                     BERITA 1, 2, 3, DST
+                ========================================== --}}
+
+            <div class="featured-news-list">
+
+
+                @foreach($secondaryFeatured as $item)
+
+                <article class="featured-news-item">
+
+
+                    {{-- IMAGE --}}
+
+                    <div class="featured-news-item-image">
+
+                        @if($item->thumbnail)
+
+                        <img
+                            src="{{ asset('storage/' . $item->thumbnail) }}"
+                            alt="{{ $item->title }}">
+
+                        @else
+
+                        <span>
+                            NEWS
+                        </span>
+
+                        @endif
+
+                    </div>
+
+
+                    {{-- CONTENT --}}
+
+                    <div class="featured-news-item-content">
+
+                        <div class="news-meta">
+
+                            <span>
+                                {{ strtoupper($item->category) }}
+                            </span>
+
+                            <span>
+                                {{ $item->published_at->format('d M Y') }}
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            {{ $item->title }}
+                        </h3>
+
+
+                        @if($item->excerpt)
+
+                        <p>
+                            {{ \Illuminate\Support\Str::limit(
+                                            $item->excerpt,
+                                            100
+                                        ) }}
+                        </p>
+
+                        @endif
+
+
+                        <a
+                            href="{{ route('news.show', $item->slug) }}"
+                            class="news-read-more">
+                            Read More
+                        </a>
+
+                    </div>
+
+                </article>
+
+                @endforeach
+
 
             </div>
 
         </div>
 
-        @else
 
-        {{-- DEFAULT FEATURED CONTENT --}}
+
+        {{-- =================================================
+             0 FEATURED
+             Fallback
+        ================================================== --}}
+
+        @else
 
         <div class="featured-news-card">
 
@@ -167,13 +362,17 @@
 </section>
 
 
-{{-- =========================
+
+{{-- =====================================================
      LATEST NEWS
-========================= --}}
+===================================================== --}}
 
 <section class="latest-news">
 
     <div class="container">
+
+
+        {{-- HEADING --}}
 
         <div class="news-heading">
 
@@ -189,6 +388,7 @@
 
             </div>
 
+
             <p>
                 Explore the latest stories, activities,
                 and updates from Xclip.
@@ -197,17 +397,22 @@
         </div>
 
 
-        {{-- NEWS GRID --}}
 
-        @if($news->count() > 0)
+        {{-- =================================================
+             NEWS GRID
+        ================================================== --}}
+
+        @if($latestNews->count() > 0)
 
         <div class="news-grid">
 
-            @foreach($news as $item)
+
+            @foreach($latestNews as $item)
 
             <article class="news-card">
 
-                {{-- NEWS IMAGE --}}
+
+                {{-- IMAGE --}}
 
                 <div class="news-card-image">
 
@@ -228,7 +433,7 @@
                 </div>
 
 
-                {{-- NEWS CONTENT --}}
+                {{-- CONTENT --}}
 
                 <div class="news-card-content">
 
@@ -253,7 +458,10 @@
                     @if($item->excerpt)
 
                     <p>
-                        {{ \Illuminate\Support\Str::limit($item->excerpt, 150) }}
+                        {{ \Illuminate\Support\Str::limit(
+                                        $item->excerpt,
+                                        150
+                                    ) }}
                     </p>
 
                     @endif
@@ -262,7 +470,7 @@
                     <a
                         href="{{ route('news.show', $item->slug) }}"
                         class="news-read-more">
-                        Read More →
+                        Read More
                     </a>
 
                 </div>
@@ -271,9 +479,13 @@
 
             @endforeach
 
+
         </div>
 
+
         @else
+
+        {{-- EMPTY STATE --}}
 
         <div class="news-empty">
 
@@ -300,9 +512,10 @@
 </section>
 
 
-{{-- =========================
+
+{{-- =====================================================
      NEWS CTA
-========================= --}}
+===================================================== --}}
 
 <section class="news-cta">
 
@@ -314,23 +527,27 @@
                 STAY CONNECTED
             </p>
 
+
             <h2>
                 Want to Know
                 More About Xclip?
             </h2>
+
 
             <p>
                 Explore our services and projects or get
                 in touch with our team to discuss your needs.
             </p>
 
+
             <div class="news-cta-actions">
 
                 <a
                     href="{{ route('services') }}"
                     class="news-button">
-                    Explore Services →
+                    Explore Services
                 </a>
+
 
                 <a
                     href="{{ route('contact') }}"
@@ -345,5 +562,6 @@
     </div>
 
 </section>
+
 
 @endsection

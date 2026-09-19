@@ -1,0 +1,626 @@
+/* =========================================================
+   RFQ ADMIN
+========================================================= */
+
+.rfq-admin-details {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    width: 100%;
+}
+
+
+.rfq-detail-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 0;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 2px solid #1f2937;
+
+    overflow-wrap: anywhere;
+}
+
+
+.rfq-detail-item span {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+
+.rfq-detail-item strong {
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   RFQ DESCRIPTION
+========================================================= */
+
+.rfq-description {
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 2px solid #1f2937;
+
+    line-height: 1.7;
+
+    white-space: pre-line;
+
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   RFQ FORM
+========================================================= */
+
+.admin-dashboard-section form .form-group {
+    margin-bottom: 15px;
+}
+
+
+.admin-dashboard-section select {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 10px 12px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 2px solid #1f2937;
+
+    font-family: inherit;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .admin-sidebar {
+        width: 235px;
+
+        min-width: 235px;
+    }
+
+
+    .admin-main {
+        width: calc(100% - 235px);
+    }
+
+
+    .admin-sidebar-brand {
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    .admin-sidebar-nav {
+        padding-left: 17px;
+
+        padding-right: 17px;
+    }
+
+
+    .admin-sidebar-bottom {
+        padding-left: 17px;
+
+        padding-right: 17px;
+    }
+
+
+    .admin-topbar {
+        padding-left: 30px;
+
+        padding-right: 30px;
+    }
+
+
+    .admin-content {
+        padding-left: 30px;
+
+        padding-right: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-sidebar {
+        width: 210px;
+
+        min-width: 210px;
+    }
+
+
+    .admin-main {
+        width: calc(100% - 210px);
+    }
+
+
+    .admin-sidebar-brand h2 {
+        font-size: 18px;
+    }
+
+
+    .admin-nav-item {
+        font-size: 11px;
+    }
+
+
+    .admin-topbar {
+        padding: 20px 25px;
+    }
+
+
+    .admin-topbar h1 {
+        font-size: 28px;
+    }
+
+
+    .admin-user {
+        min-width: 190px;
+    }
+
+
+    .admin-content {
+        padding: 30px 25px;
+    }
+
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-stat-card {
+        grid-template-columns: 100px minmax(0, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .admin-layout {
+        display: block;
+
+        width: 100%;
+    }
+
+
+    .admin-sidebar {
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: auto;
+
+        position: relative;
+
+        border-right: none;
+
+        border-bottom: 3px solid #1f2937;
+    }
+
+
+    .admin-main {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .admin-sidebar-brand {
+        height: 85px;
+
+        min-height: 85px;
+    }
+
+
+    .admin-sidebar-nav {
+        padding: 20px;
+    }
+
+
+    .admin-sidebar-bottom {
+        display: none;
+    }
+
+
+    .admin-topbar {
+        min-height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .admin-topbar h1 {
+        font-size: 30px;
+    }
+
+
+    .admin-user {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .admin-content {
+        padding: 25px 20px;
+
+        width: 100%;
+    }
+
+
+    .admin-page-header h2 {
+        font-size: 45px;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    .admin-section-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .admin-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rfq-admin-details {
+        grid-template-columns: 1fr;
+    }
+
+
+    .admin-detail-card {
+        padding: 22px;
+    }
+
+
+    .admin-detail-header {
+        flex-direction: column;
+    }
+
+
+    .admin-detail-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .admin-detail-actions form {
+        width: 100%;
+    }
+
+
+    .admin-detail-actions select,
+    .admin-detail-actions .admin-btn,
+    .admin-detail-actions .admin-view-link,
+    .admin-action-button,
+    .admin-delete-button {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .admin-sidebar-nav {
+        padding: 18px 15px;
+    }
+
+
+    .admin-nav-group {
+        margin-bottom: 22px;
+    }
+
+
+    .admin-nav-item {
+        min-height: 44px;
+
+        font-size: 12px;
+    }
+
+
+    .admin-topbar {
+        padding: 18px 15px;
+    }
+
+
+    .admin-content {
+        padding: 22px 15px;
+    }
+
+
+    .admin-page-header h2 {
+        font-size: 38px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .admin-stat-card {
+        grid-template-columns: 1fr;
+
+        padding: 22px;
+    }
+
+
+    .admin-stat-number {
+        font-size: 48px;
+    }
+
+
+    .admin-detail-card {
+        padding: 18px;
+    }
+
+}
+
+/* =====================================================
+   RFQ / MESSAGE HEADER ACTIONS
+===================================================== */
+
+.rfq-header-actions,
+.message-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.admin-delete-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+    padding: 9px 16px;
+
+    background: #dc2626;
+    color: #ffffff;
+
+    border: 3px solid #1f2937;
+    box-shadow: 4px 4px 0 #1f2937;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.admin-delete-button:hover {
+    background: #b91c1c;
+
+    transform: translate(2px, 2px);
+
+    box-shadow: 2px 2px 0 #1f2937;
+}
+
+.admin-delete-button:active {
+    transform: translate(4px, 4px);
+
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   MESSAGE DETAIL
+===================================================== */
+
+.message-detail-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.message-detail-subject {
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+
+.message-divider {
+    width: 100%;
+
+    margin: 25px 0 30px;
+
+    border-top: 3px dashed #1f2937;
+}
+
+
+/* =====================================================
+   MESSAGE SECTION TITLE
+===================================================== */
+
+.message-section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.message-section-title-spaced {
+    margin-top: 40px;
+}
+
+
+.message-section-title h3 {
+    margin: 0;
+
+    font-size: 20px;
+}
+
+
+.message-section-number {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    background: #facc15;
+
+    border: 3px solid #1f2937;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+   MESSAGE CONTENT
+===================================================== */
+
+.message-content {
+    padding: 25px;
+
+    background: #f8fafc;
+
+    border: 3px solid #1f2937;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+}
+
+
+/* =====================================================
+   MESSAGE EMAIL
+===================================================== */
+
+.message-email-link {
+    color: #1f2937;
+
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+
+    text-underline-offset: 3px;
+}
+
+.message-email-link:hover {
+    color: #dc2626;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .rfq-header-actions,
+    .message-header-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .message-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .message-detail-subject {
+        font-size: 26px;
+    }
+
+    .admin-delete-button {
+        min-height: 38px;
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+}
