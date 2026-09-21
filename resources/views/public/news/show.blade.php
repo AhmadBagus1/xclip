@@ -2,6 +2,30 @@
 
 @section('title', $news->title . ' - Xclip')
 
+@section(
+'meta_description',
+\Illuminate\Support\Str::limit(
+$news->excerpt
+?: 'Baca berita dan informasi terbaru dari Xclip mengenai proyek, layanan, aktivitas, dan perkembangan perusahaan.',
+160,
+''
+)
+)
+
+@section('og_title', $news->title . ' - Xclip')
+
+@section(
+'og_description',
+\Illuminate\Support\Str::limit(
+$news->excerpt
+?: 'Baca berita dan informasi terbaru dari Xclip.',
+160,
+''
+)
+)
+
+@section('og_type', 'article')
+
 @section('content')
 
 {{-- =========================================================

@@ -16,7 +16,13 @@ $businessHours = $siteSetting?->business_hours;
 $googleMapsEmbed = $siteSetting?->google_maps_embed;
 @endphp
 
-@section('title', 'Contact - ' . $siteName)
+@section('title', 'Contact — ' . $siteName)
+
+@section('meta_description', 'Hubungi ' . $siteName . ' untuk pertanyaan, kebutuhan bisnis, informasi proyek, layanan, atau permintaan penawaran.')
+
+@section('og_title', 'Contact — ' . $siteName)
+
+@section('og_description', 'Hubungi tim ' . $siteName . ' untuk membahas kebutuhan bisnis, proyek, layanan, dan informasi lainnya.')
 
 @section('content')
 
@@ -408,6 +414,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+
             </div>
 
             @else
@@ -425,8 +432,6 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
             @endif
 
         </div>
-
-    </div>
 
     </div>
 
@@ -456,7 +461,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
         </p>
 
         <a
-            href="/rfq"
+            href="{{ route('rfq') }}"
             class="contact-cta-button">
 
             Request a Quote

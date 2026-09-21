@@ -9,6 +9,9 @@
 <div class="admin-page-header">
 
     <div>
+        <p class="section-label">
+            MANAJEMEN DOWNLOAD
+        </p>
         <h2>
             Downloads.
         </h2>

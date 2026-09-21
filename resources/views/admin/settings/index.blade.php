@@ -276,12 +276,7 @@
                         type="text"
                         id="business_days"
                         name="business_days"
-                        value="{{ old('business_days', $setting?->business_days) }}"
-                        placeholder="Example: Monday - Friday">
-
-                    <small class="admin-form-help">
-                        Example: Monday - Friday
-                    </small>
+                        value="{{ old('business_days', $setting?->business_days) }}">
 
                 </div>
 
@@ -296,12 +291,7 @@
                         type="text"
                         id="business_hours"
                         name="business_hours"
-                        value="{{ old('business_hours', $setting?->business_hours) }}"
-                        placeholder="Example: 08:00 - 17:00">
-
-                    <small class="admin-form-help">
-                        Example: 08:00 - 17:00
-                    </small>
+                        value="{{ old('business_hours', $setting?->business_hours) }}">
 
                 </div>
 

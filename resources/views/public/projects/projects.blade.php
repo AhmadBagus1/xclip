@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Projects - Xclip')
+@section('title', 'Projects — Xclip')
+
+@section('meta_description', 'Lihat portofolio proyek Xclip di berbagai sektor, mulai dari konstruksi dan infrastruktur hingga perdagangan, industrial, dan layanan profesional.')
+
+@section('og_title', 'Projects — Xclip')
+
+@section('og_description', 'Jelajahi proyek dan solusi yang dikerjakan Xclip di berbagai sektor bisnis dan kebutuhan profesional.')
 
 @section('content')
 
@@ -357,11 +363,13 @@
                     </div>
 
                 </div>
+
                 <a
                     href="{{ route('projects.show', $project->slug) }}"
                     class="project-view-link">
                     View Project
                 </a>
+
             </article>
 
             @endforeach

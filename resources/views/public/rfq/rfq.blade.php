@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Request a Quote - Xclip')
+@section('title', 'Request a Quote — Xclip')
+
+@section('meta_description', 'Ajukan permintaan penawaran kepada Xclip untuk kebutuhan proyek, konstruksi, perdagangan, industrial, dan layanan profesional.')
+
+@section('og_title', 'Request a Quote — Xclip')
+
+@section('og_description', 'Kirim detail proyek dan kebutuhan bisnis Anda kepada Xclip melalui formulir Request a Quote.')
 
 @section('content')
 
@@ -760,7 +766,7 @@
             you can contact our team directly.
         </p>
 
-        <a href="/contact">
+        <a href="{{ route('contact') }}">
             Contact Xclip
         </a>
 

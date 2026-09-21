@@ -2,6 +2,30 @@
 
 @section('title', $project->title . ' - Xclip')
 
+@section(
+'meta_description',
+\Illuminate\Support\Str::limit(
+$project->description
+?: 'Pelajari detail proyek ' . $project->title . ' dari Xclip, termasuk kategori, klien, lokasi, tahun, dan informasi proyek.',
+160,
+''
+)
+)
+
+@section('og_title', $project->title . ' - Xclip')
+
+@section(
+'og_description',
+\Illuminate\Support\Str::limit(
+$project->description
+?: 'Detail proyek ' . $project->title . ' dari Xclip.',
+160,
+''
+)
+)
+
+@section('og_type', 'article')
+
 @section('content')
 
 {{-- =========================
@@ -240,8 +264,6 @@
             </div>
 
         </div>
-
-    </div>
 
     </div>
 

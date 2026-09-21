@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'News - Xclip')
+@section('title', 'News & Updates — Xclip')
+
+@section('meta_description', 'Dapatkan berita dan informasi terbaru dari Xclip mengenai proyek, layanan, aktivitas perusahaan, dan berbagai perkembangan bisnis.')
+
+@section('og_title', 'News & Updates — Xclip')
+
+@section('og_description', 'Ikuti berita, aktivitas, proyek, dan perkembangan terbaru dari Xclip.')
 
 @section('content')
 
@@ -147,8 +153,8 @@
 
 
             {{-- =========================================
-                     BERITA UTAMA
-                ========================================== --}}
+                 BERITA UTAMA
+            ========================================== --}}
 
             <article class="featured-news-main">
 
@@ -200,9 +206,9 @@
 
                     <p>
                         {{ \Illuminate\Support\Str::limit(
-                                    $mainFeatured->excerpt,
-                                    220
-                                ) }}
+                            $mainFeatured->excerpt,
+                            220
+                        ) }}
                     </p>
 
                     @endif
@@ -221,8 +227,8 @@
 
 
             {{-- =========================================
-                     BERITA 1, 2, 3, DST
-                ========================================== --}}
+                 BERITA 1, 2, 3, DST
+            ========================================== --}}
 
             <div class="featured-news-list">
 
@@ -279,9 +285,9 @@
 
                         <p>
                             {{ \Illuminate\Support\Str::limit(
-                                            $item->excerpt,
-                                            100
-                                        ) }}
+                                $item->excerpt,
+                                100
+                            ) }}
                         </p>
 
                         @endif
@@ -459,9 +465,9 @@
 
                     <p>
                         {{ \Illuminate\Support\Str::limit(
-                                        $item->excerpt,
-                                        150
-                                    ) }}
+                            $item->excerpt,
+                            150
+                        ) }}
                     </p>
 
                     @endif

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\News;
 use App\Models\Project;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -20,11 +21,56 @@ class DashboardController extends Controller
         |--------------------------------------------------------------------------
         */
 
-        // Jumlah seluruh pesan dari halaman Contact
+        // Projects
+        $projects = Project::count();
+
+        // Active Projects
+        $activeProjects = Project::where('is_active', true)->count();
+
+        // Featured Projects
+        $featuredProjects = Project::where('is_featured', true)
+            ->where('is_active', true)
+            ->count();
+
+        // News
+        $news = News::count();
+
+        // Published News
+        $publishedNews = News::where('is_active', true)
+            ->whereNotNull('published_at')
+            ->where('published_at', '<=', now())
+            ->count();
+
+        // Downloads
+        $downloads = DB::table('downloads')->count();
+
+        // Contact Messages
         $contactMessages = DB::table('contact_messages')->count();
 
-        // Jumlah seluruh Request a Quote
+        // Request a Quote
         $rfqRequests = DB::table('rfq_requests')->count();
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | RECENT PROJECTS
+        |--------------------------------------------------------------------------
+        */
+
+        $recentProjects = Project::latest()
+            ->limit(5)
+            ->get();
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | RECENT NEWS
+        |--------------------------------------------------------------------------
+        */
+
+        $recentNews = News::latest()
+            ->limit(5)
+            ->get();
 
 
         /*
@@ -33,7 +79,6 @@ class DashboardController extends Controller
         |--------------------------------------------------------------------------
         */
 
-        // Mengambil 5 pesan Contact terbaru
         $recentMessages = DB::table('contact_messages')
             ->latest()
             ->limit(5)
@@ -46,7 +91,6 @@ class DashboardController extends Controller
         |--------------------------------------------------------------------------
         */
 
-        // Mengambil 5 Request a Quote terbaru
         $recentRfq = DB::table('rfq_requests')
             ->latest()
             ->limit(5)
@@ -58,7 +102,7 @@ class DashboardController extends Controller
         | DASHBOARD CHART PERIOD
         |--------------------------------------------------------------------------
         |
-        | Grafik akan menampilkan data 12 bulan terakhir.
+        | Grafik menampilkan data 12 bulan terakhir.
         |
         */
 
@@ -90,7 +134,6 @@ class DashboardController extends Controller
 
 
         $messageChartLabels = [];
-
         $messageChartData = [];
 
 
@@ -102,12 +145,8 @@ class DashboardController extends Controller
 
             $key = $month->format('Y-m');
 
-
-            // Label bulan
             $messageChartLabels[] = $month->format('M Y');
 
-
-            // Jumlah pesan pada bulan tersebut
             $messageChartData[] =
                 isset($monthlyMessages[$key])
                 ? $monthlyMessages[$key]->count()
@@ -135,7 +174,6 @@ class DashboardController extends Controller
 
 
         $rfqChartLabels = [];
-
         $rfqChartData = [];
 
 
@@ -147,12 +185,8 @@ class DashboardController extends Controller
 
             $key = $month->format('Y-m');
 
-
-            // Label bulan
             $rfqChartLabels[] = $month->format('M Y');
 
-
-            // Jumlah RFQ pada bulan tersebut
             $rfqChartData[] =
                 isset($monthlyRfq[$key])
                 ? $monthlyRfq[$key]->count()
@@ -198,10 +232,18 @@ class DashboardController extends Controller
         return view('admin.dashboard', compact(
 
             // Statistics
+            'projects',
+            'activeProjects',
+            'featuredProjects',
+            'news',
+            'publishedNews',
+            'downloads',
             'contactMessages',
             'rfqRequests',
 
             // Recent data
+            'recentProjects',
+            'recentNews',
             'recentMessages',
             'recentRfq',
 
@@ -215,7 +257,6 @@ class DashboardController extends Controller
 
             // Project Status chart
             'projectStatusData'
-
         ));
     }
 }

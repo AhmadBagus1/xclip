@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Downloads - Xclip')
+@section('title', 'Downloads — Xclip')
+
+@section('meta_description', 'Akses company profile, brochure, portfolio, dokumen layanan, dan berbagai resource resmi dari Xclip.')
+
+@section('og_title', 'Downloads — Xclip')
+
+@section('og_description', 'Download company profile, brochure, portfolio, dan berbagai dokumen resmi Xclip.')
 
 @section('content')
 
@@ -182,7 +188,6 @@
 
                     @if($download->file)
 
-                    {{-- Download melalui controller --}}
                     <a
                         href="{{ route('downloads.download', $download) }}"
                         class="download-button">

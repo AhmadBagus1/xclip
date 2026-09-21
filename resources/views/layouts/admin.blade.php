@@ -302,7 +302,7 @@
 
 
     {{-- =========================================================
-         JAVASCRIPT
+         VITE JAVASCRIPT
     ========================================================== --}}
 
     @vite('resources/js/app.js')
@@ -323,14 +323,10 @@
 
 
     {{-- =========================================================
-         ADMIN PROFILE + LOGOUT + DELETE SCRIPTS
+         ADMIN PROFILE DROPDOWN
     ========================================================== --}}
 
     <script>
-        /* =====================================================
-           ADMIN PROFILE DROPDOWN
-        ===================================================== */
-
         function toggleAdminProfileMenu() {
 
             const dropdown =
@@ -346,10 +342,6 @@
 
         }
 
-
-        /* =====================================================
-           CLOSE PROFILE DROPDOWN WHEN CLICKING OUTSIDE
-        ===================================================== */
 
         document.addEventListener(
             'click',
@@ -374,10 +366,6 @@
         );
 
 
-        /* =====================================================
-           CLOSE PROFILE DROPDOWN WITH ESCAPE
-        ===================================================== */
-
         document.addEventListener(
             'keydown',
             function(event) {
@@ -399,15 +387,19 @@
 
             }
         );
+    </script>
 
 
-        /* =====================================================
-           OPEN LOGOUT MODAL
-        ===================================================== */
+    {{-- =========================================================
+         LOGOUT MODAL
+    ========================================================== --}}
 
+    <script>
         function openLogoutModal() {
 
-            /* Close profile dropdown */
+            /*
+             * Close profile dropdown
+             */
 
             const dropdown =
                 document.querySelector(
@@ -421,7 +413,9 @@
             }
 
 
-            /* Open modal */
+            /*
+             * Open modal
+             */
 
             const modal =
                 document.getElementById(
@@ -445,10 +439,6 @@
 
         }
 
-
-        /* =====================================================
-           CLOSE LOGOUT MODAL
-        ===================================================== */
 
         function closeLogoutModal() {
 
@@ -475,10 +465,6 @@
         }
 
 
-        /* =====================================================
-           CLOSE LOGOUT MODAL WHEN CLICKING OUTSIDE
-        ===================================================== */
-
         const logoutModal =
             document.getElementById(
                 'logoutModal'
@@ -502,10 +488,6 @@
         }
 
 
-        /* =====================================================
-           ESCAPE CLOSES LOGOUT MODAL
-        ===================================================== */
-
         document.addEventListener(
             'keydown',
             function(event) {
@@ -518,12 +500,14 @@
 
             }
         );
+    </script>
 
 
-        /* =====================================================
-           SWEETALERT DELETE CONFIRMATION
-        ===================================================== */
+    {{-- =========================================================
+         SWEETALERT DELETE CONFIRMATION
+    ========================================================== --}}
 
+    <script>
         document.addEventListener(
             'DOMContentLoaded',
             function() {
@@ -600,14 +584,16 @@
 
             }
         );
+    </script>
 
 
-        /* =====================================================
-           SWEETALERT DELETE SUCCESS
-        ===================================================== */
+    {{-- =========================================================
+         SWEETALERT DELETE SUCCESS
+    ========================================================== --}}
 
-        @if(session('delete_success'))
+    @if(session('delete_success'))
 
+    <script>
         document.addEventListener(
             'DOMContentLoaded',
             function() {
@@ -616,7 +602,8 @@
 
                     title: 'Berhasil Dihapus',
 
-                    text: @json(session('delete_success')),
+                    text: '{{ session('
+                    delete_success ') }}',
 
                     icon: 'success',
 
@@ -640,9 +627,9 @@
 
             }
         );
-
-        @endif
     </script>
+
+    @endif
 
 
 </body>

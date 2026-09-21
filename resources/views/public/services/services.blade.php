@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Xclip - Services')
+@section('title', 'Xclip — Services & Business Solutions')
+
+@section('meta_description', 'Xclip menyediakan layanan konstruksi, perdagangan, industrial, dan jasa profesional untuk mendukung kebutuhan bisnis, proyek, dan operasional.')
+
+@section('og_title', 'Xclip — Services & Business Solutions')
+
+@section('og_description', 'Temukan layanan Xclip dalam bidang konstruksi, perdagangan, industrial, dan jasa profesional untuk mendukung berbagai kebutuhan proyek dan bisnis.')
 
 @section('content')
 
@@ -368,7 +374,7 @@
                 how Xclip can support your business needs.
             </p>
 
-            <a href="/rfq" class="services-cta-button">
+            <a href="{{ route('rfq') }}" class="services-cta-button">
                 Request a Quote
             </a>
 

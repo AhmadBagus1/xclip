@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'About Xclip')
+@section('title', 'About Xclip — Company Profile')
+
+@section('meta_description', 'Mengenal PT Xclip Subcon Asia, perusahaan multi-layanan dengan berbagai bidang usaha yang menyediakan solusi terintegrasi untuk kebutuhan bisnis dan proyek.')
+
+@section('og_title', 'About Xclip — Company Profile')
+
+@section('og_description', 'Mengenal profil, bidang usaha, dan pendekatan bisnis PT Xclip Subcon Asia.')
 
 @section('content')
 
@@ -33,11 +39,13 @@
 
                 <div class="about-hero-actions">
 
-                    <a href="/services" class="doodle-button doodle-button-primary">
+                    <a href="{{ route('services') }}"
+                        class="doodle-button doodle-button-primary">
                         Explore Our Services
                     </a>
 
-                    <a href="/contact" class="doodle-button">
+                    <a href="{{ route('contact') }}"
+                        class="doodle-button">
                         Contact Xclip
                     </a>
 
@@ -591,11 +599,9 @@
                         Planning
                     </span>
 
-
                     <span>
                         Project
                     </span>
-
 
                     <span>
                         Support
@@ -643,11 +649,13 @@
 
             <div class="about-cta-actions">
 
-                <a href="/rfq" class="doodle-button doodle-button-primary">
+                <a href="{{ route('rfq') }}"
+                    class="doodle-button doodle-button-primary">
                     Request a Quote
                 </a>
 
-                <a href="/contact" class="doodle-button">
+                <a href="{{ route('contact') }}"
+                    class="doodle-button">
                     Contact Us
                 </a>
 
