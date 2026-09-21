@@ -1,58 +1,137 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Xclip Website
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website company profile dan business information system untuk **Xclip**, yang dikembangkan menggunakan Laravel dengan pendekatan modern, responsive, dan dynamic content management.
 
-## About Laravel
+Website ini menyediakan halaman publik untuk menampilkan informasi perusahaan, layanan, project, berita, dokumen, kontak, serta Request for Quote (RFQ). Selain itu, tersedia halaman admin untuk mengelola berbagai data yang ditampilkan pada website publik.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📌 About Xclip
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Xclip Website merupakan website company profile yang dirancang untuk membantu perusahaan dalam menyampaikan informasi mengenai:
 
-## Learning Laravel
+- Profil perusahaan
+- Layanan yang tersedia
+- Project yang telah dan sedang dikerjakan
+- Berita dan informasi terbaru
+- Dokumen dan file yang dapat diunduh
+- Informasi kontak dan lokasi perusahaan
+- Request for Quote (RFQ)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Website menggunakan konsep **dynamic content**, sehingga data tertentu yang ditampilkan pada halaman publik dapat dikelola melalui halaman admin tanpa harus mengubah kode secara langsung.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 🚀 Features
 
-## Agentic Development
+### 🌐 Public Website
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- Home
+- About
+- Services
+- Projects
+- News
+- Downloads
+- Contact
+- Request for Quote (RFQ)
 
-```bash
-composer require laravel/boost --dev
+### 🔐 Admin Panel
 
-php artisan boost:install
-```
+- Admin authentication
+- Super Admin account
+- Login attempt protection
+- Dashboard
+- Profile management
+- Profile photo
+- Password change
+- Site settings
+- News management
+- Project management
+- Download management
+- RFQ management
+- Delete confirmation
+- Dynamic content management
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 📰 News Management
 
-## Contributing
+Admin dapat:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Menambahkan berita
+- Mengubah berita
+- Melihat detail berita
+- Menghapus berita
+- Menentukan kategori berita
+- Menentukan tanggal publikasi
+- Mengatur berita aktif/nonaktif
+- Menentukan berita sebagai featured
+- Mengunggah thumbnail berita
 
-## Code of Conduct
+Featured news pada halaman publik dapat menampilkan lebih dari satu berita. Berita yang ditandai sebagai featured tidak akan ditampilkan kembali pada bagian Latest Updates.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 📁 Downloads Management
 
-## Security Vulnerabilities
+Admin dapat mengelola dokumen atau file yang tersedia untuk pengunjung website.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 🏗️ Projects Management
 
-## License
+Project dapat ditampilkan secara dinamis pada halaman publik berdasarkan data yang dikelola melalui admin panel.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 📩 Request for Quote
+
+Pengunjung dapat mengirimkan permintaan penawaran melalui form RFQ.
+
+Data RFQ kemudian dapat dilihat oleh Super Admin melalui admin panel.
+
+Sistem juga memiliki status pembacaan RFQ untuk membedakan data yang masih baru dan yang sudah dibaca.
+
+### 📞 Contact & Site Settings
+
+Informasi perusahaan dapat dikelola melalui Site Settings, seperti:
+
+- Site name
+- Email
+- Phone
+- WhatsApp
+- Address
+- Business days
+- Business hours
+- Google Maps Embed URL
+
+Google Maps menggunakan URL Embed yang disimpan pada database sehingga lokasi dapat diperbarui melalui Settings.
+
+---
+
+## 🛠️ Technologies
+
+Project ini menggunakan beberapa teknologi berikut:
+
+| Technology | Usage |
+|------------|-------|
+| PHP | Backend |
+| Laravel 13 | Web framework |
+| MySQL | Database |
+| Blade | Template engine |
+| HTML | Website structure |
+| CSS | Styling |
+| JavaScript | Client-side interaction |
+| Vite | Frontend asset bundling |
+| DoodleCSS-inspired design | Visual design |
+
+---
+
+## 🎨 Design
+
+Xclip menggunakan pendekatan visual **Doodle / Hand-drawn Corporate Design**.
+
+Beberapa karakteristik desain:
+
+- Hand-drawn style
+- Sketch-like borders
+- Bold typography
+- Irregular card rotation
+- Hand-drawn visual elements
+- Strong contrast
+- Corporate color palette
+- Responsive layout
+
+
