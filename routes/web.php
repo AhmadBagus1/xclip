@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | PUBLIC CONTROLLERS
@@ -15,7 +14,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RfqRequestController;
-
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +30,7 @@ use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\RfqController;
+use App\Http\Controllers\Admin\ServiceCategoryController;
 use App\Http\Controllers\Admin\SettingController;
 
 
@@ -66,11 +66,14 @@ Route::get('/about', function () {
 |--------------------------------------------------------------------------
 | SERVICES
 |--------------------------------------------------------------------------
+|
+| Public Services sekarang langsung mengambil Service Categories.
+| Tidak ada lagi /services/{service}.
+|
 */
 
-Route::get('/services', function () {
-    return view('public.services.services');
-})->name('services');
+Route::get('/services', [ServiceController::class, 'index'])
+    ->name('services');
 
 
 /*
@@ -259,6 +262,38 @@ Route::middleware('auth')
 
         Route::resource('downloads', AdminDownloadController::class)
             ->names('admin.downloads');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | SERVICES / SERVICE CATEGORIES
+        |--------------------------------------------------------------------------
+        |
+        | Admin Services sekarang langsung mengelola Service Categories.
+        |
+        | /admin/services
+        | /admin/services/create
+        | /admin/services/{category}/edit
+        |
+        */
+
+        Route::get('/services', [ServiceCategoryController::class, 'index'])
+            ->name('admin.services.index');
+
+        Route::get('/services/create', [ServiceCategoryController::class, 'create'])
+            ->name('admin.services.create');
+
+        Route::post('/services', [ServiceCategoryController::class, 'store'])
+            ->name('admin.services.store');
+
+        Route::get('/services/{category}/edit', [ServiceCategoryController::class, 'edit'])
+            ->name('admin.services.edit');
+
+        Route::put('/services/{category}', [ServiceCategoryController::class, 'update'])
+            ->name('admin.services.update');
+
+        Route::delete('/services/{category}', [ServiceCategoryController::class, 'destroy'])
+            ->name('admin.services.destroy');
 
 
         /*

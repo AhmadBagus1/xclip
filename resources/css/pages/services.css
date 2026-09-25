@@ -1,11 +1,11 @@
 /* =========================================================
-   SERVICES PAGE
+   XCLIP — SERVICES PAGE
    Corporate Doodle Style
 ========================================================= */
 
 
 /* =========================================================
-   SERVICES HERO
+   01. SERVICES HERO
 ========================================================= */
 
 .services-hero {
@@ -17,7 +17,7 @@
 }
 
 
-.services-hero-content {
+.services-hero-inner {
     display: grid;
 
     grid-template-columns: 1.3fr 0.7fr;
@@ -28,14 +28,20 @@
 }
 
 
-.services-label {
-    margin-bottom: 20px;
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.services-eyebrow {
+    margin: 0 0 20px;
 
     font-size: 14px;
 
     font-weight: 900;
 
     letter-spacing: 4px;
+
+    line-height: 1.2;
 
     color: #1f2937;
 }
@@ -44,7 +50,7 @@
 .services-hero h1 {
     max-width: 850px;
 
-    margin-bottom: 30px;
+    margin: 0 0 30px;
 
     font-size: clamp(55px, 7vw, 90px);
 
@@ -84,8 +90,10 @@
 }
 
 
-.services-intro {
+.services-hero-description {
     max-width: 650px;
+
+    margin: 0;
 
     font-size: 19px;
 
@@ -96,7 +104,7 @@
 
 
 /* =========================================================
-   HERO NOTE
+   02. HERO NOTE
 ========================================================= */
 
 .services-hero-note {
@@ -112,7 +120,7 @@
 }
 
 
-.services-hero-note span {
+.services-note-line {
     display: block;
 
     margin-bottom: 20px;
@@ -120,10 +128,14 @@
     font-size: 50px;
 
     line-height: 1;
+
+    font-weight: 700;
 }
 
 
 .services-hero-note p {
+    margin: 0;
+
     font-size: 17px;
 
     font-weight: 700;
@@ -135,10 +147,10 @@
 
 
 /* =========================================================
-   INTRODUCTION
+   03. SERVICES INTRO
 ========================================================= */
 
-.services-introduction {
+.services-intro {
     padding: 100px 0;
 
     background: #ffffff;
@@ -147,18 +159,23 @@
 }
 
 
-.services-introduction-grid {
+.services-intro-grid {
     display: grid;
 
     grid-template-columns: 0.8fr 1.2fr;
 
     gap: 80px;
+
+    align-items: start;
 }
 
 
-.services-section-label {
-    margin-bottom: 15px;
+.services-intro-label {
+    padding-top: 8px;
+}
 
+
+.services-intro-label span {
     font-size: 13px;
 
     font-weight: 900;
@@ -169,8 +186,15 @@
 }
 
 
-.services-introduction h2 {
-    max-width: 500px;
+.services-intro-content {
+    max-width: 850px;
+}
+
+
+.services-intro-content h2 {
+    max-width: 700px;
+
+    margin: 0 0 30px;
 
     font-size: clamp(45px, 5vw, 65px);
 
@@ -182,8 +206,10 @@
 }
 
 
-.services-introduction-grid > div:last-child p {
-    margin-bottom: 20px;
+.services-intro-content p {
+    max-width: 750px;
+
+    margin: 0 0 20px;
 
     font-size: 18px;
 
@@ -193,185 +219,53 @@
 }
 
 
+.services-intro-content p:last-child {
+    margin-bottom: 0;
+}
+
+
 /* =========================================================
-   SERVICES LIST
+   04. SERVICES LIST
 ========================================================= */
 
 .services-list {
     padding: 100px 0;
 
     background: #f7f7f2;
-}
-
-
-.services-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 35px;
-}
-
-
-/* =========================================================
-   SERVICE CARD
-========================================================= */
-
-.service-doodle-card {
-    min-height: 350px;
-
-    padding: 35px;
-
-    background: #ffffff;
-
-    border: 3px solid #1f2937;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.service-doodle-card:hover {
-    transform: translate(-5px, -5px);
-}
-
-
-/* Card colors */
-
-.service-orange {
-    box-shadow: 9px 9px 0 #f97316;
-}
-
-
-.service-green {
-    box-shadow: 9px 9px 0 #7dbd26;
-}
-
-
-.service-blue {
-    box-shadow: 9px 9px 0 #159bd3;
-}
-
-
-.service-yellow {
-    box-shadow: 9px 9px 0 #fbbf24;
-}
-
-
-/* =========================================================
-   CARD TOP
-========================================================= */
-
-.service-card-top {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-bottom: 35px;
-}
-
-
-.service-number {
-    font-size: 15px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-}
-
-
-.service-symbol {
-    font-size: 40px;
-
-    font-weight: 900;
-
-    line-height: 1;
-}
-
-
-/* =========================================================
-   CARD CONTENT
-========================================================= */
-
-.service-doodle-card h3 {
-    margin-bottom: 18px;
-
-    font-size: 35px;
-
-    line-height: 1;
-
-    letter-spacing: -1px;
-
-    color: #1f2937;
-}
-
-
-.service-doodle-card p {
-    max-width: 550px;
-
-    font-size: 17px;
-
-    line-height: 1.7;
-
-    color: #374151;
-}
-
-
-/* =========================================================
-   CARD LINE
-========================================================= */
-
-.service-line {
-    width: 100%;
-
-    height: 2px;
-
-    margin: 30px 0 18px;
-
-    background: #1f2937;
-
-    transform: rotate(-1deg);
-}
-
-
-/* =========================================================
-   CARD TAG
-========================================================= */
-
-.service-tag {
-    font-size: 12px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #6b7280;
-}
-
-
-/* =========================================================
-   APPROACH
-========================================================= */
-
-.services-approach {
-    padding: 100px 0;
-
-    background: #ffffff;
 
     border-bottom: 3px solid #1f2937;
 }
 
 
-.services-approach-header {
+/* =========================================================
+   SERVICES SECTION HEADING
+========================================================= */
+
+.services-section-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
     margin-bottom: 55px;
 }
 
 
-.services-approach-header h2 {
-    max-width: 850px;
+.services-section-heading > div {
+    flex: 1;
+}
+
+
+.services-section-heading .services-eyebrow {
+    margin-bottom: 15px;
+}
+
+
+.services-section-heading h2 {
+    margin: 0;
 
     font-size: clamp(45px, 6vw, 75px);
 
@@ -383,68 +277,11 @@
 }
 
 
-/* =========================================================
-   APPROACH GRID
-========================================================= */
+.services-section-heading > p {
+    max-width: 300px;
 
-.services-approach-grid {
-    display: grid;
+    margin: 0;
 
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-.approach-card {
-    padding: 30px;
-
-    background: #fffdf7;
-
-    border: 3px solid #1f2937;
-}
-
-
-.approach-card:nth-child(1) {
-    transform: rotate(-1deg);
-}
-
-
-.approach-card:nth-child(2) {
-    transform: rotate(1deg);
-}
-
-
-.approach-card:nth-child(3) {
-    transform: rotate(-1deg);
-}
-
-
-.approach-number {
-    display: block;
-
-    margin-bottom: 25px;
-
-    font-size: 14px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #f97316;
-}
-
-
-.approach-card h3 {
-    margin-bottom: 15px;
-
-    font-size: 27px;
-
-    color: #1f2937;
-}
-
-
-.approach-card p {
     font-size: 16px;
 
     line-height: 1.7;
@@ -454,7 +291,394 @@
 
 
 /* =========================================================
-   SERVICES CTA
+   05. SERVICE CATEGORY GRID
+========================================================= */
+
+.services-category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 35px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   06. SERVICE CATEGORY CARD
+========================================================= */
+
+.service-category-card {
+    position: relative;
+
+    display: block;
+
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 3px solid #1f2937;
+
+    color: #1f2937;
+
+    text-decoration: none;
+
+    box-shadow: 9px 9px 0 #f97316;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   CARD COLORS
+========================================================= */
+
+.service-category-card:nth-child(4n + 1) {
+    box-shadow: 9px 9px 0 #f97316;
+}
+
+
+.service-category-card:nth-child(4n + 2) {
+    box-shadow: 9px 9px 0 #7dbd26;
+}
+
+
+.service-category-card:nth-child(4n + 3) {
+    box-shadow: 9px 9px 0 #159bd3;
+}
+
+
+.service-category-card:nth-child(4n + 4) {
+    box-shadow: 9px 9px 0 #fbbf24;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.service-category-card:hover {
+    transform: translate(-5px, -5px);
+}
+
+
+.service-category-card:nth-child(4n + 1):hover {
+    box-shadow: 13px 13px 0 #f97316;
+}
+
+
+.service-category-card:nth-child(4n + 2):hover {
+    box-shadow: 13px 13px 0 #7dbd26;
+}
+
+
+.service-category-card:nth-child(4n + 3):hover {
+    box-shadow: 13px 13px 0 #159bd3;
+}
+
+
+.service-category-card:nth-child(4n + 4):hover {
+    box-shadow: 13px 13px 0 #fbbf24;
+}
+
+
+/* =========================================================
+   07. CARD INNER
+========================================================= */
+
+.service-category-card-inner {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-height: 300px;
+
+    height: 100%;
+
+    padding: 32px;
+}
+
+
+/* =========================================================
+   08. CARD ICON
+========================================================= */
+
+.service-category-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 30px;
+
+    border: 2px solid #1f2937;
+
+    background: #fffdf7;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   ALTERNATING ICON COLORS
+========================================================= */
+
+.service-category-card:nth-child(4n + 1)
+.service-category-icon {
+    background: #ffe0cf;
+}
+
+
+.service-category-card:nth-child(4n + 2)
+.service-category-icon {
+    background: #e3f2c9;
+}
+
+
+.service-category-card:nth-child(4n + 3)
+.service-category-icon {
+    background: #d9f0fa;
+}
+
+
+.service-category-card:nth-child(4n + 4)
+.service-category-icon {
+    background: #fff0b8;
+}
+
+
+/* =========================================================
+   09. CARD CONTENT
+========================================================= */
+
+.service-category-content {
+    flex: 1;
+
+    max-width: 600px;
+}
+
+
+.service-category-content h3 {
+    margin: 0 0 18px;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    color: #1f2937;
+}
+
+
+.service-category-content p {
+    max-width: 500px;
+
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #374151;
+}
+
+
+/* =========================================================
+   10. CARD ARROW
+========================================================= */
+
+.service-category-arrow {
+    align-self: flex-end;
+
+    margin-top: 25px;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: #1f2937;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.service-category-card:hover
+.service-category-arrow {
+    transform: translateX(7px);
+}
+
+
+/* =========================================================
+   11. EMPTY STATE
+========================================================= */
+
+.services-empty-state {
+    padding: 80px 40px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 3px solid #1f2937;
+
+    box-shadow: 9px 9px 0 #f97316;
+}
+
+
+.services-empty-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 25px;
+
+    background: #fbbf24;
+
+    border: 3px solid #1f2937;
+
+    font-size: 32px;
+
+    font-weight: 900;
+}
+
+
+.services-empty-state h3 {
+    margin: 0 0 15px;
+
+    font-size: 35px;
+
+    color: #1f2937;
+}
+
+
+.services-empty-state p {
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #374151;
+}
+
+
+/* =========================================================
+   12. OUR APPROACH
+========================================================= */
+
+.services-approach {
+    padding: 100px 0;
+
+    background: #ffffff;
+
+    border-bottom: 3px solid #1f2937;
+}
+
+
+.services-approach-grid {
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 80px;
+
+    align-items: start;
+}
+
+
+.services-approach-label {
+    position: relative;
+
+    min-height: 150px;
+}
+
+
+.services-approach-label .services-eyebrow {
+    margin-bottom: 30px;
+}
+
+
+.services-approach-arrow {
+    display: block;
+
+    font-size: 70px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #f97316;
+
+    transform: rotate(8deg);
+}
+
+
+.services-approach-content {
+    max-width: 850px;
+}
+
+
+.services-approach-content h2 {
+    max-width: 800px;
+
+    margin: 0 0 30px;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    color: #1f2937;
+}
+
+
+.services-approach-content p {
+    max-width: 750px;
+
+    margin: 0 0 20px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #374151;
+}
+
+
+.services-approach-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   13. SERVICES CTA
 ========================================================= */
 
 .services-cta {
@@ -466,13 +690,29 @@
 }
 
 
-.services-cta-content {
+.services-cta-inner {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+
+.services-cta-inner > div {
     max-width: 850px;
 }
 
 
+.services-cta-inner .services-eyebrow {
+    margin-bottom: 20px;
+}
+
+
 .services-cta h2 {
-    margin-bottom: 25px;
+    margin: 0;
 
     font-size: clamp(50px, 6vw, 80px);
 
@@ -484,43 +724,50 @@
 }
 
 
-.services-cta p:not(.services-section-label) {
-    max-width: 650px;
-
-    margin-bottom: 30px;
-
-    font-size: 19px;
-
-    line-height: 1.7;
-
-    color: #1f2937;
-}
-
-
 /* =========================================================
-   CTA BUTTON
+   14. CTA BUTTON
 ========================================================= */
 
 .services-cta-button {
-    display: inline-block;
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-shrink: 0;
 
     padding: 15px 25px;
 
     background: #1f2937;
 
-    color: #ffffff !important;
-
     border: 3px solid #1f2937;
+
+    color: #ffffff !important;
 
     font-weight: 900;
 
     text-decoration: none;
+
+    white-space: nowrap;
 
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
         background 0.2s ease,
         color 0.2s ease;
+}
+
+
+.services-cta-button span {
+    font-size: 20px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.2s ease;
 }
 
 
@@ -535,13 +782,18 @@
 }
 
 
+.services-cta-button:hover span {
+    transform: translateX(5px);
+}
+
+
 /* =========================================================
-   RESPONSIVE
+   15. TABLET
 ========================================================= */
 
 @media (max-width: 950px) {
 
-    .services-hero-content {
+    .services-hero-inner {
         grid-template-columns: 1fr;
 
         gap: 50px;
@@ -553,7 +805,7 @@
     }
 
 
-    .services-introduction-grid {
+    .services-intro-grid {
         grid-template-columns: 1fr;
 
         gap: 40px;
@@ -562,10 +814,35 @@
 
     .services-approach-grid {
         grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .services-approach-label {
+        min-height: auto;
+    }
+
+
+    .services-approach-arrow {
+        display: none;
+    }
+
+
+    .services-cta-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 35px;
     }
 
 }
 
+
+/* =========================================================
+   16. MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
@@ -581,7 +858,24 @@
     }
 
 
-    .services-introduction,
+    .services-hero-description {
+        font-size: 17px;
+    }
+
+
+    .services-hero-note {
+        padding: 28px;
+
+        box-shadow: 6px 6px 0 #1f2937;
+    }
+
+
+    .services-hero-note p {
+        font-size: 16px;
+    }
+
+
+    .services-intro,
     .services-list,
     .services-approach,
     .services-cta {
@@ -589,29 +883,70 @@
     }
 
 
-    .services-grid {
-        grid-template-columns: 1fr;
+    .services-section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        margin-bottom: 40px;
     }
 
 
-    .service-doodle-card {
-        min-height: auto;
+    .services-section-heading > p {
+        max-width: 500px;
+    }
+
+
+    .services-category-grid {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+
+    .service-category-card-inner {
+        min-height: 280px;
 
         padding: 28px;
     }
 
 
-    .service-doodle-card h3 {
-        font-size: 30px;
+    .service-category-content h3 {
+        font-size: 34px;
+    }
+
+
+    .service-category-content p {
+        font-size: 15px;
+    }
+
+
+    .services-approach-content h2 {
+        font-size: 50px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .services-approach-content p {
+        font-size: 17px;
     }
 
 
     .services-cta h2 {
         font-size: 50px;
+
+        letter-spacing: -2px;
     }
 
 }
 
+
+/* =========================================================
+   17. SMALL MOBILE
+========================================================= */
 
 @media (max-width: 450px) {
 
@@ -620,13 +955,83 @@
     }
 
 
+    .services-eyebrow {
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+
     .services-hero-note {
         padding: 25px;
+
+        transform: rotate(1deg);
+    }
+
+
+    .services-note-line {
+        font-size: 42px;
+    }
+
+
+    .services-intro-content h2 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .services-section-heading h2 {
+        font-size: 48px;
+    }
+
+
+    .service-category-card-inner {
+        min-height: 260px;
+
+        padding: 24px;
+    }
+
+
+    .service-category-icon {
+        width: 50px;
+        height: 50px;
+
+        margin-bottom: 24px;
+
+        font-size: 26px;
+    }
+
+
+    .service-category-content h3 {
+        font-size: 30px;
+    }
+
+
+    .service-category-arrow {
+        margin-top: 20px;
+
+        font-size: 26px;
+    }
+
+
+    .services-empty-state {
+        padding: 60px 25px;
+    }
+
+
+    .services-approach-content h2 {
+        font-size: 42px;
     }
 
 
     .services-cta h2 {
         font-size: 42px;
+    }
+
+
+    .services-cta-button {
+        width: 100%;
     }
 
 }

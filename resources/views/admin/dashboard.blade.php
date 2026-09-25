@@ -31,10 +31,13 @@
 
 {{-- =========================================================
      MAIN STATISTICS
+     8 CARDS / 4 COLUMNS
 ========================================================= --}}
 <div class="admin-stats">
 
-    {{-- PROJECTS --}}
+    {{-- =====================================================
+         01. PROJECTS
+    ====================================================== --}}
     <div class="admin-stat-card admin-stat-projects">
 
         <div class="admin-stat-number">
@@ -42,17 +45,23 @@
         </div>
 
         <div class="admin-stat-info">
-            <h3>Projects</h3>
+
+            <h3>
+                Projects
+            </h3>
 
             <p>
                 Total projects in the system.
             </p>
+
         </div>
 
     </div>
 
 
-    {{-- ACTIVE PROJECTS --}}
+    {{-- =====================================================
+         02. ACTIVE PROJECTS
+    ====================================================== --}}
     <div class="admin-stat-card admin-stat-active">
 
         <div class="admin-stat-number">
@@ -60,17 +69,23 @@
         </div>
 
         <div class="admin-stat-info">
-            <h3>Active Projects</h3>
+
+            <h3>
+                Active Projects
+            </h3>
 
             <p>
                 Projects currently active.
             </p>
+
         </div>
 
     </div>
 
 
-    {{-- NEWS --}}
+    {{-- =====================================================
+         03. NEWS
+    ====================================================== --}}
     <div class="admin-stat-card admin-stat-news">
 
         <div class="admin-stat-number">
@@ -78,17 +93,23 @@
         </div>
 
         <div class="admin-stat-info">
-            <h3>News</h3>
+
+            <h3>
+                News
+            </h3>
 
             <p>
                 Total news articles.
             </p>
+
         </div>
 
     </div>
 
 
-    {{-- DOWNLOADS --}}
+    {{-- =====================================================
+         04. DOWNLOADS
+    ====================================================== --}}
     <div class="admin-stat-card admin-stat-downloads">
 
         <div class="admin-stat-number">
@@ -96,17 +117,23 @@
         </div>
 
         <div class="admin-stat-info">
-            <h3>Downloads</h3>
+
+            <h3>
+                Downloads
+            </h3>
 
             <p>
                 Files available on website.
             </p>
+
         </div>
 
     </div>
 
 
-    {{-- CONTACT MESSAGES --}}
+    {{-- =====================================================
+         05. CONTACT MESSAGES
+    ====================================================== --}}
     <div class="admin-stat-card admin-stat-messages">
 
         <div class="admin-stat-number">
@@ -114,17 +141,23 @@
         </div>
 
         <div class="admin-stat-info">
-            <h3>Messages</h3>
+
+            <h3>
+                Messages
+            </h3>
 
             <p>
                 Messages received from visitors.
             </p>
+
         </div>
 
     </div>
 
 
-    {{-- RFQ --}}
+    {{-- =====================================================
+         06. RFQ
+    ====================================================== --}}
     <div class="admin-stat-card admin-stat-rfq">
 
         <div class="admin-stat-number">
@@ -132,58 +165,63 @@
         </div>
 
         <div class="admin-stat-info">
-            <h3>Quote Requests</h3>
+
+            <h3>
+                Quote Requests
+            </h3>
 
             <p>
                 Project requests submitted.
             </p>
+
         </div>
 
     </div>
 
-</div>
 
+    {{-- =====================================================
+         07. FEATURED PROJECTS
+    ====================================================== --}}
+    <div class="admin-stat-card admin-stat-featured">
 
-{{-- =========================================================
-     QUICK OVERVIEW
-========================================================= --}}
-<div class="admin-dashboard-overview">
+        <div class="admin-stat-number">
+            {{ $featuredProjects }}
+        </div>
 
-    <div class="admin-overview-note">
+        <div class="admin-stat-info">
 
-        <span class="admin-overview-icon">
-            ✦
-        </span>
-
-        <div>
-            <strong>
-                {{ $featuredProjects }}
+            <h3>
                 Featured Projects
-            </strong>
+            </h3>
 
             <p>
-                Active projects currently highlighted on the website.
+                Projects highlighted on website.
             </p>
+
         </div>
 
     </div>
 
 
-    <div class="admin-overview-note">
+    {{-- =====================================================
+         08. PUBLISHED NEWS
+    ====================================================== --}}
+    <div class="admin-stat-card admin-stat-published">
 
-        <span class="admin-overview-icon">
-            ✎
-        </span>
+        <div class="admin-stat-number">
+            {{ $publishedNews }}
+        </div>
 
-        <div>
-            <strong>
-                {{ $publishedNews }}
+        <div class="admin-stat-info">
+
+            <h3>
                 Published News
-            </strong>
+            </h3>
 
             <p>
-                News articles currently visible to website visitors.
+                News visible to website visitors.
             </p>
+
         </div>
 
     </div>
@@ -204,6 +242,7 @@
         <div class="admin-chart-header">
 
             <div>
+
                 <p class="section-label">
                     CONTACT
                 </p>
@@ -211,6 +250,7 @@
                 <h2>
                     Contact Messages
                 </h2>
+
             </div>
 
             <span class="admin-chart-period">
@@ -234,6 +274,7 @@
         <div class="admin-chart-header">
 
             <div>
+
                 <p class="section-label">
                     REQUEST A QUOTE
                 </p>
@@ -241,6 +282,7 @@
                 <h2>
                     Quote Requests
                 </h2>
+
             </div>
 
             <span class="admin-chart-period">
@@ -264,6 +306,7 @@
         <div class="admin-chart-header">
 
             <div>
+
                 <p class="section-label">
                     PROJECTS
                 </p>
@@ -271,6 +314,7 @@
                 <h2>
                     Projects by Status
                 </h2>
+
             </div>
 
         </div>
@@ -291,12 +335,16 @@
                     <span class="admin-project-status-dot planning"></span>
 
                     <div>
-                        <strong>Planning</strong>
+
+                        <strong>
+                            Planning
+                        </strong>
 
                         <span>
                             {{ $projectStatusData['planning'] }}
                             project
                         </span>
+
                     </div>
 
                 </div>
@@ -308,12 +356,16 @@
                     <span class="admin-project-status-dot ongoing"></span>
 
                     <div>
-                        <strong>Ongoing</strong>
+
+                        <strong>
+                            Ongoing
+                        </strong>
 
                         <span>
                             {{ $projectStatusData['ongoing'] }}
                             project
                         </span>
+
                     </div>
 
                 </div>
@@ -325,12 +377,16 @@
                     <span class="admin-project-status-dot completed"></span>
 
                     <div>
-                        <strong>Completed</strong>
+
+                        <strong>
+                            Completed
+                        </strong>
 
                         <span>
                             {{ $projectStatusData['completed'] }}
                             project
                         </span>
+
                     </div>
 
                 </div>
@@ -352,6 +408,7 @@
     <div class="admin-section-header">
 
         <div>
+
             <p class="section-label">
                 PROJECTS
             </p>
@@ -359,6 +416,7 @@
             <h2>
                 Recent Projects
             </h2>
+
         </div>
 
         <a
@@ -377,6 +435,7 @@
         <table class="admin-table">
 
             <thead>
+
                 <tr>
                     <th>Project</th>
                     <th>Category</th>
@@ -384,6 +443,7 @@
                     <th>Status</th>
                     <th>Year</th>
                 </tr>
+
             </thead>
 
             <tbody>
@@ -407,9 +467,11 @@
                     </td>
 
                     <td>
+
                         <span class="admin-status">
                             {{ ucfirst($project->status ?? 'planning') }}
                         </span>
+
                     </td>
 
                     <td>
@@ -453,6 +515,7 @@
     <div class="admin-section-header">
 
         <div>
+
             <p class="section-label">
                 NEWS
             </p>
@@ -460,6 +523,7 @@
             <h2>
                 Recent News
             </h2>
+
         </div>
 
         <a
@@ -478,6 +542,7 @@
         <table class="admin-table">
 
             <thead>
+
                 <tr>
                     <th>Title</th>
                     <th>Category</th>
@@ -485,6 +550,7 @@
                     <th>Published</th>
                     <th>Status</th>
                 </tr>
+
             </thead>
 
             <tbody>
@@ -508,23 +574,33 @@
                     </td>
 
                     <td>
+
                         @if($item->published_at)
+
                         {{ $item->published_at->format('d M Y') }}
+
                         @else
+
                         -
+
                         @endif
+
                     </td>
 
                     <td>
 
                         @if($item->is_active)
+
                         <span class="admin-status admin-status-active">
                             Active
                         </span>
+
                         @else
+
                         <span class="admin-status admin-status-inactive">
                             Inactive
                         </span>
+
                         @endif
 
                     </td>
@@ -566,6 +642,7 @@
     <div class="admin-section-header">
 
         <div>
+
             <p class="section-label">
                 CONTACT
             </p>
@@ -573,6 +650,7 @@
             <h2>
                 Recent Messages
             </h2>
+
         </div>
 
         <a
@@ -591,12 +669,14 @@
         <table class="admin-table">
 
             <thead>
+
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Subject</th>
                     <th>Date</th>
                 </tr>
+
             </thead>
 
             <tbody>
@@ -658,6 +738,7 @@
     <div class="admin-section-header">
 
         <div>
+
             <p class="section-label">
                 REQUEST A QUOTE
             </p>
@@ -665,6 +746,7 @@
             <h2>
                 Recent Requests
             </h2>
+
         </div>
 
         <a
@@ -683,6 +765,7 @@
         <table class="admin-table">
 
             <thead>
+
                 <tr>
                     <th>Company</th>
                     <th>Contact</th>
@@ -690,6 +773,7 @@
                     <th>Status</th>
                     <th>Date</th>
                 </tr>
+
             </thead>
 
             <tbody>
@@ -767,7 +851,8 @@
     data-ongoing="{{ $projectStatusData['ongoing'] }}"
     data-completed="{{ $projectStatusData['completed'] }}"
 
-    style="display: none;"></div>
+    style="display: none;">
+</div>
 
 
 {{-- =========================================================
@@ -786,11 +871,9 @@
         }
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | GET DATA
-        |--------------------------------------------------------------------------
-        */
+        /* =====================================================
+           GET DATA
+        ====================================================== */
 
         const chartData = {
 
@@ -804,7 +887,6 @@
                 )
             },
 
-
             rfq: {
                 labels: JSON.parse(
                     chartDataElement.dataset.rfqLabels
@@ -814,7 +896,6 @@
                     chartDataElement.dataset.rfqData
                 )
             },
-
 
             projects: {
 
@@ -835,11 +916,9 @@
         };
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | COMMON SETTINGS
-        |--------------------------------------------------------------------------
-        */
+        /* =====================================================
+           COMMON SETTINGS
+        ====================================================== */
 
         Chart.defaults.font.family =
             'Arial, Helvetica, sans-serif';
@@ -849,11 +928,9 @@
         Chart.defaults.color = '#1f2937';
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | CONTACT MESSAGES CHART
-        |--------------------------------------------------------------------------
-        */
+        /* =====================================================
+           CONTACT MESSAGES CHART
+        ====================================================== */
 
         const messagesCanvas =
             document.getElementById('messagesChart');
@@ -959,11 +1036,9 @@
         }
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | RFQ CHART
-        |--------------------------------------------------------------------------
-        */
+        /* =====================================================
+           RFQ CHART
+        ====================================================== */
 
         const rfqCanvas =
             document.getElementById('rfqChart');
@@ -1069,11 +1144,9 @@
         }
 
 
-        /*
-        |--------------------------------------------------------------------------
-        | PROJECT STATUS CHART
-        |--------------------------------------------------------------------------
-        */
+        /* =====================================================
+           PROJECT STATUS CHART
+        ====================================================== */
 
         const projectStatusCanvas =
             document.getElementById('projectStatusChart');
@@ -1092,39 +1165,34 @@
                         'Completed'
                     ],
 
-                    datasets: [
+                    datasets: [{
+                        data: [
 
-                        {
+                            chartData.projects.planning,
 
-                            data: [
+                            chartData.projects.ongoing,
 
-                                chartData.projects.planning,
+                            chartData.projects.completed
 
-                                chartData.projects.ongoing,
+                        ],
 
-                                chartData.projects.completed
+                        borderWidth: 3,
 
-                            ],
+                        borderColor: '#f7f7f2',
 
-                            borderWidth: 3,
+                        backgroundColor: [
 
-                            borderColor: '#f7f7f2',
+                            '#facc15',
 
-                            backgroundColor: [
+                            '#3b82f6',
 
-                                '#facc15',
+                            '#22c55e'
 
-                                '#3b82f6',
+                        ],
 
-                                '#22c55e'
+                        hoverOffset: 6
 
-                            ],
-
-                            hoverOffset: 6
-
-                        }
-
-                    ]
+                    }]
 
                 },
 

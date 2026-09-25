@@ -1,53 +1,46 @@
 @extends('layouts.app')
 
-@section('title', 'Xclip — Services & Business Solutions')
-
-@section('meta_description', 'Xclip menyediakan layanan konstruksi, perdagangan, industrial, dan jasa profesional untuk mendukung kebutuhan bisnis, proyek, dan operasional.')
-
-@section('og_title', 'Xclip — Services & Business Solutions')
-
-@section('og_description', 'Temukan layanan Xclip dalam bidang konstruksi, perdagangan, industrial, dan jasa profesional untuk mendukung berbagai kebutuhan proyek dan bisnis.')
+@section('title', 'Xclip - Services')
 
 @section('content')
 
-{{-- =====================================================
+{{-- =========================================================
      SERVICES HERO
-===================================================== --}}
+========================================================= --}}
 
 <section class="services-hero">
 
     <div class="container">
 
-        <div class="services-hero-content">
+        <div class="services-hero-inner">
 
-            <div>
+            <div class="services-hero-content">
 
-                <p class="services-label">
+                <p class="services-eyebrow">
                     OUR SERVICES
                 </p>
 
                 <h1>
-                    Solutions
-                    <span>That Move</span>
-                    Business Forward
+                    Solutions That Move
+                    <span>Business Forward</span>
                 </h1>
 
-                <p class="services-intro">
-                    Xclip provides business services and
-                    solutions designed to support projects,
-                    operations, and business needs.
+                <p class="services-hero-description">
+                    Xclip provides practical solutions to support
+                    projects, operations, and business needs through
+                    reliable services and professional expertise.
                 </p>
 
             </div>
+
 
             <div class="services-hero-note">
 
-                <span>✦</span>
+
 
                 <p>
-                    From project support to professional
-                    services, we work to deliver practical
-                    solutions for our clients.
+                    From project support to professional services,
+                    we help turn business needs into practical solutions.
                 </p>
 
             </div>
@@ -59,42 +52,41 @@
 </section>
 
 
-{{-- =====================================================
-     SERVICES INTRO
-===================================================== --}}
+{{-- =========================================================
+     SERVICES INTRODUCTION
+========================================================= --}}
 
-<section class="services-introduction">
+<section class="services-intro">
 
     <div class="container">
 
-        <div class="services-introduction-grid">
+        <div class="services-intro-grid">
 
-            <div>
+            <div class="services-intro-label">
 
-                <p class="services-section-label">
+                <span>
                     WHAT WE DO
-                </p>
-
-                <h2>
-                    Our Areas
-                    of Service
-                </h2>
+                </span>
 
             </div>
 
-            <div>
+
+            <div class="services-intro-content">
+
+                <h2>
+                    Practical services for
+                    real business needs.
+                </h2>
 
                 <p>
-                    Xclip operates across several business
-                    areas to support different project and
-                    operational requirements.
+                    Our services are organized into several categories
+                    designed to support different project requirements,
+                    operational needs, and business activities.
                 </p>
 
                 <p>
-                    Our services are organized into
-                    specialized areas, allowing us to
-                    provide solutions according to the
-                    needs of each client and project.
+                    Explore our service categories below to discover
+                    how Xclip can support your project.
                 </p>
 
             </div>
@@ -106,239 +98,147 @@
 </section>
 
 
-{{-- =====================================================
-     SERVICE CARDS
-===================================================== --}}
+{{-- =========================================================
+     SERVICE CATEGORIES
+========================================================= --}}
 
 <section class="services-list">
 
     <div class="container">
 
-        <div class="services-grid">
+        <div class="services-section-heading">
 
-            {{-- 01 Construction --}}
+            <div>
 
-            <article class="service-doodle-card service-orange">
-
-                <div class="service-card-top">
-
-                    <span class="service-number">
-                        01
-                    </span>
-
-                    <span class="service-symbol">
-                        +
-                    </span>
-
-                </div>
-
-                <h3>
-                    Construction
-                </h3>
-
-                <p>
-                    Construction and infrastructure
-                    related services to support project
-                    development and implementation.
+                <p class="services-eyebrow">
+                    SERVICE CATEGORIES
                 </p>
 
-                <div class="service-line"></div>
+                <h2>
+                    What We Offer
+                </h2>
 
-                <span class="service-tag">
-                    PROJECT SUPPORT
-                </span>
+            </div>
 
-            </article>
-
-
-            {{-- 02 Trade --}}
-
-            <article class="service-doodle-card service-green">
-
-                <div class="service-card-top">
-
-                    <span class="service-number">
-                        02
-                    </span>
-
-                    <span class="service-symbol">
-                        ×
-                    </span>
-
-                </div>
-
-                <h3>
-                    Trade
-                </h3>
-
-                <p>
-                    Trading, distribution, and retail
-                    solutions that support business
-                    supply and commercial activities.
-                </p>
-
-                <div class="service-line"></div>
-
-                <span class="service-tag">
-                    TRADE & DISTRIBUTION
-                </span>
-
-            </article>
-
-
-            {{-- 03 Industrial --}}
-
-            <article class="service-doodle-card service-blue">
-
-                <div class="service-card-top">
-
-                    <span class="service-number">
-                        03
-                    </span>
-
-                    <span class="service-symbol">
-                        ○
-                    </span>
-
-                </div>
-
-                <h3>
-                    Industrial
-                </h3>
-
-                <p>
-                    Industrial and manufacturing solutions
-                    designed to support operational and
-                    production requirements.
-                </p>
-
-                <div class="service-line"></div>
-
-                <span class="service-tag">
-                    INDUSTRIAL
-                </span>
-
-            </article>
-
-
-            {{-- 04 Professional --}}
-
-            <article class="service-doodle-card service-yellow">
-
-                <div class="service-card-top">
-
-                    <span class="service-number">
-                        04
-                    </span>
-
-                    <span class="service-symbol">
-                        *
-                    </span>
-
-                </div>
-
-                <h3>
-                    Professional
-                </h3>
-
-                <p>
-                    Consulting, design, and professional
-                    services to help clients plan and
-                    develop their projects.
-                </p>
-
-                <div class="service-line"></div>
-
-                <span class="service-tag">
-                    PROFESSIONAL SERVICES
-                </span>
-
-            </article>
+            <p>
+                Explore our core service categories.
+            </p>
 
         </div>
+
+
+        @if($categories->isNotEmpty())
+
+        <div class="services-category-grid">
+
+            @foreach($categories as $category)
+
+            <article class="service-category-card">
+
+                <div class="service-category-card-inner">
+
+                    {{-- ICON --}}
+
+                    <div class="service-category-icon">
+
+                        {{ $category->icon ?: '+' }}
+
+                    </div>
+
+
+                    {{-- CATEGORY CONTENT --}}
+
+                    <div class="service-category-content">
+
+                        <h3>
+                            {{ $category->name }}
+                        </h3>
+
+                        @if($category->description)
+
+                        <p>
+                            {{ $category->description }}
+                        </p>
+
+                        @endif
+
+                    </div>
+
+
+
+
+                </div>
+
+            </article>
+
+            @endforeach
+
+        </div>
+
+        @else
+
+        <div class="services-empty-state">
+
+            <div class="services-empty-icon">
+                +
+            </div>
+
+            <h3>
+                Services Coming Soon
+            </h3>
+
+            <p>
+                Service information is currently being prepared.
+                Please check back again soon.
+            </p>
+
+        </div>
+
+        @endif
 
     </div>
 
 </section>
 
 
-{{-- =====================================================
-     WHY XCLIP
-===================================================== --}}
+{{-- =========================================================
+     OUR APPROACH
+========================================================= --}}
 
 <section class="services-approach">
 
     <div class="container">
 
-        <div class="services-approach-header">
-
-            <p class="services-section-label">
-                OUR APPROACH
-            </p>
-
-            <h2>
-                Practical Solutions.
-                <br>
-                Meaningful Results.
-            </h2>
-
-        </div>
-
-
         <div class="services-approach-grid">
 
-            <div class="approach-card">
+            <div class="services-approach-label">
 
-                <span class="approach-number">
-                    01
-                </span>
-
-                <h3>
-                    Understand
-                </h3>
-
-                <p>
-                    We begin by understanding the needs,
-                    objectives, and requirements of each
-                    project.
+                <p class="services-eyebrow">
+                    OUR APPROACH
                 </p>
+
 
             </div>
 
 
-            <div class="approach-card">
+            <div class="services-approach-content">
 
-                <span class="approach-number">
-                    02
-                </span>
-
-                <h3>
-                    Support
-                </h3>
+                <h2>
+                    Practical Solutions.
+                    Professional Execution.
+                </h2>
 
                 <p>
-                    We provide services and solutions
-                    that are aligned with the project's
-                    requirements.
+                    We believe good service starts with understanding
+                    the actual needs of each project. Our approach focuses
+                    on practical solutions, clear communication, and
+                    professional execution.
                 </p>
 
-            </div>
-
-
-            <div class="approach-card">
-
-                <span class="approach-number">
-                    03
-                </span>
-
-                <h3>
-                    Deliver
-                </h3>
-
                 <p>
-                    We focus on practical solutions that
-                    can provide value for clients and
-                    their projects.
+                    Every project has different requirements. That's why
+                    we work with a flexible approach that allows our
+                    services to adapt to the needs of our clients.
                 </p>
 
             </div>
@@ -350,32 +250,37 @@
 </section>
 
 
-{{-- =====================================================
+{{-- =========================================================
      CTA
-===================================================== --}}
+========================================================= --}}
 
 <section class="services-cta">
 
     <div class="container">
 
-        <div class="services-cta-content">
+        <div class="services-cta-inner">
 
-            <p class="services-section-label">
-                HAVE A PROJECT?
-            </p>
+            <div>
 
-            <h2>
-                Let's Build
-                Something Together.
-            </h2>
+                <p class="services-eyebrow">
+                    HAVE A PROJECT IN MIND?
+                </p>
 
-            <p>
-                Tell us about your project and discover
-                how Xclip can support your business needs.
-            </p>
+                <h2>
+                    Let's build the right
+                    solution together.
+                </h2>
 
-            <a href="{{ route('rfq') }}" class="services-cta-button">
+            </div>
+
+
+            <a
+                href="{{ route('rfq') }}"
+                class="services-cta-button">
+
                 Request a Quote
+
+
             </a>
 
         </div>

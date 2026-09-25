@@ -37,7 +37,6 @@
                 href="{{ route('admin.dashboard') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
 
-
                 <span>
                     Dashboard
                 </span>
@@ -50,7 +49,6 @@
                 href="{{ route('admin.messages.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.messages.*') ? 'active' : '' }}">
 
-
                 <span>
                     Messages
                 </span>
@@ -62,7 +60,6 @@
             <a
                 href="{{ route('admin.rfq.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.rfq.*') ? 'active' : '' }}">
-
 
                 <span>
                     Request a Quote
@@ -84,11 +81,26 @@
             </p>
 
 
+            {{-- SERVICES --}}
+            <a
+                href="{{ route('admin.services.index') }}"
+                class="admin-nav-item {{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
+
+                <span>
+                    Services
+                </span>
+
+            </a>
+
+
             {{-- PROJECTS --}}
-            <a href="{{ route('admin.projects.index') }}"
+            <a
+                href="{{ route('admin.projects.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.projects.*') ? 'active' : '' }}">
 
-                <span>Projects</span>
+                <span>
+                    Projects
+                </span>
 
             </a>
 
@@ -97,15 +109,22 @@
             <a
                 href="{{ route('admin.news.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.news.*') ? 'active' : '' }}">
-                <span>News</span>
+
+                <span>
+                    News
+                </span>
+
             </a>
 
 
             {{-- DOWNLOADS --}}
-            <a href="{{ route('admin.downloads.index') }}"
+            <a
+                href="{{ route('admin.downloads.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.downloads.*') ? 'active' : '' }}">
 
-                <span>Downloads</span>
+                <span>
+                    Downloads
+                </span>
 
             </a>
 
@@ -124,10 +143,18 @@
 
 
             {{-- SETTINGS --}}
-            <a href="{{ route('admin.settings.index') }}"
+            <a
+                href="{{ route('admin.settings.index') }}"
                 class="admin-nav-item {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
-                <span>Settings</span>
+
+                <span>
+                    Settings
+                </span>
+
             </a>
+
         </div>
+
     </nav>
+
 </aside>

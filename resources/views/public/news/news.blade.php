@@ -58,7 +58,7 @@
 
         {{-- =================================================
              1 FEATURED
-             Jika hanya ada satu berita featured
+             Layout editorial besar
         ================================================== --}}
 
         @if($featuredNews->count() === 1)
@@ -136,43 +136,31 @@
 
         {{-- =================================================
              2+ FEATURED
-             Berita utama
-             +
-             Berita 1, 2, 3, dst
+             Semua Featured menjadi card yang setara
         ================================================== --}}
 
         @elseif($featuredNews->count() > 1)
 
-        @php
-        $mainFeatured = $featuredNews->first();
-        $secondaryFeatured = $featuredNews->skip(1);
-        @endphp
+        <div class="featured-news-grid">
 
+            @foreach($featuredNews as $index => $item)
 
-        <div class="featured-news-editorial">
+            <article class="featured-news-grid-card">
 
+                {{-- IMAGE --}}
 
-            {{-- =========================================
-                 BERITA UTAMA
-            ========================================== --}}
+                <div class="featured-news-grid-image">
 
-            <article class="featured-news-main">
-
-
-                {{-- MAIN IMAGE --}}
-
-                <div class="featured-news-main-image">
-
-                    @if($mainFeatured->thumbnail)
+                    @if($item->thumbnail)
 
                     <img
-                        src="{{ asset('storage/' . $mainFeatured->thumbnail) }}"
-                        alt="{{ $mainFeatured->title }}">
+                        src="{{ asset('storage/' . $item->thumbnail) }}"
+                        alt="{{ $item->title }}">
 
                     @else
 
                     <span>
-                        FEATURED NEWS
+                        NEWS
                     </span>
 
                     @endif
@@ -180,42 +168,53 @@
                 </div>
 
 
-                {{-- MAIN CONTENT --}}
+                {{-- CONTENT --}}
 
-                <div class="featured-news-main-content">
+                <div class="featured-news-grid-content">
+
+                    <div class="featured-news-grid-number">
+                        BERITA
+                        {{ str_pad(
+                                    $index + 1,
+                                    2,
+                                    '0',
+                                    STR_PAD_LEFT
+                                ) }}
+                    </div>
+
 
                     <div class="news-meta">
 
                         <span>
-                            {{ strtoupper($mainFeatured->category) }}
+                            {{ strtoupper($item->category) }}
                         </span>
 
                         <span>
-                            {{ $mainFeatured->published_at->format('d M Y') }}
+                            {{ $item->published_at->format('d M Y') }}
                         </span>
 
                     </div>
 
 
-                    <h2>
-                        {{ $mainFeatured->title }}
-                    </h2>
+                    <h3>
+                        {{ $item->title }}
+                    </h3>
 
 
-                    @if($mainFeatured->excerpt)
+                    @if($item->excerpt)
 
                     <p>
                         {{ \Illuminate\Support\Str::limit(
-                            $mainFeatured->excerpt,
-                            220
-                        ) }}
+                                        $item->excerpt,
+                                        120
+                                    ) }}
                     </p>
 
                     @endif
 
 
                     <a
-                        href="{{ route('news.show', $mainFeatured->slug) }}"
+                        href="{{ route('news.show', $item->slug) }}"
                         class="news-read-more">
                         Read More
                     </a>
@@ -224,89 +223,7 @@
 
             </article>
 
-
-
-            {{-- =========================================
-                 BERITA 1, 2, 3, DST
-            ========================================== --}}
-
-            <div class="featured-news-list">
-
-
-                @foreach($secondaryFeatured as $item)
-
-                <article class="featured-news-item">
-
-
-                    {{-- IMAGE --}}
-
-                    <div class="featured-news-item-image">
-
-                        @if($item->thumbnail)
-
-                        <img
-                            src="{{ asset('storage/' . $item->thumbnail) }}"
-                            alt="{{ $item->title }}">
-
-                        @else
-
-                        <span>
-                            NEWS
-                        </span>
-
-                        @endif
-
-                    </div>
-
-
-                    {{-- CONTENT --}}
-
-                    <div class="featured-news-item-content">
-
-                        <div class="news-meta">
-
-                            <span>
-                                {{ strtoupper($item->category) }}
-                            </span>
-
-                            <span>
-                                {{ $item->published_at->format('d M Y') }}
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            {{ $item->title }}
-                        </h3>
-
-
-                        @if($item->excerpt)
-
-                        <p>
-                            {{ \Illuminate\Support\Str::limit(
-                                $item->excerpt,
-                                100
-                            ) }}
-                        </p>
-
-                        @endif
-
-
-                        <a
-                            href="{{ route('news.show', $item->slug) }}"
-                            class="news-read-more">
-                            Read More
-                        </a>
-
-                    </div>
-
-                </article>
-
-                @endforeach
-
-
-            </div>
+            @endforeach
 
         </div>
 
@@ -412,11 +329,9 @@
 
         <div class="news-grid">
 
-
             @foreach($latestNews as $item)
 
             <article class="news-card">
-
 
                 {{-- IMAGE --}}
 
@@ -465,9 +380,9 @@
 
                     <p>
                         {{ \Illuminate\Support\Str::limit(
-                            $item->excerpt,
-                            150
-                        ) }}
+                                        $item->excerpt,
+                                        150
+                                    ) }}
                     </p>
 
                     @endif
@@ -484,7 +399,6 @@
             </article>
 
             @endforeach
-
 
         </div>
 

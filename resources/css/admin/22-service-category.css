@@ -1,0 +1,176 @@
+/* =========================================================
+   XCLIP ADMIN
+   SERVICE CATEGORY FORM
+========================================================= */
+
+
+/* =========================================================
+   FORM PAGE
+========================================================= */
+
+.admin-form-page {
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.admin-form-card {
+    padding: 30px;
+    background: #ffffff;
+    border: 3px solid #1f2937;
+    box-shadow: 6px 6px 0 #1f2937;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.admin-form-group {
+    margin-bottom: 24px;
+}
+
+.admin-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1f2937;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.admin-form-group label span {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.admin-form-group input,
+.admin-form-group textarea,
+.admin-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 2px solid #1f2937;
+    outline: none;
+    background: #fffdf7;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.admin-form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.6;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus,
+.admin-form-group select:focus {
+    background: #ffffff;
+    box-shadow: 4px 4px 0 #facc15;
+}
+
+
+/* =========================================================
+   HELP
+========================================================= */
+
+.admin-form-help {
+    display: block;
+    margin-top: 7px;
+    color: #6b7280;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.admin-form-error {
+    display: block;
+    margin-top: 7px;
+    color: #dc2626;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.admin-form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 5px;
+    padding: 14px;
+    border: 2px dashed #9ca3af;
+    background: #fffdf7;
+}
+
+.admin-form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #1f2937;
+}
+
+.admin-form-checkbox label {
+    margin: 0;
+    color: #1f2937;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.admin-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #d1d5db;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .admin-form-card {
+        padding: 20px;
+    }
+
+    .admin-form-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .admin-form-actions .admin-primary-button,
+    .admin-form-actions .admin-action-link {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+}

@@ -18,6 +18,7 @@
 
      $siteSetting = \App\Models\SiteSetting::first();
 
+
      /*
      |--------------------------------------------------------------------------
      | GENERAL
@@ -86,17 +87,69 @@
 
      $ogTitle =
      trim($__env->yieldContent('og_title'))
-     ?: $pageTitle;
+     ?: $defaultOgTitle;
 
 
      $ogDescription =
      trim($__env->yieldContent('og_description'))
-     ?: $pageDescription;
+     ?: $defaultOgDescription;
 
 
      $ogType =
      trim($__env->yieldContent('og_type'))
      ?: 'website';
+
+
+     /*
+     |--------------------------------------------------------------------------
+     | DECODE HTML ENTITIES
+     |--------------------------------------------------------------------------
+     |
+     | Mencegah data seperti:
+     |
+     | News &amp; Updates
+     |
+     | tampil sebagai:
+     |
+     | News &amp; Updates
+     |
+     | setelah Blade melakukan escaping.
+     |
+     */
+
+     $pageTitle = html_entity_decode(
+     $pageTitle,
+     ENT_QUOTES | ENT_HTML5,
+     'UTF-8'
+     );
+
+
+     $pageDescription = html_entity_decode(
+     $pageDescription,
+     ENT_QUOTES | ENT_HTML5,
+     'UTF-8'
+     );
+
+
+     $ogTitle = html_entity_decode(
+     $ogTitle,
+     ENT_QUOTES | ENT_HTML5,
+     'UTF-8'
+     );
+
+
+     $ogDescription = html_entity_decode(
+     $ogDescription,
+     ENT_QUOTES | ENT_HTML5,
+     'UTF-8'
+     );
+
+
+     $siteName = html_entity_decode(
+     $siteName,
+     ENT_QUOTES | ENT_HTML5,
+     'UTF-8'
+     );
 
 
      /*
@@ -238,8 +291,8 @@
 
 
      {{-- =====================================================
-     GOOGLE ANALYTICS
-====================================================== --}}
+         GOOGLE ANALYTICS
+    ====================================================== --}}
 
      @if($siteSetting?->google_analytics_id)
 
@@ -261,7 +314,10 @@
 
           gtag('js', new Date());
 
-          gtag('config', '{{ $googleAnalyticsId }}');
+          gtag(
+               'config',
+               '{{ $googleAnalyticsId }}'
+          );
      </script>
 
      @endif
