@@ -1,194 +1,941 @@
 @extends('layouts.app')
 
-@section('title', 'Xclip — Business Solutions for Your Project')
+@section('title', 'PT Xclip Subcon Asia — Integrated Business Solutions')
 
-@section('meta_description', 'Xclip menyediakan solusi bisnis, dukungan proyek, perdagangan, industrial, dan jasa profesional untuk kebutuhan proyek Anda.')
+@section(
+'meta_description',
+'PT Xclip Subcon Asia menyediakan solusi terintegrasi untuk kebutuhan konstruksi, industrial, perdagangan, teknologi, dan jasa profesional.'
+)
 
-@section('og_title', 'Xclip — Business Solutions for Your Project')
+@section('og_title', 'PT Xclip Subcon Asia — Integrated Business Solutions')
 
-@section('og_description', 'Solusi bisnis dan dukungan proyek dari Xclip.')
+@section(
+'og_description',
+'Solusi terintegrasi untuk mendukung kebutuhan bisnis, proyek, dan operasional Anda.'
+)
 
 @section('content')
+
 
 {{-- =========================================================
      HERO
 ========================================================= --}}
-<section class="hero">
+
+<section class="home-hero">
+
+    <div class="home-hero-bg"></div>
+
     <div class="container">
 
-        <div class="hero-content">
+        <div class="home-hero-grid">
 
-            <span class="hero-label">
-                PT. Xclip Subcon Asia
-            </span>
+            <div class="home-hero-content">
 
-            <h1>
-                Business Solutions
-                for Your Project
-            </h1>
+                <span class="home-eyebrow">
+                    PT. XCLIP SUBCON ASIA
+                </span>
 
-            <p>
-                Discover our services, projects, and
-                professional solutions for your business needs.
-            </p>
+                <h1>
+                    Building
+                    <span>Solutions</span>
+                    Across Industries.
+                </h1>
 
-            <div class="hero-actions">
+                <p class="home-hero-description">
+                    Kami menghadirkan solusi terintegrasi untuk mendukung
+                    kebutuhan bisnis, proyek, dan operasional melalui
+                    layanan yang profesional, inovatif, dan berorientasi
+                    pada hasil.
+                </p>
 
-                <a href="{{ route('services') }}">
-                    Explore Services
-                </a>
+                <div class="home-hero-actions">
 
-                <a href="{{ route('rfq') }}">
-                    Request a Quote
-                </a>
+                    <a
+                        href="{{ route('services') }}"
+                        class="home-button home-button-primary">
+                        Explore Our Services
+                    </a>
+
+                    <a
+                        href="{{ route('about') }}"
+                        class="home-button home-button-secondary">
+                        Discover Xclip
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="home-hero-visual">
+
+                <div class="home-hero-image-frame">
+
+                    <img
+                        src="{{ asset('images/gedung.jpg') }}"
+                        alt="Gedung PT Xclip Subcon Asia">
+
+                </div>
+
+
+                <span class="home-doodle home-doodle-star">
+                    ✦
+                </span>
+
+                <span class="home-doodle home-doodle-circle">
+                </span>
+
+                <span class="home-doodle home-doodle-arrow">
+                    ↘
+                </span>
 
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
 {{-- =========================================================
-     ABOUT PREVIEW
+     COMPANY INTRO
 ========================================================= --}}
-<section class="about-preview">
+
+<section class="home-company">
+
     <div class="container">
 
-        <p>
-            ABOUT XCLIP
-        </p>
+        <div class="home-company-header">
 
-        <h2>
-            Building Solutions
-            That Matter
-        </h2>
+            <div class="home-company-title">
 
-        <p>
-            Xclip provides various business services
-            and solutions to support client projects
-            through reliable and professional solutions.
-        </p>
+                <span class="home-section-label">
+                    ABOUT XCLIP
+                </span>
 
-        <a href="{{ route('about') }}">
-            Learn More
-        </a>
+                <h2>
+                    One Company.
+                    <span>Multiple Capabilities.</span>
+                    One Integrated Approach.
+                </h2>
 
-    </div>
-</section>
+            </div>
 
 
-{{-- =========================================================
-     SERVICES PREVIEW
-========================================================= --}}
-<section class="services-preview">
-    <div class="container">
+            <div class="home-company-intro">
 
-        <p>
-            OUR SERVICES
-        </p>
+                <span class="home-company-intro-label">
+                    WHO WE ARE
+                </span>
 
-        <h2>
-            What We Do
-        </h2>
+                <p>
+                    PT Xclip Subcon Asia merupakan perusahaan
+                    multi-layanan yang menghadirkan solusi
+                    profesional untuk mendukung kebutuhan bisnis,
+                    proyek, dan operasional di berbagai sektor.
+                </p>
 
-        <div class="service-grid">
+                <p>
+                    Kami menghubungkan berbagai kapabilitas dalam
+                    satu pendekatan terintegrasi untuk membantu
+                    klien mendapatkan solusi yang relevan,
+                    efektif, dan berorientasi pada kebutuhan nyata.
+                </p>
 
-            <div class="service-card">
+            </div>
 
-                <span class="service-number">
+        </div>
+
+
+        {{-- COMPANY INFORMATION --}}
+
+        <div class="home-company-facts">
+
+            <div class="home-company-fact">
+
+                <span class="home-fact-number">
                     01
                 </span>
 
-                <h3>
-                    Construction
-                </h3>
+                <span class="home-company-fact-label">
+                    ESTABLISHED
+                </span>
+
+                <strong>
+                    2023
+                </strong>
 
                 <p>
-                    Construction and infrastructure
-                    related services.
+                    Officially established
+                    as a business entity.
                 </p>
 
             </div>
 
 
-            <div class="service-card">
+            <div class="home-company-fact">
 
-                <span class="service-number">
+                <span class="home-fact-number">
                     02
                 </span>
 
-                <h3>
-                    Trade
-                </h3>
+                <span class="home-company-fact-label">
+                    LOCATION
+                </span>
+
+                <strong>
+                    Kebumen
+                </strong>
 
                 <p>
-                    Trading, distribution, and
-                    retail solutions.
+                    Central Java,
+                    Indonesia.
                 </p>
 
             </div>
 
 
-            <div class="service-card">
+            <div class="home-company-fact">
 
-                <span class="service-number">
+                <span class="home-fact-number">
                     03
                 </span>
 
-                <h3>
-                    Industrial
-                </h3>
+                <span class="home-company-fact-label">
+                    BUSINESS
+                </span>
+
+                <strong>
+                    Multi-Sector
+                </strong>
 
                 <p>
-                    Industrial and manufacturing
-                    solutions.
+                    Solutions across
+                    different business needs.
                 </p>
 
             </div>
 
 
-            <div class="service-card">
+            <div class="home-company-fact">
 
-                <span class="service-number">
+                <span class="home-fact-number">
                     04
                 </span>
 
-                <h3>
-                    Professional
-                </h3>
+                <span class="home-company-fact-label">
+                    APPROACH
+                </span>
+
+                <strong>
+                    Integrated
+                </strong>
 
                 <p>
-                    Consulting, design, and
-                    professional services.
+                    Connecting capabilities
+                    into one solution.
                 </p>
 
             </div>
 
         </div>
 
-        <a href="{{ route('services') }}">
-            View All Services
-        </a>
+
+        {{-- COMPANY CAPABILITIES --}}
+
+        <div class="home-company-footer">
+
+            <div class="home-company-capabilities">
+
+                <span class="home-company-capabilities-label">
+                    OUR CAPABILITIES
+                </span>
+
+                <div class="home-company-tags">
+
+                    <span>
+                        Construction
+                    </span>
+
+                    <span>
+                        Industrial
+                    </span>
+
+                    <span>
+                        Trade
+                    </span>
+
+                    <span>
+                        Technology
+                    </span>
+
+                    <span>
+                        Professional Services
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="{{ route('about') }}"
+                class="home-text-link">
+
+                Explore Xclip
+
+            </a>
+
+        </div>
 
     </div>
+
 </section>
 
+{{-- =========================================================
+     SERVICES
+========================================================= --}}
+
+<section class="home-services">
+
+    <div class="container">
+
+        <div class="home-services-header">
+
+            <div class="home-services-title">
+
+                <span class="home-section-label">
+                    WHAT WE DO
+                </span>
+
+                <h2>
+                    Solutions Built
+                    <span>Across Industries.</span>
+                </h2>
+
+            </div>
+
+            <div class="home-services-description">
+
+                <span class="home-services-note">
+                    XCLIP CAPABILITIES
+                </span>
+
+                <p>
+                    Xclip menggabungkan berbagai kapabilitas untuk
+                    mendukung kebutuhan konstruksi, perdagangan,
+                    industrial, dan jasa profesional dalam satu
+                    pendekatan yang terintegrasi.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        @if($serviceCategories->isNotEmpty())
+
+        <div class="home-services-grid">
+
+            @foreach($serviceCategories as $index => $service)
+
+            <article class="home-service-card">
+
+                {{-- SERVICE IMAGE --}}
+                <div class="home-service-image">
+
+                    @if($service->image)
+
+                    <img
+                        src="{{ asset('storage/' . $service->image) }}"
+                        alt="{{ $service->name }}"
+                        loading="lazy">
+
+                    @else
+
+                    <div class="home-service-placeholder">
+
+                        <span>
+                            {{ str_pad(
+                                $index + 1,
+                                2,
+                                '0',
+                                STR_PAD_LEFT
+                            ) }}
+                        </span>
+
+                        <strong>
+                            {{ strtoupper($service->name) }}
+                        </strong>
+
+                    </div>
+
+                    @endif
+
+
+                    <div class="home-service-overlay"></div>
+
+
+                    <span class="home-service-index">
+                        {{ str_pad(
+                            $index + 1,
+                            2,
+                            '0',
+                            STR_PAD_LEFT
+                        ) }}
+                    </span>
+
+
+                    <span class="home-service-doodle">
+                        ↗
+                    </span>
+
+                </div>
+
+
+                {{-- SERVICE CONTENT --}}
+                <div class="home-service-content">
+
+                    <div class="home-service-main">
+
+                        <span class="home-service-label">
+                            SERVICE
+                            {{ str_pad(
+                                $index + 1,
+                                2,
+                                '0',
+                                STR_PAD_LEFT
+                            ) }}
+                        </span>
+
+                        <h3>
+                            {{ $service->name }}
+                        </h3>
+
+
+                        @if($service->description)
+
+                        <p>
+                            {{ \Illuminate\Support\Str::limit(
+                                $service->description,
+                                170
+                            ) }}
+                        </p>
+
+                        @else
+
+                        <p>
+                            Solusi profesional yang dirancang
+                            untuk mendukung kebutuhan bisnis,
+                            proyek, dan operasional Anda.
+                        </p>
+
+                        @endif
+
+                    </div>
+
+
+                    <div class="home-service-bottom">
+
+                        <span class="home-service-line"></span>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            @endforeach
+
+        </div>
+
+        @else
+
+        <div class="home-empty-state">
+
+            <span>✦</span>
+
+            <h3>
+                Services Coming Soon
+            </h3>
+
+            <p>
+                Service information will appear here
+                once service categories are published.
+            </p>
+
+        </div>
+
+        @endif
+
+
+        <div class="home-services-footer">
+
+            <p>
+                Dari kebutuhan lapangan hingga kebutuhan bisnis,
+                setiap layanan dikembangkan untuk memberikan
+                solusi yang praktis dan relevan.
+            </p>
+
+            <a
+                href="{{ route('services') }}"
+                class="home-text-link">
+
+                Explore All Services
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{{-- =========================================================
+     WHY XCLIP
+========================================================= --}}
+
+<section class="home-why">
+
+    <div class="container">
+
+        <div class="home-why-header">
+
+            <div class="home-why-title">
+
+                <span class="home-section-label">
+                    WHY XCLIP
+                </span>
+
+                <h2>
+                    Built to Connect
+                    <span>Needs With Solutions.</span>
+                </h2>
+
+            </div>
+
+            <div class="home-why-intro">
+
+                <span class="home-why-note">
+                    WHY WORK WITH US?
+                </span>
+
+                <p>
+                    Xclip hadir sebagai mitra yang menghubungkan
+                    berbagai kebutuhan bisnis, proyek, dan operasional
+                    melalui kapabilitas lintas sektor dalam satu
+                    pendekatan yang terintegrasi.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="home-why-grid">
+
+            {{-- ITEM 01 --}}
+            <article class="home-why-card">
+
+                <div class="home-why-card-top">
+
+                    <span class="home-why-number">
+                        01
+                    </span>
+
+                    <span class="home-why-symbol">
+                        +
+                    </span>
+
+                </div>
+
+                <div class="home-why-card-content">
+
+                    <span class="home-why-label">
+                        CAPABILITY
+                    </span>
+
+                    <h3>
+                        Integrated Capabilities
+                    </h3>
+
+                    <p>
+                        Xclip memiliki kapabilitas di berbagai bidang,
+                        mulai dari konstruksi, industrial, perdagangan,
+                        teknologi, hingga jasa profesional.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            {{-- ITEM 02 --}}
+            <article class="home-why-card">
+
+                <div class="home-why-card-top">
+
+                    <span class="home-why-number">
+                        02
+                    </span>
+
+
+                </div>
+
+                <div class="home-why-card-content">
+
+                    <span class="home-why-label">
+                        APPROACH
+                    </span>
+
+                    <h3>
+                        Practical Solutions
+                    </h3>
+
+                    <p>
+                        Kami berfokus pada pemahaman kebutuhan nyata
+                        sebelum menentukan solusi, sehingga setiap
+                        pekerjaan dapat diarahkan pada hasil yang
+                        relevan dan dapat diterapkan.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            {{-- ITEM 03 --}}
+            <article class="home-why-card">
+
+                <div class="home-why-card-top">
+
+                    <span class="home-why-number">
+                        03
+                    </span>
+
+                    <span class="home-why-symbol">
+                        *
+                    </span>
+
+                </div>
+
+                <div class="home-why-card-content">
+
+                    <span class="home-why-label">
+                        COLLABORATION
+                    </span>
+
+                    <h3>
+                        Flexible Partnership
+                    </h3>
+
+                    <p>
+                        Setiap proyek memiliki kebutuhan yang berbeda.
+                        Karena itu, Xclip mengembangkan pola kerja yang
+                        fleksibel dan dapat disesuaikan dengan kondisi
+                        serta kebutuhan klien.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            {{-- ITEM 04 --}}
+            <article class="home-why-card">
+
+                <div class="home-why-card-top">
+
+                    <span class="home-why-number">
+                        04
+                    </span>
+
+                </div>
+
+                <div class="home-why-card-content">
+
+                    <span class="home-why-label">
+                        EXECUTION
+                    </span>
+
+                    <h3>
+                        Professional Execution
+                    </h3>
+
+                    <p>
+                        Kami mengutamakan komunikasi yang jelas,
+                        koordinasi yang baik, dan pelaksanaan yang
+                        profesional untuk menjaga pekerjaan tetap
+                        terarah dari awal hingga selesai.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="home-why-bottom">
+
+            <div class="home-why-bottom-line"></div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+</section>
+
+{{-- =========================================================
+     HOW WE WORK
+========================================================= --}}
+
+<section class="home-how">
+
+    <div class="container">
+
+        <div class="home-how-header">
+
+            <div class="home-how-title">
+
+                <span class="home-section-label">
+                    HOW WE WORK
+                </span>
+
+                <h2>
+                    From Need
+                    <span>to Solution.</span>
+                </h2>
+
+            </div>
+
+            <div class="home-how-intro">
+
+                <span class="home-how-note">
+                    OUR PROCESS
+                </span>
+
+                <p>
+                    Setiap proyek dimulai dari kebutuhan yang berbeda.
+                    Xclip mengembangkan proses kerja yang terstruktur
+                    untuk memahami kebutuhan, menentukan pendekatan,
+                    menjalankan pekerjaan, dan memastikan solusi dapat
+                    memberikan hasil yang relevan.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="home-how-process">
+
+            {{-- STEP 01 --}}
+            <article class="home-how-step">
+
+                <div class="home-how-step-top">
+
+                    <span class="home-how-number">
+                        01
+                    </span>
+
+                </div>
+
+                <div class="home-how-step-content">
+
+                    <span class="home-how-label">
+                        UNDERSTAND
+                    </span>
+
+                    <h3>
+                        Understand the Need
+                    </h3>
+
+                    <p>
+                        Kami memulai dengan memahami kebutuhan,
+                        tujuan, kondisi, dan tantangan yang dihadapi
+                        klien sebelum menentukan solusi.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            {{-- STEP 02 --}}
+            <article class="home-how-step">
+
+                <div class="home-how-step-top">
+
+                    <span class="home-how-number">
+                        02
+                    </span>
+
+
+                </div>
+
+                <div class="home-how-step-content">
+
+                    <span class="home-how-label">
+                        PLAN
+                    </span>
+
+                    <h3>
+                        Plan the Approach
+                    </h3>
+
+                    <p>
+                        Kebutuhan yang telah dipahami diterjemahkan
+                        menjadi pendekatan, ruang lingkup pekerjaan,
+                        dan langkah yang sesuai dengan kebutuhan proyek.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            {{-- STEP 03 --}}
+            <article class="home-how-step">
+
+                <div class="home-how-step-top">
+
+                    <span class="home-how-number">
+                        03
+                    </span>
+
+
+                </div>
+
+                <div class="home-how-step-content">
+
+                    <span class="home-how-label">
+                        EXECUTE
+                    </span>
+
+                    <h3>
+                        Execute the Solution
+                    </h3>
+
+                    <p>
+                        Tim menjalankan pekerjaan dengan koordinasi
+                        yang jelas, komunikasi yang terarah, dan
+                        perhatian terhadap kebutuhan teknis maupun
+                        operasional proyek.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            {{-- STEP 04 --}}
+            <article class="home-how-step">
+
+                <div class="home-how-step-top">
+
+                    <span class="home-how-number">
+                        04
+                    </span>
+
+
+                </div>
+
+                <div class="home-how-step-content">
+
+                    <span class="home-how-label">
+                        DELIVER
+                    </span>
+
+                    <h3>
+                        Deliver the Result
+                    </h3>
+
+                    <p>
+                        Pekerjaan diarahkan pada hasil yang jelas,
+                        relevan, dan sesuai dengan tujuan yang telah
+                        disepakati bersama.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="home-how-bottom">
+
+            <div class="home-how-doodle-line"></div>
+
+            <div class="home-how-bottom-content">
+
+                <div>
+
+                    <span class="home-how-bottom-label">
+                        ONE CONNECTED PROCESS
+                    </span>
+
+                    <p>
+                        <strong>Understand.</strong>
+                        <strong>Plan.</strong>
+                        <strong>Execute.</strong>
+                        <strong>Deliver.</strong>
+                    </p>
+
+                </div>
+
+                <a
+                    href="{{ route('contact') }}"
+                    class="home-text-link">
+
+                    Start a Conversation
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 {{-- =========================================================
      FEATURED PROJECTS
 ========================================================= --}}
-<section class="projects-preview">
+
+<section class="home-projects">
+
     <div class="container">
 
-        <p>
-            OUR PROJECTS
-        </p>
+        <div class="home-section-heading">
 
-        <h2>
-            Featured Projects
-        </h2>
+            <div>
+
+                <span class="home-section-label">
+                    OUR PROJECTS
+                </span>
+
+                <h2>
+                    Work That
+                    <span>Speaks for Us.</span>
+                </h2>
+
+            </div>
+
+            <a
+                href="{{ route('projects') }}"
+                class="home-text-link">
+                View All Projects
+            </a>
+
+        </div>
 
 
         @if($featuredProjects->count())
@@ -209,12 +956,8 @@
 
                     @else
 
-                    <div class="home-project-image-placeholder">
-
-                        <span>
-                            NO IMAGE
-                        </span>
-
+                    <div class="home-project-placeholder">
+                        PROJECT
                     </div>
 
                     @endif
@@ -274,7 +1017,7 @@
 
                     <a
                         href="{{ route('projects.show', $project->slug) }}"
-                        class="home-project-link">
+                        class="home-text-link">
                         View Project
                     </a>
 
@@ -290,9 +1033,7 @@
 
         <div class="home-empty-state">
 
-            <span>
-                ✦
-            </span>
+            <span>✦</span>
 
             <h3>
                 Projects Coming Soon
@@ -307,32 +1048,41 @@
 
         @endif
 
-
-        <div class="home-section-link">
-
-            <a href="{{ route('projects') }}">
-                View All Projects
-            </a>
-
-        </div>
-
     </div>
+
 </section>
 
 
 {{-- =========================================================
      LATEST NEWS
 ========================================================= --}}
-<section class="home-news-preview">
+
+<section class="home-news">
+
     <div class="container">
 
-        <p>
-            LATEST NEWS
-        </p>
+        <div class="home-section-heading">
 
-        <h2>
-            What's New at Xclip
-        </h2>
+            <div>
+
+                <span class="home-section-label">
+                    LATEST INFORMATION
+                </span>
+
+                <h2>
+                    What's New
+                    <span>at Xclip.</span>
+                </h2>
+
+            </div>
+
+            <a
+                href="{{ route('news') }}"
+                class="home-text-link">
+                View All News
+            </a>
+
+        </div>
 
 
         @if($latestNews->count())
@@ -353,12 +1103,8 @@
 
                     @else
 
-                    <div class="home-news-image-placeholder">
-
-                        <span>
-                            NEWS
-                        </span>
-
+                    <div class="home-news-placeholder">
+                        XCLIP NEWS
                     </div>
 
                     @endif
@@ -409,7 +1155,7 @@
 
                     <a
                         href="{{ route('news.show', $news->slug) }}"
-                        class="home-news-link">
+                        class="home-text-link">
                         Read More
                     </a>
 
@@ -425,9 +1171,7 @@
 
         <div class="home-empty-state">
 
-            <span>
-                ✎
-            </span>
+            <span>✎</span>
 
             <h3>
                 News Coming Soon
@@ -442,39 +1186,54 @@
 
         @endif
 
-
-        <div class="home-section-link">
-
-            <a href="{{ route('news') }}">
-                View All News
-            </a>
-
-        </div>
-
     </div>
+
 </section>
 
 
 {{-- =========================================================
      CTA
 ========================================================= --}}
-<section class="cta">
+
+<section class="home-cta">
+
     <div class="container">
 
-        <h2>
-            Have a Project in Mind?
-        </h2>
+        <div class="home-cta-content">
 
-        <p>
-            Let's discuss how Xclip can support
-            your project.
-        </p>
+            <span class="home-section-label">
+                LET'S WORK TOGETHER
+            </span>
 
-        <a href="{{ route('rfq') }}">
-            Request a Quote
-        </a>
+            <h2>
+                Have a Project
+                <span>in Mind?</span>
+            </h2>
+
+            <p>
+                Tell us about your needs and let's explore
+                how Xclip can support your project.
+            </p>
+
+            <a
+                href="{{ route('rfq') }}"
+                class="home-button home-button-light">
+                Request a Quote
+            </a>
+
+        </div>
+
+
+        <div class="home-cta-doodle">
+
+            <span>✦</span>
+            <span>〰</span>
+            <span>↗</span>
+
+        </div>
 
     </div>
+
 </section>
 
 @endsection

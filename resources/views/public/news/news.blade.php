@@ -2,38 +2,75 @@
 
 @section('title', 'News & Updates — Xclip')
 
-@section('meta_description', 'Dapatkan berita dan informasi terbaru dari Xclip mengenai proyek, layanan, aktivitas perusahaan, dan berbagai perkembangan bisnis.')
+@section(
+'meta_description',
+'Dapatkan berita dan informasi terbaru dari Xclip mengenai proyek, layanan, aktivitas perusahaan, dan berbagai perkembangan bisnis.'
+)
 
 @section('og_title', 'News & Updates — Xclip')
 
-@section('og_description', 'Ikuti berita, aktivitas, proyek, dan perkembangan terbaru dari Xclip.')
+@section(
+'og_description',
+'Ikuti berita, aktivitas, proyek, dan perkembangan terbaru dari Xclip.'
+)
 
 @section('content')
 
 
-{{-- =====================================================
+{{-- =========================================================
      NEWS HERO
-===================================================== --}}
+========================================================= --}}
 
 <section class="news-hero">
 
     <div class="container">
 
-        <div class="news-hero-box">
+        <div class="news-hero-inner">
 
-            <p class="section-label">
-                NEWS & UPDATES
-            </p>
+            {{-- HERO CONTENT --}}
 
-            <h1>
-                Stories,
-                <span>Updates & Ideas.</span>
-            </h1>
+            <div class="news-hero-content">
 
-            <p class="news-hero-description">
-                Stay informed about Xclip, our projects,
-                services, activities, and the latest updates.
-            </p>
+                <p class="section-label">
+                    NEWS & UPDATES
+                </p>
+
+                <h1>
+                    Berita,
+                    <span>Aktivitas & Perkembangan.</span>
+                </h1>
+
+                <p class="news-hero-description">
+                    Ikuti berbagai berita, aktivitas, proyek,
+                    dan perkembangan terbaru Xclip dari
+                    berbagai bidang usaha dan layanan.
+                </p>
+
+            </div>
+
+
+            {{-- HERO NOTE --}}
+
+            <div class="news-hero-note">
+
+                <span class="news-note-mark">
+                    ✦
+                </span>
+
+                <strong>
+                    Tetap Terhubung.
+                </strong>
+
+                <strong>
+                    Ikuti Perkembangan Xclip.
+                </strong>
+
+                <p>
+                    Informasi terbaru mengenai aktivitas,
+                    proyek, dan perkembangan perusahaan.
+                </p>
+
+            </div>
 
         </div>
 
@@ -43,22 +80,22 @@
 
 
 
-{{-- =====================================================
+{{-- =========================================================
      FEATURED NEWS
-===================================================== --}}
+========================================================= --}}
 
 <section class="featured-news">
 
     <div class="container">
 
         <p class="section-label">
-            FEATURED
+            BERITA PILIHAN
         </p>
 
 
         {{-- =================================================
-             1 FEATURED
-             Layout editorial besar
+             1 FEATURED NEWS
+             Editorial layout besar
         ================================================== --}}
 
         @if($featuredNews->count() === 1)
@@ -70,6 +107,7 @@
 
         <article class="featured-news-card">
 
+
             {{-- IMAGE --}}
 
             <div class="featured-news-image">
@@ -78,7 +116,8 @@
 
                 <img
                     src="{{ asset('storage/' . $featured->thumbnail) }}"
-                    alt="{{ $featured->title }}">
+                    alt="{{ $featured->title }} — Xclip"
+                    loading="lazy">
 
                 @else
 
@@ -95,6 +134,8 @@
 
             <div class="featured-news-content">
 
+                {{-- META --}}
+
                 <div class="news-meta">
 
                     <span>
@@ -108,10 +149,14 @@
                 </div>
 
 
+                {{-- TITLE --}}
+
                 <h2>
                     {{ $featured->title }}
                 </h2>
 
+
+                {{-- EXCERPT --}}
 
                 @if($featured->excerpt)
 
@@ -122,10 +167,14 @@
                 @endif
 
 
+                {{-- LINK --}}
+
                 <a
                     href="{{ route('news.show', $featured->slug) }}"
                     class="news-read-more">
-                    Read More
+
+                    Baca Berita
+
                 </a>
 
             </div>
@@ -135,8 +184,8 @@
 
 
         {{-- =================================================
-             2+ FEATURED
-             Semua Featured menjadi card yang setara
+             2+ FEATURED NEWS
+             Equal editorial cards
         ================================================== --}}
 
         @elseif($featuredNews->count() > 1)
@@ -147,6 +196,7 @@
 
             <article class="featured-news-grid-card">
 
+
                 {{-- IMAGE --}}
 
                 <div class="featured-news-grid-image">
@@ -155,7 +205,8 @@
 
                     <img
                         src="{{ asset('storage/' . $item->thumbnail) }}"
-                        alt="{{ $item->title }}">
+                        alt="{{ $item->title }} — Xclip"
+                        loading="lazy">
 
                     @else
 
@@ -172,7 +223,11 @@
 
                 <div class="featured-news-grid-content">
 
+
+                    {{-- NUMBER --}}
+
                     <div class="featured-news-grid-number">
+
                         BERITA
                         {{ str_pad(
                                     $index + 1,
@@ -180,8 +235,11 @@
                                     '0',
                                     STR_PAD_LEFT
                                 ) }}
+
                     </div>
 
+
+                    {{-- META --}}
 
                     <div class="news-meta">
 
@@ -196,10 +254,14 @@
                     </div>
 
 
+                    {{-- TITLE --}}
+
                     <h3>
                         {{ $item->title }}
                     </h3>
 
+
+                    {{-- EXCERPT --}}
 
                     @if($item->excerpt)
 
@@ -213,10 +275,14 @@
                     @endif
 
 
+                    {{-- LINK --}}
+
                     <a
                         href="{{ route('news.show', $item->slug) }}"
                         class="news-read-more">
-                        Read More
+
+                        Baca Berita
+
                     </a>
 
                 </div>
@@ -230,13 +296,16 @@
 
 
         {{-- =================================================
-             0 FEATURED
+             0 FEATURED NEWS
              Fallback
         ================================================== --}}
 
         @else
 
         <div class="featured-news-card">
+
+
+            {{-- EMPTY IMAGE --}}
 
             <div class="featured-news-image">
 
@@ -246,6 +315,8 @@
 
             </div>
 
+
+            {{-- FALLBACK CONTENT --}}
 
             <div class="featured-news-content">
 
@@ -286,35 +357,37 @@
 
 
 
-{{-- =====================================================
+{{-- =========================================================
      LATEST NEWS
-===================================================== --}}
+========================================================= --}}
 
 <section class="latest-news">
 
     <div class="container">
 
 
-        {{-- HEADING --}}
+        {{-- =================================================
+             SECTION HEADING
+        ================================================== --}}
 
         <div class="news-heading">
 
             <div>
 
                 <p class="section-label">
-                    LATEST UPDATES
+                    UPDATE TERBARU
                 </p>
 
                 <h2>
-                    What's New
+                    Berita Terkini
                 </h2>
 
             </div>
 
 
             <p>
-                Explore the latest stories, activities,
-                and updates from Xclip.
+                Temukan berita, aktivitas, proyek, dan
+                perkembangan terbaru dari Xclip.
             </p>
 
         </div>
@@ -333,6 +406,7 @@
 
             <article class="news-card">
 
+
                 {{-- IMAGE --}}
 
                 <div class="news-card-image">
@@ -341,7 +415,8 @@
 
                     <img
                         src="{{ asset('storage/' . $item->thumbnail) }}"
-                        alt="{{ $item->title }}">
+                        alt="{{ $item->title }} — Xclip"
+                        loading="lazy">
 
                     @else
 
@@ -358,6 +433,9 @@
 
                 <div class="news-card-content">
 
+
+                    {{-- META --}}
+
                     <div class="news-meta">
 
                         <span>
@@ -371,10 +449,14 @@
                     </div>
 
 
+                    {{-- TITLE --}}
+
                     <h3>
                         {{ $item->title }}
                     </h3>
 
+
+                    {{-- EXCERPT --}}
 
                     @if($item->excerpt)
 
@@ -388,10 +470,14 @@
                     @endif
 
 
+                    {{-- LINK --}}
+
                     <a
                         href="{{ route('news.show', $item->slug) }}"
                         class="news-read-more">
-                        Read More
+
+                        Baca Berita
+
                     </a>
 
                 </div>
@@ -405,79 +491,29 @@
 
         @else
 
-        {{-- EMPTY STATE --}}
+        {{-- =================================================
+                 EMPTY STATE
+            ================================================== --}}
 
         <div class="news-empty">
 
             <p class="section-label">
-                NO UPDATES
+                BELUM ADA UPDATE
             </p>
 
             <h3>
-                No News Available Yet.
+                Berita Segera Hadir.
             </h3>
 
             <p>
-                There are currently no published news
-                articles. Please check back soon for
-                the latest updates from Xclip.
+                Belum ada berita yang dipublikasikan saat ini.
+                Silakan kembali lagi untuk melihat informasi
+                terbaru dari Xclip.
             </p>
 
         </div>
 
         @endif
-
-    </div>
-
-</section>
-
-
-
-{{-- =====================================================
-     NEWS CTA
-===================================================== --}}
-
-<section class="news-cta">
-
-    <div class="container">
-
-        <div class="news-cta-box">
-
-            <p class="section-label">
-                STAY CONNECTED
-            </p>
-
-
-            <h2>
-                Want to Know
-                More About Xclip?
-            </h2>
-
-
-            <p>
-                Explore our services and projects or get
-                in touch with our team to discuss your needs.
-            </p>
-
-
-            <div class="news-cta-actions">
-
-                <a
-                    href="{{ route('services') }}"
-                    class="news-button">
-                    Explore Services
-                </a>
-
-
-                <a
-                    href="{{ route('contact') }}"
-                    class="news-button-outline">
-                    Contact Us
-                </a>
-
-            </div>
-
-        </div>
 
     </div>
 

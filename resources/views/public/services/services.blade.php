@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Xclip - Services')
+@section('title', 'Xclip - Layanan')
 
 @section('content')
+
 
 {{-- =========================================================
      SERVICES HERO
@@ -21,14 +22,16 @@
                 </p>
 
                 <h1>
-                    Solutions That Move
-                    <span>Business Forward</span>
+                    Solusi Lintas Sektor
+                    <span>untuk Kebutuhan Bisnis dan Proyek</span>
                 </h1>
 
                 <p class="services-hero-description">
-                    Xclip provides practical solutions to support
-                    projects, operations, and business needs through
-                    reliable services and professional expertise.
+                    Xclip menghadirkan layanan lintas sektor yang dapat
+                    disesuaikan dengan kebutuhan bisnis, proyek,
+                    operasional, dan pekerjaan profesional dengan
+                    pendekatan yang terintegrasi, praktis, dan
+                    berorientasi pada hasil.
                 </p>
 
             </div>
@@ -36,11 +39,21 @@
 
             <div class="services-hero-note">
 
+                <span class="services-note-mark">
+                    ✦
+                </span>
 
+                <strong>
+                    Satu Mitra.
+                </strong>
+
+                <strong>
+                    Beragam Kapabilitas.
+                </strong>
 
                 <p>
-                    From project support to professional services,
-                    we help turn business needs into practical solutions.
+                    Menghubungkan berbagai kebutuhan
+                    dengan solusi yang tepat.
                 </p>
 
             </div>
@@ -50,7 +63,6 @@
     </div>
 
 </section>
-
 
 {{-- =========================================================
      SERVICES INTRODUCTION
@@ -74,19 +86,25 @@
             <div class="services-intro-content">
 
                 <h2>
-                    Practical services for
-                    real business needs.
+                    Kapabilitas yang disesuaikan
+                    dengan kebutuhan nyata.
                 </h2>
 
                 <p>
-                    Our services are organized into several categories
-                    designed to support different project requirements,
-                    operational needs, and business activities.
+                    Setiap bisnis dan proyek memiliki kebutuhan,
+                    tantangan, dan ruang lingkup yang berbeda.
+                    Xclip menghubungkan berbagai kapabilitas
+                    lintas sektor untuk memberikan dukungan
+                    yang relevan sesuai kebutuhan setiap klien.
                 </p>
 
                 <p>
-                    Explore our service categories below to discover
-                    how Xclip can support your project.
+                    Mulai dari dukungan konstruksi, perdagangan
+                    dan distribusi, kebutuhan industri, hingga
+                    layanan profesional, setiap kapabilitas dapat
+                    digunakan secara mandiri maupun dikombinasikan
+                    untuk mendukung kebutuhan bisnis dan proyek
+                    secara lebih menyeluruh.
                 </p>
 
             </div>
@@ -102,7 +120,9 @@
      SERVICE CATEGORIES
 ========================================================= --}}
 
-<section class="services-list">
+<section
+    class="services-list"
+    id="service-categories">
 
     <div class="container">
 
@@ -115,13 +135,14 @@
                 </p>
 
                 <h2>
-                    What We Offer
+                    Layanan Kami
                 </h2>
 
             </div>
 
             <p>
-                Explore our core service categories.
+                Jelajahi kategori layanan yang tersedia
+                melalui Xclip.
             </p>
 
         </div>
@@ -135,9 +156,44 @@
 
             <article class="service-category-card">
 
+                {{-- =================================================
+                     SERVICE IMAGE
+                ================================================= --}}
+
+                @if($category->image)
+
+                <div class="service-category-image">
+
+                    <img
+                        src="{{ asset('storage/' . $category->image) }}"
+                        alt="{{ $category->name }} — Xclip"
+                        loading="lazy">
+
+                </div>
+
+                @else
+
+                {{-- FALLBACK JIKA BELUM ADA GAMBAR --}}
+
+                <div class="service-category-image service-category-image-empty">
+
+                    <span>
+                        {{ $category->icon ?: '+' }}
+                    </span>
+
+                </div>
+
+                @endif
+
+
+                {{-- =================================================
+                     SERVICE CARD CONTENT
+                ================================================= --}}
+
                 <div class="service-category-card-inner">
 
-                    {{-- ICON --}}
+
+                    {{-- CATEGORY ICON --}}
 
                     <div class="service-category-icon">
 
@@ -150,21 +206,30 @@
 
                     <div class="service-category-content">
 
+                        <p class="service-category-label">
+                            KATEGORI LAYANAN
+                        </p>
+
                         <h3>
                             {{ $category->name }}
                         </h3>
 
                         @if($category->description)
 
-                        <p>
+                        <p class="service-category-description">
                             {{ $category->description }}
+                        </p>
+
+                        @else
+
+                        <p class="service-category-description service-category-muted">
+                            Informasi layanan sedang
+                            dipersiapkan.
                         </p>
 
                         @endif
 
                     </div>
-
-
 
 
                 </div>
@@ -177,6 +242,10 @@
 
         @else
 
+        {{-- =================================================
+             EMPTY STATE
+        ================================================= --}}
+
         <div class="services-empty-state">
 
             <div class="services-empty-icon">
@@ -184,12 +253,13 @@
             </div>
 
             <h3>
-                Services Coming Soon
+                Layanan Segera Hadir
             </h3>
 
             <p>
-                Service information is currently being prepared.
-                Please check back again soon.
+                Informasi kategori layanan sedang dipersiapkan.
+                Silakan kembali lagi untuk melihat pembaruan
+                layanan Xclip.
             </p>
 
         </div>
@@ -202,46 +272,316 @@
 
 
 {{-- =========================================================
-     OUR APPROACH
+     HOW WE SUPPORT
 ========================================================= --}}
 
 <section class="services-approach">
 
     <div class="container">
 
-        <div class="services-approach-grid">
+        <div class="services-approach-header">
 
-            <div class="services-approach-label">
+            <div class="services-approach-title">
 
                 <p class="services-eyebrow">
-                    OUR APPROACH
+                    HOW WE SUPPORT
                 </p>
-
-
-            </div>
-
-
-            <div class="services-approach-content">
 
                 <h2>
-                    Practical Solutions.
-                    Professional Execution.
+                    Dari kebutuhan
+                    <span>menjadi solusi.</span>
                 </h2>
 
-                <p>
-                    We believe good service starts with understanding
-                    the actual needs of each project. Our approach focuses
-                    on practical solutions, clear communication, and
-                    professional execution.
-                </p>
+            </div>
 
-                <p>
-                    Every project has different requirements. That's why
-                    we work with a flexible approach that allows our
-                    services to adapt to the needs of our clients.
-                </p>
+            <p class="services-approach-intro">
+                Setiap pekerjaan dimulai dengan memahami kebutuhan
+                dan berakhir pada solusi yang dapat dijalankan.
+                Xclip menghubungkan proses, kapabilitas, dan sumber
+                daya untuk mendukung kebutuhan klien.
+            </p>
+
+        </div>
+
+
+        <div class="services-process">
+
+            {{-- STEP 01 --}}
+
+            <article class="services-process-card">
+
+                <div class="services-process-top">
+
+                    <span class="services-process-number">
+                        01
+                    </span>
+
+                    <span class="services-process-icon">
+                        ?
+                    </span>
+
+                </div>
+
+                <div class="services-process-content">
+
+                    <p>
+                        UNDERSTAND
+                    </p>
+
+                    <h3>
+                        Memahami
+                    </h3>
+
+                    <span class="services-process-line"></span>
+
+                    <p class="services-process-description">
+                        Memahami kebutuhan, tujuan, ruang lingkup,
+                        dan hasil yang ingin dicapai.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <div class="services-process-connector">
 
             </div>
+
+
+            {{-- STEP 02 --}}
+
+            <article class="services-process-card">
+
+                <div class="services-process-top">
+
+                    <span class="services-process-number">
+                        02
+                    </span>
+
+                    <span class="services-process-icon">
+                        ↔
+                    </span>
+
+                </div>
+
+                <div class="services-process-content">
+
+                    <p>
+                        CONNECT
+                    </p>
+
+                    <h3>
+                        Menghubungkan
+                    </h3>
+
+                    <span class="services-process-line"></span>
+
+                    <p class="services-process-description">
+                        Menyesuaikan kapabilitas dan sumber daya
+                        dengan kebutuhan pekerjaan.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <div class="services-process-connector">
+
+            </div>
+
+
+            {{-- STEP 03 --}}
+
+            <article class="services-process-card">
+
+                <div class="services-process-top">
+
+                    <span class="services-process-number">
+                        03
+                    </span>
+
+                    <span class="services-process-icon">
+                        ✓
+                    </span>
+
+                </div>
+
+                <div class="services-process-content">
+
+                    <p>
+                        EXECUTE
+                    </p>
+
+                    <h3>
+                        Melaksanakan
+                    </h3>
+
+                    <span class="services-process-line"></span>
+
+                    <p class="services-process-description">
+                        Memberikan dukungan dengan komunikasi
+                        yang jelas dan pelaksanaan yang terarah.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{{-- =========================================================
+     WHY XCLIP
+========================================================= --}}
+
+<section class="services-benefits">
+
+    <div class="container">
+
+        <div class="services-benefits-header">
+
+            <div>
+
+                <p class="services-eyebrow">
+                    WHY XCLIP
+                </p>
+
+                <h2>
+                    Satu pendekatan,
+                    <span>beragam kapabilitas.</span>
+                </h2>
+
+            </div>
+
+            <p>
+                Xclip menggabungkan berbagai kapabilitas untuk
+                memberikan dukungan yang dapat disesuaikan
+                dengan kebutuhan setiap pekerjaan.
+            </p>
+
+        </div>
+
+
+        <div class="services-benefits-grid">
+
+
+            {{-- 01 --}}
+
+            <article class="services-benefit-card benefit-orange">
+
+                <div class="services-benefit-card-top">
+
+                    <span class="services-benefit-number">
+                        01
+                    </span>
+
+                    <span class="services-benefit-icon">
+                        +
+                    </span>
+
+                </div>
+
+                <h3>
+                    Lintas Sektor
+                </h3>
+
+                <p>
+                    Kapabilitas yang mencakup berbagai bidang
+                    untuk mendukung kebutuhan bisnis dan proyek.
+                </p>
+
+            </article>
+
+
+            {{-- 02 --}}
+
+            <article class="services-benefit-card benefit-blue">
+
+                <div class="services-benefit-card-top">
+
+                    <span class="services-benefit-number">
+                        02
+                    </span>
+
+                    <span class="services-benefit-icon">
+                        ↔
+                    </span>
+
+                </div>
+
+                <h3>
+                    Terintegrasi
+                </h3>
+
+                <p>
+                    Berbagai layanan dapat saling terhubung
+                    sesuai dengan kebutuhan pekerjaan.
+                </p>
+
+            </article>
+
+
+            {{-- 03 --}}
+
+            <article class="services-benefit-card benefit-green">
+
+                <div class="services-benefit-card-top">
+
+                    <span class="services-benefit-number">
+                        03
+                    </span>
+
+                    <span class="services-benefit-icon">
+                        ✓
+                    </span>
+
+                </div>
+
+                <h3>
+                    Praktis
+                </h3>
+
+                <p>
+                    Berfokus pada solusi yang relevan,
+                    jelas, dan dapat diterapkan.
+                </p>
+
+            </article>
+
+
+            {{-- 04 --}}
+
+            <article class="services-benefit-card benefit-yellow">
+
+                <div class="services-benefit-card-top">
+
+                    <span class="services-benefit-number">
+                        04
+                    </span>
+
+                    <span class="services-benefit-icon">
+                        ★
+                    </span>
+
+                </div>
+
+                <h3>
+                    Fleksibel
+                </h3>
+
+                <p>
+                    Pendekatan dapat disesuaikan dengan
+                    ruang lingkup dan kebutuhan klien.
+                </p>
+
+            </article>
+
 
         </div>
 
@@ -263,30 +603,48 @@
             <div>
 
                 <p class="services-eyebrow">
-                    HAVE A PROJECT IN MIND?
+                    PUNYA RENCANA PROYEK?
                 </p>
 
                 <h2>
-                    Let's build the right
-                    solution together.
+                    Mari membangun
+                    solusi bersama.
                 </h2>
+
+                <p class="services-cta-description">
+                    Ceritakan proyek, kebutuhan bisnis, atau
+                    kebutuhan layanan Anda kepada kami dan
+                    mari temukan bentuk kerja sama yang tepat.
+                </p>
 
             </div>
 
 
-            <a
-                href="{{ route('rfq') }}"
-                class="services-cta-button">
+            <div class="services-cta-actions">
 
-                Request a Quote
+                <a
+                    href="{{ route('rfq') }}"
+                    class="services-cta-button">
 
+                    Ajukan Penawaran
 
-            </a>
+                </a>
+
+                <a
+                    href="{{ route('contact') }}"
+                    class="services-cta-link">
+
+                    Hubungi Xclip
+
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
 </section>
+
 
 @endsection

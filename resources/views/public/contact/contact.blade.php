@@ -18,38 +18,93 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
 
 @section('title', 'Contact — ' . $siteName)
 
-@section('meta_description', 'Hubungi ' . $siteName . ' untuk pertanyaan, kebutuhan bisnis, informasi proyek, layanan, atau permintaan penawaran.')
+@section(
+'meta_description',
+'Hubungi ' . $siteName . ' untuk pertanyaan, kebutuhan bisnis, informasi proyek, layanan, atau permintaan penawaran.'
+)
 
 @section('og_title', 'Contact — ' . $siteName)
 
-@section('og_description', 'Hubungi tim ' . $siteName . ' untuk membahas kebutuhan bisnis, proyek, layanan, dan informasi lainnya.')
+@section(
+'og_description',
+'Hubungi tim ' . $siteName . ' untuk membahas kebutuhan bisnis, proyek, layanan, dan informasi lainnya.'
+)
 
 @section('content')
 
-{{-- =====================================================
+
+{{-- =========================================================
      CONTACT HERO
-===================================================== --}}
+========================================================= --}}
 
 <section class="contact-hero">
 
     <div class="container">
 
-        <div class="contact-hero-box">
+        <div class="contact-hero-inner">
 
-            <p class="section-label">
-                CONTACT {{ strtoupper($siteName) }}
-            </p>
+            <div class="contact-hero-content">
 
-            <h1>
-                Let's
-                <span>Talk.</span>
-            </h1>
+                <p class="section-label">
+                    CONTACT {{ strtoupper($siteName) }}
+                </p>
 
-            <p>
-                Have a question, business inquiry, or need
-                more information about {{ $siteName }}?
-                Get in touch with our team.
-            </p>
+                <h1>
+                    Let's
+                    <span>Talk.</span>
+                </h1>
+
+                <p class="contact-hero-description">
+                    Punya pertanyaan, kebutuhan bisnis,
+                    proyek, layanan, atau ingin mengenal
+                    {{ $siteName }} lebih jauh?
+                    Hubungi tim kami.
+                </p>
+
+                <div class="contact-hero-tags">
+
+                    <span>
+                        BUSINESS
+                    </span>
+
+                    <span>
+                        PROJECT
+                    </span>
+
+                    <span>
+                        SERVICES
+                    </span>
+
+                    <span>
+                        INQUIRY
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-hero-note">
+
+                <span class="contact-note-mark">
+                    ✦
+                </span>
+
+                <strong>
+                    Punya Pertanyaan?
+                </strong>
+
+                <strong>
+                    Mari Bicara.
+                </strong>
+
+                <p>
+                    Kami siap mendengar kebutuhan
+                    dan membantu menemukan bentuk
+                    dukungan yang sesuai.
+                </p>
+
+            </div>
 
         </div>
 
@@ -58,15 +113,16 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
 </section>
 
 
-{{-- =====================================================
-     CONTACT INFORMATION + FORM
-===================================================== --}}
+{{-- =========================================================
+     CONTACT MAIN
+========================================================= --}}
 
 <section class="contact-main">
 
     <div class="container">
 
         <div class="contact-layout">
+
 
             {{-- =================================================
                  CONTACT INFORMATION
@@ -80,13 +136,15 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
 
                 <h2>
                     Contact
-                    {{ $siteName }}
+                    <span>{{ $siteName }}</span>
                 </h2>
 
                 <p class="contact-intro">
-                    We're ready to hear from you. Reach out
-                    to discuss your project, business needs,
-                    or any questions you may have.
+                    Kami siap mendengar pertanyaan,
+                    kebutuhan proyek, maupun kebutuhan
+                    bisnis Anda. Hubungi kami melalui
+                    informasi berikut atau kirimkan pesan
+                    secara langsung.
                 </p>
 
 
@@ -97,7 +155,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                         01
                     </div>
 
-                    <div>
+                    <div class="contact-item-content">
 
                         <h3>
                             Email
@@ -119,7 +177,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                         02
                     </div>
 
-                    <div>
+                    <div class="contact-item-content">
 
                         <h3>
                             Phone
@@ -141,7 +199,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                         03
                     </div>
 
-                    <div>
+                    <div class="contact-item-content">
 
                         <h3>
                             WhatsApp
@@ -163,7 +221,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                         04
                     </div>
 
-                    <div>
+                    <div class="contact-item-content">
 
                         <h3>
                             Address
@@ -185,7 +243,7 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                         05
                     </div>
 
-                    <div>
+                    <div class="contact-item-content">
 
                         <h3>
                             Business Hours
@@ -220,24 +278,43 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
 
                     <h2>
                         Tell Us
-                        About It.
+                        <span>About It.</span>
                     </h2>
+
+                    <p>
+                        Ceritakan kebutuhan atau pertanyaan
+                        Anda kepada tim {{ $siteName }}.
+                    </p>
 
                 </div>
 
 
+                {{-- SUCCESS MESSAGE --}}
                 @if(session('success'))
 
                 <div class="contact-success-message">
-                    {{ session('success') }}
+
+                    <strong>
+                        Message Sent.
+                    </strong>
+
+                    <span>
+                        {{ session('success') }}
+                    </span>
+
                 </div>
 
                 @endif
 
 
+                {{-- ERROR MESSAGE --}}
                 @if($errors->any())
 
                 <div class="contact-error-message">
+
+                    <strong>
+                        Please Check Your Input.
+                    </strong>
 
                     @foreach($errors->all() as $error)
 
@@ -353,7 +430,9 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
                         type="submit"
                         class="contact-submit">
 
-                        Send Message
+                        <span>
+                            Send Message
+                        </span>
 
                     </button>
 
@@ -396,11 +475,6 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
 
             </div>
 
-
-            {{-- =================================================
-                 GOOGLE MAP
-            ================================================== --}}
-
             @if($googleMapsEmbed)
 
             <div class="map-embed">
@@ -423,10 +497,6 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
 
                 <span>MAP</span>
 
-                <div class="map-pin">
-                    X
-                </div>
-
             </div>
 
             @endif
@@ -438,38 +508,50 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
 </section>
 
 
-{{-- =====================================================
+{{-- =========================================================
      CONTACT CTA
-===================================================== --}}
+========================================================= --}}
 
 <section class="contact-cta">
 
     <div class="container">
 
-        <p class="section-label">
-            HAVE A PROJECT IN MIND?
-        </p>
+        <div class="contact-cta-box">
 
-        <h2>
-            Let's Build
-            Something Together.
-        </h2>
+            <div>
 
-        <p>
-            If you already have a project or business
-            requirement in mind, send us a Request for Quote.
-        </p>
+                <p class="section-label">
+                    HAVE A PROJECT IN MIND?
+                </p>
 
-        <a
-            href="{{ route('rfq') }}"
-            class="contact-cta-button">
+                <h2>
+                    Let's Build
+                    <span>Something Together.</span>
+                </h2>
 
-            Request a Quote
+                <p>
+                    Jika Anda sudah memiliki kebutuhan
+                    proyek atau bisnis, ceritakan kepada
+                    Xclip melalui Request for Quote.
+                </p>
 
-        </a>
+            </div>
+
+            <a
+                href="{{ route('rfq') }}"
+                class="contact-cta-button">
+
+                <span>
+                    Request a Quote
+                </span>
+
+            </a>
+
+        </div>
 
     </div>
 
 </section>
+
 
 @endsection

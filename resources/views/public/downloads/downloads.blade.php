@@ -2,38 +2,102 @@
 
 @section('title', 'Downloads — Xclip')
 
-@section('meta_description', 'Akses company profile, brochure, portfolio, dokumen layanan, dan berbagai resource resmi dari Xclip.')
+@section(
+'meta_description',
+'Akses company profile, brochure, portfolio, dokumen layanan, dan berbagai resource resmi dari Xclip.'
+)
 
 @section('og_title', 'Downloads — Xclip')
 
-@section('og_description', 'Download company profile, brochure, portfolio, dan berbagai dokumen resmi Xclip.')
+@section(
+'og_description',
+'Download company profile, brochure, portfolio, dan berbagai dokumen resmi Xclip.'
+)
 
 @section('content')
 
+{{-- =========================================================
+     DOWNLOADS HERO
+========================================================= --}}
+
 <section class="downloads-hero">
+
     <div class="container">
 
-        <div class="downloads-hero-box">
+        <div class="downloads-hero-inner">
 
-            <p class="section-label">
-                DOWNLOADS
-            </p>
+            <div class="downloads-hero-content">
 
-            <h1>
-                Resources <span>& Documents.</span>
-            </h1>
+                <p class="section-label">
+                    DOWNLOADS
+                </p>
 
-            <p class="downloads-hero-description">
-                Access company profiles, brochures,
-                portfolios, service documents, and
-                other useful resources from Xclip.
-            </p>
+                <h1>
+                    Resources
+                    <span>& Documents.</span>
+                </h1>
+
+                <p class="downloads-hero-description">
+                    Akses berbagai dokumen resmi Xclip,
+                    mulai dari company profile, brochure,
+                    portfolio, dokumen layanan, hingga
+                    berbagai resource pendukung lainnya.
+                </p>
+
+                <div class="downloads-hero-tags">
+
+                    <span>
+                        COMPANY PROFILE
+                    </span>
+
+                    <span>
+                        BROCHURE
+                    </span>
+
+                    <span>
+                        PORTFOLIO
+                    </span>
+
+                    <span>
+                        DOCUMENTS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="downloads-hero-note">
+
+                <span class="downloads-note-mark">
+                    FILE
+                </span>
+
+                <strong>
+                    Satu Tempat.
+                </strong>
+
+                <strong>
+                    Berbagai Resource.
+                </strong>
+
+                <p>
+                    Temukan dokumen yang Anda butuhkan
+                    untuk mengenal Xclip lebih jauh.
+                </p>
+
+            </div>
 
         </div>
 
     </div>
+
 </section>
 
+
+{{-- =========================================================
+     DOWNLOAD CENTER
+========================================================= --}}
 
 <section class="downloads-section">
 
@@ -54,8 +118,9 @@
             </div>
 
             <p>
-                Browse and access documents
-                provided by Xclip.
+                Jelajahi dan akses berbagai dokumen
+                yang disediakan oleh Xclip untuk
+                kebutuhan informasi, bisnis, dan proyek.
             </p>
 
         </div>
@@ -69,19 +134,31 @@
 
             <article class="download-card">
 
+                {{-- CARD HEADER --}}
                 <div class="download-card-top">
 
-                    <div class="download-file-icon">
-                        FILE
+                    <div class="download-file">
+
+                        <div class="download-file-icon">
+                            FILE
+                        </div>
+
                     </div>
 
+
                     <span class="download-card-number">
-                        {{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}
+                        {{ str_pad(
+                            $loop->iteration,
+                            2,
+                            '0',
+                            STR_PAD_LEFT
+                        ) }}
                     </span>
 
                 </div>
 
 
+                {{-- CARD CONTENT --}}
                 <div class="download-card-content">
 
                     <div class="download-meta">
@@ -124,47 +201,45 @@
 
                         @if($download->file_size)
 
+                        @php
+
+                        $size = $download->file_size;
+
+                        if ($size >= 1073741824) {
+
+                        $formattedSize =
+                        number_format(
+                        $size / 1073741824,
+                        2
+                        ) . ' GB';
+
+                        } elseif ($size >= 1048576) {
+
+                        $formattedSize =
+                        number_format(
+                        $size / 1048576,
+                        2
+                        ) . ' MB';
+
+                        } elseif ($size >= 1024) {
+
+                        $formattedSize =
+                        number_format(
+                        $size / 1024,
+                        2
+                        ) . ' KB';
+
+                        } else {
+
+                        $formattedSize =
+                        $size . ' B';
+
+                        }
+
+                        @endphp
+
                         <span>
-
-                            @php
-
-                            $size = $download->file_size;
-
-                            if ($size >= 1073741824) {
-
-                            $formattedSize =
-                            number_format(
-                            $size / 1073741824,
-                            2
-                            ) . ' GB';
-
-                            } elseif ($size >= 1048576) {
-
-                            $formattedSize =
-                            number_format(
-                            $size / 1048576,
-                            2
-                            ) . ' MB';
-
-                            } elseif ($size >= 1024) {
-
-                            $formattedSize =
-                            number_format(
-                            $size / 1024,
-                            2
-                            ) . ' KB';
-
-                            } else {
-
-                            $formattedSize =
-                            $size . ' B';
-
-                            }
-
-                            @endphp
-
                             {{ $formattedSize }}
-
                         </span>
 
                         @endif
@@ -183,6 +258,14 @@
                         {{ $download->description }}
                     </p>
 
+                    @else
+
+                    <p>
+                        Dokumen resmi Xclip yang dapat
+                        digunakan sebagai referensi
+                        untuk kebutuhan bisnis dan proyek.
+                    </p>
+
                     @endif
 
 
@@ -192,7 +275,10 @@
                         href="{{ route('downloads.download', $download) }}"
                         class="download-button">
 
-                        Download
+                        <span>
+                            Download File
+                        </span>
+
 
                     </a>
 
@@ -209,6 +295,10 @@
 
         @else
 
+        {{-- =================================================
+             EMPTY STATE
+        ================================================== --}}
+
         <div class="downloads-empty">
 
             <div class="downloads-empty-icon">
@@ -220,13 +310,14 @@
             </p>
 
             <h3>
-                No Downloads Available Yet.
+                Documents Coming Soon.
             </h3>
 
             <p>
-                There are currently no documents
-                available for download.
-                Please check back soon.
+                Belum ada dokumen yang tersedia
+                untuk diunduh saat ini.
+                Silakan kembali lagi untuk melihat
+                resource terbaru dari Xclip.
             </p>
 
         </div>

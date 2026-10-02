@@ -2,31 +2,19 @@
 
 @section('title', 'Request a Quote — Xclip')
 
-@section('meta_description', 'Ajukan permintaan penawaran kepada Xclip untuk kebutuhan proyek, konstruksi, perdagangan, industrial, dan layanan profesional.')
+@section(
+'meta_description',
+'Ajukan permintaan penawaran kepada Xclip untuk kebutuhan proyek, konstruksi, perdagangan, industrial, dan layanan profesional.'
+)
 
 @section('og_title', 'Request a Quote — Xclip')
 
-@section('og_description', 'Kirim detail proyek dan kebutuhan bisnis Anda kepada Xclip melalui formulir Request a Quote.')
+@section(
+'og_description',
+'Kirim detail proyek dan kebutuhan bisnis Anda kepada Xclip melalui formulir Request a Quote.'
+)
 
 @section('content')
-
-@if(session('success'))
-<div class="rfq-success">
-    {{ session('success') }}
-</div>
-@endif
-
-@if($errors->any())
-<div class="rfq-error">
-    <strong>Please check the following:</strong>
-
-    <ul>
-        @foreach($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
 
 
 {{-- =====================================================
@@ -37,22 +25,66 @@
 
     <div class="container">
 
-        <div class="rfq-hero-box">
+        <div class="rfq-hero-inner">
 
-            <p class="section-label">
-                REQUEST A QUOTE
-            </p>
+            <div class="rfq-hero-content">
 
-            <h1>
-                Let's Start
-                <span>Your Project.</span>
-            </h1>
+                <p class="section-label">
+                    REQUEST A QUOTE
+                </p>
 
-            <p>
-                Tell us about your project and business needs.
-                Our team will review your requirements and
-                get back to you.
-            </p>
+                <h1>
+                    Let's Start
+                    <span>Your Project.</span>
+                </h1>
+
+                <p class="rfq-hero-description">
+                    Ceritakan kebutuhan proyek atau bisnis Anda
+                    kepada Xclip. Tim kami akan mempelajari
+                    kebutuhan tersebut dan menghubungi Anda
+                    untuk pembahasan lebih lanjut.
+                </p>
+
+                <div class="rfq-hero-actions">
+
+                    <a
+                        href="#rfq-form"
+                        class="doodle-button doodle-button-primary">
+                        Mulai Pengajuan
+                    </a>
+
+                    <a
+                        href="{{ route('contact') }}"
+                        class="doodle-button">
+                        Hubungi Xclip
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="rfq-hero-note">
+
+                <span class="rfq-note-mark">
+                    ✦
+                </span>
+
+                <strong>
+                    Satu Kebutuhan.
+                </strong>
+
+                <strong>
+                    Satu Pembahasan.
+                </strong>
+
+                <p>
+                    Jelaskan kebutuhan Anda dan biarkan
+                    Xclip membantu menemukan bentuk
+                    dukungan yang sesuai.
+                </p>
+
+            </div>
 
         </div>
 
@@ -62,7 +94,84 @@
 
 
 {{-- =====================================================
-     RFQ INTRO
+     ALERT
+===================================================== --}}
+
+@if(session('success'))
+
+<section class="rfq-alert-section">
+
+    <div class="container">
+
+        <div class="rfq-success">
+
+            <span class="rfq-alert-icon">
+                ✓
+            </span>
+
+            <div>
+                <strong>
+                    Permintaan berhasil dikirim.
+                </strong>
+
+                <p>
+                    Terima kasih. Tim Xclip akan meninjau
+                    informasi yang Anda kirimkan.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+@endif
+
+
+@if($errors->any())
+
+<section class="rfq-alert-section">
+
+    <div class="container">
+
+        <div class="rfq-error">
+
+            <span class="rfq-alert-icon">
+                !
+            </span>
+
+            <div>
+
+                <strong>
+                    Data belum dapat dikirim.
+                </strong>
+
+                <ul>
+
+                    @foreach($errors->all() as $error)
+
+                    <li>
+                        {{ $error }}
+                    </li>
+
+                    @endforeach
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+@endif
+
+
+{{-- =====================================================
+     HOW IT WORKS
 ===================================================== --}}
 
 <section class="rfq-intro">
@@ -71,7 +180,7 @@
 
         <div class="rfq-intro-grid">
 
-            <div>
+            <div class="rfq-intro-heading">
 
                 <p class="section-label">
                     HOW IT WORKS
@@ -79,60 +188,106 @@
 
                 <h2>
                     Tell Us
-                    What You Need.
+                    <span>What You Need.</span>
                 </h2>
 
             </div>
 
-            <div>
 
-                <p>
-                    Complete the form below with as much
-                    information as possible. This will help
-                    the Xclip team understand your project
-                    requirements.
+            <div class="rfq-intro-content">
+
+                <p class="rfq-intro-description">
+                    Lengkapi informasi berikut sesuai dengan
+                    kebutuhan proyek Anda. Semakin lengkap
+                    informasi yang diberikan, semakin mudah
+                    bagi tim Xclip memahami kebutuhan pekerjaan.
                 </p>
+
 
                 <div class="rfq-steps">
 
+                    {{-- STEP 01 --}}
+
                     <div class="rfq-step">
 
-                        <span>01</span>
+                        <div class="rfq-step-number">
+                            01
+                        </div>
 
-                        <div>
-                            <h3>Submit</h3>
-                            <p>
-                                Send your project requirements
-                                through the form.
+                        <div class="rfq-step-content">
+
+                            <p class="rfq-step-label">
+                                SUBMIT
                             </p>
+
+                            <h3>
+                                Kirim Informasi
+                            </h3>
+
+                            <p>
+                                Sampaikan informasi perusahaan,
+                                kontak, dan kebutuhan proyek
+                                melalui formulir.
+                            </p>
+
                         </div>
 
                     </div>
 
+
+                    {{-- STEP 02 --}}
+
                     <div class="rfq-step">
 
-                        <span>02</span>
+                        <div class="rfq-step-number">
+                            02
+                        </div>
 
-                        <div>
-                            <h3>Review</h3>
-                            <p>
-                                Our team reviews your requirements
-                                and project information.
+                        <div class="rfq-step-content">
+
+                            <p class="rfq-step-label">
+                                REVIEW
                             </p>
+
+                            <h3>
+                                Kami Pelajari
+                            </h3>
+
+                            <p>
+                                Tim Xclip mempelajari kebutuhan,
+                                ruang lingkup, dan informasi
+                                proyek yang diberikan.
+                            </p>
+
                         </div>
 
                     </div>
 
+
+                    {{-- STEP 03 --}}
+
                     <div class="rfq-step">
 
-                        <span>03</span>
+                        <div class="rfq-step-number">
+                            03
+                        </div>
 
-                        <div>
-                            <h3>Discuss</h3>
-                            <p>
-                                We contact you to discuss the
-                                project in more detail.
+                        <div class="rfq-step-content">
+
+                            <p class="rfq-step-label">
+                                DISCUSS
                             </p>
+
+                            <h3>
+                                Bahas Kebutuhan
+                            </h3>
+
+                            <p>
+                                Kami menghubungi Anda untuk
+                                membahas kebutuhan dan detail
+                                pekerjaan secara lebih lanjut.
+                            </p>
+
                         </div>
 
                     </div>
@@ -152,32 +307,56 @@
      RFQ FORM
 ===================================================== --}}
 
-<section class="rfq-form-section">
+<section
+    class="rfq-form-section"
+    id="rfq-form">
 
     <div class="container">
 
         <div class="rfq-form-wrapper">
 
+
             {{-- FORM HEADER --}}
 
             <div class="rfq-form-header">
 
-                <p class="section-label">
-                    INFORMASI PROYEK
-                </p>
+                <div class="rfq-form-header-copy">
 
-                <h2>
-                    Ajukan
-                    Permintaan Penawaran.
-                </h2>
+                    <p class="section-label">
+                        PROJECT INFORMATION
+                    </p>
 
-                <p>
-                    Silakan lengkapi informasi kontak dan
-                    proyek Anda di bawah ini.
-                </p>
+                    <h2>
+                        Ajukan
+                        <span>Permintaan Penawaran.</span>
+                    </h2>
+
+                    <p>
+                        Silakan lengkapi informasi di bawah ini
+                        agar tim Xclip dapat memahami kebutuhan
+                        proyek atau bisnis Anda.
+                    </p>
+
+                </div>
+
+                <div class="rfq-form-badge">
+
+                    <span>
+                        RFQ
+                    </span>
+
+                    <small>
+                        XCLIP
+                    </small>
+
+                </div>
 
             </div>
 
+
+            {{-- =================================================
+                 FORM
+            ================================================== --}}
 
             <form
                 action="{{ route('rfq.store') }}"
@@ -189,21 +368,32 @@
 
 
                 {{-- =================================================
-                     COMPANY INFORMATION
+                     SECTION 01
                 ================================================== --}}
 
                 <div class="rfq-form-section-title">
 
-                    <span>01</span>
+                    <div class="rfq-form-section-number">
+                        01
+                    </div>
 
-                    <h3>
-                        Informasi Perusahaan
-                    </h3>
+                    <div>
+
+                        <p>
+                            COMPANY
+                        </p>
+
+                        <h3>
+                            Informasi Perusahaan
+                        </h3>
+
+                    </div>
 
                 </div>
 
 
                 <div class="rfq-form-grid">
+
 
                     {{-- COMPANY NAME --}}
 
@@ -277,21 +467,32 @@
 
 
                 {{-- =================================================
-                     CONTACT INFORMATION
+                     SECTION 02
                 ================================================== --}}
 
                 <div class="rfq-form-section-title">
 
-                    <span>02</span>
+                    <div class="rfq-form-section-number">
+                        02
+                    </div>
 
-                    <h3>
-                        Informasi Kontak
-                    </h3>
+                    <div>
+
+                        <p>
+                            CONTACT
+                        </p>
+
+                        <h3>
+                            Informasi Kontak
+                        </h3>
+
+                    </div>
 
                 </div>
 
 
                 <div class="rfq-form-grid">
+
 
                     {{-- CONTACT NAME --}}
 
@@ -368,21 +569,32 @@
 
 
                 {{-- =================================================
-                     PROJECT INFORMATION
+                     SECTION 03
                 ================================================== --}}
 
                 <div class="rfq-form-section-title">
 
-                    <span>03</span>
+                    <div class="rfq-form-section-number">
+                        03
+                    </div>
 
-                    <h3>
-                        Informasi Proyek
-                    </h3>
+                    <div>
+
+                        <p>
+                            PROJECT
+                        </p>
+
+                        <h3>
+                            Informasi Proyek
+                        </h3>
+
+                    </div>
 
                 </div>
 
 
                 <div class="rfq-form-grid">
+
 
                     {{-- PROJECT NAME --}}
 
@@ -402,7 +614,7 @@
                     </div>
 
 
-                    {{-- SERVICE CATEGORY --}}
+                    {{-- SERVICE --}}
 
                     <div class="form-group">
 
@@ -452,14 +664,6 @@
 
                     </div>
 
-                </div>
-
-
-                {{-- =================================================
-                     PROJECT LOCATION
-                ================================================== --}}
-
-                <div class="rfq-form-grid">
 
                     {{-- PROJECT LOCATION --}}
 
@@ -523,14 +727,6 @@
 
                     </div>
 
-                </div>
-
-
-                {{-- =================================================
-                     BUDGET + TIMELINE
-                ================================================== --}}
-
-                <div class="rfq-form-grid">
 
                     {{-- BUDGET --}}
 
@@ -643,21 +839,33 @@
 
 
                 {{-- =================================================
-                     PROJECT DESCRIPTION
+                     SECTION 04
                 ================================================== --}}
 
                 <div class="rfq-form-section-title">
 
-                    <span>04</span>
+                    <div class="rfq-form-section-number">
+                        04
+                    </div>
 
-                    <h3>
-                        Detail Proyek
-                    </h3>
+                    <div>
+
+                        <p>
+                            DETAILS
+                        </p>
+
+                        <h3>
+                            Detail Proyek
+                        </h3>
+
+                    </div>
 
                 </div>
 
 
-                <div class="form-group">
+                {{-- DESCRIPTION --}}
+
+                <div class="form-group rfq-full-field">
 
                     <label for="description">
                         Deskripsi Proyek
@@ -672,33 +880,33 @@
                 </div>
 
 
-                {{-- =================================================
-                     DOCUMENT
-                ================================================== --}}
+                {{-- DOCUMENT --}}
 
-                <div class="form-group">
+                <div class="form-group rfq-upload-group">
 
                     <label for="document">
                         Dokumen Pendukung
                     </label>
 
-                    <input
-                        type="file"
-                        id="document"
-                        name="document">
+                    <div class="rfq-file-wrapper">
+
+                        <input
+                            type="file"
+                            id="document"
+                            name="document">
+
+                    </div>
 
                     <small>
-                        Anda dapat melampirkan brief proyek,
-                        spesifikasi, gambar, atau dokumen
-                        pendukung lainnya.
+                        Lampirkan brief proyek, spesifikasi,
+                        gambar, proposal, atau dokumen pendukung
+                        lainnya jika diperlukan.
                     </small>
 
                 </div>
 
 
-                {{-- =================================================
-                     AGREEMENT
-                ================================================== --}}
+                {{-- AGREEMENT --}}
 
                 <div class="rfq-agreement">
 
@@ -712,9 +920,9 @@
 
                         <span>
                             Saya memastikan bahwa informasi yang
-                            diberikan sudah benar dan dapat
-                            digunakan oleh Xclip untuk menghubungi
-                            saya terkait permintaan ini.
+                            diberikan sudah benar dan dapat digunakan
+                            oleh Xclip untuk menghubungi saya
+                            terkait permintaan ini.
                         </span>
 
                     </label>
@@ -722,17 +930,27 @@
                 </div>
 
 
-                {{-- =================================================
-                     SUBMIT
-                ================================================== --}}
+                {{-- SUBMIT --}}
 
-                <button
-                    type="submit"
-                    class="rfq-submit">
+                <div class="rfq-submit-area">
 
-                    Kirim Permintaan
+                    <p>
+                        Pastikan informasi yang Anda berikan
+                        sudah sesuai sebelum mengirimkan permintaan.
+                    </p>
 
-                </button>
+                    <button
+                        type="submit"
+                        class="rfq-submit">
+
+                        <span>
+                            Kirim Permintaan
+                        </span>
+
+
+                    </button>
+
+                </div>
 
 
             </form>
@@ -752,26 +970,40 @@
 
     <div class="container">
 
-        <p class="section-label">
-            NEED HELP?
-        </p>
+        <div class="rfq-cta-box">
 
-        <h2>
-            Not Sure
-            Where to Start?
-        </h2>
+            <div>
 
-        <p>
-            If you're not sure which information to provide,
-            you can contact our team directly.
-        </p>
+                <p class="section-label">
+                    NEED HELP?
+                </p>
 
-        <a href="{{ route('contact') }}">
-            Contact Xclip
-        </a>
+                <h2>
+                    Not Sure
+                    <span>Where to Start?</span>
+                </h2>
+
+                <p>
+                    Jika Anda belum yakin informasi apa yang
+                    perlu disiapkan, hubungi tim Xclip secara
+                    langsung untuk membahas kebutuhan Anda.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ route('contact') }}"
+                class="rfq-cta-button">
+
+                Contact Xclip
+
+            </a>
+
+        </div>
 
     </div>
 
 </section>
+
 
 @endsection

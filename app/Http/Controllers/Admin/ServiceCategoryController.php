@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ServiceCategoryController extends Controller
@@ -19,8 +20,12 @@ class ServiceCategoryController extends Controller
             ->orderBy('name')
             ->get();
 
-        return view('admin.services.categories.index', compact('categories'));
+        return view(
+            'admin.services.categories.index',
+            compact('categories')
+        );
     }
+
 
     /**
      * Show the form for creating a new service category.
@@ -29,6 +34,7 @@ class ServiceCategoryController extends Controller
     {
         return view('admin.services.categories.create');
     }
+
 
     /**
      * Store a newly created service category.
@@ -61,6 +67,13 @@ class ServiceCategoryController extends Controller
                 'string',
             ],
 
+            'image' => [
+                'nullable',
+                'image',
+                'mimes:jpg,jpeg,png,webp',
+                'max:10240',
+            ],
+
             'sort_order' => [
                 'nullable',
                 'integer',
@@ -73,13 +86,24 @@ class ServiceCategoryController extends Controller
             ],
         ]);
 
+
+        /*
+        |--------------------------------------------------------------------------
+        | Generate slug
+        |--------------------------------------------------------------------------
+        */
+
         $slug = !empty($validated['slug'])
             ? Str::slug($validated['slug'])
             : Str::slug($validated['name']);
 
+
         /*
-         * Pastikan slug tetap unik.
-         */
+        |--------------------------------------------------------------------------
+        | Pastikan slug tetap unik
+        |--------------------------------------------------------------------------
+        */
+
         $originalSlug = $slug;
         $counter = 1;
 
@@ -90,19 +114,48 @@ class ServiceCategoryController extends Controller
             $counter++;
         }
 
+
+        /*
+        |--------------------------------------------------------------------------
+        | Upload image
+        |--------------------------------------------------------------------------
+        */
+
+        $imagePath = null;
+
+        if ($request->hasFile('image')) {
+
+            $imagePath = $request
+                ->file('image')
+                ->store('services', 'public');
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Create service category
+        |--------------------------------------------------------------------------
+        */
+
         ServiceCategory::create([
             'name' => $validated['name'],
             'slug' => $slug,
             'icon' => $validated['icon'] ?? null,
             'description' => $validated['description'] ?? null,
+            'image' => $imagePath,
             'sort_order' => $validated['sort_order'] ?? 0,
             'is_active' => $request->boolean('is_active'),
         ]);
 
+
         return redirect()
             ->route('admin.services.index')
-            ->with('success', 'Service category berhasil ditambahkan.');
+            ->with(
+                'success',
+                'Service category berhasil ditambahkan.'
+            );
     }
+
 
     /**
      * Show the form for editing a service category.
@@ -114,6 +167,7 @@ class ServiceCategoryController extends Controller
             compact('category')
         );
     }
+
 
     /**
      * Update the specified service category.
@@ -148,6 +202,13 @@ class ServiceCategoryController extends Controller
                 'string',
             ],
 
+            'image' => [
+                'nullable',
+                'image',
+                'mimes:jpg,jpeg,png,webp',
+                'max:10240',
+            ],
+
             'sort_order' => [
                 'nullable',
                 'integer',
@@ -160,13 +221,24 @@ class ServiceCategoryController extends Controller
             ],
         ]);
 
+
+        /*
+        |--------------------------------------------------------------------------
+        | Generate slug
+        |--------------------------------------------------------------------------
+        */
+
         $slug = !empty($validated['slug'])
             ? Str::slug($validated['slug'])
             : Str::slug($validated['name']);
 
+
         /*
-         * Pastikan slug tidak bentrok dengan category lain.
-         */
+        |--------------------------------------------------------------------------
+        | Pastikan slug tidak bentrok dengan category lain
+        |--------------------------------------------------------------------------
+        */
+
         $originalSlug = $slug;
         $counter = 1;
 
@@ -179,29 +251,89 @@ class ServiceCategoryController extends Controller
             $counter++;
         }
 
+
+        /*
+        |--------------------------------------------------------------------------
+        | Handle image
+        |--------------------------------------------------------------------------
+        */
+
+        $imagePath = $category->image;
+
+        if ($request->hasFile('image')) {
+
+            // Hapus gambar lama
+            if ($category->image) {
+                Storage::disk('public')->delete(
+                    $category->image
+                );
+            }
+
+            // Simpan gambar baru
+            $imagePath = $request
+                ->file('image')
+                ->store('services', 'public');
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Update service category
+        |--------------------------------------------------------------------------
+        */
+
         $category->update([
             'name' => $validated['name'],
             'slug' => $slug,
             'icon' => $validated['icon'] ?? null,
             'description' => $validated['description'] ?? null,
+            'image' => $imagePath,
             'sort_order' => $validated['sort_order'] ?? 0,
             'is_active' => $request->boolean('is_active'),
         ]);
 
+
         return redirect()
             ->route('admin.services.index')
-            ->with('success', 'Service category berhasil diperbarui.');
+            ->with(
+                'success',
+                'Service category berhasil diperbarui.'
+            );
     }
+
 
     /**
      * Remove the specified service category.
      */
     public function destroy(ServiceCategory $category)
     {
+        /*
+        |--------------------------------------------------------------------------
+        | Hapus gambar jika category memiliki gambar
+        |--------------------------------------------------------------------------
+        */
+
+        if ($category->image) {
+            Storage::disk('public')->delete(
+                $category->image
+            );
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Hapus service category
+        |--------------------------------------------------------------------------
+        */
+
         $category->delete();
+
 
         return redirect()
             ->route('admin.services.index')
-            ->with('success', 'Service category berhasil dihapus.');
+            ->with(
+                'success',
+                'Service category berhasil dihapus.'
+            );
     }
 }

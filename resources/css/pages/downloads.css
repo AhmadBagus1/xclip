@@ -1,40 +1,178 @@
-/* =====================================================
-   PUBLIC DOWNLOADS
-===================================================== */
+/* =========================================================
+   XCLIP — PUBLIC DOWNLOADS
+   Corporate Doodle / Editorial Style
+========================================================= */
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .downloads-hero {
-    padding: 80px 0 50px;
+    padding: 70px 0 90px;
 }
 
-.downloads-hero-box {
+.downloads-hero-inner {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(260px, 0.7fr);
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+/* -------------------------
+   HERO CONTENT
+------------------------- */
+
+.downloads-hero-content {
+    position: relative;
+}
+
+.downloads-hero-content h1 {
+    max-width: 900px;
+
+    margin: 12px 0 25px;
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+    color: #1f2937;
+}
+
+.downloads-hero-content h1 span {
+    display: block;
+
+    color: #168a68;
+}
+
+.downloads-hero-description {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: #4b5563;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* -------------------------
+   HERO TAGS
+------------------------- */
+
+.downloads-hero-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.downloads-hero-tags span {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 12px;
+
+    background: #ffffff;
+
+    border: 2px solid #1f2937;
+
+    box-shadow: 3px 3px 0 #1f2937;
+
+    color: #1f2937;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+
+    transform: rotate(-1deg);
+}
+
+.downloads-hero-tags span:nth-child(2) {
+    background: #facc15;
+
+    transform: rotate(1deg);
+}
+
+.downloads-hero-tags span:nth-child(3) {
+    background: #168a68;
+
+    color: #ffffff;
+
+    transform: rotate(-0.5deg);
+}
+
+.downloads-hero-tags span:nth-child(4) {
+    background: #f47b20;
+
+    color: #ffffff;
+
+    transform: rotate(1deg);
+}
+
+
+/* -------------------------
+   HERO NOTE
+------------------------- */
+
+.downloads-hero-note {
     position: relative;
 
-    padding: 55px;
+    padding: 35px 30px;
 
     background: #facc15;
 
     border: 3px solid #1f2937;
 
-    box-shadow: 9px 9px 0 #1f2937;
+    box-shadow: 8px 8px 0 #1f2937;
 
-    transform: rotate(-0.5deg);
+    transform: rotate(2deg);
 }
 
-.downloads-hero-box::after {
+.downloads-hero-note::before {
     content: "";
 
     position: absolute;
 
-    right: 45px;
-    bottom: -22px;
+    top: -12px;
+    right: 35px;
 
-    width: 45px;
-    height: 45px;
+    width: 75px;
+    height: 22px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 2px solid #1f2937;
+
+    transform: rotate(-3deg);
+}
+
+.downloads-hero-note::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -18px;
+    left: 35px;
+
+    width: 35px;
+    height: 35px;
 
     background: #facc15;
 
@@ -44,65 +182,94 @@
     transform: rotate(45deg);
 }
 
-.downloads-hero-box h1 {
-    max-width: 800px;
+.downloads-note-mark {
+    display: inline-flex;
 
-    margin: 10px 0 20px;
+    align-items: center;
+    justify-content: center;
 
-    font-size: clamp(48px, 7vw, 90px);
+    width: 48px;
+    height: 48px;
 
-    line-height: 0.95;
+    margin-bottom: 25px;
 
-    letter-spacing: -4px;
+    background: #1f2937;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.05em;
+
+    transform: rotate(-4deg);
+
+    box-shadow: 4px 4px 0 #168a68;
 }
 
-.downloads-hero-box h1 span {
+.downloads-hero-note strong {
     display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 25px;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.8px;
 }
 
-.downloads-hero-description {
-    max-width: 650px;
+.downloads-hero-note p {
+    margin: 18px 0 0;
 
-    margin: 0;
+    color: #374151;
 
-    font-size: 16px;
+    font-size: 13px;
 
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 
-/* =========================
-   SECTION
-========================= */
+/* =========================================================
+   DOWNLOAD SECTION
+========================================================= */
 
 .downloads-section {
     padding: 100px 0;
 }
 
+
+/* -------------------------
+   HEADING
+------------------------- */
+
 .downloads-heading {
     display: flex;
 
-    justify-content: space-between;
+    align-items: flex-end;
 
-    align-items: end;
+    justify-content: space-between;
 
     gap: 40px;
 
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 .downloads-heading h2 {
-    margin: 5px 0 0;
+    margin: 7px 0 0;
 
-    font-size: clamp(38px, 5vw, 60px);
+    color: #1f2937;
 
-    line-height: 1;
+    font-size: clamp(42px, 5vw, 65px);
 
-    letter-spacing: -2px;
+    line-height: 0.95;
+
+    letter-spacing: -3px;
 }
 
 .downloads-heading > p {
-    max-width: 380px;
+    max-width: 430px;
 
     margin: 0;
 
@@ -110,26 +277,27 @@
 
     font-size: 14px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 
-/* =========================
-   GRID
-========================= */
+/* =========================================================
+   DOWNLOAD GRID
+========================================================= */
 
 .downloads-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-    gap: 30px;
+    gap: 32px;
 }
 
 
-/* =========================
-   CARD
-========================= */
+/* =========================================================
+   DOWNLOAD CARD
+========================================================= */
 
 .download-card {
     position: relative;
@@ -138,15 +306,15 @@
 
     flex-direction: column;
 
-    min-height: 330px;
+    min-height: 350px;
+
+    overflow: hidden;
 
     background: #ffffff;
 
     border: 3px solid #1f2937;
 
     box-shadow: 7px 7px 0 #1f2937;
-
-    overflow: hidden;
 
     transition:
         transform 0.2s ease,
@@ -162,15 +330,15 @@
 }
 
 .download-card:hover {
-    transform: translate(-3px, -3px) rotate(0deg);
+    transform: translate(-4px, -4px) rotate(0deg);
 
-    box-shadow: 10px 10px 0 #1f2937;
+    box-shadow: 11px 11px 0 #1f2937;
 }
 
 
-/* =========================
+/* =========================================================
    CARD TOP
-========================= */
+========================================================= */
 
 .download-card-top {
     display: flex;
@@ -179,25 +347,42 @@
 
     justify-content: space-between;
 
-    padding: 25px;
-
-    border-bottom: 2px solid #1f2937;
+    padding: 24px;
 
     background: #f7f7f2;
+
+    border-bottom: 3px solid #1f2937;
 }
 
+.download-file {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 10px;
+}
+
+
+/* -------------------------
+   FILE ICON
+------------------------- */
+
 .download-file-icon {
-    width: 58px;
-    height: 70px;
+    position: relative;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
+    width: 62px;
+    height: 76px;
+
     background: #facc15;
 
     border: 3px solid #1f2937;
+
+    color: #1f2937;
 
     font-size: 10px;
 
@@ -208,35 +393,91 @@
     box-shadow: 4px 4px 0 #1f2937;
 }
 
-.download-card-number {
-    font-size: 12px;
+.download-file-icon::after {
+    content: "";
 
-    font-weight: 900;
+    position: absolute;
+
+    top: -3px;
+    right: -3px;
+
+    width: 17px;
+    height: 17px;
+
+    background: #ffffff;
+
+    border-left: 3px solid #1f2937;
+    border-bottom: 3px solid #1f2937;
 }
 
 
-/* =========================
+/* -------------------------
+   FILE TYPE
+------------------------- */
+
+.download-file-type {
+    padding: 5px 8px;
+
+    background: #168a68;
+
+    color: #ffffff;
+
+    border: 2px solid #1f2937;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+
+    transform: rotate(2deg);
+}
+
+
+/* -------------------------
+   NUMBER
+------------------------- */
+
+.download-card-number {
+    color: #1f2937;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
    CARD CONTENT
-========================= */
+========================================================= */
 
 .download-card-content {
     display: flex;
 
-    flex-direction: column;
-
     flex: 1;
+
+    flex-direction: column;
 
     padding: 30px;
 }
 
+
+/* -------------------------
+   META
+------------------------- */
+
 .download-meta {
     display: flex;
+
+    align-items: center;
 
     justify-content: space-between;
 
     gap: 15px;
 
-    margin-bottom: 15px;
+    margin-bottom: 17px;
 
     color: #6b7280;
 
@@ -247,46 +488,71 @@
     letter-spacing: 0.08em;
 }
 
+.download-meta span:first-child {
+    color: #168a68;
+}
+
 .download-meta span:last-child {
     text-align: right;
 }
 
+
+/* -------------------------
+   TITLE
+------------------------- */
+
 .download-card-content h3 {
-    margin: 0 0 12px;
+    max-width: 520px;
 
-    font-size: 26px;
+    margin: 0 0 14px;
 
-    line-height: 1.1;
+    color: #1f2937;
 
-    letter-spacing: -0.8px;
+    font-size: clamp(25px, 3vw, 32px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1px;
 }
 
+
+/* -------------------------
+   DESCRIPTION
+------------------------- */
+
 .download-card-content > p {
-    margin: 0 0 25px;
+    max-width: 560px;
+
+    margin: 0 0 30px;
 
     color: #4b5563;
 
     font-size: 14px;
 
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
 
 .download-button {
     display: inline-flex;
 
     align-items: center;
-    justify-content: center;
+
+    justify-content: space-between;
 
     align-self: flex-start;
 
+    gap: 25px;
+
+    min-width: 145px;
+
     margin-top: auto;
 
-    padding: 11px 17px;
+    padding: 12px 18px;
 
     background: #1f2937;
 
@@ -294,18 +560,21 @@
 
     color: #ffffff;
 
+    text-decoration: none;
+
     font-size: 11px;
 
     font-weight: 900;
 
-    text-decoration: none;
-
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 }
 
 .download-button:hover {
+    background: #168a68;
+
     color: #ffffff;
 
     transform: translate(-3px, -3px);
@@ -313,39 +582,49 @@
     box-shadow: 5px 5px 0 #facc15;
 }
 
+.download-button-arrow {
+    font-size: 17px;
 
-/* =========================
+    line-height: 1;
+}
+
+
+/* =========================================================
    EMPTY STATE
-========================= */
+========================================================= */
 
 .downloads-empty {
-    padding: 80px 30px;
+    position: relative;
+
+    padding: 90px 30px;
+
+    text-align: center;
 
     background: #ffffff;
 
     border: 3px solid #1f2937;
 
-    box-shadow: 7px 7px 0 #1f2937;
+    box-shadow: 8px 8px 0 #1f2937;
 
-    text-align: center;
-
-    transform: rotate(-0.3deg);
+    transform: rotate(-0.25deg);
 }
 
 .downloads-empty-icon {
-    width: 65px;
-    height: 78px;
-
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin: 0 auto 25px;
+    width: 70px;
+    height: 82px;
+
+    margin: 0 auto 28px;
 
     background: #facc15;
 
     border: 3px solid #1f2937;
+
+    color: #1f2937;
 
     font-size: 10px;
 
@@ -357,15 +636,17 @@
 }
 
 .downloads-empty h3 {
-    margin: 10px 0;
+    margin: 10px 0 15px;
 
-    font-size: 32px;
+    color: #1f2937;
 
-    line-height: 1.1;
+    font-size: clamp(28px, 4vw, 40px);
+
+    line-height: 1;
 }
 
 .downloads-empty > p:last-child {
-    max-width: 500px;
+    max-width: 520px;
 
     margin: 0 auto;
 
@@ -373,15 +654,153 @@
 
     font-size: 14px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================================
+   CTA
+========================================================= */
 
-@media (max-width: 900px) {
+.downloads-cta {
+    padding: 0 0 110px;
+}
+
+.downloads-cta-box {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding: 55px;
+
+    background: #168a68;
+
+    border: 3px solid #1f2937;
+
+    box-shadow: 9px 9px 0 #1f2937;
+
+    transform: rotate(0.35deg);
+
+    overflow: hidden;
+}
+
+.downloads-cta-box::before {
+    content: "XCLIP";
+
+    position: absolute;
+
+    right: -20px;
+    bottom: -55px;
+
+    color: rgba(255, 255, 255, 0.08);
+
+    font-size: 150px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+.downloads-cta-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 650px;
+}
+
+.downloads-cta-content .section-label {
+    color: #facc15;
+}
+
+.downloads-cta-content h2 {
+    margin: 10px 0 18px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+.downloads-cta-content h2 span {
+    display: block;
+
+    color: #facc15;
+}
+
+.downloads-cta-content > p:last-child {
+    max-width: 580px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* -------------------------
+   CTA ACTIONS
+------------------------- */
+
+.downloads-cta-actions {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-shrink: 0;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* Make buttons work on green CTA */
+
+.downloads-cta-actions .doodle-button {
+    background: #ffffff;
+
+    border-color: #1f2937;
+
+    color: #1f2937;
+}
+
+.downloads-cta-actions .doodle-button:hover {
+    background: #facc15;
+
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .downloads-hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .downloads-hero-note {
+        max-width: 500px;
+
+        justify-self: end;
+    }
 
     .downloads-grid {
         grid-template-columns: 1fr;
@@ -395,10 +814,14 @@
         gap: 15px;
     }
 
-    .downloads-cta-box {
-        flex-direction: column;
+    .downloads-heading > p {
+        max-width: 600px;
+    }
 
+    .downloads-cta-box {
         align-items: flex-start;
+
+        flex-direction: column;
     }
 
 }
@@ -407,33 +830,59 @@
 @media (max-width: 768px) {
 
     .downloads-hero {
-        padding-top: 50px;
+        padding: 50px 0 70px;
     }
 
-    .downloads-hero-box {
-        padding: 35px 25px;
+    .downloads-hero-content h1 {
+        font-size: clamp(52px, 13vw, 76px);
+
+        letter-spacing: -3px;
     }
 
-    .downloads-hero-box h1 {
-        font-size: 52px;
+    .downloads-hero-description {
+        font-size: 15px;
+    }
 
-        letter-spacing: -2px;
+    .downloads-hero-note {
+        width: 100%;
+
+        max-width: none;
+
+        box-sizing: border-box;
+
+        transform: rotate(1deg);
     }
 
     .downloads-section {
-        padding: 70px 0;
+        padding: 75px 0;
     }
 
-    .downloads-card-content {
+    .downloads-heading {
+        margin-bottom: 35px;
+    }
+
+    .downloads-heading h2 {
+        font-size: clamp(40px, 11vw, 58px);
+    }
+
+    .download-card {
+        min-height: 0;
+    }
+
+    .download-card-content {
         padding: 25px;
     }
 
     .downloads-cta {
-        padding-bottom: 70px;
+        padding-bottom: 80px;
     }
 
     .downloads-cta-box {
-        padding: 35px 25px;
+        padding: 40px 28px;
+    }
+
+    .downloads-cta-content h2 {
+        letter-spacing: -2px;
     }
 
 }
@@ -441,16 +890,74 @@
 
 @media (max-width: 500px) {
 
-    .downloads-hero-box h1 {
-        font-size: 42px;
+    .downloads-hero {
+        padding-top: 35px;
     }
 
-    .downloads-card-content h3 {
-        font-size: 23px;
+    .downloads-hero-content h1 {
+        font-size: 45px;
+
+        letter-spacing: -2px;
+    }
+
+    .downloads-hero-tags {
+        gap: 8px;
+    }
+
+    .downloads-hero-tags span {
+        padding: 7px 9px;
+
+        font-size: 8px;
+    }
+
+    .downloads-hero-note {
+        padding: 28px 22px;
+    }
+
+    .downloads-hero-note strong {
+        font-size: 22px;
+    }
+
+    .downloads-section {
+        padding: 60px 0;
+    }
+
+    .download-card-top {
+        padding: 20px;
     }
 
     .download-card-content {
         padding: 22px;
+    }
+
+    .download-meta {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+    .download-meta span:last-child {
+        text-align: left;
+    }
+
+    .download-card-content h3 {
+        font-size: 25px;
+    }
+
+    .download-button {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .downloads-empty {
+        padding: 65px 22px;
+    }
+
+    .downloads-cta-box {
+        padding: 35px 22px;
     }
 
     .downloads-cta-actions {
@@ -459,11 +966,12 @@
         flex-direction: column;
     }
 
-    .downloads-button,
-    .downloads-button-outline {
+    .downloads-cta-actions .doodle-button {
         width: 100%;
 
         box-sizing: border-box;
+
+        justify-content: center;
     }
 
 }

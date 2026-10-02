@@ -2,17 +2,18 @@
 
 @section('title', 'About Xclip — Company Profile')
 
-@section('meta_description', 'Mengenal PT Xclip Subcon Asia, perusahaan multi-layanan dengan berbagai bidang usaha yang menyediakan solusi terintegrasi untuk kebutuhan bisnis dan proyek.')
+@section('meta_description', 'Mengenal PT Xclip Subcon Asia, perusahaan multi-layanan dengan 98 bidang usaha dalam 6 kategori utama untuk mendukung kebutuhan bisnis, proyek, dan operasional.')
 
 @section('og_title', 'About Xclip — Company Profile')
 
-@section('og_description', 'Mengenal profil, bidang usaha, dan pendekatan bisnis PT Xclip Subcon Asia.')
+@section('og_description', 'Mengenal PT Xclip Subcon Asia, kapabilitas lintas sektor, legal credentials, dan pendekatan bisnis terintegrasi.')
 
 @section('content')
 
-{{-- =========================
+
+{{-- =========================================================
      ABOUT HERO
-========================= --}}
+========================================================= --}}
 
 <section class="about-hero">
 
@@ -27,48 +28,62 @@
                 </p>
 
                 <h1>
-                    Integrated Solutions
-                    <span>Across Multiple Sectors</span>
+                    One Company.
+                    <span>Multiple Capabilities.</span>
                 </h1>
 
                 <p class="about-hero-description">
                     PT Xclip Subcon Asia adalah perusahaan multi-layanan
-                    yang berkomitmen memberikan solusi inovatif, berkualitas,
-                    dan berkelanjutan untuk mendukung kemajuan bisnis dan masyarakat.
+                    yang menghubungkan berbagai kapabilitas untuk mendukung
+                    kebutuhan bisnis, proyek, dan operasional lintas sektor.
                 </p>
 
-                <div class="about-hero-actions">
 
-                    <a href="{{ route('services') }}"
-                        class="doodle-button doodle-button-primary">
-                        Explore Our Services
-                    </a>
 
-                    <a href="{{ route('contact') }}"
-                        class="doodle-button">
-                        Contact Xclip
-                    </a>
+                <div class="about-hero-meta">
+
+                    <div>
+                        <strong>2023</strong>
+                        <span>Established</span>
+                    </div>
+
+                    <div>
+                        <strong>Kebumen</strong>
+                        <span>Central Java</span>
+                    </div>
+
+                    <div>
+                        <strong>6</strong>
+                        <span>Business Categories</span>
+                    </div>
 
                 </div>
 
             </div>
 
 
-            {{-- Decorative Information --}}
-            <div class="about-hero-note">
+            <div class="about-hero-visual">
 
-                <div class="doodle-note">
+                <div class="about-hero-image">
+
+                    <img
+                        src="{{ asset('images/gedung.jpg') }}"
+                        alt="Xclip business and project environment">
+
+                </div>
+
+                <div class="about-hero-note">
 
                     <span class="note-number">
                         98
                     </span>
 
                     <span class="note-text">
-                        bidang usaha
+                        Fields of Business
                     </span>
 
                     <small>
-                        dalam 6 kategori utama
+                        across 6 major categories
                     </small>
 
                 </div>
@@ -82,57 +97,67 @@
 </section>
 
 
-{{-- =========================
+{{-- =========================================================
      COMPANY PROFILE
-========================= --}}
+========================================================= --}}
 
 <section class="about-profile">
 
     <div class="container">
 
-        <div class="about-section-heading">
-
-            <p class="about-label">
-                COMPANY PROFILE
-            </p>
-
-            <h2>
-                Who We Are
-            </h2>
-
-        </div>
-
-
         <div class="about-profile-grid">
 
-            <div class="about-profile-text">
+            <div class="about-profile-content">
+
+                <p class="about-label">
+                    COMPANY PROFILE
+                </p>
+
+                <h2>
+                    Who We Are
+                </h2>
 
                 <p>
-                    PT Xclip Subcon Asia merupakan perusahaan multi-layanan
-                    dengan portofolio bidang usaha yang luas. Xclip hadir
-                    untuk mendukung berbagai kebutuhan bisnis dan proyek
-                    melalui solusi yang terintegrasi.
+                    PT Xclip Subcon Asia hadir sebagai perusahaan dengan
+                    kapabilitas lintas sektor yang dirancang untuk mendukung
+                    berbagai kebutuhan usaha dan proyek.
                 </p>
 
                 <p>
-                    Dengan cakupan usaha yang meliputi berbagai sektor,
-                    Xclip dapat mendukung kebutuhan mulai dari perencanaan,
-                    pengadaan, pelaksanaan proyek, layanan profesional,
-                    hingga dukungan operasional.
+                    Dengan portofolio yang mencakup konstruksi, industri,
+                    perdagangan, teknologi, layanan profesional, serta
+                    dukungan operasional, Xclip menghubungkan berbagai
+                    kebutuhan dalam satu pendekatan yang terintegrasi.
                 </p>
 
                 <p>
-                    Pendekatan ini memungkinkan Xclip untuk menjadi mitra
-                    kolaborasi bagi berbagai kebutuhan usaha dan proyek
-                    dengan solusi yang fleksibel dan lintas sektor.
+                    Pendekatan tersebut memungkinkan Xclip untuk bekerja
+                    secara fleksibel sebagai mitra dalam pengadaan,
+                    pelaksanaan proyek, layanan profesional, maupun
+                    kebutuhan operasional.
                 </p>
+
+                <div class="about-capabilities">
+
+                    <span>Construction</span>
+                    <span>Industrial</span>
+                    <span>Trade</span>
+                    <span>Technology</span>
+                    <span>Professional Services</span>
+                    <span>Operational Support</span>
+
+                </div>
 
             </div>
 
 
-            <div class="about-profile-highlight">
+            <div class="about-profile-side">
 
-                <div class="doodle-card profile-card">
+                <div class="doodle-card profile-card profile-card-orange">
+
+                    <span class="profile-card-number">
+                        01
+                    </span>
 
                     <div class="card-icon card-orange">
                         ✦
@@ -143,14 +168,18 @@
                     </h3>
 
                     <p>
-                        Portofolio usaha Xclip mencakup berbagai sektor
-                        untuk mendukung kebutuhan bisnis dan proyek.
+                        Berbagai kategori usaha memungkinkan Xclip
+                        mendukung kebutuhan dari berbagai sektor.
                     </p>
 
                 </div>
 
 
-                <div class="doodle-card profile-card">
+                <div class="doodle-card profile-card profile-card-green">
+
+                    <span class="profile-card-number">
+                        02
+                    </span>
 
                     <div class="card-icon card-green">
                         ✓
@@ -161,8 +190,8 @@
                     </h3>
 
                     <p>
-                        Menghubungkan berbagai kapabilitas untuk
-                        menghadirkan solusi yang lebih terintegrasi.
+                        Berbagai kapabilitas dihubungkan untuk
+                        menciptakan solusi yang lebih terkoordinasi.
                     </p>
 
                 </div>
@@ -176,9 +205,9 @@
 </section>
 
 
-{{-- =========================
-     COMPANY IDENTITY / LEGAL
-========================= --}}
+{{-- =========================================================
+     COMPANY & LEGAL
+========================================================= --}}
 
 <section class="about-legal">
 
@@ -191,8 +220,14 @@
             </p>
 
             <h2>
-                Company Information
+                Built on a Clear
+                Business Foundation
             </h2>
+
+            <p>
+                Informasi identitas dan legalitas perusahaan sebagai
+                bagian dari kredibilitas Xclip dalam membangun kerja sama.
+            </p>
 
         </div>
 
@@ -200,7 +235,7 @@
         <div class="legal-layout">
 
 
-            {{-- Company Identity --}}
+            {{-- COMPANY IDENTITY --}}
 
             <div class="doodle-card legal-card">
 
@@ -210,9 +245,17 @@
                         ◆
                     </span>
 
-                    <h3>
-                        Company Identity
-                    </h3>
+                    <div>
+
+                        <span>
+                            COMPANY IDENTITY
+                        </span>
+
+                        <h3>
+                            Xclip Subcon Asia
+                        </h3>
+
+                    </div>
 
                 </div>
 
@@ -231,7 +274,6 @@
 
                     </div>
 
-
                     <div class="legal-item">
 
                         <span>
@@ -243,7 +285,6 @@
                         </strong>
 
                     </div>
-
 
                     <div class="legal-item">
 
@@ -257,11 +298,10 @@
 
                     </div>
 
-
                     <div class="legal-item">
 
                         <span>
-                            Investment Status
+                            Investment
                         </span>
 
                         <strong>
@@ -269,7 +309,6 @@
                         </strong>
 
                     </div>
-
 
                     <div class="legal-item">
 
@@ -288,7 +327,7 @@
             </div>
 
 
-            {{-- Business Commitment --}}
+            {{-- COMMITMENT --}}
 
             <div class="doodle-card legal-card legal-card-yellow">
 
@@ -298,18 +337,26 @@
                         ★
                     </span>
 
-                    <h3>
-                        Our Commitment
-                    </h3>
+                    <div>
+
+                        <span>
+                            OUR COMMITMENT
+                        </span>
+
+                        <h3>
+                            How We Create Value
+                        </h3>
+
+                    </div>
 
                 </div>
 
                 <p>
-                    Xclip berkomitmen memberikan solusi yang
+                    Xclip berkomitmen menghadirkan solusi yang
                     <strong>inovatif</strong>,
                     <strong>berkualitas</strong>, dan
                     <strong>berkelanjutan</strong>
-                    untuk mendukung kemajuan bisnis dan masyarakat.
+                    untuk mendukung kebutuhan bisnis dan proyek.
                 </p>
 
                 <div class="commitment-tags">
@@ -337,9 +384,9 @@
 </section>
 
 
-{{-- =========================
+{{-- =========================================================
      BUSINESS PORTFOLIO
-========================= --}}
+========================================================= --}}
 
 <section class="about-business">
 
@@ -352,12 +399,14 @@
             </p>
 
             <h2>
-                98 Fields of Business
+                98 Fields.
+                <span>6 Categories.</span>
             </h2>
 
             <p>
-                Portofolio Xclip mencakup 98 bidang usaha
-                yang dikelompokkan ke dalam 6 kategori utama.
+                Portofolio Xclip mencakup 98 bidang usaha yang
+                dikelompokkan ke dalam enam kategori utama,
+                membentuk kapabilitas lintas sektor.
             </p>
 
         </div>
@@ -368,7 +417,7 @@
 
             {{-- 01 --}}
 
-            <div class="business-card business-orange">
+            <article class="business-card business-orange">
 
                 <span class="business-number">
                     01
@@ -379,8 +428,8 @@
                 </div>
 
                 <h3>
-                    Teknologi Digital,
-                    Media & Publishing
+                    Technology, Media
+                    & Publishing
                 </h3>
 
                 <strong>
@@ -388,17 +437,17 @@
                 </strong>
 
                 <p>
-                    Media imersif, software, film/video,
-                    cyber, hosting, publishing, dan
+                    Software, media imersif, film dan video,
+                    cyber, hosting, publishing, serta berbagai
                     layanan teknologi digital.
                 </p>
 
-            </div>
+            </article>
 
 
             {{-- 02 --}}
 
-            <div class="business-card business-blue">
+            <article class="business-card business-blue">
 
                 <span class="business-number">
                     02
@@ -409,8 +458,8 @@
                 </div>
 
                 <h3>
-                    Industri, Percetakan
-                    & Manufaktur
+                    Industry, Printing
+                    & Manufacturing
                 </h3>
 
                 <strong>
@@ -418,17 +467,17 @@
                 </strong>
 
                 <p>
-                    Percetakan, jasa penunjang percetakan,
-                    industri barang dari semen, produk
-                    logam struktural, dan manufaktur lainnya.
+                    Percetakan, material berbasis semen,
+                    produk logam struktural, serta berbagai
+                    kebutuhan manufaktur.
                 </p>
 
-            </div>
+            </article>
 
 
             {{-- 03 --}}
 
-            <div class="business-card business-green">
+            <article class="business-card business-green business-featured">
 
                 <span class="business-number">
                     03
@@ -439,8 +488,8 @@
                 </div>
 
                 <h3>
-                    Konstruksi,
-                    Infrastruktur & Properti
+                    Construction,
+                    Infrastructure & Property
                 </h3>
 
                 <strong>
@@ -448,17 +497,21 @@
                 </strong>
 
                 <p>
-                    Konstruksi gedung, infrastruktur,
-                    utilitas, instalasi, finishing,
-                    serta pengembangan properti.
+                    Konstruksi gedung, infrastruktur, utilitas,
+                    instalasi, finishing, hingga pengembangan
+                    properti.
                 </p>
 
-            </div>
+                <span class="business-note">
+                    CORE CAPABILITY
+                </span>
+
+            </article>
 
 
             {{-- 04 --}}
 
-            <div class="business-card business-yellow">
+            <article class="business-card business-yellow">
 
                 <span class="business-number">
                     04
@@ -469,8 +522,8 @@
                 </div>
 
                 <h3>
-                    Perdagangan,
-                    Distribusi & Retail
+                    Trade, Distribution
+                    & Retail
                 </h3>
 
                 <strong>
@@ -478,18 +531,17 @@
                 </strong>
 
                 <p>
-                    Retail umum, retail teknologi,
-                    material kebutuhan proyek,
-                    furnishing, stationery, dan
-                    produk komunitas.
+                    Perdagangan umum, teknologi, material proyek,
+                    furniture, stationery, serta berbagai produk
+                    kebutuhan bisnis.
                 </p>
 
-            </div>
+            </article>
 
 
             {{-- 05 --}}
 
-            <div class="business-card business-blue">
+            <article class="business-card business-blue">
 
                 <span class="business-number">
                     05
@@ -500,8 +552,8 @@
                 </div>
 
                 <h3>
-                    Konsultasi, Desain
-                    & Layanan Profesional
+                    Consulting, Design
+                    & Professional Services
                 </h3>
 
                 <strong>
@@ -509,18 +561,17 @@
                 </strong>
 
                 <p>
-                    Konsultasi bisnis, arsitektur,
-                    engineering, sertifikasi teknis,
-                    riset opini publik, desain,
-                    dan layanan profesional.
+                    Konsultasi, arsitektur, engineering,
+                    sertifikasi, research, desain, dan
+                    layanan profesional lainnya.
                 </p>
 
-            </div>
+            </article>
 
 
             {{-- 06 --}}
 
-            <div class="business-card business-green">
+            <article class="business-card business-green">
 
                 <span class="business-number">
                     06
@@ -531,8 +582,8 @@
                 </div>
 
                 <h3>
-                    Operasional, Lingkungan,
-                    Rental, Event & SDM
+                    Operations, Environment,
+                    Rental, Events & People
                 </h3>
 
                 <strong>
@@ -540,13 +591,12 @@
                 </strong>
 
                 <p>
-                    Lingkungan dan limbah, event,
-                    hospitality, rental, asset support,
-                    SDM, facility support, serta
-                    pengembangan kapasitas.
+                    Dukungan lingkungan, rental, staffing,
+                    cleaning, landscape, hospitality,
+                    event, training, dan operational support.
                 </p>
 
-            </div>
+            </article>
 
         </div>
 
@@ -555,9 +605,9 @@
 </section>
 
 
-{{-- =========================
+{{-- =========================================================
      BUSINESS APPROACH
-========================= --}}
+========================================================= --}}
 
 <section class="about-approach">
 
@@ -565,47 +615,97 @@
 
         <div class="approach-grid">
 
-            <div>
+            <div class="approach-heading">
 
                 <p class="about-label">
                     OUR APPROACH
                 </p>
 
                 <h2>
-                    From Planning
-                    to Operational Support
+                    From Need
+                    <span>to Solution.</span>
                 </h2>
+
+                <p class="approach-intro">
+                    Xclip menghubungkan kebutuhan klien dengan
+                    kapabilitas yang tepat untuk menghasilkan
+                    solusi yang dapat dijalankan.
+                </p>
 
             </div>
 
 
-            <div class="approach-content">
-
-                <p>
-                    Portofolio Xclip menunjukkan jangkauan layanan
-                    dari perencanaan hingga operasional lapangan.
-                </p>
-
-                <p>
-                    Dengan cakupan lintas sektor tersebut, Xclip
-                    membuka peluang kolaborasi pada proyek,
-                    pengadaan, layanan profesional, dan event support.
-                </p>
+            <div class="approach-flow">
 
 
-                <div class="approach-flow">
+                <div class="approach-step">
 
                     <span>
-                        Planning
+                        01
                     </span>
 
-                    <span>
-                        Project
-                    </span>
+                    <h3>
+                        Understand
+                    </h3>
+
+                    <p>
+                        Memahami kebutuhan, tujuan,
+                        dan konteks proyek.
+                    </p>
+
+                </div>
+
+
+                <div class="approach-step">
 
                     <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Plan
+                    </h3>
+
+                    <p>
+                        Menentukan pendekatan,
+                        kebutuhan, dan sumber daya.
+                    </p>
+
+                </div>
+
+
+                <div class="approach-step">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Execute
+                    </h3>
+
+                    <p>
+                        Menghubungkan kapabilitas
+                        dengan pelaksanaan pekerjaan.
+                    </p>
+
+                </div>
+
+
+                <div class="approach-step">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
                         Support
-                    </span>
+                    </h3>
+
+                    <p>
+                        Memberikan dukungan hingga
+                        kebutuhan operasional terpenuhi.
+                    </p>
 
                 </div>
 
@@ -618,9 +718,9 @@
 </section>
 
 
-{{-- =========================
+{{-- =========================================================
      CTA
-========================= --}}
+========================================================= --}}
 
 <section class="about-cta">
 
@@ -635,13 +735,14 @@
                 </p>
 
                 <h2>
-                    Ready to Build
-                    Something Together?
+                    Let's Build
+                    Something Together.
                 </h2>
 
                 <p>
-                    Siap menjadi mitra kolaborasi untuk
-                    berbagai kebutuhan usaha dan proyek.
+                    Diskusikan kebutuhan proyek, pengadaan,
+                    layanan profesional, maupun dukungan
+                    operasional bersama Xclip.
                 </p>
 
             </div>

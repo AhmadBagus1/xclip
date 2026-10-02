@@ -2,37 +2,82 @@
 
 @section('title', 'Projects — Xclip')
 
-@section('meta_description', 'Lihat portofolio proyek Xclip di berbagai sektor, mulai dari konstruksi dan infrastruktur hingga perdagangan, industrial, dan layanan profesional.')
+@section(
+'meta_description',
+'Jelajahi portofolio proyek Xclip dari berbagai sektor dan kebutuhan bisnis, mulai dari konstruksi, perdagangan, industrial, hingga layanan profesional.'
+)
 
 @section('og_title', 'Projects — Xclip')
 
-@section('og_description', 'Jelajahi proyek dan solusi yang dikerjakan Xclip di berbagai sektor bisnis dan kebutuhan profesional.')
+@section(
+'og_description',
+'Jelajahi proyek dan pengalaman kerja Xclip dalam mendukung berbagai kebutuhan bisnis, proyek, dan layanan profesional.'
+)
 
 @section('content')
 
-{{-- =========================
+
+{{-- =========================================================
      PROJECT HERO
-========================= --}}
+========================================================= --}}
 
 <section class="projects-hero">
 
     <div class="container">
 
-        <div class="doodle-box projects-hero-box">
+        <div class="projects-hero-inner">
 
-            <p class="section-label">
-                OUR PROJECTS
-            </p>
+            <div class="projects-hero-content">
 
-            <h1>
-                Projects That
-                <span>Make an Impact.</span>
-            </h1>
+                <p class="section-label">
+                    OUR PROJECTS
+                </p>
 
-            <p class="projects-hero-description">
-                Explore selected projects and solutions delivered
-                by Xclip across different business sectors.
-            </p>
+                <h1>
+                    Solusi Nyata
+                    <span>untuk Beragam Kebutuhan.</span>
+                </h1>
+
+                <p class="projects-hero-description">
+                    Jelajahi proyek dan pekerjaan yang menunjukkan
+                    bagaimana Xclip menghubungkan berbagai kapabilitas
+                    untuk mendukung kebutuhan bisnis, proyek,
+                    operasional, dan layanan profesional.
+                </p>
+
+                <div class="projects-hero-actions">
+
+                    <a
+                        href="#featured-projects"
+                        class="doodle-button doodle-button-primary">
+                        Lihat Proyek
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="projects-hero-note">
+
+                <span class="projects-note-mark">
+                    ✦
+                </span>
+
+                <strong>
+                    Dari Rencana.
+                </strong>
+
+                <strong>
+                    Menjadi Pekerjaan Nyata.
+                </strong>
+
+                <p>
+                    Setiap proyek menjadi bagian dari
+                    pengalaman dan kapabilitas Xclip.
+                </p>
+
+            </div>
 
         </div>
 
@@ -41,9 +86,9 @@
 </section>
 
 
-{{-- =========================
+{{-- =========================================================
      PROJECT INTRO
-========================= --}}
+========================================================= --}}
 
 <section class="projects-intro">
 
@@ -51,33 +96,41 @@
 
         <div class="projects-intro-grid">
 
-            <div>
+            <div class="projects-intro-label">
 
                 <p class="section-label">
                     OUR WORK
                 </p>
 
-                <h2>
-                    Turning Ideas
-                    Into Real Solutions
-                </h2>
+                <span class="projects-intro-mark">
+
+                </span>
 
             </div>
 
 
-            <div>
+            <div class="projects-intro-content">
+
+                <h2>
+                    Mengubah kebutuhan
+                    menjadi solusi yang dapat dijalankan.
+                </h2>
 
                 <p>
-                    Xclip supports clients through a variety of
-                    projects and professional solutions. From
-                    construction and infrastructure to trade,
-                    industrial, and professional services.
+                    Setiap proyek memiliki kebutuhan, ruang lingkup,
+                    tantangan, dan tujuan yang berbeda. Xclip
+                    menghadirkan pendekatan yang fleksibel dengan
+                    menghubungkan kapabilitas dan sumber daya
+                    yang relevan dengan kebutuhan pekerjaan.
                 </p>
 
                 <p>
-                    Each project is approached with a focus on
-                    quality, reliability, and solutions that meet
-                    the needs of our clients.
+                    Portofolio Xclip mencakup berbagai sektor,
+                    termasuk konstruksi, perdagangan dan distribusi,
+                    industrial, teknologi, serta layanan profesional.
+                    Setiap pekerjaan menjadi bagian dari pengalaman
+                    Xclip dalam memahami kebutuhan dan memberikan
+                    dukungan yang tepat.
                 </p>
 
             </div>
@@ -89,11 +142,13 @@
 </section>
 
 
-{{-- =========================
+{{-- =========================================================
      FEATURED PROJECTS
-========================= --}}
+========================================================= --}}
 
-<section class="projects-list">
+<section
+    class="projects-list"
+    id="featured-projects">
 
     <div class="container">
 
@@ -106,15 +161,22 @@
                 </p>
 
                 <h2>
-                    Our Selected Work
+                    Proyek Pilihan
                 </h2>
 
             </div>
 
+            <p class="projects-heading-description">
+                Beberapa proyek yang merepresentasikan
+                pengalaman dan kapabilitas Xclip.
+            </p>
+
         </div>
 
 
-        {{-- PROJECT GRID --}}
+        {{-- =================================================
+             PROJECT GRID
+        ================================================= --}}
 
         @if($featuredProjects->count() > 0)
 
@@ -125,7 +187,9 @@
             <article class="project-card doodle-card">
 
 
-                {{-- PROJECT IMAGE --}}
+                {{-- =================================================
+                     PROJECT IMAGE
+                ================================================= --}}
 
                 <div class="project-image">
 
@@ -133,14 +197,16 @@
 
                     <img
                         src="{{ asset('storage/' . $project->thumbnail) }}"
-                        alt="{{ $project->title }}">
+                        alt="{{ $project->title }} — Xclip"
+                        loading="lazy">
 
                     @else
 
                     <div class="project-image-placeholder">
 
                         <span>
-                            PROJECT {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
+                            PROJECT
+                            {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                         </span>
 
                     </div>
@@ -150,7 +216,9 @@
                 </div>
 
 
-                {{-- PROJECT CONTENT --}}
+                {{-- =================================================
+                     PROJECT CONTENT
+                ================================================= --}}
 
                 <div class="project-content">
 
@@ -173,8 +241,9 @@
                     @else
 
                     <p>
-                        Xclip delivers reliable solutions tailored
-                        to meet project requirements and client needs.
+                        Xclip memberikan dukungan yang disesuaikan
+                        dengan kebutuhan, ruang lingkup, dan tujuan
+                        pekerjaan.
                     </p>
 
                     @endif
@@ -209,6 +278,19 @@
 
                     </div>
 
+
+                    @if($project->slug)
+
+                    <a
+                        href="{{ route('projects.show', $project->slug) }}"
+                        class="project-view-link">
+
+                        Lihat Proyek
+
+                    </a>
+
+                    @endif
+
                 </div>
 
             </article>
@@ -219,7 +301,9 @@
 
         @else
 
-        {{-- NO FEATURED PROJECTS --}}
+        {{-- =================================================
+             EMPTY STATE
+        ================================================= --}}
 
         <div class="projects-empty">
 
@@ -228,11 +312,12 @@
             </div>
 
             <h3>
-                Projects Coming Soon.
+                Proyek Segera Hadir
             </h3>
 
             <p>
-                Our selected projects will be displayed here.
+                Portofolio proyek Xclip sedang dipersiapkan
+                dan akan ditampilkan di halaman ini.
             </p>
 
         </div>
@@ -244,9 +329,9 @@
 </section>
 
 
-{{-- =========================
+{{-- =========================================================
      ALL PROJECTS
-========================= --}}
+========================================================= --}}
 
 @if($projects->count() > 0)
 
@@ -263,10 +348,15 @@
                 </p>
 
                 <h2>
-                    More Projects
+                    Proyek Lainnya
                 </h2>
 
             </div>
+
+            <p class="projects-heading-description">
+                Jelajahi proyek lain yang menjadi bagian
+                dari portofolio Xclip.
+            </p>
 
         </div>
 
@@ -278,7 +368,9 @@
             <article class="project-card doodle-card">
 
 
-                {{-- PROJECT IMAGE --}}
+                {{-- =================================================
+                     PROJECT IMAGE
+                ================================================= --}}
 
                 <div class="project-image">
 
@@ -286,14 +378,16 @@
 
                     <img
                         src="{{ asset('storage/' . $project->thumbnail) }}"
-                        alt="{{ $project->title }}">
+                        alt="{{ $project->title }} — Xclip"
+                        loading="lazy">
 
                     @else
 
                     <div class="project-image-placeholder">
 
                         <span>
-                            PROJECT {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
+                            PROJECT
+                            {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                         </span>
 
                     </div>
@@ -303,7 +397,9 @@
                 </div>
 
 
-                {{-- PROJECT CONTENT --}}
+                {{-- =================================================
+                     PROJECT CONTENT
+                ================================================= --}}
 
                 <div class="project-content">
 
@@ -326,8 +422,9 @@
                     @else
 
                     <p>
-                        Xclip delivers reliable solutions tailored
-                        to meet project requirements and client needs.
+                        Xclip memberikan dukungan yang disesuaikan
+                        dengan kebutuhan, ruang lingkup, dan tujuan
+                        pekerjaan.
                     </p>
 
                     @endif
@@ -362,13 +459,16 @@
 
                     </div>
 
-                </div>
 
-                <a
-                    href="{{ route('projects.show', $project->slug) }}"
-                    class="project-view-link">
-                    View Project
-                </a>
+                    <a
+                        href="{{ route('projects.show', $project->slug) }}"
+                        class="project-view-link">
+
+                        Lihat Proyek
+
+                    </a>
+
+                </div>
 
             </article>
 
@@ -383,9 +483,9 @@
 @endif
 
 
-{{-- =========================
-     PROJECT PROCESS
-========================= --}}
+{{-- =========================================================
+     PROJECT APPROACH
+========================================================= --}}
 
 <section class="project-process">
 
@@ -398,14 +498,24 @@
             </p>
 
             <h2>
-                From Concept
-                to Completion.
+                Memahami.
+                Menyesuaikan.
+                <span>Melaksanakan.</span>
             </h2>
+
+            <p class="process-description">
+                Setiap proyek dimulai dari pemahaman yang jelas
+                terhadap kebutuhan dan diikuti dengan pendekatan
+                yang sesuai hingga pekerjaan dapat dilaksanakan.
+            </p>
 
         </div>
 
 
         <div class="process-grid">
+
+
+            {{-- 01 --}}
 
             <div class="process-card">
 
@@ -413,17 +523,24 @@
                     01
                 </span>
 
+                <div class="process-card-icon">
+                    ?
+                </div>
+
                 <h3>
-                    Understand
+                    Memahami
                 </h3>
 
                 <p>
-                    We understand the project requirements,
-                    goals, and challenges faced by our clients.
+                    Memahami kebutuhan, tujuan, ruang lingkup,
+                    prioritas, dan tantangan yang dihadapi
+                    dalam pekerjaan.
                 </p>
 
             </div>
 
+
+            {{-- 02 --}}
 
             <div class="process-card">
 
@@ -431,17 +548,24 @@
                     02
                 </span>
 
+                <div class="process-card-icon">
+                    +
+                </div>
+
                 <h3>
-                    Plan
+                    Menyesuaikan
                 </h3>
 
                 <p>
-                    We develop an appropriate approach and
-                    solution based on the project requirements.
+                    Menyesuaikan kapabilitas, sumber daya,
+                    dan pendekatan dengan kebutuhan pekerjaan
+                    yang akan dilaksanakan.
                 </p>
 
             </div>
 
+
+            {{-- 03 --}}
 
             <div class="process-card">
 
@@ -449,13 +573,18 @@
                     03
                 </span>
 
+                <div class="process-card-icon">
+                    ✓
+                </div>
+
                 <h3>
-                    Deliver
+                    Melaksanakan
                 </h3>
 
                 <p>
-                    We work toward delivering reliable solutions
-                    that support the client's objectives.
+                    Memberikan dukungan secara terarah melalui
+                    komunikasi yang jelas, koordinasi, dan
+                    pelaksanaan yang profesional.
                 </p>
 
             </div>
@@ -467,9 +596,9 @@
 </section>
 
 
-{{-- =========================
+{{-- =========================================================
      CTA
-========================= --}}
+========================================================= --}}
 
 <section class="projects-cta">
 
@@ -478,23 +607,26 @@
         <div class="projects-cta-box">
 
             <p class="section-label">
-                HAVE A PROJECT IN MIND?
+                PUNYA PROYEK?
             </p>
 
             <h2>
-                Let's Build
-                Something Together.
+                Mari Wujudkan
+                <span>Kebutuhan Anda.</span>
             </h2>
 
             <p>
-                Tell us about your project and discover how
-                Xclip can support your needs.
+                Ceritakan kebutuhan proyek atau bisnis Anda
+                kepada Xclip dan temukan bentuk dukungan
+                yang sesuai dengan kebutuhan pekerjaan.
             </p>
 
             <a
                 href="{{ route('rfq') }}"
-                class="doodle-button">
-                Request a Quote
+                class="doodle-button doodle-button-primary">
+
+                Ajukan Penawaran
+
             </a>
 
         </div>
@@ -502,5 +634,6 @@
     </div>
 
 </section>
+
 
 @endsection

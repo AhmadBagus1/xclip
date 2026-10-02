@@ -101,6 +101,7 @@
         <form
             action="{{ route('admin.services.update', $category) }}"
             method="POST"
+            enctype="multipart/form-data"
             class="admin-form">
 
             @csrf
@@ -229,6 +230,75 @@
 
 
             {{-- =================================================
+                 SERVICE IMAGE
+            ================================================== --}}
+
+            <div class="admin-form-group">
+
+                <label>
+                    Service Image
+                </label>
+
+
+                {{-- CURRENT IMAGE --}}
+
+                @if($category->image)
+
+                <div class="admin-service-current-image">
+
+                    <img
+                        src="{{ asset('storage/' . $category->image) }}"
+                        alt="{{ $category->name }}">
+
+                </div>
+
+                @else
+
+                <div class="admin-service-image-empty">
+
+                    <span>
+                        No image uploaded
+                    </span>
+
+                </div>
+
+                @endif
+
+
+                {{-- NEW IMAGE --}}
+
+                <div class="admin-service-image-upload">
+
+                    <label for="image">
+                        Replace Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept=".jpg,.jpeg,.png,.webp">
+
+                    <small>
+                        Kosongkan jika tidak ingin mengganti gambar.
+                        Format JPG, JPEG, PNG, atau WebP. Maksimal 10 MB.
+                    </small>
+
+                </div>
+
+
+                @error('image')
+
+                <span class="admin-form-error">
+                    {{ $message }}
+                </span>
+
+                @enderror
+
+            </div>
+
+
+            {{-- =================================================
                  DISPLAY ORDER
             ================================================== --}}
 
@@ -265,8 +335,6 @@
             ================================================== --}}
 
             <div class="admin-form-group">
-
-
 
                 <div class="admin-checkbox-wrapper">
 

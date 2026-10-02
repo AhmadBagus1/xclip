@@ -101,6 +101,7 @@
         <form
             action="{{ route('admin.services.store') }}"
             method="POST"
+            enctype="multipart/form-data"
             class="admin-form">
 
             @csrf
@@ -216,6 +217,38 @@
                     placeholder="Deskripsi singkat kategori layanan...">{{ old('description') }}</textarea>
 
                 @error('description')
+
+                <span class="admin-form-error">
+                    {{ $message }}
+                </span>
+
+                @enderror
+
+            </div>
+
+
+            {{-- =================================================
+                 SERVICE IMAGE
+            ================================================== --}}
+
+            <div class="admin-form-group">
+
+                <label for="image">
+                    Service Image
+                </label>
+
+                <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    accept=".jpg,.jpeg,.png,.webp">
+
+                <small>
+                    Gunakan gambar yang mewakili layanan.
+                    Format JPG, JPEG, PNG, atau WebP. Maksimal 10 MB.
+                </small>
+
+                @error('image')
 
                 <span class="admin-form-error">
                     {{ $message }}

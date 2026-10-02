@@ -44,8 +44,6 @@
 
             </a>
 
-
-
         </div>
 
     </div>
@@ -129,8 +127,25 @@
             <article class="admin-service-category-card">
 
                 {{-- =================================================
-                             ICON
-                        ================================================== --}}
+                     SERVICE IMAGE
+                ================================================== --}}
+
+                @if($category->image)
+
+                <div class="admin-service-category-image">
+
+                    <img
+                        src="{{ asset('storage/' . $category->image) }}"
+                        alt="{{ $category->name }}"
+                        loading="lazy">
+
+                </div>
+
+                @else
+
+                {{-- =================================================
+                     ICON FALLBACK
+                ================================================== --}}
 
                 <div class="admin-service-category-icon">
 
@@ -138,12 +153,14 @@
 
                 </div>
 
+                @endif
+
 
                 <div class="admin-service-category-content">
 
                     {{-- =================================================
-                                 TOP
-                            ================================================== --}}
+                         TOP
+                    ================================================== --}}
 
                     <div class="admin-service-category-top">
 
@@ -165,8 +182,8 @@
 
 
                     {{-- =================================================
-                                 CATEGORY NAME
-                            ================================================== --}}
+                         CATEGORY NAME
+                    ================================================== --}}
 
                     <h4>
                         {{ $category->name }}
@@ -174,18 +191,29 @@
 
 
                     {{-- =================================================
-                                 DESCRIPTION
-                            ================================================== --}}
+                         SLUG
+                    ================================================== --}}
+
+                    <div class="admin-service-category-slug">
+
+                        {{ $category->slug }}
+
+                    </div>
+
+
+                    {{-- =================================================
+                         DESCRIPTION
+                    ================================================== --}}
 
                     <p>
                         {{ $category->description
-                                    ?: 'Belum ada deskripsi kategori.' }}
+                            ?: 'Belum ada deskripsi kategori.' }}
                     </p>
 
 
                     {{-- =================================================
-                                 SORT ORDER
-                            ================================================== --}}
+                         SORT ORDER
+                    ================================================== --}}
 
                     <div class="admin-service-category-meta">
 
@@ -201,16 +229,16 @@
 
 
                     {{-- =================================================
-                                 ACTIONS
-                            ================================================== --}}
+                         ACTIONS
+                    ================================================== --}}
 
                     <div class="admin-service-actions">
 
                         <a
                             href="{{ route(
-                                        'admin.services.edit',
-                                        $category
-                                    ) }}"
+                                'admin.services.edit',
+                                $category
+                            ) }}"
                             class="admin-action-link">
 
                             Edit
@@ -220,9 +248,9 @@
 
                         <form
                             action="{{ route(
-                                        'admin.services.destroy',
-                                        $category
-                                    ) }}"
+                                'admin.services.destroy',
+                                $category
+                            ) }}"
                             method="POST"
                             class="swal-delete-form">
 
@@ -253,8 +281,8 @@
         @else
 
         {{-- =====================================================
-                 EMPTY STATE
-            ====================================================== --}}
+             EMPTY STATE
+        ====================================================== --}}
 
         <div class="admin-empty-state">
 
