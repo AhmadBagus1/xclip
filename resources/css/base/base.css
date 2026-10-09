@@ -1,4 +1,29 @@
 /* =========================================================
+   FONTS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Short+Stack&display=swap');
+
+@font-face {
+    font-family: "Comic Sans MS";
+    src: local("Comic Sans MS"),
+         url("/fonts/comic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Comic Sans MS";
+    src: local("Comic Sans MS Bold"), local("Comic Sans MS"),
+         url("/fonts/comicbd.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* =========================================================
    GLOBAL
 ========================================================= */
 
@@ -16,13 +41,10 @@ body {
     color: #171717;
 
     /*
-     * DoodleCSS menggunakan Short Stack sebagai
-     * font utamanya.
-     *
-     * Untuk sementara kita gunakan fallback jika
-     * font belum tersedia.
+     * Menggunakan font Comic Sans MS (persis seperti Gambar 1).
+     * Disertakan @font-face agar di Android dan semua device tampil identik.
      */
-    font-family: "Short Stack", cursive;
+    font-family: "Comic Sans MS", "Comic Neue", "Short Stack", cursive, sans-serif;
 
     line-height: 1.6;
 }
