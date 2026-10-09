@@ -1,6 +1,6 @@
 /* =========================================================
    XCLIP NAVBAR
-   Corporate Doodle Navigation
+   Doodle Corporate Navigation
 ========================================================= */
 
 
@@ -15,12 +15,10 @@
 
     width: 100%;
 
-    background: rgba(255, 253, 247, 0.96);
+    background: #fffdf7;
 
+    border-top: 2px solid #1f2937;
     border-bottom: 2px solid #1f2937;
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 
@@ -29,12 +27,12 @@
 ========================================================= */
 
 .navbar-container {
-    min-height: 82px;
+    min-height: 76px;
 
     display: flex;
     align-items: center;
 
-    gap: 28px;
+    gap: 25px;
 }
 
 
@@ -44,8 +42,9 @@
 
 .navbar-logo {
     flex: 0 0 auto;
-    width: 150px;
-    height: 82px;
+
+    width: 135px;
+    height: 76px;
 
     display: flex;
     align-items: center;
@@ -57,21 +56,30 @@
 .navbar-logo img {
     display: block;
 
-    width: 145px;
-    max-width: 145px;
+    width: 125px;
+    max-width: 125px;
+
     height: auto;
-    max-height: 60px;
+    max-height: 52px;
 
     object-fit: contain;
 
     transition:
         transform 0.2s ease,
-        filter 0.2s ease;
+        opacity 0.2s ease;
 }
 
+
+/* =========================================================
+   LOGO HOVER
+========================================================= */
+
 .navbar-logo:hover img {
-    transform: rotate(-2deg) scale(1.04);
+    transform: rotate(-1deg) scale(1.03);
+
+    opacity: 0.9;
 }
+
 
 /* =========================================================
    NAVIGATION MENU
@@ -82,9 +90,9 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 
-    gap: 4px;
+    gap: 3px;
 }
 
 
@@ -93,56 +101,34 @@
 ========================================================= */
 
 .nav-link {
-    position: relative;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    min-height: 42px;
+    min-height: 46px;
 
-    padding: 8px 13px;
+    padding: 7px 14px;
 
     color: #1f2937;
 
+    background: transparent;
+
+    border: 3px solid transparent;
+    border-radius: 999px;
+
     text-decoration: none;
 
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
 
     white-space: nowrap;
 
     transition:
         color 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-/* =========================================================
-   NAV LINK UNDERLINE
-========================================================= */
-
-.nav-link::after {
-    content: "";
-
-    position: absolute;
-
-    left: 12px;
-    right: 12px;
-    bottom: 3px;
-
-    height: 3px;
-
-    background: #f47b20;
-
-    transform:
-        scaleX(0)
-        rotate(-1deg);
-
-    transform-origin: center;
-
-    transition:
-        transform 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
@@ -153,28 +139,54 @@
 .nav-link:hover {
     color: #f47b20;
 
-    transform: translateY(-2px);
-}
-
-.nav-link:hover::after {
-    transform:
-        scaleX(1)
-        rotate(-1deg);
+    transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   NAV LINK ACTIVE
+   ACTIVE NAV LINK
 ========================================================= */
 
 .nav-link.active {
-    color: #f47b20;
+    color: #1f2937;
+
+    background: #fbb52f;
+
+    border-color: #1f2937;
+
+    border-radius: 999px;
+
+    box-shadow: 3px 5px 0 #1f2937;
+
+    transform: translateY(-2px);
 }
 
-.nav-link.active::after {
+
+/* =========================================================
+   ACTIVE NAV LINK HOVER
+========================================================= */
+
+.nav-link.active:hover {
+    color: #1f2937;
+
+    background: #fbb52f;
+
+    border-color: #1f2937;
+
     transform:
-        scaleX(1)
+        translateY(-3px)
         rotate(-1deg);
+
+    box-shadow: 4px 6px 0 #1f2937;
+}
+
+
+/* =========================================================
+   REMOVE UNDERLINE
+========================================================= */
+
+.nav-link::after {
+    display: none;
 }
 
 
@@ -183,53 +195,136 @@
 ========================================================= */
 
 .navbar-cta {
+    position: relative;
+
     flex: 0 0 auto;
 
-    min-height: 46px;
+    min-width: 185px;
+    min-height: 44px;
 
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 10px 17px;
+    gap: 7px;
 
-    background: #1f2937;
+    padding: 7px 12px;
 
-    color: #ffffff;
+    background: #fbb52f;
 
-    border: 2px solid #1f2937;
+    color: #1f2937;
+
+    border: 3px solid #1f2937;
 
     text-decoration: none;
 
-    font-size: 13px;
-    font-weight: 900;
+    font-size: 14px;
+    font-weight: 800;
 
-    box-shadow: 4px 4px 0 #f47b20;
+    white-space: nowrap;
 
-    transform: rotate(-0.8deg);
+    box-shadow: 4px 4px 0 #1f2937;
+
+    transform:
+        rotate(-0.8deg)
+        skewX(-0.5deg);
 
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease;
+        background 0.2s ease;
 }
 
 
 /* =========================================================
-   REQUEST A QUOTE HOVER
+   CTA LEFT ICON
+========================================================= */
+
+.navbar-cta-icon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+    color: #f47b20;
+
+    transform: rotate(-18deg);
+}
+
+
+/* =========================================================
+   CTA TEXT
+========================================================= */
+
+.navbar-cta-text {
+    display: inline-block;
+}
+
+
+/* =========================================================
+   CTA STAR
+========================================================= */
+
+.navbar-cta-star {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+
+    color: #f47b20;
+
+    transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   CTA HOVER
 ========================================================= */
 
 .navbar-cta:hover {
-    background: #f47b20;
-
     color: #1f2937;
 
-    transform:
-        translate(-2px, -2px)
-        rotate(0deg);
+    background: #ffc13b;
 
-    box-shadow: 6px 6px 0 #1f2937;
+    transform:
+        translate(-1px, -2px)
+        rotate(0deg)
+        skewX(0);
+
+    box-shadow: 5px 5px 0 #1f2937;
+}
+
+
+/* =========================================================
+   CTA ACTIVE - RFQ PAGE
+========================================================= */
+
+.navbar-cta.active {
+    background: #f47b20;
+
+    color: #ffffff;
+
+    transform:
+        translateY(-1px)
+        rotate(-0.8deg);
+
+    box-shadow: 4px 4px 0 #1f2937;
+}
+
+
+/* =========================================================
+   CTA ACTIVE ICON
+========================================================= */
+
+.navbar-cta.active .navbar-cta-icon,
+.navbar-cta.active .navbar-cta-star {
+    color: #fbb52f;
 }
 
 
@@ -268,7 +363,6 @@
     display: flex;
 
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
@@ -276,14 +370,38 @@
 
     cursor: pointer;
 
-    background: #ffffff;
+    background: #fffdf7;
 
-    border: 2px solid #1f2937;
+    border: 3px solid #1f2937;
 
-    box-shadow: 4px 4px 0 #1f2937;
+    border-radius: 50%;
+
+    box-shadow: 3px 4px 0 #1f2937;
 
     transform: rotate(-1deg);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
+
+/* =========================================================
+   MOBILE TOGGLE HOVER
+========================================================= */
+
+.navbar-mobile-toggle:hover {
+    transform:
+        translateY(-1px)
+        rotate(1deg);
+
+    box-shadow: 4px 5px 0 #1f2937;
+}
+
+
+/* =========================================================
+   MOBILE TOGGLE LINES
+========================================================= */
 
 .navbar-mobile-toggle span {
     width: 20px;
@@ -300,7 +418,7 @@
 
 
 /* =========================================================
-   MOBILE TOGGLE OPENED
+   MOBILE TOGGLE OPEN
 ========================================================= */
 
 .navbar-mobile[open]
@@ -330,93 +448,147 @@
 .navbar-mobile-menu {
     position: absolute;
 
-    top: calc(100% + 14px);
+    top: calc(100% + 12px);
     right: 0;
 
-    width: min(300px, calc(100vw - 32px));
+    width: min(290px, calc(100vw - 30px));
 
-    padding: 12px;
+    padding: 10px;
 
-    background: #ffffff;
+    background: #fffdf7;
 
-    border: 2px solid #1f2937;
+    border: 3px solid #1f2937;
 
-    box-shadow: 7px 7px 0 #1f2937;
+    box-shadow: 6px 7px 0 #1f2937;
 
-    transform: rotate(0.5deg);
+    transform: rotate(0.4deg);
 }
 
 
 /* =========================================================
-   MOBILE LINKS
+   MOBILE LINK
 ========================================================= */
 
 .navbar-mobile-menu > a {
     display: flex;
 
     align-items: center;
-    justify-content: space-between;
 
-    padding: 14px 12px;
+    min-height: 46px;
+
+    padding: 9px 13px;
 
     color: #1f2937;
+
+    background: transparent;
+
+    border: 3px solid transparent;
+
+    border-radius: 999px;
 
     text-decoration: none;
 
     font-size: 15px;
-    font-weight: 800;
-
-    border-bottom: 1px solid #d1d5db;
+    font-weight: 700;
 
     transition:
-        background 0.2s ease,
         color 0.2s ease,
-        padding-left 0.2s ease;
-}
-
-.navbar-mobile-menu > a:last-child {
-    border-bottom: 0;
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
 /* =========================================================
-   MOBILE LINK HOVER / ACTIVE
+   MOBILE LINK HOVER
 ========================================================= */
 
-.navbar-mobile-menu > a:hover,
-.navbar-mobile-menu > a.active {
+.navbar-mobile-menu > a:hover {
     color: #f47b20;
 
     background: #fff7ed;
 
-    padding-left: 17px;
+    transform: translateX(2px);
 }
 
 
 /* =========================================================
-   MOBILE CTA
+   MOBILE ACTIVE
 ========================================================= */
 
-.navbar-mobile-menu .mobile-cta {
-    margin-top: 10px;
-
-    padding: 14px;
-
-    background: #1f2937;
-
-    color: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    box-shadow: 4px 4px 0 #f47b20;
-}
-
-.navbar-mobile-menu .mobile-cta:hover {
+.navbar-mobile-menu > a.active {
     color: #1f2937;
 
-    background: #f47b20;
+    background: #fbb52f;
 
-    padding-left: 14px;
+    border-color: #1f2937;
+
+    box-shadow: 3px 4px 0 #1f2937;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MOBILE ACTIVE HOVER
+========================================================= */
+
+.navbar-mobile-menu > a.active:hover {
+    color: #1f2937;
+
+    background: #fbb52f;
+
+    transform:
+        translateY(-2px)
+        rotate(-1deg);
+
+    box-shadow: 4px 5px 0 #1f2937;
+}
+
+
+/* =========================================================
+   MOBILE RFQ
+========================================================= */
+
+.navbar-mobile-menu > a.mobile-rfq {
+    margin-top: 8px;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    background: #fbb52f;
+
+    color: #1f2937;
+
+    border-color: #1f2937;
+
+    box-shadow: 4px 5px 0 #1f2937;
+}
+
+
+/* =========================================================
+   MOBILE RFQ ICON
+========================================================= */
+
+.mobile-rfq-icon {
+    color: #f47b20;
+
+    font-size: 20px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* =========================================================
+   MOBILE RFQ STAR
+========================================================= */
+
+.mobile-rfq-star {
+    color: #f47b20;
+
+    font-size: 16px;
 }
 
 
@@ -424,30 +596,115 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1250px) {
 
     .navbar-container {
         gap: 18px;
     }
 
+
     .navbar-logo {
-        width: 115px;
+        width: 120px;
     }
 
+
+    .navbar-logo img {
+        width: 115px;
+        max-width: 115px;
+    }
+
+
     .nav-link {
-        padding-left: 9px;
-        padding-right: 9px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        font-size: 14px;
+    }
+
+
+    .navbar-cta {
+        min-width: 170px;
+
+        min-height: 43px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+        font-size: 13px;
+
+        gap: 6px;
+    }
+
+
+    .navbar-cta-icon {
+        font-size: 18px;
+    }
+
+
+    .navbar-cta-star {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   TABLET SMALL
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .navbar-container {
+        gap: 10px;
+    }
+
+
+    .navbar-logo {
+        width: 105px;
+    }
+
+
+    .navbar-logo img {
+        width: 100px;
+        max-width: 100px;
+
+        max-height: 46px;
+    }
+
+
+    .navbar-menu {
+        gap: 1px;
+    }
+
+
+    .nav-link {
+        min-height: 44px;
+
+        padding-left: 7px;
+        padding-right: 7px;
 
         font-size: 13px;
     }
 
+
     .navbar-cta {
-        padding-left: 13px;
-        padding-right: 13px;
+        min-width: 160px;
+
+        min-height: 42px;
 
         font-size: 12px;
+
+        gap: 5px;
     }
 
+
+    .navbar-cta-icon {
+        font-size: 17px;
+    }
+
+
+    .navbar-cta-star {
+        font-size: 13px;
+    }
 }
 
 
@@ -458,30 +715,38 @@
 @media (max-width: 850px) {
 
     .navbar-container {
-        min-height: 72px;
+        min-height: 70px;
 
         justify-content: space-between;
+
+        gap: 0;
     }
+
 
     .navbar-logo {
         width: auto;
-        height: 72px;
+
+        height: 70px;
     }
 
+
     .navbar-logo img {
-        max-width: 105px;
-        max-height: 44px;
+        width: 115px;
+        max-width: 115px;
+
+        max-height: 48px;
     }
+
 
     .navbar-menu,
     .navbar-cta {
         display: none;
     }
 
+
     .navbar-mobile {
         display: block;
     }
-
 }
 
 
@@ -492,43 +757,30 @@
 @media (max-width: 480px) {
 
     .navbar-container {
-        min-height: 68px;
+        min-height: 64px;
     }
+
 
     .navbar-logo {
-        height: 68px;
+        height: 64px;
     }
 
+
     .navbar-logo img {
-        max-width: 95px;
-        max-height: 40px;
+        width: 105px;
+        max-width: 105px;
+
+        max-height: 44px;
     }
+
 
     .navbar-mobile-toggle {
         width: 42px;
         height: 42px;
     }
 
-}
 
-/* =========================================================
-   MOBILE LOGO
-========================================================= */
-
-@media (max-width: 768px) {
-
-    .navbar-container {
-        min-height: 78px;
-    }
-
-    .navbar-logo {
-        width: 130px;
-        height: 78px;
-    }
-
-    .navbar-logo img {
-        width: 120px;
-        max-width: 120px;
-        max-height: 52px;
+    .navbar-mobile-menu {
+        width: min(275px, calc(100vw - 24px));
     }
 }

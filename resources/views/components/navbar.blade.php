@@ -6,8 +6,6 @@ $siteName = $siteSetting?->site_name ?? 'Xclip';
 $logo = $siteSetting?->logo
 ? asset('storage/' . $siteSetting->logo)
 : asset('images/xclip-logo.jpeg');
-
-$currentPath = request()->path();
 @endphp
 
 <nav class="navbar">
@@ -22,74 +20,91 @@ $currentPath = request()->path();
             href="{{ url('/') }}"
             class="navbar-logo"
             aria-label="{{ $siteName }} Home">
-
             <img
                 src="{{ $logo }}"
                 alt="{{ $siteName }} Logo">
-
         </a>
 
 
         {{-- =====================================================
-             NAVIGATION
+             DESKTOP NAVIGATION
         ====================================================== --}}
 
         <div class="navbar-menu">
 
+            {{-- HOME --}}
             <a
                 href="{{ url('/') }}"
                 class="nav-link {{ request()->is('/') ? 'active' : '' }}">
-                <span>Home</span>
+                Home
             </a>
 
+
+            {{-- ABOUT --}}
             <a
                 href="{{ url('/about') }}"
                 class="nav-link {{ request()->is('about') ? 'active' : '' }}">
-                <span>About</span>
+                About
             </a>
 
+
+            {{-- SERVICES --}}
             <a
                 href="{{ url('/services') }}"
                 class="nav-link {{ request()->is('services*') ? 'active' : '' }}">
-                <span>Services</span>
+                Services
             </a>
 
+
+            {{-- PROJECTS --}}
             <a
                 href="{{ url('/projects') }}"
                 class="nav-link {{ request()->is('projects*') ? 'active' : '' }}">
-                <span>Projects</span>
+                Projects
             </a>
 
+
+            {{-- NEWS --}}
             <a
                 href="{{ url('/news') }}"
                 class="nav-link {{ request()->is('news*') ? 'active' : '' }}">
-                <span>News</span>
+                News
             </a>
 
+
+            {{-- DOWNLOADS --}}
             <a
                 href="{{ url('/downloads') }}"
                 class="nav-link {{ request()->is('downloads*') ? 'active' : '' }}">
-                <span>Downloads</span>
+                Downloads
             </a>
 
+
+            {{-- CONTACT --}}
             <a
                 href="{{ url('/contact') }}"
                 class="nav-link {{ request()->is('contact') ? 'active' : '' }}">
-                <span>Contact</span>
+                Contact
             </a>
 
         </div>
 
 
         {{-- =====================================================
-             CTA
+             REQUEST A QUOTE
         ====================================================== --}}
 
         <a
             href="{{ url('/rfq') }}"
-            class="navbar-cta">
+            class="navbar-cta {{ request()->is('rfq*') ? 'active' : '' }}">
 
-            <span>Request a Quote</span>
+            <span class="navbar-cta-icon"></span>
+
+            <span class="navbar-cta-text">
+                Request a Quote
+            </span>
+
+            <span class="navbar-cta-star"></span>
 
         </a>
 
@@ -103,12 +118,11 @@ $currentPath = request()->path();
             <summary
                 class="navbar-mobile-toggle"
                 aria-label="Open navigation menu">
-
                 <span></span>
                 <span></span>
                 <span></span>
-
             </summary>
+
 
             <div class="navbar-mobile-menu">
 
@@ -154,10 +168,19 @@ $currentPath = request()->path();
                     Contact
                 </a>
 
+
+                {{-- MOBILE RFQ --}}
+
                 <a
                     href="{{ url('/rfq') }}"
-                    class="mobile-cta">
-                    Request a Quote
+                    class="mobile-rfq {{ request()->is('rfq*') ? 'active' : '' }}">
+                    <span class="navbar-cta-icon"></span>
+                    <span>
+                        Request a Quote
+                    </span>
+
+                    <span class="mobile-rfq-star"></span>
+
                 </a>
 
             </div>

@@ -585,52 +585,40 @@
             }
         );
     </script>
-
-
     {{-- =========================================================
-         SWEETALERT DELETE SUCCESS
-    ========================================================== --}}
-
+     SWEETALERT DELETE SUCCESS
+========================================================== --}}
     @if(session('delete_success'))
+    <div
+        id="deleteSuccessMessage"
+        data-message="{{ session('delete_success') }}"
+        hidden>
+    </div>
 
     <script>
-        document.addEventListener(
-            'DOMContentLoaded',
-            function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageElement = document.getElementById('deleteSuccessMessage');
 
-                Swal.fire({
-
-                    title: 'Berhasil Dihapus',
-
-                    text: '{{ session('
-                    delete_success ') }}',
-
-                    icon: 'success',
-
-                    confirmButtonColor: '#1f2937',
-
-                    confirmButtonText: 'OK',
-
-                    customClass: {
-
-                        popup: 'xclip-swal-popup',
-
-                        title: 'xclip-swal-title',
-
-                        htmlContainer: 'xclip-swal-text',
-
-                        confirmButton: 'xclip-swal-confirm'
-
-                    }
-
-                });
-
+            if (!messageElement || typeof Swal === 'undefined') {
+                return;
             }
-        );
+
+            Swal.fire({
+                title: 'Berhasil Dihapus',
+                text: messageElement.dataset.message,
+                icon: 'success',
+                confirmButtonColor: '#1f2937',
+                confirmButtonText: 'OK',
+                customClass: {
+                    popup: 'xclip-swal-popup',
+                    title: 'xclip-swal-title',
+                    htmlContainer: 'xclip-swal-text',
+                    confirmButton: 'xclip-swal-confirm'
+                }
+            });
+        });
     </script>
-
     @endif
-
 
 </body>
 

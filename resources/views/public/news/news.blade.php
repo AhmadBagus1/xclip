@@ -31,9 +31,6 @@
 
             <div class="news-hero-content">
 
-                <p class="section-label">
-                    NEWS & UPDATES
-                </p>
 
                 <h1>
                     Berita,
@@ -224,19 +221,6 @@
                 <div class="featured-news-grid-content">
 
 
-                    {{-- NUMBER --}}
-
-                    <div class="featured-news-grid-number">
-
-                        BERITA
-                        {{ str_pad(
-                                    $index + 1,
-                                    2,
-                                    '0',
-                                    STR_PAD_LEFT
-                                ) }}
-
-                    </div>
 
 
                     {{-- META --}}
@@ -383,12 +367,6 @@
                 </h2>
 
             </div>
-
-
-            <p>
-                Temukan berita, aktivitas, proyek, dan
-                perkembangan terbaru dari Xclip.
-            </p>
 
         </div>
 

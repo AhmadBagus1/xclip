@@ -23,10 +23,6 @@
 
             <div class="about-hero-content">
 
-                <p class="about-label">
-                    ABOUT XCLIP
-                </p>
-
                 <h1>
                     One Company.
                     <span>Multiple Capabilities.</span>
@@ -37,8 +33,6 @@
                     yang menghubungkan berbagai kapabilitas untuk mendukung
                     kebutuhan bisnis, proyek, dan operasional lintas sektor.
                 </p>
-
-
 
                 <div class="about-hero-meta">
 
@@ -61,13 +55,12 @@
 
             </div>
 
-
             <div class="about-hero-visual">
 
                 <div class="about-hero-image">
 
                     <img
-                        src="{{ asset('images/gedung.jpg') }}"
+                        src="{{ asset('images/ssss.jpg') }}"
                         alt="Xclip business and project environment">
 
                 </div>
@@ -150,14 +143,9 @@
 
             </div>
 
-
             <div class="about-profile-side">
 
                 <div class="doodle-card profile-card profile-card-orange">
-
-                    <span class="profile-card-number">
-                        01
-                    </span>
 
                     <div class="card-icon card-orange">
                         ✦
@@ -174,12 +162,7 @@
 
                 </div>
 
-
                 <div class="doodle-card profile-card profile-card-green">
-
-                    <span class="profile-card-number">
-                        02
-                    </span>
 
                     <div class="card-icon card-green">
                         ✓
@@ -195,6 +178,173 @@
                     </p>
 
                 </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{{-- =========================================================
+     BUILT TO CONNECT
+========================================================= --}}
+
+<section class="about-built">
+
+    <div class="container">
+
+        <div class="about-built-header">
+
+            <div class="about-built-title">
+
+                <p class="about-label">
+                    BUILT TO CONNECT
+                </p>
+
+                <h2>
+                    Connecting Capabilities.
+                    <span>Creating Solutions.</span>
+                </h2>
+
+            </div>
+
+            <div class="about-built-intro">
+
+                <span>
+                    ONE INTEGRATED APPROACH
+                </span>
+
+                <p>
+                    Xclip menghubungkan berbagai kapabilitas,
+                    kebutuhan, dan sumber daya untuk menciptakan
+                    solusi yang lebih terintegrasi bagi setiap
+                    proyek dan kebutuhan bisnis.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-built-grid">
+
+
+            {{-- 01 --}}
+
+            <article class="about-built-card">
+
+                <div class="about-built-card-top">
+
+                    <span class="about-built-number">
+                        01
+                    </span>
+
+                    <span class="about-built-symbol">
+                        +
+                    </span>
+
+                </div>
+
+                <span class="about-built-label">
+                    CAPABILITIES
+                </span>
+
+                <h3>
+                    Connect Capabilities
+                </h3>
+
+                <p>
+                    Menghubungkan berbagai kemampuan Xclip
+                    dari lintas sektor untuk menjawab kebutuhan
+                    yang berbeda dalam satu ekosistem bisnis.
+                </p>
+
+            </article>
+
+
+            {{-- 02 --}}
+
+            <article class="about-built-card">
+
+                <div class="about-built-card-top">
+
+                    <span class="about-built-number">
+                        02
+                    </span>
+
+                    <span class="about-built-symbol">
+                        ×
+                    </span>
+
+                </div>
+
+                <span class="about-built-label">
+                    NEEDS
+                </span>
+
+                <h3>
+                    Connect Needs
+                </h3>
+
+                <p>
+                    Memahami kebutuhan klien dan menghubungkannya
+                    dengan kapabilitas serta sumber daya yang
+                    paling relevan.
+                </p>
+
+            </article>
+
+
+            {{-- 03 --}}
+
+            <article class="about-built-card">
+
+                <div class="about-built-card-top">
+
+                    <span class="about-built-number">
+                        03
+                    </span>
+
+                    <span class="about-built-symbol">
+                        ○
+                    </span>
+
+                </div>
+
+                <span class="about-built-label">
+                    SOLUTIONS
+                </span>
+
+                <h3>
+                    Connect Solutions
+                </h3>
+
+                <p>
+                    Menghasilkan solusi yang terkoordinasi,
+                    praktis, dan dapat dijalankan sesuai
+                    kebutuhan proyek maupun operasional.
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="about-built-bottom">
+
+            <div class="about-built-bottom-line"></div>
+
+            <div class="about-built-bottom-content">
+
+                <p>
+                    <strong>One company.</strong>
+                    Multiple capabilities.
+                    <strong>One connected approach.</strong>
+                </p>
 
             </div>
 
@@ -231,7 +381,6 @@
 
         </div>
 
-
         <div class="legal-layout">
 
 
@@ -258,7 +407,6 @@
                     </div>
 
                 </div>
-
 
                 <div class="legal-list">
 
@@ -411,7 +559,6 @@
 
         </div>
 
-
         <div class="business-grid">
 
 
@@ -419,12 +566,20 @@
 
             <article class="business-card business-orange">
 
-                <span class="business-number">
-                    01
-                </span>
+                <div class="business-icon" aria-hidden="true">
 
-                <div class="business-icon">
-                    ◇
+                    <svg viewBox="0 0 24 24">
+
+                        <rect x="3" y="4" width="18" height="13" rx="1"></rect>
+
+                        <path d="M8 21h8"></path>
+
+                        <path d="M12 17v4"></path>
+
+                        <path d="m10 8 5 2.5L10 13V8Z"></path>
+
+                    </svg>
+
                 </div>
 
                 <h3>
@@ -449,12 +604,24 @@
 
             <article class="business-card business-blue">
 
-                <span class="business-number">
-                    02
-                </span>
+                <div class="business-icon" aria-hidden="true">
 
-                <div class="business-icon">
-                    ⚙
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M3 20V10l6 3V7l6 3V4h6v16H3Z"></path>
+
+                        <path d="M6 20v-4"></path>
+
+                        <path d="M11 20v-4"></path>
+
+                        <path d="M16 20v-4"></path>
+
+                        <path d="M19 7h2"></path>
+
+                        <path d="M19 10h2"></path>
+
+                    </svg>
+
                 </div>
 
                 <h3>
@@ -479,12 +646,22 @@
 
             <article class="business-card business-green business-featured">
 
-                <span class="business-number">
-                    03
-                </span>
+                <div class="business-icon" aria-hidden="true">
 
-                <div class="business-icon">
-                    △
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M4 20V6l8-3 8 3v14H4Z"></path>
+
+                        <path d="M8 20v-4h3v4"></path>
+
+                        <path d="M14 8h3"></path>
+
+                        <path d="M14 11h3"></path>
+
+                        <path d="M14 14h3"></path>
+
+                    </svg>
+
                 </div>
 
                 <h3>
@@ -513,12 +690,20 @@
 
             <article class="business-card business-yellow">
 
-                <span class="business-number">
-                    04
-                </span>
+                <div class="business-icon" aria-hidden="true">
 
-                <div class="business-icon">
-                    □
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M4 5h2l2 11h10l2-8H7"></path>
+
+                        <circle cx="10" cy="20" r="1.5"></circle>
+
+                        <circle cx="18" cy="20" r="1.5"></circle>
+
+                        <path d="M9 8h8"></path>
+
+                    </svg>
+
                 </div>
 
                 <h3>
@@ -543,12 +728,18 @@
 
             <article class="business-card business-blue">
 
-                <span class="business-number">
-                    05
-                </span>
+                <div class="business-icon" aria-hidden="true">
 
-                <div class="business-icon">
-                    ✎
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="m4 20 1.5-5.5L15.5 4.5a2.1 2.1 0 0 1 3 3L8.5 17.5 4 20Z"></path>
+
+                        <path d="m13.5 6.5 4 4"></path>
+
+                        <path d="M4 20h4"></path>
+
+                    </svg>
+
                 </div>
 
                 <h3>
@@ -573,12 +764,20 @@
 
             <article class="business-card business-green">
 
-                <span class="business-number">
-                    06
-                </span>
+                <div class="business-icon" aria-hidden="true">
 
-                <div class="business-icon">
-                    ♢
+                    <svg viewBox="0 0 24 24">
+
+                        <circle cx="9" cy="8" r="3"></circle>
+
+                        <circle cx="17" cy="9" r="2.5"></circle>
+
+                        <path d="M3.5 20c.5-3.5 2.5-5 5.5-5s5 1.5 5.5 5"></path>
+
+                        <path d="M14 15c2.5 0 4.5 1.5 5 4"></path>
+
+                    </svg>
+
                 </div>
 
                 <h3>
@@ -597,6 +796,7 @@
                 </p>
 
             </article>
+
 
         </div>
 
@@ -634,9 +834,7 @@
 
             </div>
 
-
             <div class="approach-flow">
-
 
                 <div class="approach-step">
 
@@ -655,7 +853,6 @@
 
                 </div>
 
-
                 <div class="approach-step">
 
                     <span>
@@ -673,7 +870,6 @@
 
                 </div>
 
-
                 <div class="approach-step">
 
                     <span>
@@ -690,7 +886,6 @@
                     </p>
 
                 </div>
-
 
                 <div class="approach-step">
 
@@ -746,7 +941,6 @@
                 </p>
 
             </div>
-
 
             <div class="about-cta-actions">
 

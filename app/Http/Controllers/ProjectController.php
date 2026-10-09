@@ -13,31 +13,34 @@ class ProjectController extends Controller
     {
         /*
         |--------------------------------------------------------------------------
-        | FEATURED PROJECTS
+        | ALL ACTIVE PROJECTS
         |--------------------------------------------------------------------------
+        |
+        | Menampilkan seluruh project yang aktif.
+        | Project diurutkan dari yang terbaru dan menggunakan pagination
+        | agar halaman Projects tidak memuat seluruh data sekaligus.
+        |
         */
 
-        $featuredProjects = Project::where('is_active', true)
-            ->where('is_featured', true)
+        $projects = Project::query()
+            ->where('is_active', true)
             ->latest()
-            ->get();
+            ->paginate(9);
 
 
         /*
         |--------------------------------------------------------------------------
-        | ALL ACTIVE PROJECTS
+        | PROJECT VIEW
         |--------------------------------------------------------------------------
+        |
+        | $projects dikirim ke halaman Projects sebagai paginator.
+        |
         */
 
-        $projects = Project::where('is_active', true)
-            ->latest()
-            ->get();
-
-
-        return view('public.projects.projects', compact(
-            'projects',
-            'featuredProjects'
-        ));
+        return view(
+            'public.projects.projects',
+            compact('projects')
+        );
     }
 
 
@@ -50,6 +53,10 @@ class ProjectController extends Controller
         |--------------------------------------------------------------------------
         | ONLY ACTIVE PROJECTS CAN BE VIEWED PUBLICLY
         |--------------------------------------------------------------------------
+        |
+        | Project yang tidak aktif tidak boleh ditampilkan
+        | pada halaman publik.
+        |
         */
 
         if (!$project->is_active) {
@@ -57,6 +64,15 @@ class ProjectController extends Controller
         }
 
 
-        return view('public.projects.show', compact('project'));
+        /*
+        |--------------------------------------------------------------------------
+        | PROJECT DETAIL VIEW
+        |--------------------------------------------------------------------------
+        */
+
+        return view(
+            'public.projects.show',
+            compact('project')
+        );
     }
 }

@@ -31,7 +31,7 @@ class HomeController extends Controller
         $featuredProjects = Project::where('is_active', true)
             ->where('is_featured', true)
             ->latest()
-            ->take(3)
+            ->take(6)
             ->get();
 
         /*

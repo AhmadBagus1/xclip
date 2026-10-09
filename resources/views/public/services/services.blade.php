@@ -630,14 +630,6 @@
 
                 </a>
 
-                <a
-                    href="{{ route('contact') }}"
-                    class="services-cta-link">
-
-                    Hubungi Xclip
-
-                </a>
-
             </div>
 
         </div>

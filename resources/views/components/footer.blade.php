@@ -7,148 +7,263 @@ $siteDescription = $siteSetting?->description
 ?? 'Professional business solutions for your project needs.';
 @endphp
 
-<footer>
+<footer class="site-footer">
 
     <div class="container">
 
         <div class="footer-content">
 
 
-            {{-- =========================
+            {{-- =====================================================
                  COMPANY
-            ========================== --}}
+            ====================================================== --}}
+
             <div class="footer-company">
 
-                <h2>
-                    {{ strtoupper($siteName) }}
-                </h2>
+                <div class="footer-company-brand">
 
-                <p>
+                    <div class="footer-company-logo">
+                        {{ strtoupper($siteName) }}
+                    </div>
+
+                </div>
+
+                <p class="footer-company-description">
                     {{ $siteDescription }}
                 </p>
 
+
+                {{-- SOCIAL MEDIA --}}
+
+                <div class="footer-social">
+
+                    @if($siteSetting?->instagram)
+
+                    <a
+                        href="{{ $siteSetting->instagram }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+                    @endif
+
+
+                    @if($siteSetting?->facebook)
+
+                    <a
+                        href="{{ $siteSetting->facebook }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+                    @endif
+
+
+                    @if($siteSetting?->linkedin)
+
+                    <a
+                        href="{{ $siteSetting->linkedin }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+
+                        <i class="fa-brands fa-linkedin-in"></i>
+
+                    </a>
+
+                    @endif
+
+
+                    @if($siteSetting?->youtube)
+
+                    <a
+                        href="{{ $siteSetting->youtube }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+                    @endif
+
+                </div>
+
             </div>
 
 
-            {{-- =========================
-                 NAVIGATION
-            ========================== --}}
-            <div class="footer-links">
+            {{-- =====================================================
+                 INFORMATION
+            ====================================================== --}}
+
+            <div class="footer-information">
 
                 <h3>
-                    Navigation
+                    Information
                 </h3>
 
-                <a href="/">
-                    Home
-                </a>
 
-                <a href="/about">
-                    About
-                </a>
+                <div class="footer-information-links">
 
-                <a href="/services">
-                    Services
-                </a>
+                    <a href="{{ url('/') }}">
+                        Home
+                    </a>
 
-                <a href="/projects">
-                    Projects
-                </a>
+                    <a href="{{ url('/about') }}">
+                        About
+                    </a>
 
-                <a href="/news">
-                    News
-                </a>
+                    <a href="{{ url('/services') }}">
+                        Services
+                    </a>
 
-                <a href="/downloads">
-                    Downloads
-                </a>
+                    <a href="{{ url('/projects') }}">
+                        Projects
+                    </a>
 
-                <a href="/contact">
-                    Contact
-                </a>
+                    <a href="{{ url('/news') }}">
+                        News
+                    </a>
+
+                    <a href="{{ url('/downloads') }}">
+                        Downloads
+                    </a>
+
+                    <a href="{{ url('/contact') }}">
+                        Contact
+                    </a>
+
+                </div>
 
             </div>
 
 
-            {{-- =========================
-                 CONTACT
-            ========================== --}}
+            {{-- =====================================================
+                 CONTACT US
+            ====================================================== --}}
+
             <div class="footer-contact">
 
                 <h3>
-                    Contact
+                    Contact Us
                 </h3>
+
+
+                {{-- EMAIL --}}
 
                 @if($siteSetting?->email)
-                <p>
-                    Email: {{ $siteSetting->email }}
-                </p>
+
+                <div class="footer-contact-item">
+
+                    <div class="footer-contact-icon">
+                        ✉
+                    </div>
+
+                    <div class="footer-contact-content">
+
+                        <span class="footer-contact-label">
+                            Email
+                        </span>
+
+                        <span class="footer-contact-value">
+                            {{ $siteSetting->email }}
+                        </span>
+
+                    </div>
+
+                </div>
+
                 @endif
+
+
+                {{-- PHONE --}}
 
                 @if($siteSetting?->phone)
-                <p>
-                    Phone: {{ $siteSetting->phone }}
-                </p>
+
+                <div class="footer-contact-item">
+
+                    <div class="footer-contact-icon">
+                        ☎
+                    </div>
+
+                    <div class="footer-contact-content">
+
+                        <span class="footer-contact-label">
+                            Phone
+                        </span>
+
+                        <span class="footer-contact-value">
+                            {{ $siteSetting->phone }}
+                        </span>
+
+                    </div>
+
+                </div>
+
                 @endif
+
+
+                {{-- WHATSAPP --}}
 
                 @if($siteSetting?->whatsapp)
-                <p>
-                    WhatsApp: {{ $siteSetting->whatsapp }}
-                </p>
+
+                <div class="footer-contact-item">
+
+                    <div class="footer-contact-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+
+
+                    <div class="footer-contact-content">
+
+                        <span class="footer-contact-label">
+                            WhatsApp
+                        </span>
+
+                        <span class="footer-contact-value">
+                            {{ $siteSetting->whatsapp }}
+                        </span>
+
+                    </div>
+
+                </div>
+
                 @endif
+
+
+                {{-- ADDRESS --}}
 
                 @if($siteSetting?->address)
-                <p>
-                    Address: {{ $siteSetting->address }}
-                </p>
-                @endif
 
-            </div>
+                <div class="footer-contact-item">
 
+                    <div class="footer-contact-icon">
+                        📍
+                    </div>
 
-            {{-- =========================
-                 SOCIAL MEDIA
-            ========================== --}}
-            <div class="footer-social">
+                    <div class="footer-contact-content">
 
-                <h3>
-                    Follow Us
-                </h3>
+                        <span class="footer-contact-label">
+                            Address
+                        </span>
 
-                @if($siteSetting?->instagram)
-                <a
-                    href="{{ $siteSetting->instagram }}"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Instagram
-                </a>
-                @endif
+                        <span class="footer-contact-value">
+                            {{ $siteSetting->address }}
+                        </span>
 
-                @if($siteSetting?->facebook)
-                <a
-                    href="{{ $siteSetting->facebook }}"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Facebook
-                </a>
-                @endif
+                    </div>
 
-                @if($siteSetting?->linkedin)
-                <a
-                    href="{{ $siteSetting->linkedin }}"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-                @endif
+                </div>
 
-                @if($siteSetting?->youtube)
-                <a
-                    href="{{ $siteSetting->youtube }}"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    YouTube
-                </a>
                 @endif
 
             </div>
@@ -156,14 +271,22 @@ $siteDescription = $siteSetting?->description
         </div>
 
 
-        {{-- =========================
-             COPYRIGHT
-        ========================== --}}
+        {{-- =====================================================
+             FOOTER BOTTOM
+        ====================================================== --}}
+
         <div class="footer-bottom">
 
             <p>
-                &copy; {{ date('Y') }} {{ $siteName }}.
+                © {{ date('Y') }}
+                {{ $siteName }}.
                 All rights reserved.
+            </p>
+
+            <p class="footer-credit">
+                Crafted with
+                <span class="footer-heart">♥</span>
+                &amp; doodle passion by PT Xclip Subcon Asia
             </p>
 
         </div>

@@ -29,10 +29,6 @@
 
             <div class="rfq-hero-content">
 
-                <p class="section-label">
-                    REQUEST A QUOTE
-                </p>
-
                 <h1>
                     Let's Start
                     <span>Your Project.</span>
@@ -44,22 +40,6 @@
                     kebutuhan tersebut dan menghubungi Anda
                     untuk pembahasan lebih lanjut.
                 </p>
-
-                <div class="rfq-hero-actions">
-
-                    <a
-                        href="#rfq-form"
-                        class="doodle-button doodle-button-primary">
-                        Mulai Pengajuan
-                    </a>
-
-                    <a
-                        href="{{ route('contact') }}"
-                        class="doodle-button">
-                        Hubungi Xclip
-                    </a>
-
-                </div>
 
             </div>
 
@@ -954,50 +934,6 @@
 
 
             </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-{{-- =====================================================
-     RFQ CTA
-===================================================== --}}
-
-<section class="rfq-cta">
-
-    <div class="container">
-
-        <div class="rfq-cta-box">
-
-            <div>
-
-                <p class="section-label">
-                    NEED HELP?
-                </p>
-
-                <h2>
-                    Not Sure
-                    <span>Where to Start?</span>
-                </h2>
-
-                <p>
-                    Jika Anda belum yakin informasi apa yang
-                    perlu disiapkan, hubungi tim Xclip secara
-                    langsung untuk membahas kebutuhan Anda.
-                </p>
-
-            </div>
-
-            <a
-                href="{{ route('contact') }}"
-                class="rfq-cta-button">
-
-                Contact Xclip
-
-            </a>
 
         </div>
 

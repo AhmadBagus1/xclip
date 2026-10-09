@@ -17,7 +17,7 @@
 @section('content')
 
 {{-- =========================================================
-     DOWNLOADS HERO
+DOWNLOADS HERO
 ========================================================= --}}
 
 <section class="downloads-hero">
@@ -27,10 +27,6 @@
         <div class="downloads-hero-inner">
 
             <div class="downloads-hero-content">
-
-                <p class="section-label">
-                    DOWNLOADS
-                </p>
 
                 <h1>
                     Resources
@@ -94,9 +90,8 @@
 
 </section>
 
-
 {{-- =========================================================
-     DOWNLOAD CENTER
+DOWNLOAD CENTER
 ========================================================= --}}
 
 <section class="downloads-section">
@@ -148,11 +143,11 @@
 
                     <span class="download-card-number">
                         {{ str_pad(
-                            $loop->iteration,
-                            2,
-                            '0',
-                            STR_PAD_LEFT
-                        ) }}
+                        $loop->iteration,
+                        2,
+                        '0',
+                        STR_PAD_LEFT
+                    ) }}
                     </span>
 
                 </div>
@@ -296,8 +291,8 @@
         @else
 
         {{-- =================================================
-             EMPTY STATE
-        ================================================== --}}
+         EMPTY STATE
+    ================================================== --}}
 
         <div class="downloads-empty">
 

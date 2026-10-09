@@ -32,87 +32,6 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
 
 @section('content')
 
-
-{{-- =========================================================
-     CONTACT HERO
-========================================================= --}}
-
-<section class="contact-hero">
-
-    <div class="container">
-
-        <div class="contact-hero-inner">
-
-            <div class="contact-hero-content">
-
-                <p class="section-label">
-                    CONTACT {{ strtoupper($siteName) }}
-                </p>
-
-                <h1>
-                    Let's
-                    <span>Talk.</span>
-                </h1>
-
-                <p class="contact-hero-description">
-                    Punya pertanyaan, kebutuhan bisnis,
-                    proyek, layanan, atau ingin mengenal
-                    {{ $siteName }} lebih jauh?
-                    Hubungi tim kami.
-                </p>
-
-                <div class="contact-hero-tags">
-
-                    <span>
-                        BUSINESS
-                    </span>
-
-                    <span>
-                        PROJECT
-                    </span>
-
-                    <span>
-                        SERVICES
-                    </span>
-
-                    <span>
-                        INQUIRY
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-hero-note">
-
-                <span class="contact-note-mark">
-                    ✦
-                </span>
-
-                <strong>
-                    Punya Pertanyaan?
-                </strong>
-
-                <strong>
-                    Mari Bicara.
-                </strong>
-
-                <p>
-                    Kami siap mendengar kebutuhan
-                    dan membantu menemukan bentuk
-                    dukungan yang sesuai.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
 {{-- =========================================================
      CONTACT MAIN
 ========================================================= --}}
@@ -129,10 +48,6 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
             ================================================== --}}
 
             <div class="contact-information">
-
-                <p class="section-label">
-                    GET IN TOUCH
-                </p>
 
                 <h2>
                     Contact
@@ -500,52 +415,6 @@ $googleMapsEmbed = $siteSetting?->google_maps_embed;
             </div>
 
             @endif
-
-        </div>
-
-    </div>
-
-</section>
-
-
-{{-- =========================================================
-     CONTACT CTA
-========================================================= --}}
-
-<section class="contact-cta">
-
-    <div class="container">
-
-        <div class="contact-cta-box">
-
-            <div>
-
-                <p class="section-label">
-                    HAVE A PROJECT IN MIND?
-                </p>
-
-                <h2>
-                    Let's Build
-                    <span>Something Together.</span>
-                </h2>
-
-                <p>
-                    Jika Anda sudah memiliki kebutuhan
-                    proyek atau bisnis, ceritakan kepada
-                    Xclip melalui Request for Quote.
-                </p>
-
-            </div>
-
-            <a
-                href="{{ route('rfq') }}"
-                class="contact-cta-button">
-
-                <span>
-                    Request a Quote
-                </span>
-
-            </a>
 
         </div>
 

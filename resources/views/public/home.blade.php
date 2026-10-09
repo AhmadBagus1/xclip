@@ -1,24 +1,29 @@
 @extends('layouts.app')
 
+
 @section('title', 'PT Xclip Subcon Asia — Integrated Business Solutions')
+
 
 @section(
 'meta_description',
 'PT Xclip Subcon Asia menyediakan solusi terintegrasi untuk kebutuhan konstruksi, industrial, perdagangan, teknologi, dan jasa profesional.'
 )
 
+
 @section('og_title', 'PT Xclip Subcon Asia — Integrated Business Solutions')
+
 
 @section(
 'og_description',
 'Solusi terintegrasi untuk mendukung kebutuhan bisnis, proyek, dan operasional Anda.'
 )
 
+
 @section('content')
 
 
 {{-- =========================================================
-     HERO
+     01. HERO
 ========================================================= --}}
 
 <section class="home-hero">
@@ -36,16 +41,16 @@
                 </span>
 
                 <h1>
-                    Building
-                    <span>Solutions</span>
-                    Across Industries.
+                    One Partner.
+                    <span>Multiple Capabilities</span>
                 </h1>
 
                 <p class="home-hero-description">
-                    Kami menghadirkan solusi terintegrasi untuk mendukung
-                    kebutuhan bisnis, proyek, dan operasional melalui
-                    layanan yang profesional, inovatif, dan berorientasi
-                    pada hasil.
+                    PT Xclip Subcon Asia menghubungkan berbagai
+                    kapabilitas lintas sektor untuk mendukung
+                    kebutuhan bisnis, proyek, dan operasional
+                    melalui solusi yang terintegrasi dan fleksibel
+                    sesuai kebutuhan klien.
                 </p>
 
                 <div class="home-hero-actions">
@@ -53,13 +58,17 @@
                     <a
                         href="{{ route('services') }}"
                         class="home-button home-button-primary">
+
                         Explore Our Services
+
                     </a>
 
                     <a
                         href="{{ route('about') }}"
                         class="home-button home-button-secondary">
+
                         Discover Xclip
+
                     </a>
 
                 </div>
@@ -72,7 +81,7 @@
                 <div class="home-hero-image-frame">
 
                     <img
-                        src="{{ asset('images/gedung.jpg') }}"
+                        src="{{ asset('images/doodle-construction.jpg') }}"
                         alt="Gedung PT Xclip Subcon Asia">
 
                 </div>
@@ -99,7 +108,7 @@
 
 
 {{-- =========================================================
-     COMPANY INTRO
+     02. ONE COMPANY
 ========================================================= --}}
 
 <section class="home-company">
@@ -154,10 +163,6 @@
 
             <div class="home-company-fact">
 
-                <span class="home-fact-number">
-                    01
-                </span>
-
                 <span class="home-company-fact-label">
                     ESTABLISHED
                 </span>
@@ -175,10 +180,6 @@
 
 
             <div class="home-company-fact">
-
-                <span class="home-fact-number">
-                    02
-                </span>
 
                 <span class="home-company-fact-label">
                     LOCATION
@@ -198,10 +199,6 @@
 
             <div class="home-company-fact">
 
-                <span class="home-fact-number">
-                    03
-                </span>
-
                 <span class="home-company-fact-label">
                     BUSINESS
                 </span>
@@ -219,10 +216,6 @@
 
 
             <div class="home-company-fact">
-
-                <span class="home-fact-number">
-                    04
-                </span>
 
                 <span class="home-company-fact-label">
                     APPROACH
@@ -293,197 +286,118 @@
 
 </section>
 
+
 {{-- =========================================================
-     SERVICES
+     03. PROJECTS
 ========================================================= --}}
 
-<section class="home-services">
+<section class="home-projects">
 
     <div class="container">
 
-        <div class="home-services-header">
+        <div class="home-section-title text-center">
 
-            <div class="home-services-title">
+            <span class="home-section-title-sub">
+                Our Projects
+            </span>
 
-                <span class="home-section-label">
-                    WHAT WE DO
-                </span>
-
-                <h2>
-                    Solutions Built
-                    <span>Across Industries.</span>
-                </h2>
-
-            </div>
-
-            <div class="home-services-description">
-
-                <span class="home-services-note">
-                    XCLIP CAPABILITIES
-                </span>
-
-                <p>
-                    Xclip menggabungkan berbagai kapabilitas untuk
-                    mendukung kebutuhan konstruksi, perdagangan,
-                    industrial, dan jasa profesional dalam satu
-                    pendekatan yang terintegrasi.
-                </p>
-
-            </div>
+            <h2 class="home-section-title-main">
+                Here you find our latest projects
+            </h2>
 
         </div>
 
+    </div>
 
-        @if($serviceCategories->isNotEmpty())
 
-        <div class="home-services-grid">
+    @if($featuredProjects->count())
 
-            @foreach($serviceCategories as $index => $service)
+    <div class="home-project-wrapper">
 
-            <article class="home-service-card">
+        @foreach($featuredProjects as $project)
 
-                {{-- SERVICE IMAGE --}}
-                <div class="home-service-image">
+        <div class="home-project-item">
 
-                    @if($service->image)
+            <a
+                href="{{ route('projects.show', $project->slug) }}"
+                class="home-project-link">
 
-                    <img
-                        src="{{ asset('storage/' . $service->image) }}"
-                        alt="{{ $service->name }}"
-                        loading="lazy">
+                @if($project->thumbnail)
 
-                    @else
+                <img
+                    src="{{ asset('storage/' . $project->thumbnail) }}"
+                    alt="{{ $project->title }}"
+                    class="home-project-image"
+                    loading="lazy">
 
-                    <div class="home-service-placeholder">
+                @else
 
-                        <span>
-                            {{ str_pad(
-                                $index + 1,
-                                2,
-                                '0',
-                                STR_PAD_LEFT
-                            ) }}
-                        </span>
+                <div class="home-project-placeholder">
 
-                        <strong>
-                            {{ strtoupper($service->name) }}
-                        </strong>
+                    <span>
+                        PROJECT
+                    </span>
 
-                    </div>
+                </div>
+
+                @endif
+
+
+                <span class="home-project-title">
+
+                    {{ $project->title }}
+
+                    @if($project->category)
+
+                    <small>
+                        {{ $project->category }}
+                    </small>
 
                     @endif
 
+                </span>
 
-                    <div class="home-service-overlay"></div>
-
-
-                    <span class="home-service-index">
-                        {{ str_pad(
-                            $index + 1,
-                            2,
-                            '0',
-                            STR_PAD_LEFT
-                        ) }}
-                    </span>
-
-
-                    <span class="home-service-doodle">
-                        ↗
-                    </span>
-
-                </div>
-
-
-                {{-- SERVICE CONTENT --}}
-                <div class="home-service-content">
-
-                    <div class="home-service-main">
-
-                        <span class="home-service-label">
-                            SERVICE
-                            {{ str_pad(
-                                $index + 1,
-                                2,
-                                '0',
-                                STR_PAD_LEFT
-                            ) }}
-                        </span>
-
-                        <h3>
-                            {{ $service->name }}
-                        </h3>
-
-
-                        @if($service->description)
-
-                        <p>
-                            {{ \Illuminate\Support\Str::limit(
-                                $service->description,
-                                170
-                            ) }}
-                        </p>
-
-                        @else
-
-                        <p>
-                            Solusi profesional yang dirancang
-                            untuk mendukung kebutuhan bisnis,
-                            proyek, dan operasional Anda.
-                        </p>
-
-                        @endif
-
-                    </div>
-
-
-                    <div class="home-service-bottom">
-
-                        <span class="home-service-line"></span>
-
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            @endforeach
+            </a>
 
         </div>
 
-        @else
+        @endforeach
+
+    </div>
+
+    @else
+
+    <div class="container">
 
         <div class="home-empty-state">
 
             <span>✦</span>
 
             <h3>
-                Services Coming Soon
+                Projects Coming Soon
             </h3>
 
             <p>
-                Service information will appear here
-                once service categories are published.
+                Featured projects will appear here
+                once they are published.
             </p>
 
         </div>
 
-        @endif
+    </div>
+
+    @endif
 
 
-        <div class="home-services-footer">
+    <div class="container">
 
-            <p>
-                Dari kebutuhan lapangan hingga kebutuhan bisnis,
-                setiap layanan dikembangkan untuk memberikan
-                solusi yang praktis dan relevan.
-            </p>
+        <div class="home-project-footer">
 
             <a
-                href="{{ route('services') }}"
+                href="{{ route('projects') }}"
                 class="home-text-link">
 
-                Explore All Services
+                View All Projects
 
             </a>
 
@@ -493,206 +407,98 @@
 
 </section>
 
+
 {{-- =========================================================
-     WHY XCLIP
+     04. OUR PROJECTS / CLIENT LOGOS
 ========================================================= --}}
 
-<section class="home-why">
+<section class="home-clients">
 
     <div class="container">
 
-        <div class="home-why-header">
 
-            <div class="home-why-title">
+        {{-- SECTION HEADER --}}
+        <div class="home-clients-header">
+            <span class="home-clients-eyebrow">
+                Klien Kami
+            </span>
 
-                <span class="home-section-label">
-                    WHY XCLIP
-                </span>
+            <h2 class="home-clients-heading">
+                Telah Dipercaya Oleh:
+            </h2>
+        </div>
 
-                <h2>
-                    Built to Connect
-                    <span>Needs With Solutions.</span>
-                </h2>
+
+
+        {{-- LOGO SLIDER --}}
+        @php
+        $clientLogos = [
+        'logo-1.png',
+        'logo-2.png',
+        'logo-3.png',
+        'logo-4.png',
+        'logo-5.png',
+        'logo-6.png',
+        'logo-7.png',
+        'logo-8.png',
+        'logo-9.png',
+        'logo-10.png',
+        ];
+        @endphp
+
+        <div
+            class="home-clients-slider"
+            aria-label="Logo klien dan mitra Xclip">
+
+            <div class="home-clients-track">
+
+                {{-- SET LOGO PERTAMA --}}
+                <div class="home-clients-group">
+
+                    @foreach($clientLogos as $index => $logo)
+
+                    <div class="home-client-card">
+                        <img
+                            src="{{ asset('images/clients/' . $logo) }}"
+                            alt="Logo {{ $index + 1 }}"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    @endforeach
+
+                </div>
+
+
+                {{-- SET DUPLIKAT UNTUK ANIMASI TANPA PUTUS --}}
+                <div class="home-clients-group" aria-hidden="true">
+
+                    @foreach($clientLogos as $logo)
+
+                    <div class="home-client-card">
+                        <img
+                            src="{{ asset('images/clients/' . $logo) }}"
+                            alt=""
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    @endforeach
+
+                </div>
 
             </div>
 
-            <div class="home-why-intro">
-
-                <span class="home-why-note">
-                    WHY WORK WITH US?
-                </span>
-
-                <p>
-                    Xclip hadir sebagai mitra yang menghubungkan
-                    berbagai kebutuhan bisnis, proyek, dan operasional
-                    melalui kapabilitas lintas sektor dalam satu
-                    pendekatan yang terintegrasi.
-                </p>
-
-            </div>
-
         </div>
-
-
-        <div class="home-why-grid">
-
-            {{-- ITEM 01 --}}
-            <article class="home-why-card">
-
-                <div class="home-why-card-top">
-
-                    <span class="home-why-number">
-                        01
-                    </span>
-
-                    <span class="home-why-symbol">
-                        +
-                    </span>
-
-                </div>
-
-                <div class="home-why-card-content">
-
-                    <span class="home-why-label">
-                        CAPABILITY
-                    </span>
-
-                    <h3>
-                        Integrated Capabilities
-                    </h3>
-
-                    <p>
-                        Xclip memiliki kapabilitas di berbagai bidang,
-                        mulai dari konstruksi, industrial, perdagangan,
-                        teknologi, hingga jasa profesional.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            {{-- ITEM 02 --}}
-            <article class="home-why-card">
-
-                <div class="home-why-card-top">
-
-                    <span class="home-why-number">
-                        02
-                    </span>
-
-
-                </div>
-
-                <div class="home-why-card-content">
-
-                    <span class="home-why-label">
-                        APPROACH
-                    </span>
-
-                    <h3>
-                        Practical Solutions
-                    </h3>
-
-                    <p>
-                        Kami berfokus pada pemahaman kebutuhan nyata
-                        sebelum menentukan solusi, sehingga setiap
-                        pekerjaan dapat diarahkan pada hasil yang
-                        relevan dan dapat diterapkan.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            {{-- ITEM 03 --}}
-            <article class="home-why-card">
-
-                <div class="home-why-card-top">
-
-                    <span class="home-why-number">
-                        03
-                    </span>
-
-                    <span class="home-why-symbol">
-                        *
-                    </span>
-
-                </div>
-
-                <div class="home-why-card-content">
-
-                    <span class="home-why-label">
-                        COLLABORATION
-                    </span>
-
-                    <h3>
-                        Flexible Partnership
-                    </h3>
-
-                    <p>
-                        Setiap proyek memiliki kebutuhan yang berbeda.
-                        Karena itu, Xclip mengembangkan pola kerja yang
-                        fleksibel dan dapat disesuaikan dengan kondisi
-                        serta kebutuhan klien.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            {{-- ITEM 04 --}}
-            <article class="home-why-card">
-
-                <div class="home-why-card-top">
-
-                    <span class="home-why-number">
-                        04
-                    </span>
-
-                </div>
-
-                <div class="home-why-card-content">
-
-                    <span class="home-why-label">
-                        EXECUTION
-                    </span>
-
-                    <h3>
-                        Professional Execution
-                    </h3>
-
-                    <p>
-                        Kami mengutamakan komunikasi yang jelas,
-                        koordinasi yang baik, dan pelaksanaan yang
-                        profesional untuk menjaga pekerjaan tetap
-                        terarah dari awal hingga selesai.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <div class="home-why-bottom">
-
-            <div class="home-why-bottom-line"></div>
-
-
-        </div>
-
-    </div>
 
     </div>
 
 </section>
 
+
+
 {{-- =========================================================
-     HOW WE WORK
+     05. HOW WE WORK
 ========================================================= --}}
 
 <section class="home-how">
@@ -713,6 +519,7 @@
                 </h2>
 
             </div>
+
 
             <div class="home-how-intro">
 
@@ -735,7 +542,9 @@
 
         <div class="home-how-process">
 
+
             {{-- STEP 01 --}}
+
             <article class="home-how-step">
 
                 <div class="home-how-step-top">
@@ -768,6 +577,7 @@
 
 
             {{-- STEP 02 --}}
+
             <article class="home-how-step">
 
                 <div class="home-how-step-top">
@@ -775,7 +585,6 @@
                     <span class="home-how-number">
                         02
                     </span>
-
 
                 </div>
 
@@ -801,6 +610,7 @@
 
 
             {{-- STEP 03 --}}
+
             <article class="home-how-step">
 
                 <div class="home-how-step-top">
@@ -808,7 +618,6 @@
                     <span class="home-how-number">
                         03
                     </span>
-
 
                 </div>
 
@@ -835,6 +644,7 @@
 
 
             {{-- STEP 04 --}}
+
             <article class="home-how-step">
 
                 <div class="home-how-step-top">
@@ -842,7 +652,6 @@
                     <span class="home-how-number">
                         04
                     </span>
-
 
                 </div>
 
@@ -882,13 +691,19 @@
                     </span>
 
                     <p>
+
                         <strong>Understand.</strong>
+
                         <strong>Plan.</strong>
+
                         <strong>Execute.</strong>
+
                         <strong>Deliver.</strong>
+
                     </p>
 
                 </div>
+
 
                 <a
                     href="{{ route('contact') }}"
@@ -906,181 +721,25 @@
 
 </section>
 
-{{-- =========================================================
-     FEATURED PROJECTS
-========================================================= --}}
-
-<section class="home-projects">
-
-    <div class="container">
-
-        <div class="home-section-heading">
-
-            <div>
-
-                <span class="home-section-label">
-                    OUR PROJECTS
-                </span>
-
-                <h2>
-                    Work That
-                    <span>Speaks for Us.</span>
-                </h2>
-
-            </div>
-
-            <a
-                href="{{ route('projects') }}"
-                class="home-text-link">
-                View All Projects
-            </a>
-
-        </div>
-
-
-        @if($featuredProjects->count())
-
-        <div class="home-project-grid">
-
-            @foreach($featuredProjects as $project)
-
-            <article class="home-project-card">
-
-                <div class="home-project-image">
-
-                    @if($project->thumbnail)
-
-                    <img
-                        src="{{ asset('storage/' . $project->thumbnail) }}"
-                        alt="{{ $project->title }}">
-
-                    @else
-
-                    <div class="home-project-placeholder">
-                        PROJECT
-                    </div>
-
-                    @endif
-
-                </div>
-
-
-                <div class="home-project-content">
-
-                    @if($project->category)
-
-                    <span class="home-project-category">
-                        {{ $project->category }}
-                    </span>
-
-                    @endif
-
-
-                    <h3>
-                        {{ $project->title }}
-                    </h3>
-
-
-                    @if($project->description)
-
-                    <p>
-                        {{ \Illuminate\Support\Str::limit(
-                                        $project->description,
-                                        120
-                                    ) }}
-                    </p>
-
-                    @endif
-
-
-                    <div class="home-project-meta">
-
-                        @if($project->location)
-
-                        <span>
-                            {{ $project->location }}
-                        </span>
-
-                        @endif
-
-
-                        @if($project->year)
-
-                        <span>
-                            {{ $project->year }}
-                        </span>
-
-                        @endif
-
-                    </div>
-
-
-                    <a
-                        href="{{ route('projects.show', $project->slug) }}"
-                        class="home-text-link">
-                        View Project
-                    </a>
-
-                </div>
-
-            </article>
-
-            @endforeach
-
-        </div>
-
-        @else
-
-        <div class="home-empty-state">
-
-            <span>✦</span>
-
-            <h3>
-                Projects Coming Soon
-            </h3>
-
-            <p>
-                Featured projects will appear here
-                once they are published.
-            </p>
-
-        </div>
-
-        @endif
-
-    </div>
-
-</section>
-
 
 {{-- =========================================================
-     LATEST NEWS
+     06. LATEST NEWS
 ========================================================= --}}
 
 <section class="home-news">
 
     <div class="container">
 
-        <div class="home-section-heading">
+        <div class="home-section-title text-center">
 
-            <div>
+            <span class="home-section-title-sub">
+                Latest News
+            </span>
 
-                <span class="home-section-label">
-                    LATEST INFORMATION
-                </span>
-
-                <h2>
-                    What's New
-                    <span>at Xclip.</span>
-                </h2>
-
-            </div>
-
-            <a
-                href="{{ route('news') }}"
-                class="home-text-link">
-                View All News
-            </a>
+            <h2 class="home-section-title-main">
+                News and updates about
+                our latest activities
+            </h2>
 
         </div>
 
@@ -1091,28 +750,60 @@
 
             @foreach($latestNews as $news)
 
-            <article class="home-news-card">
+            <article class="home-news-item">
 
                 <div class="home-news-image">
 
-                    @if($news->thumbnail)
+                    <a
+                        href="{{ route('news.show', $news->slug) }}">
 
-                    <img
-                        src="{{ asset('storage/' . $news->thumbnail) }}"
-                        alt="{{ $news->title }}">
+                        @if($news->thumbnail)
 
-                    @else
+                        <img
+                            src="{{ asset('storage/' . $news->thumbnail) }}"
+                            alt="{{ $news->title }}"
+                            loading="lazy">
 
-                    <div class="home-news-placeholder">
-                        XCLIP NEWS
-                    </div>
+                        @else
 
-                    @endif
+                        <div class="home-news-placeholder">
+                            XCLIP NEWS
+                        </div>
+
+                        @endif
+
+                    </a>
 
                 </div>
 
 
                 <div class="home-news-content">
+
+                    <h3 class="home-news-title">
+
+                        <a
+                            href="{{ route('news.show', $news->slug) }}">
+
+                            {{ $news->title }}
+
+                        </a>
+
+                    </h3>
+
+
+                    @if($news->excerpt)
+
+                    <p class="home-news-text">
+
+                        {{ \Illuminate\Support\Str::limit(
+                                        $news->excerpt,
+                                        150
+                                    ) }}
+
+                    </p>
+
+                    @endif
+
 
                     <div class="home-news-meta">
 
@@ -1127,37 +818,16 @@
 
                         @if($news->published_at)
 
-                        <time>
+                        <time
+                            datetime="{{ $news->published_at->toDateString() }}">
+
                             {{ $news->published_at->format('d M Y') }}
+
                         </time>
 
                         @endif
 
                     </div>
-
-
-                    <h3>
-                        {{ $news->title }}
-                    </h3>
-
-
-                    @if($news->excerpt)
-
-                    <p>
-                        {{ \Illuminate\Support\Str::limit(
-                                        $news->excerpt,
-                                        130
-                                    ) }}
-                    </p>
-
-                    @endif
-
-
-                    <a
-                        href="{{ route('news.show', $news->slug) }}"
-                        class="home-text-link">
-                        Read More
-                    </a>
 
                 </div>
 
@@ -1186,13 +856,26 @@
 
         @endif
 
+
+        <div class="home-news-footer">
+
+            <a
+                href="{{ route('news') }}"
+                class="home-text-link">
+
+                View All News
+
+            </a>
+
+        </div>
+
     </div>
 
 </section>
 
 
 {{-- =========================================================
-     CTA
+     07. CTA
 ========================================================= --}}
 
 <section class="home-cta">
@@ -1218,7 +901,9 @@
             <a
                 href="{{ route('rfq') }}"
                 class="home-button home-button-light">
+
                 Request a Quote
+
             </a>
 
         </div>
@@ -1227,7 +912,9 @@
         <div class="home-cta-doodle">
 
             <span>✦</span>
+
             <span>〰</span>
+
             <span>↗</span>
 
         </div>
@@ -1235,5 +922,6 @@
     </div>
 
 </section>
+
 
 @endsection
