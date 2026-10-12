@@ -5,7 +5,7 @@ $siteName = $siteSetting?->site_name ?? 'Xclip';
 
 $logo = $siteSetting?->logo
 ? asset('storage/' . $siteSetting->logo)
-: asset('images/xclip-logo.jpeg');
+: asset('images/xclip-logo-Photoroom.png');
 @endphp
 
 <nav class="navbar">
