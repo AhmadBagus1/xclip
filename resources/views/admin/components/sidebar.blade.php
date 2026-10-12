@@ -3,17 +3,16 @@
     {{-- =====================================================
          SIDEBAR BRAND
     ====================================================== --}}
+
     <div class="admin-sidebar-brand">
-
-        <h2>
-            XCLIP ADMIN
-        </h2>
-
-        <span>
-            CONTROL PANEL
-        </span>
-
+        <a href="{{ route('admin.dashboard') }}" class="admin-sidebar-brand-link">
+            <img
+                src="{{ asset('images/xclip-logo-Photoroom-admin.png') }}"
+                alt="Xclip"
+                class="admin-sidebar-brand-logo">
+        </a>
     </div>
+
 
 
     {{-- =====================================================

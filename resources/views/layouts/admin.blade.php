@@ -67,10 +67,6 @@
 
                 <div class="admin-topbar-heading">
 
-                    <p class="admin-topbar-label">
-                        XCLIP ADMIN
-                    </p>
-
                     <h1>
                         @yield('page-title', 'Dashboard')
                     </h1>
