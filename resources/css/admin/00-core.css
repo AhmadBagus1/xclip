@@ -1,12 +1,5 @@
 /* =========================================================
-   XCLIP ADMIN PANEL
-   Doodle / Corporate Style
-   Compact 75% Feel - No Horizontal Scroll
-========================================================= */
-
-
-/* =========================================================
-   RESET
+   ADMIN BODY
 ========================================================= */
 
 .admin-body {
@@ -19,6 +12,7 @@
     min-height: 100vh;
 
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 
@@ -28,9 +22,7 @@
 
 .admin-layout {
     display: flex;
-
     width: 100%;
     min-height: 100vh;
-
-    overflow-x: hidden;
+    overflow: visible;
 }

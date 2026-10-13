@@ -1,18 +1,23 @@
+/* =========================================================
+   XCLIP ADMIN - TOPBAR
+   File: resources/css/admin/02-topbar.css
+   ========================================================= */
+
 
 /* =========================================================
    MAIN AREA
 ========================================================= */
 
-.admin-main {
-    flex: 1;
-
+.admin-layout .admin-main {
+    flex: 1 1 0;
     min-width: 0;
+    width: auto;
 
-    width: calc(100% - 260px);
+    box-sizing: border-box;
 
-    background: #f7f7f2;
+    overflow: visible;
 
-    overflow-x: hidden;
+    transition: width 0.25s ease;
 }
 
 
@@ -23,135 +28,75 @@
 .admin-topbar {
     position: relative;
 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
     width: 100%;
+    height: 70px;
+    min-height: 70px;
 
-    min-height: 100px;
-
-    height: 100px;
-
+    padding: 0 28px;
     box-sizing: border-box;
 
-    padding: 24px 42px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
     background: #ffffff;
-
-    border-bottom: 3px solid #1f2937;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-
-/* =========================================================
-   TOPBAR LABEL
-========================================================= */
-
-.admin-topbar-label {
-    margin: 0 0 5px;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   TOPBAR TITLE
-========================================================= */
-
+/* Hilangkan judul dan label di topbar */
+.admin-topbar-label,
 .admin-topbar h1 {
-    margin: 0;
-
-    font-size: 32px;
-
-    line-height: 0.95;
-
-    letter-spacing: -1.5px;
-
-    color: #1f2937;
+    display: none;
 }
 
 
 /* =========================================================
-   ADMIN PROFILE DROPDOWN
+   PROFILE DROPDOWN WRAPPER
 ========================================================= */
 
 .admin-profile-dropdown {
     position: relative;
-
     flex-shrink: 0;
 }
 
 
 /* =========================================================
-   ADMIN USER BUTTON
+   PROFILE BUTTON
 ========================================================= */
 
 .admin-profile-dropdown .admin-user {
     position: relative;
 
     display: flex;
-
     align-items: center;
+    justify-content: center;
 
-    gap: 12px;
+    min-width: 0;
+    gap: 0;
+    padding: 0;
 
-    min-width: 300px;
-
-    padding: 10px 14px;
-
-    box-sizing: border-box;
-
-    background: #ffffff;
-
+    background: transparent;
     color: #1f2937;
 
-    border: 2px solid #1f2937;
-
-    box-shadow: 4px 4px 0 #1f2937;
+    border: none;
+    box-shadow: none;
 
     cursor: pointer;
-
     text-align: left;
-
     font-family: inherit;
 
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+    transition: transform 0.2s ease;
 }
-
-
-/* =========================================================
-   PROFILE BUTTON HOVER
-========================================================= */
 
 .admin-profile-dropdown .admin-user:hover {
-    transform:
-        translate(-1px, -1px);
-
-    box-shadow:
-        5px 5px 0 #1f2937;
+    transform: translateY(-1px);
+    box-shadow: none;
 }
 
-
-/* =========================================================
-   REMOVE OLD USER PSEUDO ELEMENT
-========================================================= */
-
+/* Hapus dekorasi tombol lama */
 .admin-user::before,
 .admin-user::after {
     content: none !important;
-
     display: none !important;
 }
 
@@ -161,144 +106,79 @@
 ========================================================= */
 
 .admin-profile-dropdown .admin-user-avatar {
-    width: 42px;
-
-    height: 42px;
-
-    min-width: 42px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
 
+    overflow: hidden;
     box-sizing: border-box;
 
-    background: #facc15;
+    background: #bca783;
+    color: #ffffff;
 
-    border: 2px solid #1f2937;
+    border: none;
+    border-radius: 50%;
 
     font-size: 17px;
-
-    font-weight: 900;
-}
-
-
-/* =========================================================
-   PROFILE IMAGE
-========================================================= */
-
-.admin-profile-dropdown .admin-user-avatar img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* =========================================================
-   PROFILE INFORMATION
-========================================================= */
-
-.admin-profile-dropdown .admin-user-info {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 3px;
-
-    min-width: 0;
-
-    flex: 1;
-}
-
-
-.admin-profile-dropdown .admin-user-info strong {
-    font-size: 14px;
-
-    font-weight: 900;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-}
-
-
-.admin-profile-dropdown .admin-user-info span {
-    margin: 0;
-
-    font-size: 11px;
-
-    color: #6b7280;
-
     font-weight: 600;
 }
 
-
-/* =========================================================
-   ARROW
-========================================================= */
-
-.admin-profile-dropdown .admin-user-arrow {
+/* Foto profil jika tersedia */
+.admin-profile-dropdown .admin-user-avatar img {
     display: block;
 
-    margin: 0;
+    width: 100%;
+    height: 100%;
 
-    font-size: 10px;
-
-    color: #64748b;
-
-    transition:
-        transform 0.2s ease;
-}
-
-
-.admin-profile-dropdown.open .admin-user-arrow {
-    transform: rotate(180deg);
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 
 /* =========================================================
-   FLOATING PROFILE MENU
+   HIDE PROFILE NAME AND ARROW
 ========================================================= */
 
-.admin-profile-menu {
-    position: absolute;
+.admin-profile-dropdown .admin-user-info {
+    display: none;
+}
 
-    top: calc(100% + 10px);
-
-    right: 0;
-
-    z-index: 9999;
-
-    width: 210px;
-
-    padding: 7px;
-
-    box-sizing: border-box;
-
-    background: #ffffff;
-
-    border: 2px solid #1f2937;
-
-    box-shadow: 5px 5px 0 #1f2937;
-
+.admin-profile-dropdown .admin-user-arrow {
     display: none;
 }
 
 
 /* =========================================================
-   SHOW PROFILE MENU
+   PROFILE MENU
 ========================================================= */
 
+.admin-profile-menu {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    right: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    width: 210px;
+    padding: 7px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+/* Tampilkan menu saat dropdown terbuka */
 .admin-profile-dropdown.open .admin-profile-menu {
     display: block;
 }
@@ -310,75 +190,60 @@
 
 .admin-profile-menu-item {
     display: flex;
-
     align-items: center;
 
     gap: 10px;
 
     width: 100%;
-
+    padding: 11px 12px;
     box-sizing: border-box;
 
-    padding: 11px 12px;
-
     background: transparent;
-
     border: none;
+    border-radius: 7px;
 
     color: #1f2937;
 
     font-family: inherit;
-
     font-size: 13px;
-
-    font-weight: 800;
-
-    text-decoration: none;
+    font-weight: 600;
 
     text-align: left;
+    text-decoration: none;
 
     cursor: pointer;
 
-    transition:
-        background 0.15s ease,
-        transform 0.15s ease;
+    transition: background 0.15s ease;
 }
-
-
-/* =========================================================
-   MENU HOVER
-========================================================= */
 
 .admin-profile-menu-item:hover {
-    background: #fef3c7;
-
-    transform: translateX(3px);
+    background: #f3f4f6;
 }
 
 
 /* =========================================================
-   MENU ICON
+   PROFILE MENU ICON
 ========================================================= */
 
 .admin-profile-menu-icon {
-    width: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    font-size: 16px;
+    width: 20px;
+    flex-shrink: 0;
 
     text-align: center;
-
-    flex-shrink: 0;
 }
 
 
 /* =========================================================
-   LOGOUT MENU ITEM
+   LOGOUT ITEM
 ========================================================= */
 
 .admin-profile-menu-logout {
     color: #dc2626;
 }
-
 
 .admin-profile-menu-logout:hover {
     background: #fee2e2;
@@ -386,54 +251,39 @@
 
 
 /* =========================================================
-   TOPBAR RESPONSIVE
+   RESPONSIVE - TABLET
 ========================================================= */
 
 @media (max-width: 800px) {
-
     .admin-topbar {
-        min-height: 100px;
-
-        height: 100px;
-
-        padding: 18px 25px;
+        padding-right: 22px;
+        padding-left: 22px;
     }
-
-    .admin-profile-dropdown .admin-user {
-        min-width: 230px;
-    }
-
 }
 
 
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
-
     .admin-topbar {
-        height: auto;
+        height: 70px;
+        min-height: 70px;
 
-        min-height: 90px;
-
-        padding: 15px 18px;
+        padding-right: 16px;
+        padding-left: 16px;
     }
 
-    .admin-profile-dropdown .admin-user {
-        min-width: auto;
+    .admin-profile-dropdown .admin-user-avatar {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
 
-        padding: 8px;
-    }
-
-    .admin-profile-dropdown .admin-user-info {
-        display: none;
-    }
-
-    .admin-profile-dropdown .admin-user-arrow {
-        display: none;
+        font-size: 15px;
     }
 
     .admin-profile-menu {
-        right: 0;
-
         width: 190px;
     }
-
 }

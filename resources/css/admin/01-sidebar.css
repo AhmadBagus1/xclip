@@ -1,330 +1,670 @@
 
 /* =========================================================
-   SIDEBAR
+   XCLIP ADMIN - SIDEBAR
+   File: resources/css/admin/01-sidebar.css
+========================================================= */
+
+
+/* =========================================================
+   1. SIDEBAR BASE
 ========================================================= */
 
 .admin-sidebar {
-    width: 260px;
+    --sidebar-width: 260px;
 
-    min-width: 260px;
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    flex: 0 0 var(--sidebar-width);
 
+    height: 100vh;
     min-height: 100vh;
-
     box-sizing: border-box;
 
-    background: #ffffff;
-
-    border-right: 3px solid #1f2937;
-
     display: flex;
-
     flex-direction: column;
 
-    position: sticky;
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
 
+    position: sticky;
     top: 0;
+    align-self: flex-start;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     z-index: 100;
+
+    transition:
+        width 0.25s ease,
+        min-width 0.25s ease,
+        flex-basis 0.25s ease;
+}
+
+.admin-sidebar::-webkit-scrollbar {
+    display: none;
+    width: 0;
 }
 
 
 /* =========================================================
-   SIDEBAR BRAND - XCLIP LOGO
+   2. BRAND / LOGO
 ========================================================= */
-
 
 .admin-sidebar-brand {
-    height: 100px;
-    min-height: 100px;
-    box-sizing: border-box;
-    padding: 0 22px;
+    position: relative;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+    flex: 0 0 70px;
+
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
+
+    gap: 8px;
+    padding: 0 14px 0 22px;
+
+    box-sizing: border-box;
+
     background: #ffffff;
-    border-bottom: 3px solid #1f2937;
+    border-bottom: none;
 }
 
-
-
-/* =========================================================
-   BRAND LINK
-========================================================= */
+.admin-sidebar-brand::before,
+.admin-sidebar-brand::after {
+    content: none !important;
+    display: none !important;
+}
 
 .admin-sidebar-brand-link {
     display: flex;
-
     align-items: center;
-
     justify-content: flex-start;
 
-    width: 100%;
+    min-width: 0;
+    flex: 1;
 
     text-decoration: none;
 }
-
-
-/* =========================================================
-   BRAND LOGO IMAGE
-========================================================= */
 
 .admin-sidebar-brand-logo {
     display: block;
 
     width: 100%;
-
     max-width: 216px;
-
+    max-height: 60px;
     height: auto;
 
-    max-height: 85px;
-
     object-fit: contain;
-
     object-position: left center;
 }
 
+.admin-sidebar-brand-mini {
+    display: none;
+    align-items: center;
+    justify-content: center;
 
-/* =========================================================
-   SIDEBAR NAVIGATION
-========================================================= */
-
-.admin-sidebar-nav {
-    flex: 1;
-
-    padding: 22px 20px 20px;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
 
     box-sizing: border-box;
+
+    background: #facc15;
+    border: 2px solid #1f2937;
+
+    color: #1f2937;
+    font-size: 19px;
+    font-weight: 900;
 }
 
 
 /* =========================================================
-   NAV GROUP
+   3. COLLAPSE BUTTON
 ========================================================= */
+
+.admin-sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 201;
+
+    width: 30px;
+    height: 34px;
+    min-width: 30px;
+
+    padding: 0;
+    flex-shrink: 0;
+
+    background: #ffffff;
+    color: #b98d43;
+
+    border: none;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.admin-sidebar-toggle:hover {
+    background: #f7f7f2;
+    color: #1f2937;
+}
+
+.sidebar-toggle-icon {
+    display: block;
+
+    width: 21px;
+    height: 21px;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* =========================================================
+   4. NAVIGATION CONTAINER
+========================================================= */
+
+.admin-sidebar-nav {
+    flex: 1 1 auto;
+    min-height: 0;
+
+    width: 100%;
+
+    padding: 22px 20px 20px;
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.admin-sidebar-nav::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
 
 .admin-nav-group {
     margin-bottom: 28px;
 }
 
-
-/* =========================================================
-   NAV TITLE
-========================================================= */
-
 .admin-nav-title {
     margin: 0 0 9px;
 
     font-size: 9px;
-
     font-weight: 900;
-
     letter-spacing: 2px;
+    line-height: 1.4;
 
     color: #64748b;
+    white-space: nowrap;
 }
 
 
 /* =========================================================
-   NAV ITEM
+   5. NAVIGATION ITEMS
 ========================================================= */
 
 .admin-nav-item {
-    width: 100%;
-
-    min-height: 42px;
-
     display: flex;
-
     align-items: center;
 
+    width: 100%;
+    min-height: 44px;
+
     gap: 11px;
+    padding: 9px 11px;
+    margin-bottom: 4px;
 
     box-sizing: border-box;
 
-    padding: 9px 11px;
-
-    margin-bottom: 4px;
-
     background: transparent;
-
     border: 2px solid transparent;
 
     color: #1f2937;
 
     font-family: inherit;
-
     font-size: 12px;
-
     font-weight: 800;
-
-    line-height: 1.2;
+    line-height: 1.3;
 
     text-align: left;
-
     text-decoration: none;
+    white-space: nowrap;
 
+    overflow: hidden;
     cursor: pointer;
 
     transition:
         background 0.2s ease,
         color 0.2s ease,
+        border-color 0.2s ease,
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
+.admin-nav-icon {
+    display: block;
 
-/* =========================================================
-   NAV NUMBER
-========================================================= */
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
 
-.admin-nav-number {
-    min-width: 21px;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
+    flex-shrink: 0;
 }
 
+.admin-nav-label {
+    display: block;
 
-/* =========================================================
-   NAV HOVER
-========================================================= */
+    min-width: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .admin-nav-item:hover {
     background: #f7f7f2;
-
     border-color: #1f2937;
 
     transform: translateX(3px);
 }
 
-
-/* =========================================================
-   NAV ACTIVE
-========================================================= */
-
 .admin-nav-item.active {
     background: #1f2937;
-
     border-color: #1f2937;
 
     color: #ffffff;
 
-    box-shadow: 5px 5px 0 #9ca3af;
+    box-shadow: 4px 4px 0 #9ca3af;
 }
 
 
 /* =========================================================
-   LOGOUT
+   6. COLLAPSED SIDEBAR
 ========================================================= */
 
-.admin-logout {
-    appearance: none;
+.admin-layout.sidebar-collapsed .admin-sidebar {
+    --sidebar-width: 78px;
 
-    -webkit-appearance: none;
+    width: 78px;
+    min-width: 78px;
+    flex: 0 0 78px;
+}
 
-    background: transparent;
+.admin-layout.sidebar-collapsed .admin-sidebar-brand {
+    justify-content: center;
+
+    gap: 0;
+    padding: 0;
+
+    border-bottom: none;
+}
+
+.admin-layout.sidebar-collapsed .admin-sidebar-brand-link {
+    display: none;
+}
+
+.admin-layout.sidebar-collapsed .admin-sidebar-brand-mini {
+    display: flex;
+}
+
+.admin-layout.sidebar-collapsed .admin-sidebar-toggle {
+    position: absolute;
+
+    top: 22px;
+    right: 0;
+
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-right: none;
+}
+
+.admin-layout.sidebar-collapsed .sidebar-toggle-icon {
+    transform: rotate(180deg);
+}
+
+.admin-layout.sidebar-collapsed .admin-sidebar-nav {
+    padding: 22px 10px;
+}
+
+.admin-layout.sidebar-collapsed .admin-nav-title {
+    display: none;
+}
+
+.admin-layout.sidebar-collapsed .admin-nav-group {
+    margin-bottom: 18px;
+}
+
+.admin-layout.sidebar-collapsed .admin-nav-item {
+    justify-content: center;
+
+    gap: 0;
+    padding: 9px 0;
+
+    border-color: transparent;
+    box-shadow: none;
+
+    transform: none;
+}
+
+.admin-layout.sidebar-collapsed .admin-nav-item:hover {
+    background: #f7f7f2;
+    border-color: #1f2937;
+}
+
+.admin-layout.sidebar-collapsed .admin-nav-item.active {
+    background: #1f2937;
+    border-color: #1f2937;
+
+    box-shadow: 3px 3px 0 #9ca3af;
+}
+
+.admin-layout.sidebar-collapsed .admin-nav-label {
+    display: none;
 }
 
 
 /* =========================================================
-   SIDEBAR BOTTOM
+   7. MAIN CONTENT BASE
 ========================================================= */
 
-.admin-sidebar-bottom {
-    padding: 15px 20px;
+.admin-layout .admin-main {
+    flex: 1 1 0;
 
-    border-top: 2px dashed #1f2937;
+    min-width: 0;
+    width: auto;
+
+    box-sizing: border-box;
+
+    transition:
+        width 0.25s ease,
+        margin-left 0.25s ease;
 }
 
 
 /* =========================================================
-   SIDEBAR FOOTER TITLE
-========================================================= */
-
-.admin-sidebar-bottom span {
-    display: block;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.5px;
-}
-
-
-/* =========================================================
-   SIDEBAR FOOTER SUBTITLE
-========================================================= */
-
-.admin-sidebar-bottom small {
-    display: block;
-
-    margin-top: 3px;
-
-    font-size: 8px;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   SIDEBAR RESPONSIVE
+   8. RESPONSIVE - TABLET
 ========================================================= */
 
 @media (max-width: 800px) {
-
     .admin-sidebar {
-        width: 220px;
+        --sidebar-width: 220px;
 
+        width: 220px;
         min-width: 220px;
+        flex-basis: 220px;
     }
 
     .admin-sidebar-brand {
-        height: 100px;
-
-        min-height: 100px;
-
-        padding: 0 18px;
+        padding: 0 12px 0 18px;
     }
 
     .admin-sidebar-brand-logo {
-        max-height: 65px;
+        max-height: 55px;
     }
 
+    .admin-sidebar-nav {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .admin-layout:not(.sidebar-collapsed) .admin-sidebar {
+        flex-basis: 220px;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-sidebar {
+        width: 78px;
+        min-width: 78px;
+        flex-basis: 78px;
+    }
 }
 
 
+/* =========================================================
+   9. RESPONSIVE - MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
-
     .admin-sidebar {
+        --sidebar-width: 100%;
+
         width: 100%;
-
         min-width: 100%;
+        flex: 0 0 100%;
 
-        position: relative;
+        height: 100vh;
+        min-height: 0;
 
-        min-height: auto;
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+
+        overflow-x: hidden;
+        overflow-y: auto;
 
         border-right: none;
-
-        border-bottom: 3px solid #1f2937;
     }
 
     .admin-sidebar-brand {
-        height: 90px;
+        position: sticky;
+        top: 0;
+        z-index: 200;
 
-        min-height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        flex: 0 0 70px;
+
+        width: 100%;
+        height: 70px;
+        min-height: 70px;
 
         padding: 0 22px;
+        box-sizing: border-box;
+
+        background: #ffffff;
     }
 
     .admin-sidebar-brand-logo {
         max-width: 200px;
-
-        max-height: 60px;
+        max-height: 50px;
     }
 
+    .admin-sidebar-nav {
+        flex: 1 1 auto;
+        min-height: 0;
+
+        padding: 18px 20px;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    /* Kembalikan tampilan penuh saat collapsed di mobile */
+    .admin-layout.sidebar-collapsed .admin-sidebar {
+        width: 100%;
+        min-width: 100%;
+        flex-basis: 100%;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-sidebar-brand {
+        padding: 0 22px;
+        justify-content: space-between;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-sidebar-brand-link {
+        display: flex;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-sidebar-brand-mini {
+        display: none;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-sidebar-toggle {
+        position: static;
+
+        width: 30px;
+        height: 34px;
+        min-width: 30px;
+
+        border: none;
+    }
+
+    .admin-layout.sidebar-collapsed .sidebar-toggle-icon {
+        transform: none;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-sidebar-nav {
+        padding: 18px 20px;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-nav-title {
+        display: block;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-nav-group {
+        margin-bottom: 28px;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-nav-item {
+        justify-content: flex-start;
+
+        gap: 11px;
+        padding: 9px 11px;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-nav-label {
+        display: block;
+    }
+
+    .admin-layout .admin-main,
+    .admin-layout.sidebar-collapsed .admin-main {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   10. DESKTOP - SIDEBAR FIXED
+   Sidebar tetap terlihat saat halaman di-scroll
+========================================================= */
+
+@media (min-width: 601px) {
+    .admin-layout .admin-sidebar {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        bottom: 0;
+
+        height: 100vh;
+        min-height: 0;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        z-index: 1000;
+    }
+
+    /* Ruang konten saat sidebar terbuka */
+    .admin-layout .admin-main {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+        min-width: 0;
+    }
+
+    /* Ruang konten saat sidebar diperkecil */
+    .admin-layout.sidebar-collapsed .admin-main {
+        margin-left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+/* =========================================================
+   COLLAPSED BRAND - LOGO XCLIP + HAMBURGER
+========================================================= */
+
+.admin-sidebar-brand-mini {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+}
+
+.admin-sidebar-brand-mini img {
+    display: block;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+/* Ikon panah tampil pada sidebar terbuka */
+.sidebar-toggle-icon-arrow {
+    display: block;
+}
+
+.sidebar-toggle-icon-menu {
+    display: none;
+}
+
+/* Tampilan desktop saat sidebar diperkecil */
+@media (min-width: 601px) {
+    .admin-layout.sidebar-collapsed .admin-sidebar-brand {
+        justify-content: space-between;
+        gap: 4px;
+        padding: 0 6px;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-sidebar-brand-mini {
+        display: flex;
+    }
+
+    .admin-layout.sidebar-collapsed .admin-sidebar-toggle {
+        position: static;
+
+        width: 28px;
+        height: 30px;
+        min-width: 28px;
+        flex: 0 0 28px;
+
+        padding: 0;
+        border: none;
+        background: transparent;
+    }
+
+    .admin-layout.sidebar-collapsed .sidebar-toggle-icon-arrow {
+        display: none;
+        transform: none;
+    }
+
+    .admin-layout.sidebar-collapsed .sidebar-toggle-icon-menu {
+        display: block;
+    }
 }
