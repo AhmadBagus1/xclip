@@ -39,6 +39,15 @@
 
     <div class="admin-layout">
 
+        {{-- MOBILE SIDEBAR OVERLAY --}}
+        <button
+            type="button"
+            class="admin-sidebar-overlay"
+            aria-label="Tutup menu navigasi"
+            aria-hidden="true"
+            tabindex="-1">
+        </button>
+
 
         {{-- =====================================================
              SIDEBAR
@@ -60,7 +69,31 @@
 
             <header class="admin-topbar">
 
+                {{-- MOBILE SIDEBAR TOGGLE --}}
+                <button
+                    type="button"
+                    class="admin-mobile-menu-toggle"
+                    id="adminMobileMenuToggle"
+                    aria-label="Buka menu navigasi"
+                    aria-controls="adminSidebar"
+                    aria-expanded="false"
+                    title="Buka menu navigasi">
 
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        aria-hidden="true">
+                        <path d="M4 6h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 18h16"></path>
+                    </svg>
+
+                </button>
                 {{-- =================================================
                      PAGE TITLE
                 ================================================== --}}
